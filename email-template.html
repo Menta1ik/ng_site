@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header { 
+            background: linear-gradient(135deg, #232526 0%, #1a2980 100%);
+            color: white; 
+            padding: 30px 25px; 
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            pointer-events: none;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-info {
+            text-align: left;
+        }
+        
+        .logo-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 2px;
+        }
+        
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 400;
+        }
+        
+        .header h2 {
+            position: relative;
+            z-index: 1;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        
+        .content { 
+            padding: 30px 25px;
+            background: white;
+        }
+        
+        .field { 
+            margin: 20px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+            border-left: 4px solid #1a2980;
+            transition: all 0.3s ease;
+        }
+        
+        .field:hover {
+            box-shadow: 0 5px 15px rgba(26, 41, 128, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .label { 
+            font-weight: 600;
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .value { 
+            color: #34495e;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .message-field {
+            background: linear-gradient(135deg, rgba(35, 37, 38, 0.05), rgba(26, 41, 128, 0.05));
+            border: 2px solid rgba(26, 41, 128, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+        }
+        
+        .message-field .value {
+            color: #2c3e50;
+            font-size: 1rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #232526, #1a2980);
+            padding: 20px 25px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8rem;
+        }
+        
+        .icon {
+            display: inline-block;
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            .container { border-radius: 15px; }
+            .header { padding: 20px 15px; }
+            .content { padding: 20px 15px; }
+            .logo-section { flex-direction: column; gap: 10px; }
+            .logo { width: 40px; height: 40px; }
+            .logo-text { font-size: 1.2rem; }
+            .logo-brand { font-size: 1rem; }
+            .field { padding: 12px; margin: 15px 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header" style="background: #1a2980; background: linear-gradient(135deg, #232526 0%, #1a2980 100%); color: white; padding: 30px 25px; text-align: center; position: relative;">
+            <div class="logo-section" style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px; position: relative; z-index: 1;">
+                <div class="logo" style="width: 50px; height: 50px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255, 255, 255, 0.3);">
+                    <div class="logo-text" style="font-size: 1.5rem; font-weight: 700; color: white;">NG</div>
+                </div>
+                <div class="logo-info" style="text-align: left;">
+                    <div class="logo-brand" style="font-size: 1.2rem; font-weight: 700; color: white; margin-bottom: 2px;">NextGen</div>
+                    <div class="logo-subtitle" style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.9); font-weight: 400;">Advanced Lowcode Platform</div>
+                </div>
+            </div>
+            <h2 style="position: relative; z-index: 1; font-size: 1.4rem; font-weight: 600; color: white;">📧 New Contact Form Message</h2>
+        </div>
+        
+        <div class="content">
+            <div class="field" style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #1a2980;">
+                <span class="label" style="font-weight: 600; color: #2c3e50; display: block; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;"><span class="icon" style="display: inline-block; margin-right: 8px; font-size: 1.1rem;">👤</span>Name:</span>
+                <span class="value" style="color: #34495e; font-size: 1rem; line-height: 1.5;">{{from_name}}</span>
+            </div>
+            
+            <div class="field" style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #1a2980;">
+                <span class="label" style="font-weight: 600; color: #2c3e50; display: block; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;"><span class="icon" style="display: inline-block; margin-right: 8px; font-size: 1.1rem;">📧</span>Email:</span>
+                <span class="value" style="color: #34495e; font-size: 1rem; line-height: 1.5;">{{from_email}}</span>
+            </div>
+            
+            <div class="field" style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 12px; border-left: 4px solid #1a2980;">
+                <span class="label" style="font-weight: 600; color: #2c3e50; display: block; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;"><span class="icon" style="display: inline-block; margin-right: 8px; font-size: 1.1rem;">🏢</span>Company:</span>
+                <span class="value" style="color: #34495e; font-size: 1rem; line-height: 1.5;">{{company}}</span>
+            </div>
+            
+            <div class="field message-field" style="margin: 20px 0; padding: 20px; background: #f0f4f8; border: 2px solid #1a2980; border-radius: 15px;">
+                <span class="label" style="font-weight: 600; color: #2c3e50; display: block; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px;"><span class="icon" style="display: inline-block; margin-right: 8px; font-size: 1.1rem;">💬</span>Message:</span>
+                <div class="value" style="color: #2c3e50; font-size: 1rem; line-height: 1.6; white-space: pre-wrap;">{{message}}</div>
+            </div>
+        </div>
+        
+        <div class="footer" style="background: #1a2980; background: linear-gradient(135deg, #232526, #1a2980); padding: 20px 25px; text-align: center; color: rgba(255, 255, 255, 0.8); font-size: 0.8rem;">
+            <p style="margin: 0; color: rgba(255, 255, 255, 0.8);">📩 This message was sent through NextGen contact form</p>
+            <p style="margin: 5px 0 0 0; color: rgba(255, 255, 255, 0.8);">🕒 Generated automatically • Please respond promptly</p>
+        </div>
+    </div>
+</body>
+</html>

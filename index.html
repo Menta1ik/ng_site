@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen - Presentation Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #1a2980 100%);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #232526, #1a2980);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-brand {
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #232526, #1a2980);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+        }
+
+        .navigation-menu {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .nav-item {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-item.active {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-item:hover::before {
+            left: 100%;
+        }
+
+        .content-section {
+            background: rgba(255,255,255,0.98);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #232526;
+            text-align: center;
+        }
+
+        .platform-story {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+            text-align: justify;
+        }
+
+        .platform-story p {
+            margin-bottom: 20px;
+        }
+
+        .presentations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .presentation-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #232526;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .presentation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-left-color: #1a2980;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #232526;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .card-slides {
+            font-size: 0.9rem;
+            color: #232526;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .clients-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            justify-items: center;
+            align-items: stretch;
+        }
+
+        .client-logo {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 0.5px solid transparent;
+            text-align: center;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 200px;
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+            border-color: #95a5a6;
+        }
+
+        .client-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #232526;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .client-logo-img {
+            max-width: 100%;
+            max-height: 50px;
+            width: auto;
+            height: auto;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .client-logo:hover .client-logo-img {
+            filter: grayscale(0%);
+            transform: scale(1.07);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .presentations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navigation-menu {
+                flex-direction: column;
+                gap: 8px;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .nav-item {
+                text-align: center;
+                padding: 15px 20px;
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                justify-items: center;
+            }
+
+            .client-logo {
+                padding: 20px;
+                height: 100px;
+                max-width: 150px;
+            }
+
+            .client-name {
+                font-size: 0.9rem;
+            }
+
+            .client-logo-img {
+                max-height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-text">NG</div>
+                </div>
+                <div style="text-align: left;">
+                    <div class="logo-brand">NextGen</div>
+                    <div class="logo-subtitle">Advanced Lowcode Platform</div>
+                </div>
+            </div>
+
+            <nav class="navigation-menu">
+                <a href="#" class="nav-item active">Platform</a>
+                <a href="presentations.html" class="nav-item">Presentation</a>
+                <a href="file_archive.html" class="nav-item">Files</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Platform Story</h2>
+            <div class="platform-story">
+                <p>The NextGen platform has a history of over 10 years of development. Originally, it was conceived and built as an internal tool, primarily focused on delivering robust and secure solutions for banking and enterprise clients. This focus enabled the platform to achieve a high level of maturity, stability, and compliance with the demanding standards of the financial sector.</p>
+                
+                <p>Following the onset of the COVID-19 pandemic, it became evident that the global landscape for digital technologies and business continuity was fundamentally shifting. In response to these changes, a strategic decision was made to reorient NextGen from an internal tool towards a standalone product, ready for broader market adoption.</p>
+                
+                <p>As a result, the absence of a visible market presence until recently is not indicative of a lack of product maturity or readiness, but rather a reflection of its origin as a proprietary solution developed for specific, mission-critical use cases. The current phase marks the platform's transition into an open, commercially available low-code offering, backed by years of proven performance in highly regulated industries.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Our Clients</h2>
+            <div class="clients-description">
+                <p>Trusted by leading financial institutions and enterprises worldwide, delivering mission-critical solutions with proven reliability and security.</p>
+            </div>
+            <div class="clients-grid">
+                <!-- Поддерживаются форматы: SVG, PNG, JPG, WebP -->
+                <div class="client-logo">
+                    <img src="images/logos/enifinance-logo.svg" alt="EniFinance" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/societe-generale-logo.svg" alt="Societe Generale" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/intesa-sanpaolo-logo.svg" alt="Intesa Sanpaolo" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/credit-agricole-logo.svg" alt="Credit Agricole" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/asia-finance-group-logo.png" alt="Asia Finance Group" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/otp-bank-logo.svg" alt="OTP Bank" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/moneyveo-logo.svg" alt="Moneyveo" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/pkb-logo.svg" alt="PKB" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/pta-bank-logo.svg" alt="PTA Bank" class="client-logo-img">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/kredobank-logo.png" alt="KredoBank" class="client-logo-img">
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 NextGen | Comprehensive Digital Transformation Solutions</p>
+        </div>
+    </div>
+</body>
+</html> 

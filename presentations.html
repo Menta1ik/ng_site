@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen - Presentations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #232526 0%, #1a2980 100%);
+            color: #333;
+            min-height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #232526, #1a2980);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.2) 50%, transparent 70%);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-brand {
+            color: white;
+            font-size: 2rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-subtitle {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .main-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #232526, #1a2980);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 40px;
+        }
+
+        .navigation-menu {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .nav-item {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-item:hover {
+            background: rgba(255,255,255,0.2);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .nav-item.active {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .nav-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-item:hover::before {
+            left: 100%;
+        }
+
+        .content-section {
+            background: rgba(255,255,255,0.98);
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #232526;
+            text-align: center;
+        }
+
+        .presentations-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .presentations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .presentation-card {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #232526;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .presentation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-left-color: #1a2980;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #232526;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.4;
+        }
+
+        .card-slides {
+            font-size: 0.9rem;
+            color: #232526;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+        }
+
+        /* Планшеты и средние экраны */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .main-title {
+                font-size: 3rem;
+            }
+            
+            .presentations-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 20px;
+            }
+            
+            .content-section {
+                padding: 30px;
+            }
+        }
+
+        /* Мобильные устройства */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .main-title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .presentations-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .content-section {
+                padding: 25px;
+            }
+
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .navigation-menu {
+                flex-direction: column;
+                gap: 8px;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .nav-item {
+                text-align: center;
+                padding: 15px 20px;
+            }
+
+            .logo-container {
+                margin-bottom: 20px;
+            }
+
+            .logo {
+                width: 70px;
+                height: 70px;
+            }
+
+            .logo-text {
+                font-size: 2rem;
+            }
+
+            .logo-brand {
+                font-size: 1.8rem;
+            }
+
+            .logo-subtitle {
+                font-size: 1rem;
+            }
+        }
+
+        /* Очень маленькие экраны */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px 10px;
+            }
+            
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .content-section {
+                padding: 20px 15px;
+                border-radius: 20px;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .presentations-description {
+                font-size: 0.9rem;
+            }
+
+            .presentation-card {
+                padding: 20px;
+                border-radius: 15px;
+            }
+
+            .card-title {
+                font-size: 1.2rem;
+            }
+
+            .card-description {
+                font-size: 0.9rem;
+            }
+
+            .navigation-menu {
+                padding: 15px;
+            }
+
+            .nav-item {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .logo-text {
+                font-size: 1.8rem;
+            }
+
+            .logo-brand {
+                font-size: 1.6rem;
+            }
+
+            .logo-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Отключение hover-эффектов на устройствах без hover */
+        @media (hover: none) {
+            .presentation-card:hover {
+                transform: none;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            }
+
+            .nav-item:hover {
+                background: rgba(255,255,255,0.1);
+                color: rgba(255,255,255,0.9);
+                transform: none;
+            }
+
+            .nav-item:hover::before {
+                left: -100%;
+            }
+        }
+
+        /* Оптимизация для устройств с высоким DPI */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .logo {
+                box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            }
+        }
+
+        /* Поддержка темной темы системы */
+        @media (prefers-color-scheme: dark) {
+            .content-section {
+                background: rgba(30,30,30,0.98);
+                color: #f0f0f0;
+            }
+
+            .presentation-card {
+                background: rgba(40,40,40,0.95);
+                color: #f0f0f0;
+            }
+
+            .card-title {
+                color: #f0f0f0;
+            }
+
+            .card-description {
+                color: #ccc;
+            }
+
+            .section-title {
+                color: #f0f0f0;
+            }
+
+            .presentations-description {
+                color: #ccc;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo">
+                    <div class="logo-text">NG</div>
+                </div>
+                <div style="text-align: left;">
+                    <div class="logo-brand">NextGen</div>
+                    <div class="logo-subtitle">Advanced Lowcode Platform</div>
+                </div>
+            </div>
+
+            <nav class="navigation-menu">
+                <a href="index.html" class="nav-item">Platform</a>
+                <a href="presentations.html" class="nav-item active">Presentation</a>
+                <a href="file_archive.html" class="nav-item">Files</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Presentation Collection</h2>
+            <div class="presentations-description">
+                Explore our comprehensive collection of interactive presentations showcasing NextGen platform capabilities, 
+                use cases, and strategic insights for digital transformation initiatives.
+            </div>
+            <div class="presentations-grid">
+                <a href="use_cases_presentation.html" class="presentation-card">
+                    <div class="card-title">Main Use Cases</div>
+                    <div class="card-description">12 key use cases demonstrating platform capabilities across government and private sectors, from One-Stop-Shop to HRTech solutions.</div>
+                    <div class="card-slides">14 slides</div>
+                </a>
+
+                <a href="perception_presentation.html" class="presentation-card">
+                    <div class="card-title">Platform Perception</div>
+                    <div class="card-description">Analysis of how a proprietary low-code platform will be perceived by government, business, and international stakeholders.</div>
+                    <div class="card-slides">9 slides</div>
+                </a>
+
+                <a href="tco_roi_presentation.html" class="presentation-card">
+                    <div class="card-title">TCO/ROI Analysis</div>
+                    <div class="card-description">Economic effect comparison between low-code and traditional development approaches, with detailed cost-benefit analysis.</div>
+                    <div class="card-slides">8 slides</div>
+                </a>
+
+                <a href="digital_authority_presentation.html" class="presentation-card">
+                    <div class="card-title">Digital Authority Architecture</div>
+                    <div class="card-description">Platform architecture positioning for Digital Authority, focusing on digital sovereignty and integration flexibility.</div>
+                    <div class="card-slides">9 slides</div>
+                </a>
+
+                <a href="rfp_evaluation_presentation.html" class="presentation-card">
+                    <div class="card-title">RFP Evaluation</div>
+                    <div class="card-description">Comprehensive RFP and evaluation checklist for low-code platforms, with NextGen Release 11.7 analysis.</div>
+                    <div class="card-slides">12 slides</div>
+                </a>
+
+                <a href="rfp_checklist_presentation.html" class="presentation-card">
+                    <div class="card-title">RFP Checklist</div>
+                    <div class="card-description">Detailed evaluation framework for enterprise low-code platform selection with focus on NextGen capabilities.</div>
+                    <div class="card-slides">13 slides</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2025 NextGen | Comprehensive Digital Transformation Solutions</p>
+        </div>
+    </div>
+</body>
+</html> 

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессиональные градиенты для IT-продукта</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #181c20;
+            color: #222;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        h1 {
+            text-align: center;
+            color: #1a2636;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+        .gradient-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .gradient-card {
+            width: 350px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px 0 rgba(30,40,90,0.10);
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        .gradient-preview {
+            height: 120px;
+            width: 100%;
+        }
+        .gradient-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1a2636;
+            margin: 1rem 1rem 0.5rem 1rem;
+        }
+        .gradient-desc {
+            font-size: 0.98rem;
+            color: #4a5568;
+            margin: 0 1rem 1.2rem 1rem;
+        }
+        /* Градиенты */
+        .g1 { background: linear-gradient(135deg, #232526 0%, #414345 100%); }
+        .g2 { background: linear-gradient(135deg, #283e51 0%, #485563 100%); }
+        .g3 { background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%); }
+        .g4 { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); }
+        .g5 { background: linear-gradient(135deg, #232526 0%, #1a2980 100%); }
+        .g6 { background: linear-gradient(135deg, #434343 0%, #283e51 100%); }
+        .g7 { background: linear-gradient(135deg, #283e51 0%, #36d1c4 100%); }
+        @media (max-width: 900px) {
+            .gradient-list { flex-direction: column; align-items: center; }
+            .gradient-card { width: 95vw; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Профессиональные градиенты для IT/Enterprise продукта</h1>
+        <div class="gradient-list">
+            <div class="gradient-card">
+                <div class="gradient-preview g1"></div>
+                <div class="gradient-title">1. Графитовый → Серый</div>
+                <div class="gradient-desc">Строгий, универсальный фон для корпоративных и финтех решений. Отлично сочетается с любыми акцентами.</div>
+            </div>
+            <div class="gradient-card">
+                <div class="gradient-preview g2"></div>
+                <div class="gradient-title">2. Темно-синий → Стальной</div>
+                <div class="gradient-desc">Технологичный, современный. Подходит для дашбордов, аналитики, IT-продуктов.</div>
+            </div>
+            <div class="gradient-card">
+                <div class="gradient-preview g3"></div>
+                <div class="gradient-title">3. Глубокий синий → Индиго</div>
+                <div class="gradient-desc">Корпоративный, внушающий доверие. Часто используется в банковских и B2B сервисах.</div>
+            </div>
+            <div class="gradient-card">
+                <div class="gradient-preview g4"></div>
+                <div class="gradient-title">4. Сапфировый → Синий</div>
+                <div class="gradient-desc">Чистый, строгий, отлично подходит для SaaS и enterprise платформ.</div>
+            </div>
+            <div class="gradient-card">
+                <div class="gradient-preview g5"></div>
+                <div class="gradient-title">5. Графитовый → Синий</div>
+                <div class="gradient-desc">Современный, минималистичный. Хорошо смотрится с белыми и голубыми элементами интерфейса.</div>
+            </div>
+            <div class="gradient-card">
+                <div class="gradient-preview g6"></div>
+                <div class="gradient-title">6. Темно-серый → Стальной</div>
+                <div class="gradient-desc">Нейтральный, премиальный. Подходит для серьезных корпоративных решений.</div>
+            </div>
+            <div class="gradient-card">
+                <div class="gradient-preview g7"></div>
+                <div class="gradient-title">7. Темно-синий → Бирюзовый</div>
+                <div class="gradient-desc">Современно, свежо, с акцентом на инновации. Хорошо для IT-стартапов и финтеха.</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

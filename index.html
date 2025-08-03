@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen - Future of Low-Code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles background */
+        #particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Main container */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0a0a0a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b2e0ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero section */
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(25, 233, 124, 0.15);
+            color: #19e97c;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border: 1px solid rgba(25, 233, 124, 0.3);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 50px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #19e97c, #b2e0ff);
+            color: #0a0a0a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(25, 233, 124, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #b2e0ff;
+            border: 2px solid #b2e0ff;
+        }
+
+        .btn-secondary:hover {
+            background: #b2e0ff;
+            color: #0a0a0a;
+            transform: translateY(-2px);
+        }
+
+        /* Features section */
+        .features {
+            padding: 80px 40px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+        }
+
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .features-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 60px;
+            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(178, 224, 255, 0.3);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .feature-description {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        /* Stats section */
+        .stats {
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #19e97c;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 500;
+        }
+
+        /* Clients section */
+        .clients {
+            padding: 80px 0;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+        }
+
+        .clients-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #b2e0ff 0%, #ffffff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .clients-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            justify-items: center;
+            align-items: stretch;
+        }
+
+        .client-logo {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(178, 224, 255, 0.2);
+            text-align: center;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 180px;
+            backdrop-filter: blur(10px);
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            border-color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .client-logo-img {
+            max-width: 100%;
+            max-height: 50px;
+            width: auto;
+            height: auto;
+            filter: grayscale(100%) brightness(1.2);
+            transition: all 0.3s ease;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .client-logo:hover .client-logo-img {
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.07);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+
+            .features {
+                padding: 60px 20px;
+            }
+
+            .stats {
+                padding: 40px 20px;
+            }
+
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(5, 1fr);
+                gap: 20px;
+            }
+
+            .client-logo {
+                padding: 20px;
+                height: 100px;
+                max-width: 150px;
+            }
+
+            .client-logo-img {
+                max-height: 40px;
+            }
+
+            .clients-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-badge { animation-delay: 0.1s; }
+        .hero-title { animation-delay: 0.2s; }
+        .hero-subtitle { animation-delay: 0.3s; }
+        .hero-description { animation-delay: 0.4s; }
+        .cta-buttons { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <canvas id="particles-bg"></canvas>
+    
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">NG</div>
+                <div>
+                    NextGen
+                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link">Platform</a>
+                <a href="presentations.html" class="nav-link">Presentation</a>
+                <a href="file_archive.html" class="nav-link">Files</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">🚀 Low Code. High Impact.</div>
+                <h1 class="hero-title">Automate. Integrate.<br>Scale.</h1>
+                <h2 class="hero-subtitle">Grow smarter. Move faster.</h2>
+                <p class="hero-description">
+                    Powerful visual builder and process automation. Turn innovation into reality—no complex coding required.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">View Presentation</a>
+                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </main>
+
+        <section class="features">
+            <div class="features-container">
+                <h2 class="features-title">Why Choose NextGen?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3 class="feature-title">Lightning Fast</h3>
+                        <p class="feature-description">
+                            Build applications 10x faster with our intuitive drag-and-drop interface and pre-built components.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3 class="feature-title">Enterprise Security</h3>
+                        <p class="feature-description">
+                            Bank-grade security with advanced encryption, compliance standards, and robust access controls.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3 class="feature-title">Global Scale</h3>
+                        <p class="feature-description">
+                            Deploy worldwide with automatic scaling, multi-region support, and 99.9% uptime guarantee.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Years of Innovation</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime Guarantee</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Global Support</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="clients">
+            <div class="container">
+                <h2 class="clients-title">Our Clients</h2>
+                <div class="clients-description">
+                    <p>Trusted by leading financial institutions and enterprises worldwide, delivering mission-critical solutions with proven reliability and security.</p>
+                </div>
+                <div class="clients-grid">
+                    <div class="client-logo">
+                        <img src="images/logos/enifinance-logo.svg" alt="EniFinance" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/societe-generale-logo.svg" alt="Societe Generale" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/intesa-sanpaolo-logo.svg" alt="Intesa Sanpaolo" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/credit-agricole-logo.svg" alt="Credit Agricole" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/asia-finance-group-logo.png" alt="Asia Finance Group" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/otp-bank-logo.svg" alt="OTP Bank" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/moneyveo-logo.svg" alt="Moneyveo" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/pkb-logo.svg" alt="PKB" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/pta-bank-logo.svg" alt="PTA Bank" class="client-logo-img">
+                    </div>
+                    <div class="client-logo">
+                        <img src="images/logos/kredobank-logo.png" alt="KredoBank" class="client-logo-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p class="footer-text">© 2025 NextGen | Shaping the Future of Application Development</p>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced Particles Animation
+        const canvas = document.getElementById('particles-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let w = window.innerWidth;
+        let h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+
+        function resizeCanvas() {
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+            createParticles();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        const PARTICLE_COLOR = '#b2e0ff';
+        const LINE_COLOR = '#19e97c';
+        const PARTICLE_COUNT = Math.floor((w * h) / 1500);
+        const PARTICLE_SIZE = 2;
+        const SPEED = 0.15;
+        const LINE_DISTANCE = 150;
+        const MOUSE_RADIUS = 200;
+
+        let mouse = { x: 0, y: 0 };
+
+        // Mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function randomBetween(a, b) { return a + Math.random() * (b - a); }
+
+        function createParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: randomBetween(-SPEED, SPEED),
+                    vy: randomBetween(-SPEED, SPEED),
+                    size: PARTICLE_SIZE + Math.random() * 1,
+                    originalSize: PARTICLE_SIZE + Math.random() * 1,
+                    opacity: 0.3 + Math.random() * 0.7
+                });
+            }
+        }
+        createParticles();
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p1 = particles[i];
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < LINE_DISTANCE) {
+                        ctx.save();
+                        const opacity = 0.15 * (1 - dist / LINE_DISTANCE);
+                        ctx.globalAlpha = opacity;
+                        ctx.strokeStyle = LINE_COLOR;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, w, h);
+            
+            drawLines();
+            
+            for (let p of particles) {
+                // Mouse interaction
+                const mouseDistance = Math.sqrt((p.x - mouse.x) ** 2 + (p.y - mouse.y) ** 2);
+                if (mouseDistance < MOUSE_RADIUS) {
+                    const force = (MOUSE_RADIUS - mouseDistance) / MOUSE_RADIUS;
+                    p.size = p.originalSize * (1 + force * 2);
+                    p.opacity = Math.min(1, p.opacity + force * 0.5);
+                } else {
+                    p.size = p.originalSize;
+                    p.opacity = Math.max(0.3, p.opacity - 0.01);
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+                ctx.fillStyle = PARTICLE_COLOR;
+                ctx.globalAlpha = p.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+                
+                p.x += p.vx;
+                p.y += p.vy;
+                
+                // Random direction change
+                if (Math.random() < 0.003) {
+                    p.vx = randomBetween(-SPEED, SPEED);
+                    p.vy = randomBetween(-SPEED, SPEED);
+                }
+                
+                // Boundary collision
+                if (p.x < 0 || p.x > w) p.vx *= -1;
+                if (p.y < 0 || p.y > h) p.vy *= -1;
+            }
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        animateParticles();
+    </script>
+</body>
+</html>

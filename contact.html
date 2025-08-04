@@ -7,12 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("aKbRA28oaAuqPntHC");
-        })();
-    </script>
+    <!-- EmailJS removed - using server-side solution instead -->
     <style>
         * {
             margin: 0;
@@ -259,6 +254,77 @@
             transform: none;
         }
 
+        /* Стили для уведомлений */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateX(400px);
+            transition: all 0.4s ease;
+            z-index: 1000;
+            max-width: 350px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, rgba(25, 233, 124, 0.9), rgba(46, 204, 113, 0.9));
+            border-color: rgba(25, 233, 124, 0.3);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.9), rgba(192, 57, 43, 0.9));
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+
+        .notification-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .notification-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+        }
+
+        .notification-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .loading {
+            display: none;
+        }
+
+        .submit-btn.loading .loading {
+            display: inline;
+            margin-left: 8px;
+        }
+
         .contact-info-section {
              background: rgba(255, 255, 255, 0.05);
              backdrop-filter: blur(10px);
@@ -498,7 +564,7 @@
 
         <main class="content">
             <div class="container">
-                <a href="index.html" class="back-button">← Back to Platform</a>
+        
                 
                 <h1 class="page-title">Contact Us</h1>
                 <p class="page-description">
@@ -508,7 +574,7 @@
                 <div class="contact-grid">
                     <div class="contact-form-section">
                         <h3 class="form-title">Talk to our sales team</h3>
-                        <form id="contactForm" onsubmit="sendEmail(event)">
+                        <form action="https://formspree.io/f/mvgqbjwj" method="POST">
                             <div class="form-group">
                                 <label for="name" class="form-label">Name *</label>
                                 <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
@@ -685,14 +751,37 @@
         animateParticles();
 
         // Form handling
-        function showNotification(message, type) {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.className = `notification ${type}`;
-            notification.classList.add('show');
+        function showNotification(icon, message, type) {
+            // Удаляем существующие уведомления
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(n => n.remove());
             
+            // Создаем новое уведомление
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <span class="notification-icon">${icon}</span>
+                <span class="notification-message">${message}</span>
+                <button class="notification-close" onclick="this.parentElement.remove()">&times;</button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Показываем уведомление с небольшой задержкой для анимации
             setTimeout(() => {
-                notification.classList.remove('show');
+                notification.classList.add('show');
+            }, 100);
+            
+            // Автоматически скрываем через 5 секунд
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.classList.remove('show');
+                    setTimeout(() => {
+                        if (notification.parentElement) {
+                            notification.remove();
+                        }
+                    }, 400);
+                }
             }, 5000);
         }
 
@@ -701,61 +790,50 @@
             return emailRegex.test(email);
         }
 
-        function sendEmail(event) {
-            event.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const loading = document.getElementById('loading');
-            const form = document.getElementById('contactForm');
-            
-            // Get form data
-            const formData = new FormData(form);
-            const name = formData.get('name');
-            const email = formData.get('email');
-            const company = formData.get('company');
-            const message = formData.get('message');
-            
-            // Validation
-            if (!name || !email || !message) {
-                showNotification('Please fill in all required fields', 'error');
-                return;
-            }
-            
-            if (!isValidEmail(email)) {
-                showNotification('Please enter a valid email address', 'error');
-                return;
-            }
-            
-            // Show loading
-            submitBtn.disabled = true;
-            loading.classList.add('show');
-            submitBtn.textContent = 'Sending...';
-            
-            // EmailJS parameters
-            const templateParams = {
-                from_name: name,
-                from_email: email,
-                company: company || 'Not specified',
-                message: message,
-                to_name: 'NextGen Team'
-            };
-            
-            // Send email
-            emailjs.send('service_4hi8rsx', 'template_9cm0i9f', templateParams)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    showNotification('Message sent successfully! We will get back to you soon.', 'success');
-                    form.reset();
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    showNotification('Failed to send message. Please try again later.', 'error');
-                })
-                .finally(function() {
-                    // Reset button
+        // Обработка отправки формы с кастомными уведомлениями
+        const contactForm = document.querySelector('form[action*="formspree.io"]');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                // Показываем состояние загрузки
+                submitBtn.disabled = true;
+                submitBtn.classList.add('loading');
+                submitBtn.innerHTML = 'Sending... <span class="loading">⏳</span>';
+                
+                try {
+                    const formData = new FormData(contactForm);
+                    
+                    const response = await fetch(contactForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+                    
+                    if (response.ok) {
+                        // Успешная отправка
+                        showNotification('✅', 'Message sent successfully! We will contact you soon.', 'success');
+                        contactForm.reset();
+                    } else {
+                        // Ошибка от сервера
+                        const data = await response.json();
+                        throw new Error(data.error || 'Error sending message');
+                    }
+                } catch (error) {
+                    // Ошибка сети или другая ошибка
+                    console.error('Ошибка отправки:', error);
+                    showNotification('❌', 'An error occurred while sending the message. Please try again.', 'error');
+                } finally {
+                    // Возвращаем кнопку в исходное состояние
                     submitBtn.disabled = false;
-                    loading.classList.remove('show');
-                    submitBtn.textContent = 'Send Message';
-                });
+                    submitBtn.classList.remove('loading');
+                    submitBtn.innerHTML = 'Send Message <span class="loading">⏳</span>';
+                }
+            });
         }
     </script>
 </body>

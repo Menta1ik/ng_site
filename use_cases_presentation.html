@@ -3,13 +3,501 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Low-Code Platform Use Cases for Government</title>
-      <link rel="stylesheet" href="common.css?v=2.0">
+  <title>Low-Code Platform Use Cases for Government</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+        color: #ffffff;
+        min-height: 100vh;
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    /* Particles background */
+    #particles-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .presentation-container {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 80px;
+    }
+
+    .slide {
+        width: 100%;
+        min-height: calc(100vh - 80px);
+        position: relative;
+        opacity: 0;
+        display: none;
+        transition: opacity 0.5s ease-in-out;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+
+    .slide.active {
+        opacity: 1;
+        display: flex;
+    }
+
+    .slide-content {
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.1) 0%, 
+            rgba(255, 255, 255, 0.05) 50%, 
+            rgba(255, 255, 255, 0.02) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 25px;
+        padding: 40px;
+        max-width: 1200px;
+        width: 100%;
+        box-shadow: 
+            0 25px 50px rgba(0, 0, 0, 0.4),
+            0 0 0 1px rgba(255, 255, 255, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+        margin: 20px 0;
+        text-align: left;
+        position: relative;
+    }
+    
+    .slide-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, 
+            rgba(255, 255, 255, 0.1) 0%, 
+            transparent 50%, 
+            rgba(25, 233, 124, 0.05) 100%);
+        border-radius: 25px;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .slide-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #ffffff, #b2e0ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-align: center;
+    }
+
+    .slide-subtitle {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #19e97c;
+        margin: 25px 0 15px 0;
+        border-bottom: 2px solid rgba(25, 233, 124, 0.3);
+        padding-bottom: 8px;
+    }
+
+    .slide-btns {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 0 0 0;
+        max-width: 1000px;
+        width: 100%;
+    }
+
+    .slide-btn {
+        min-height: 120px;
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffffff;
+        border-radius: 20px;
+        padding: 20px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        text-align: center;
+    }
+
+    .slide-btn::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(25, 233, 124, 0.1), rgba(178, 224, 255, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        border-radius: 20px;
+    }
+
+    .slide-btn:hover::before {
+        opacity: 1;
+    }
+
+    .slide-btn:hover {
+        transform: translateY(-5px);
+        border-color: rgba(25, 233, 124, 0.3);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+    
+    .slide-btn span {
+        font-size: 2rem;
+        margin-bottom: 8px;
+        z-index: 1;
+        position: relative;
+    }
+
+    /* Logo styles */
+    .logo-container {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        padding: 10px 20px;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #b2e0ff, #19e97c);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-text {
+        font-weight: 800;
+        color: #0a0a0a;
+        font-size: 1.2rem;
+    }
+
+    .logo-brand {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: white;
+    }
+
+    .logo-subtitle {
+        font-size: 0.7rem;
+        font-weight: 400;
+        opacity: 0.8;
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+    /* Navigation */
+     .navigation {
+         position: fixed;
+         bottom: 20px;
+         left: 50%;
+         transform: translateX(-50%);
+         z-index: 1000;
+         display: flex;
+         gap: 15px;
+         background: rgba(255, 255, 255, 0.05);
+         backdrop-filter: blur(10px);
+         padding: 15px 25px;
+         border-radius: 50px;
+         border: 1px solid rgba(255, 255, 255, 0.1);
+     }
+
+     /* Slide counter moved to top */
+     .slide-counter {
+         position: fixed;
+         top: 20px;
+         right: 20px;
+         z-index: 1000;
+         background: rgba(255, 255, 255, 0.05);
+         backdrop-filter: blur(10px);
+         padding: 10px 20px;
+         border-radius: 15px;
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         color: rgba(255, 255, 255, 0.8);
+         font-size: 0.9rem;
+         font-weight: 500;
+     }
+
+    .nav-btn, .home-btn {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .nav-btn:hover, .home-btn:hover {
+        background: rgba(25, 233, 124, 0.2);
+        color: #19e97c;
+        transform: translateY(-2px);
+    }
+
+    
+
+    /* Lists */
+    ul {
+        margin: 15px 0;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .slide-btns {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .slide-btn {
+            min-height: 100px;
+            font-size: 0.8rem;
+            padding: 15px 10px;
+        }
+        
+        .slide-btn span {
+            font-size: 1.5rem;
+        }
+
+        .slide-title {
+            font-size: 2rem;
+        }
+
+        .slide-content {
+            padding: 30px 20px;
+        }
+
+        .logo-container {
+            top: 10px;
+            left: 10px;
+            padding: 8px 15px;
+        }
+
+        .navigation {
+            bottom: 10px;
+            padding: 12px 20px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .slide-btns {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+        
+        .slide-btn {
+            min-height: 80px;
+            font-size: 0.75rem;
+            padding: 12px 8px;
+        }
+        
+        .slide-btn span {
+            font-size: 1.3rem;
+        }
+
+        .slide-title {
+            font-size: 1.8rem;
+        }
+
+        .slide-content {
+            padding: 25px 15px;
+        }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .slide-content {
+         animation: fadeInUp 0.8s ease forwards;
+     }
+
+     /* File card styles from file_archive.html */
+     .files-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+         gap: 30px;
+         margin-top: 40px;
+     }
+
+     .file-card {
+         background: rgba(255, 255, 255, 0.05);
+         backdrop-filter: blur(10px);
+         border-radius: 20px;
+         padding: 30px;
+         transition: all 0.3s ease;
+         border: 1px solid rgba(255, 255, 255, 0.1);
+         text-decoration: none;
+         color: inherit;
+         display: block;
+         position: relative;
+         overflow: hidden;
+     }
+
+     .file-card::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: -100%;
+         width: 100%;
+         height: 100%;
+         background: linear-gradient(90deg, transparent, rgba(178, 224, 255, 0.1), transparent);
+         transition: left 0.5s;
+     }
+
+     .file-card:hover::before {
+         left: 100%;
+     }
+
+     .file-card:hover {
+         transform: translateY(-5px);
+         background: rgba(255, 255, 255, 0.08);
+         border-color: rgba(178, 224, 255, 0.3);
+         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+     }
+
+     .file-title {
+         font-size: 1.4rem;
+         font-weight: 600;
+         margin-bottom: 15px;
+         color: #ffffff;
+     }
+
+     .file-description {
+         font-size: 12px;
+         font-family: 'JetBrains Mono', monospace;
+         color: rgba(255, 255, 255, 0.7);
+         line-height: 1.6;
+         margin-bottom: 20px;
+     }
+
+     .file-meta {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         font-size: 0.9rem;
+         color: rgba(255, 255, 255, 0.6);
+     }
+
+     .file-size {
+         background: rgba(25, 233, 124, 0.2);
+         color: #19e97c;
+         padding: 5px 12px;
+         border-radius: 15px;
+         font-size: 0.8rem;
+         font-weight: 500;
+     }
+
+     .back-button {
+         display: inline-block;
+         background: linear-gradient(135deg, #19e97c, #b2e0ff);
+         color: #0a0a0a;
+         padding: 15px 30px;
+         border-radius: 50px;
+         text-decoration: none;
+         font-weight: 600;
+         transition: all 0.3s ease;
+         margin-bottom: 40px;
+     }
+
+     .back-button:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 10px 30px rgba(25, 233, 124, 0.3);
+     }
+
+     /* Animation delays for file cards */
+     .file-card:nth-child(1) { animation-delay: 0.1s; }
+     .file-card:nth-child(2) { animation-delay: 0.2s; }
+     .file-card:nth-child(3) { animation-delay: 0.3s; }
+     .file-card:nth-child(4) { animation-delay: 0.4s; }
+     .file-card:nth-child(5) { animation-delay: 0.5s; }
+     .file-card:nth-child(6) { animation-delay: 0.6s; }
+     .file-card:nth-child(7) { animation-delay: 0.7s; }
+     .file-card:nth-child(8) { animation-delay: 0.8s; }
+     .file-card:nth-child(9) { animation-delay: 0.9s; }
+   </style>
 </head>
 <body>
   <div class="presentation-container">
     <!-- Logo -->
-    <div class="logo-container">
+    <a href="index.html" class="logo-container" style="text-decoration: none; color: inherit;">
       <div class="logo">
         <div class="logo-text">NG</div>
       </div>
@@ -17,7 +505,7 @@
         <div class="logo-brand">NextGen</div>
                         <div class="logo-subtitle">Advanced Lowcode Platform</div>
       </div>
-    </div>
+    </a>
     <!-- Slide 1: Navigation -->
     <div class="slide active" id="slide1">
       <div class="slide-content" style="max-height:none;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;">
@@ -25,206 +513,556 @@
         <p class="slide-subtitle">Main use cases</p>
         <div class="slide-btns">
           <button class="slide-btn" data-slide="2"><span>🏢</span>One-Stop-Shop</button>
-           <button class="slide-btn" data-slide="3"><span>🏆</span>Subsidies & Grants</button>
-           <button class="slide-btn" data-slide="4"><span>🏙️</span>Smart City</button>
-           <button class="slide-btn" data-slide="5"><span>🏥</span>Digital Health</button>
-           <button class="slide-btn" data-slide="6"><span>🗄️</span>Enterprise Workflow</button>
-           <button class="slide-btn" data-slide="7"><span>📊</span>Smart Analytics</button>
-           <button class="slide-btn" data-slide="8"><span>🎓</span>Education</button>
-           <button class="slide-btn" data-slide="9"><span>🚢</span>Export/Logistics</button>
-           <button class="slide-btn" data-slide="10"><span>🏦</span>Digital Finance</button>
-           <button class="slide-btn" data-slide="11"><span>⚖️</span>LawTech</button>
-           <button class="slide-btn" data-slide="12"><span>🏠</span>PropTech</button>
-           <button class="slide-btn" data-slide="13"><span>👔</span>HRTech</button>
+          <button class="slide-btn" data-slide="3"><span>🏆</span>Subsidies & Grants</button>
+          <button class="slide-btn" data-slide="4"><span>🏙️</span>Smart City</button>
+          <button class="slide-btn" data-slide="5"><span>🏥</span>Digital Health</button>
+          <button class="slide-btn" data-slide="6"><span>🗄️</span>Enterprise Workflow</button>
+          <button class="slide-btn" data-slide="7"><span>📊</span>Smart Analytics</button>
+          <button class="slide-btn" data-slide="8"><span>🎓</span>Education</button>
+          <button class="slide-btn" data-slide="9"><span>🚢</span>Export/Logistics</button>
+          <button class="slide-btn" data-slide="10"><span>🏦</span>Digital Finance</button>
+          <button class="slide-btn" data-slide="11"><span>⚖️</span>LawTech</button>
+          <button class="slide-btn" data-slide="12"><span>🏠</span>PropTech</button>
+          <button class="slide-btn" data-slide="13"><span>👔</span>HRTech</button>
         </div>
       </div>
     </div>
     <!-- Slide 2: One-Stop-Shop -->
-    <div class="slide" id="slide2"><div class="slide-content">
-      <h2 class="slide-title">One-Stop-Shop for Business Services</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A centralized portal for business registration, licensing, application submission and reporting, obtaining certificates and subsidies, automating interaction with government and municipalities.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Ministry of Commerce, Industry and Investment Promotion, municipalities, entrepreneurship support centers</li><li><b>Private:</b> Startups, SMEs, large companies, business incubators, legal and consulting firms</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Online business registration (individual, company, branch)</li><li>Electronic licensing (application, renewal, history)</li><li>Submission and tracking of reports and tax returns</li><li>Integration with government registries, banks, tax authorities</li><li>Automatic data verification</li><li>Electronic payments and fees</li><li>Personal account with operation history</li><li>Electronic document management</li><li>Mobile version and notifications</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Transparency, speed, analytics by region and sector, reduced corruption and “paper” risks, attractiveness of Oman for investors</li><li><b>Business:</b> Minimizing paperwork time, status control, quick access to new services, everything online</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Entrepreneur submits an application online, all approvals are digital</li><li>Integration with registries and banks, payment through the platform</li><li>Application status and full history are visible in the personal account</li></ul>
+    <div class="slide" id="slide2"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">One-Stop-Shop for Business Services</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Centralized portal for business registration, licensing, and government interaction</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Ministries, municipalities, support centers</div>
+          <div><b>🏢 Private:</b> Startups, SMEs, companies, consultants</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="background: rgba(178, 224, 255, 0.1); border-radius: 10px; padding: 15px;">
+          <div style="margin-bottom: 8px;">✅ <b>Speed:</b> 10x faster processing</div>
+          <div style="margin-bottom: 8px;">🔒 <b>Transparency:</b> Full audit trail</div>
+          <div style="margin-bottom: 8px;">📱 <b>Digital:</b> Everything online</div>
+          <div>💰 <b>Cost-effective:</b> Reduced paperwork</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📝 Business registration</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📄 Electronic licensing</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Reports & tax returns</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔗 Government integration</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">✅ Auto verification</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">💳 Electronic payments</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👤 Personal account</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📱 Mobile app</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">💼 Entrepreneur submits application online → 🔄 Digital approvals → 💳 Platform payment → 📱 Real-time status tracking</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 3: Subsidies & Grants -->
-    <div class="slide" id="slide3"><div class="slide-content">
-      <h2 class="slide-title">Automation of Government Subsidies and Grants</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A platform for digital submission, review, scoring, and issuance of grants, subsidies, and payments from government and private funds.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Ministry of Agriculture, Ministry of Education, Ministry of Labor, development funds</li><li><b>Private:</b> Farmers, startups, SMEs, research and educational centers, private schools/universities, IT companies, business associations</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Applicant's personal account</li><li>Intelligent application wizard</li><li>Automatic data and criteria compliance check</li><li>Application scoring (AI/ML, transparent criteria)</li><li>Expert's account (review, comments, budget allocation)</li><li>Payment control, automated reporting</li><li>Notifications, integration with banks</li><li>Mobile interface</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Transparency, reduced corruption, budget control, scalability of new programs, efficiency analytics</li><li><b>Private:</b> Transparent process, elimination of “manual” factor, quick processing, automated reporting, access to new support types</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Farmer or business submits an application through the portal</li><li>The system calculates the score, notifies about the status</li><li>After approval—automatic payment and reporting</li></ul>
+    <div class="slide" id="slide3"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Automation of Government Subsidies and Grants</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Platform for digital submission, review, scoring, and issuance of grants, subsidies, and payments</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Agriculture, Education, Labor ministries, development funds</div>
+          <div><b>🏢 Private:</b> Farmers, startups, SMEs, research centers, schools, IT companies</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔍 Transparency</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🛡️ Reduced corruption</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">💰 Budget control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚡ Quick processing</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Analytics</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🤖 Automated reporting</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👤 Personal account</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🧙 Smart wizard</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">✅ Auto verification</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 AI scoring</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👨‍💼 Expert review</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">💳 Payment control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔔 Notifications</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📱 Mobile app</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">🌾 Farmer submits application → 🤖 AI scoring → ✅ Expert approval → 💰 Automatic payment & reporting</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 4: Smart City -->
-    <div class="slide" id="slide4"><div class="slide-content">
-      <h2 class="slide-title">Municipal Services and Citizen Requests (Smart City & e-Municipality)</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A platform for submitting and tracking requests for city services: utilities, emergencies, landscaping, environmental and city services issues.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Municipalities, utilities departments, landscaping, emergency services</li><li><b>Private:</b> Service companies (cleaning, repair), management companies, tenants, residents</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Online submission of requests and complaints (web, mobile app)</li><li>Classification of requests (topic, geolocation, photo)</li><li>Automatic task distribution to contractors</li><li>Contractor's personal account</li><li>KPI and SLA dashboards for the municipality</li><li>Quality assessment (rating/survey)</li><li>Public map of problem areas</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Contractor control, request analytics, quick response, increased resident trust</li><li><b>Private services:</b> Transparent order tracking, minimized manual reporting, increased client base</li><li><b>Residents/business:</b> Fast and transparent interaction, status tracking, ability to rate services</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Resident submits a request via the app, the system assigns a contractor</li><li>Completion report—photo, mark in the system, automatic citizen notification</li></ul>
+    <div class="slide" id="slide4"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Smart City & e-Municipality</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Platform for submitting and tracking city services: utilities, emergencies, landscaping</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Municipalities, utilities, landscaping, emergency services</div>
+          <div><b>🏢 Private:</b> Service companies, management companies, residents</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 Contractor control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Request analytics</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚡ Quick response</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🤝 Resident trust</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📱 Status tracking</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⭐ Service rating</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📝 Online requests</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🏷️ Auto classification</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔄 Task distribution</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👷 Contractor account</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 KPI dashboards</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🗺️ Problem map</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⭐ Quality rating</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📱 Mobile app</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">🏠 Resident submits request → 🤖 Auto contractor assignment → 📸 Completion report → 🔔 Citizen notification</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 5: Digital Health -->
-    <div class="slide" id="slide5"><div class="slide-content">
-      <h2 class="slide-title">Digital Health Portal</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A platform for managing medical services: appointments, diagnostics, laboratory, discharge summaries, prescriptions, integration with government registries and insurers.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Ministry of Health, public clinics, laboratories</li><li><b>Private:</b> Private clinics, laboratories, pharmacies, corporate medical programs</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Online appointments, specialist schedules</li><li>Electronic medical record</li><li>Integration with labs and insurers</li><li>Electronic prescriptions and certificates</li><li>Mobile app for patients</li><li>Payment automation, reporting</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Quality and accessibility control, analytics on visits and demand</li><li><b>Private clinics:</b> Optimized doctor workload, patient CRM, attracting corporate clients</li><li><b>Patients:</b> Everything online, fast, history “at hand”</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Patient books an appointment via the app</li><li>Doctor sees the full history, tests are pulled automatically</li><li>Electronic certificate/prescription sent to the patient</li></ul>
+    <div class="slide" id="slide5"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Digital Health Portal</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Platform for managing medical services: appointments, diagnostics, prescriptions</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Ministry of Health, public clinics, laboratories</div>
+          <div><b>🏢 Private:</b> Private clinics, laboratories, pharmacies, corporate programs</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 Quality control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Visit analytics</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚖️ Workload optimization</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👥 Patient CRM</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚡ Everything online</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📋 History access</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📅 Online appointments</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📋 Medical records</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔬 Lab integration</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">💊 E-prescriptions</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📱 Patient app</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">💳 Auto payments</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">👤 Patient books appointment → 👨‍⚕️ Doctor sees full history → 🔬 Auto test results → 💊 E-prescription sent</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 6: Enterprise Workflow -->
-    <div class="slide" id="slide6"><div class="slide-content">
-      <h2 class="slide-title">Enterprise Workflow — Electronic Document Management and Internal Control</h2>
-      <div class="section-title">Solution Description</div>
-      <p>Automation of approval, storage, and execution control of documents: orders, contracts, purchases, payments, business trips, audits.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> All ministries, agencies, state-owned companies</li><li><b>Private:</b> Corporations, banks, holdings, developers, insurance, manufacturing enterprises</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Electronic document management (orders, letters, contracts, invoices)</li><li>Automated approval</li><li>File storage and search</li><li>Task execution control</li><li>Audit and logging</li><li>Multi-level access, mobile notifications</li><li>Reporting</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Transparency and control of document flow, minimized document loss, accelerated processes</li><li><b>Private:</b> Fast adaptation to regulations, support for hybrid/remote work</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Any official assignment or purchase is initiated through the platform</li><li>All approval stages are recorded, statuses visible in real time</li><li>Integration with finance and HR</li></ul>
+    <div class="slide" id="slide6"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Enterprise Workflow & Document Management</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Automation of approval, storage, and execution control of documents and processes</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> All ministries, agencies, state-owned companies</div>
+          <div><b>🏢 Private:</b> Corporations, banks, holdings, developers, insurance</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔍 Transparency</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 Document control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🛡️ No document loss</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚡ Fast processes</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📋 Regulation compliance</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🏠 Remote work support</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📄 Document management</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">✅ Auto approval</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🗃️ File storage</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 Task control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Audit & logging</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔐 Multi-level access</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔔 Mobile notifications</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📈 Reporting</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">📝 Official assignment initiated → ✅ Auto approval stages → 📊 Real-time status → 💼 Finance & HR integration</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 7: Smart Analytics -->
-    <div class="slide" id="slide7"><div class="slide-content">
-      <h2 class="slide-title">Smart Analytics & e-Government Dashboards</h2>
-      <div class="section-title">Solution Description</div>
-      <p>Centralized BI dashboards and analytics for performance management, KPI and SLA monitoring, process dynamics analysis.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Digital transformation centers, ministries, analytics departments</li><li><b>Private:</b> Executives of corporations, holdings, network companies (retail, logistics, healthcare, finance)</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Customizable BI dashboards</li><li>KPI, SLA, request showcases</li><li>Automated reports</li><li>Regional and departmental analysis</li><li>“Red zone” notifications</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Indicator control, process dynamics, quick response to issues</li><li><b>Private:</b> Branch, department analytics, data-driven decision making</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Manager views indicators in the BI panel, filters by region</li><li>The system sends reports and alerts for deviations</li></ul>
+    <div class="slide" id="slide7"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Smart Analytics & e-Government Dashboards</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Centralized BI dashboards for performance management, KPI and SLA monitoring</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Digital transformation centers, ministries, analytics departments</div>
+          <div><b>🏢 Private:</b> Executives, holdings, network companies (retail, logistics, healthcare)</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 Indicator control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📈 Process dynamics</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚡ Quick response</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🏢 Branch analytics</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Data-driven decisions</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔍 Issue detection</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 BI dashboards</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📈 KPI monitoring</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📋 Auto reports</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🗺️ Regional analysis</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🚨 Red zone alerts</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎛️ Custom filters</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">👨‍💼 Manager views BI panel → 🗺️ Filters by region → 📊 System sends reports → 🚨 Deviation alerts</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 8: Education -->
-    <div class="slide" id="slide8"><div class="slide-content">
-      <h2 class="slide-title">Education Automation and e-Learning</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A platform for managing the educational process, schedules, document flow, distance learning, testing, and analytics.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Ministry of Education, schools, universities</li><li><b>Private:</b> Private schools, colleges, universities, EdTech companies</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Student and teacher accounts</li><li>Automation of schedules, attendance, and performance tracking</li><li>LMS: online courses, tests, exams</li><li>Mobile app</li><li>Certificate and application generation</li><li>Learning analytics</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Program control, reporting, reduced staff workload</li><li><b>Private:</b> New service for students, quick launch of online courses, attracting new clients</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Students receive schedules online</li><li>Teachers assign grades and comments</li><li>Parents see learning analytics</li></ul>
+    <div class="slide" id="slide8"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Education Automation and e-Learning</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Platform for managing educational process, schedules, distance learning, and analytics</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Ministry of Education, schools, universities</div>
+          <div><b>🏢 Private:</b> Private schools, colleges, universities, EdTech companies</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Program control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📋 Reporting</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚡ Reduced workload</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 Student services</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🚀 Quick course launch</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👥 New clients</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👨‍🎓 Student accounts</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📅 Schedule automation</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📚 LMS platform</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📱 Mobile app</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🏆 Certificates</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Learning analytics</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">👨‍🎓 Students get schedules → 👨‍🏫 Teachers assign grades → 👨‍👩‍👧‍👦 Parents see analytics</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 9: Export/Logistics -->
-    <div class="slide" id="slide9"><div class="slide-content">
-      <h2 class="slide-title">Export/Logistics Digitalization</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A digital ecosystem for submission and approval of export/import documents, integration with customs, banks, insurers, supply chain tracking, and status control.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Ministry of Trade, customs, transport and regulatory authorities</li><li><b>Private:</b> Exporters/importers, logistics companies, banks, insurers</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Online submission and approval of documents</li><li>Accounts for all participants</li><li>Electronic queues and statuses</li><li>Integration with government databases</li><li>Supply tracking</li><li>Bottleneck analytics</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Supply control, transparency, reduced time and errors</li><li><b>Private:</b> Faster deals, reduced costs and errors, operational analytics</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Exporter submits an application online, coordinates with bank and customs</li><li>All documents and statuses are visible in the account</li><li>Problem notifications—immediately to all participants</li></ul>
+    <div class="slide" id="slide9"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Export/Logistics Digitalization</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Digital ecosystem for export/import documents, customs integration, and supply chain tracking</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Ministry of Trade, customs, transport authorities</div>
+          <div><b>🏢 Private:</b> Exporters/importers, logistics companies, banks, insurers</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🎯 Supply control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👁️ Transparency</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">⚡ Reduced time</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🚀 Faster deals</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">💰 Cost reduction</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📊 Analytics</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📄 Document submission</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">👥 Participant accounts</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📋 Electronic queues</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔗 Gov integration</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">📦 Supply tracking</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.85rem;">🔍 Bottleneck analytics</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">🏢 Exporter submits online → 🏦 Coordinates with bank/customs → 📊 All statuses visible → 🚨 Instant notifications</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 10: Digital Finance -->
-    <div class="slide" id="slide10"><div class="slide-content">
-      <h2 class="slide-title">Banks, Microfinance, Insurance (Digital Finance & Compliance)</h2>
-      <div class="section-title">Solution Description</div>
-      <p>Digitization of all processes for banks, insurance, and MFIs: from account opening and lending to compliance, AML, reporting, and self-service.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> State and specialized banks, central bank, regulators</li><li><b>Private:</b> Commercial banks, Islamic banks, MFIs, insurance, investment funds, fintech companies</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Onboarding and account opening: online registration, identification, integration with government registries</li><li>Lending: electronic applications, scoring, workflow, integration with credit bureaus, government registries</li><li>KYC, AML, fraud monitoring: automatic checks, risk scoring, notifications</li><li>Omnichannel services: online accounts, mobile apps, chatbots</li><li>Reporting and integration with government agencies: automated reporting, data showcases</li><li>Insurance: online processing and underwriting, automated payments</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government/regulators:</b> Transparency, speed, compliance, prompt reporting and analytics</li><li><b>Private financial organizations:</b> Cost reduction, fast product launch, customer convenience, omnichannel services, quick adaptation to market requirements</li><li><b>Business and population:</b> Fast access to services, 24/7, minimal office visits, more transparent services and reduced queues</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Client applies for a loan online, passes KYC/AML</li><li>Decision is made automatically or flexibly via workflow</li><li>All documents are generated and signed electronically</li><li>All history, statuses, and communication—via a single portal or mobile app</li></ul>
+    <div class="slide" id="slide10"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">Digital Finance & Compliance</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Complete digitization of banking, insurance, and MFI processes from onboarding to compliance</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> State banks, central bank, regulators</div>
+          <div><b>🏢 Private:</b> Commercial banks, Islamic banks, MFIs, insurance, fintech</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏛️ <b>Gov:</b> Transparency, compliance, analytics</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏢 <b>Private:</b> Cost reduction, fast launch, omnichannel</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">👥 <b>Users:</b> 24/7 access, minimal visits, transparency</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">👤 Onboarding & account opening</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">💰 Lending & scoring workflow</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🔍 KYC, AML, fraud monitoring</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📱 Omnichannel services</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📊 Automated reporting</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🛡️ Insurance processing</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">👤 Client applies online → 🔍 KYC/AML checks → 🤖 Auto decision → 📄 E-signatures → 📱 Single portal access</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 11: LawTech -->
-    <div class="slide" id="slide11"><div class="slide-content">
-      <h2 class="slide-title">LawTech / LegalTech — Legal Process Automation</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A platform for automating legal operations: case and contract management, digital archive, document flow, templates, court process management, and online interaction with government agencies.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Judicial authorities, notaries, state registrars, bankruptcy agencies</li><li><b>Private:</b> Law firms, corporate lawyers, notary offices, compliance departments, LegalTech startups</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Case, contract, power of attorney, litigation management</li><li>Digital archive and legal document search</li><li>Automated template preparation and approval</li><li>Deadline control, court hearing and deadline calendar</li><li>Integration with government registries, e-signatures, government portals</li><li>Automatic reminders for renewal, payment, contract expiration</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Faster case review, digitalization of registries, process transparency</li><li><b>Private:</b> Fast document processing, reduced errors and costs, litigation analytics, unified storage, reduced “paperwork”</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Lawyer manages the entire case—from contract to court—online, all actions are recorded and tracked</li><li>Documents are approved and signed via the platform, data is automatically integrated into court and government registries</li></ul>
+    <div class="slide" id="slide11"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">LawTech — Legal Process Automation</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Platform for automating legal operations, case management, and court process digitalization</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Judicial authorities, notaries, state registrars</div>
+          <div><b>🏢 Private:</b> Law firms, corporate lawyers, compliance departments</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏛️ <b>Gov:</b> Faster review, digitalization, transparency</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏢 <b>Private:</b> Fast processing, reduced costs, analytics</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📁 Case & contract management</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🗃️ Digital archive & search</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📄 Template automation</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📅 Deadline control</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🔗 Gov registry integration</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🔔 Auto reminders</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">👨‍💼 Lawyer manages case online → 📄 Documents auto-approved → ✍️ E-signatures → 🏛️ Auto registry integration</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 12: PropTech -->
-    <div class="slide" id="slide12"><div class="slide-content">
-      <h2 class="slide-title">PropTech — Real Estate and Asset Management Digitalization</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A platform for automating real estate transactions, rental management, building operations, document flow, and services for residents/tenants.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Municipalities, cadastral services, real estate registrars, utilities authorities</li><li><b>Private:</b> Developers, management companies, real estate agencies, construction firms, rental businesses</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Asset management (portfolios, buildings, premises)</li><li>Electronic transactions (contracts, acts, transfer documents)</li><li>Rental automation: payment calculation, invoicing, notifications</li><li>Portal for residents/tenants: requests, payments, operation history, feedback</li><li>Operations and service management (repairs, maintenance, requests)</li><li>Analytics on occupancy, profitability, asset condition</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Transaction transparency, integration with cadastre and tax authorities, reduced “shadow” market</li><li><b>Private:</b> Fast transactions, reduced manual work losses, profitability control, convenience for clients/tenants</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Owner signs a rental or sale contract online, the transaction is automatically reflected in the registry</li><li>Tenants pay rent, submit requests, receive maintenance notifications via the mobile account</li></ul>
+    <div class="slide" id="slide12"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">PropTech — Real Estate Digitalization</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Platform for automating real estate transactions, rental management, and building operations</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Municipalities, cadastral services, utilities authorities</div>
+          <div><b>🏢 Private:</b> Developers, management companies, real estate agencies</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏛️ <b>Gov:</b> Transparency, cadastre integration, reduced shadow market</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏢 <b>Private:</b> Fast transactions, profitability control, client convenience</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏗️ Asset management</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📄 Electronic transactions</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">💰 Rental automation</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">👥 Resident portal</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🔧 Operations management</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📊 Analytics</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">🏠 Owner signs contract online → 📋 Auto registry reflection → 👥 Tenants use mobile account → 🔔 Maintenance notifications</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 13: HRTech -->
-    <div class="slide" id="slide13"><div class="slide-content">
-      <h2 class="slide-title">HRTech — Personnel and Talent Management Automation</h2>
-      <div class="section-title">Solution Description</div>
-      <p>A platform for the full cycle of personnel management: recruitment, onboarding, time tracking, KPIs, corporate training, employee self-service.</p>
-      <div class="section-title">Target Audience</div>
-      <ul><li><b>Government:</b> Civil service bodies, state corporations, educational institutions</li><li><b>Private:</b> Large and medium companies, HR agencies, HR departments, enterprises of all industries</li></ul>
-      <div class="section-title">Key Modules</div>
-      <ul><li>Recruiting: electronic vacancies, candidate screening, integration with job portals</li><li>Onboarding and employee adaptation</li><li>Time, leave, and sick leave tracking</li><li>Goal management, KPIs, performance automation</li><li>Corporate training: LMS, talent development, courses</li><li>Employee personal account (certificates, applications, documents)</li><li>Internal communications, surveys, feedback</li></ul>
-      <div class="section-title">Benefits</div>
-      <ul><li><b>Government:</b> Process standardization, digital accounting, HR analytics, legal compliance</li><li><b>Private:</b> Faster hiring, reduced turnover, increased loyalty, HR metric transparency, routine automation</li></ul>
-      <div class="section-title">Practical Scenario</div>
-      <ul><li>Candidate goes through all hiring stages online, employee tracks leave, training, and goals via personal account</li><li>Management receives analytics on efficiency, turnover, vacancy closure, and employee engagement</li></ul>
+    <div class="slide" id="slide13"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">HRTech — Personnel Management Automation</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Full cycle personnel management: recruitment, onboarding, KPIs, training, employee self-service</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Target Audience</div>
+        <div style="background: rgba(25, 233, 124, 0.1); border-radius: 10px; padding: 15px; margin-bottom: 20px;">
+          <div style="margin-bottom: 8px;"><b>🏛️ Government:</b> Civil service bodies, state corporations, educational institutions</div>
+          <div><b>🏢 Private:</b> Large and medium companies, HR agencies, enterprises</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏛️ <b>Gov:</b> Process standardization, digital accounting, legal compliance</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🏢 <b>Private:</b> Faster hiring, reduced turnover, increased loyalty</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🔧 Key Modules</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 6px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🔍 Recruiting & screening</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🚀 Onboarding & adaptation</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">⏰ Time & leave tracking</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">📊 KPIs & performance</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">🎓 Corporate training</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">👤 Employee account</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 8px; font-size: 0.8rem;">💬 Internal communications</div>
+        </div>
+        
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🚀 Practical Scenario</div>
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 10px; padding: 15px; border-left: 4px solid #19e97c;">
+          <div style="font-size: 0.9rem; line-height: 1.4;">🔍 Online hiring stages → 👤 Employee personal account → 📊 Management analytics → 📈 Efficiency tracking</div>
+        </div>
+      </div>
     </div></div>
     <!-- Slide 14: Platform Advantages -->
-    <div class="slide" id="slide14"><div class="slide-content">
-      <h2 class="slide-title">General Platform Advantages</h2>
-      <div class="section-title">Key Benefits</div>
-      <ul><li><b>🏗️ Flexible architecture:</b> any use cases, quick adaptation to local rules</li><li><b>🌐 Multilingual:</b> support for Arabic and English</li><li><b>🔑 Open IP:</b> solution ownership by the customer</li><li><b>🛡️ Security:</b> compliance with best standards</li><li><b>🔌 Any integration:</b> government registries, ERP, BI, Banks, API</li></ul>
-      <div class="section-title">Why Choose Our Platform?</div>
-      <ul><li><b>Scalability:</b> From small departments to nationwide systems</li><li><b>Customization:</b> Tailored to local specific requirements</li><li><b>Future-proof:</b> Easy to extend with new modules and features</li><li><b>Cost-effective:</b> Reduced development time and maintenance costs</li><li><b>Local support:</b> Understanding of regional business processes</li></ul>
+    <div class="slide" id="slide14"><div class="slide-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+      <div style="grid-column: 1 / -1; text-align: center; margin-bottom: 20px;">
+        <h2 class="slide-title" style="margin-bottom: 10px; font-size: 2rem;">General Platform Advantages</h2>
+        <p style="color: rgba(255, 255, 255, 0.8); font-size: 1rem; margin: 0;">Comprehensive digital transformation platform with flexible architecture and enterprise-grade capabilities</p>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">💡 Key Benefits</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; font-size: 0.85rem;">🏗️ <b>Flexible architecture:</b> any use cases, quick adaptation</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; font-size: 0.85rem;">🌐 <b>Multilingual:</b> Arabic and English support</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; font-size: 0.85rem;">🔑 <b>Open IP:</b> solution ownership by customer</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; font-size: 0.85rem;">🛡️ <b>Security:</b> compliance with best standards</div>
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 8px; padding: 10px; font-size: 0.85rem;">🔌 <b>Any integration:</b> registries, ERP, BI, Banks, API</div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="section-title" style="font-size: 1.1rem; margin: 15px 0 10px 0;">🎯 Why Choose Our Platform?</div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-bottom: 20px;">
+          <div style="background: rgba(25, 233, 124, 0.1); border-radius: 8px; padding: 10px; font-size: 0.85rem; border-left: 3px solid #19e97c;">📈 <b>Scalability:</b> From small departments to nationwide systems</div>
+          <div style="background: rgba(25, 233, 124, 0.1); border-radius: 8px; padding: 10px; font-size: 0.85rem; border-left: 3px solid #19e97c;">🎨 <b>Customization:</b> Tailored to local requirements</div>
+          <div style="background: rgba(25, 233, 124, 0.1); border-radius: 8px; padding: 10px; font-size: 0.85rem; border-left: 3px solid #19e97c;">🔮 <b>Future-proof:</b> Easy to extend with new modules</div>
+          <div style="background: rgba(25, 233, 124, 0.1); border-radius: 8px; padding: 10px; font-size: 0.85rem; border-left: 3px solid #19e97c;">💰 <b>Cost-effective:</b> Reduced development time</div>
+          <div style="background: rgba(25, 233, 124, 0.1); border-radius: 8px; padding: 10px; font-size: 0.85rem; border-left: 3px solid #19e97c;">🤝 <b>Local support:</b> Regional business understanding</div>
+        </div>
+      </div>
     </div></div>
   </div>
   <div class="navigation">
     <button class="nav-btn" id="prevBtn" onclick="previousSlide()">←</button>
+    <button class="nav-btn" id="homeBtn" onclick="goToFirstSlide()" title="На главную">🏠</button>
     <button class="nav-btn" id="nextBtn" onclick="nextSlide()">→</button>
   </div>
       <div class="slide-counter">
       <span id="currentSlide">1</span> / <span id="totalSlides">14</span>
     </div>
-  <button class="back-btn" id="backBtn" onclick="showSlide(1)" style="display: none;">← Back to Start</button>
-  <button class="home-btn" onclick="window.location.href='index.html'">🏠 Home</button>
+
+  
   <script>
     let currentSlide = 1;
     const totalSlides = 14;
@@ -241,13 +1079,7 @@
       document.getElementById('prevBtn').disabled = slideNumber === 1;
       document.getElementById('nextBtn').disabled = slideNumber === totalSlides;
       
-      // Показываем/скрываем кнопку возврата
-      const backBtn = document.getElementById('backBtn');
-      if (slideNumber === 1) {
-        backBtn.style.display = 'none';
-      } else {
-        backBtn.style.display = 'block';
-      }
+
       
       currentSlide = slideNumber;
     }
@@ -274,10 +1106,15 @@
         showSlide(slideNumber); // Use the slide number directly
       });
     });
+    function goToFirstSlide() {
+      showSlide(1);
+    }
+    
     showSlide(1); // Start from slide 1
     window.showSlide = showSlide;
     window.nextSlide = nextSlide;
     window.previousSlide = previousSlide;
+    window.goToFirstSlide = goToFirstSlide;
   </script>
 </body>
 </html>

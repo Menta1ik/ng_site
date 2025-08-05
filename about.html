@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About NextGen - Advanced Low-Code Platform</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://brainysoft.ltd/presentation/about.html">
+    <meta property="og:title" content="About NextGen - Advanced Low-Code Platform">
+    <meta property="og:description" content="Learn about NextGen's 10+ years of development in banking, enterprise automation, and digital transformation. Proven reliability in highly regulated industries.">
+    <meta property="og:image" content="https://brainysoft.ltd/presentation/images/nextgen-preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://brainysoft.ltd/presentation/about.html">
+    <meta property="twitter:title" content="About NextGen - Advanced Low-Code Platform">
+    <meta property="twitter:description" content="NextGen is a low-code platform with over 10 years of continuous development, built on a foundation of deep expertise in banking and enterprise automation.">
+    <meta property="twitter:image" content="https://brainysoft.ltd/presentation/images/nextgen-preview.png">
+    
+    <!-- Additional meta tags -->
+    <meta name="description" content="About NextGen: 10+ years of low-code platform development for banking, enterprise automation, and digital transformation. Proven reliability in regulated industries.">
+    <meta name="keywords" content="NextGen, about, low-code platform, banking, enterprise automation, digital transformation, history">
+    <meta name="author" content="BrainySoft Ltd">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles background */
+        #particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Main container */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0a0a0a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .nav-link.active {
+            color: #b2e0ff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b2e0ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 80px 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 60px 50px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 40px;
+        }
+
+        .about-text p {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #19e97c;
+            margin: 40px 0 20px 0;
+        }
+
+        .advantages-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .advantages-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .advantages-list li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            font-size: 1.2rem;
+        }
+
+        .mission-section,
+        .serve-section,
+        .future-section {
+            background: rgba(25, 233, 124, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid rgba(25, 233, 124, 0.2);
+        }
+
+        .mission-section h3,
+        .serve-section h3,
+        .future-section h3 {
+            color: #19e97c;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .mission-section p,
+        .serve-section p,
+        .future-section p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav {
+                gap: 20px;
+            }
+
+            .content {
+                padding: 60px 20px;
+            }
+
+            .about-content {
+                padding: 40px 30px;
+            }
+
+            .about-text {
+                font-size: 1rem;
+            }
+
+            .advantages-list li {
+                font-size: 1rem;
+            }
+
+            .mission-section,
+            .serve-section,
+            .future-section {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page-title,
+        .about-content {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .about-content {
+            animation-delay: 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-bg"></canvas>
+    
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">NG</div>
+                <div>
+                    NextGen
+                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Platform</a>
+                <a href="presentations.html" class="nav-link">Presentation</a>
+                <a href="file_archive.html" class="nav-link">Files</a>
+                <a href="about.html" class="nav-link active">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </header>
+
+        <main class="content">
+            <div class="container">
+                <h1 class="page-title">About NextGen</h1>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>NextGen is a low-code platform with over 10 years of continuous development, built on a foundation of deep expertise in banking, enterprise automation, and digital transformation.</p>
+                        
+                        <p>Our journey began as an internal tool designed to deliver secure and robust solutions for mission-critical projects in the financial sector. This heritage ensured that NextGen was engineered from day one to meet the most demanding standards for security, compliance, and scalability.</p>
+                        
+                        <p>With the onset of the global digital shift—accelerated by the COVID-19 pandemic—NextGen evolved from a proprietary tool to a standalone, market-ready low-code platform. Today, we empower organizations of all sizes to rapidly build, launch, and scale digital products, automate complex processes, and achieve true business agility.</p>
+                    </div>
+
+                    <h2 class="section-title">Key advantages of NextGen:</h2>
+                    <ul class="advantages-list">
+                        <li>Proven reliability in highly regulated industries</li>
+                        <li>Modular, extensible architecture for any use case</li>
+                        <li>Advanced integration and data management capabilities (ETL, BI, multi-DB)</li>
+                        <li>High-performance and security by default</li>
+                        <li>Fast onboarding and flexible deployment (cloud, on-premise, hybrid)</li>
+                        <li>24/7 expert support and continuous innovation</li>
+                    </ul>
+
+                    <div class="mission-section">
+                        <h3>Our mission:</h3>
+                        <p>To make enterprise-grade digital automation accessible to every business, everywhere, without compromise on quality, security, or control.</p>
+                    </div>
+
+                    <div class="serve-section">
+                        <h3>Who we serve:</h3>
+                        <p>Banks, financial institutions, telecoms, public sector, retail, logistics, insurance, and ambitious digital-first enterprises.</p>
+                    </div>
+
+                    <div class="future-section">
+                        <h3>Looking ahead:</h3>
+                        <p>We are open for strategic partnerships, co-innovation, and international expansion. Join us on the journey to the next generation of digital transformation.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Particles animation
+        const canvas = document.getElementById('particles-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        let w = window.innerWidth;
+        let h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+
+        function resizeCanvas() {
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+            createParticles();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        const PARTICLE_COLOR = '#b2e0ff';
+        const LINE_COLOR = '#19e97c';
+        const PARTICLE_COUNT = Math.floor((w * h) / 1500);
+        const PARTICLE_SIZE = 2;
+        const SPEED = 0.15;
+        const LINE_DISTANCE = 150;
+        const MOUSE_RADIUS = 200;
+
+        let mouse = { x: 0, y: 0 };
+
+        // Mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function randomBetween(a, b) { return a + Math.random() * (b - a); }
+
+        function createParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: randomBetween(-SPEED, SPEED),
+                    vy: randomBetween(-SPEED, SPEED),
+                    size: PARTICLE_SIZE + Math.random() * 1,
+                    originalSize: PARTICLE_SIZE + Math.random() * 1,
+                    opacity: 0.3 + Math.random() * 0.7
+                });
+            }
+        }
+        createParticles();
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < LINE_DISTANCE) {
+                        const opacity = (1 - distance / LINE_DISTANCE) * 0.5;
+                        ctx.strokeStyle = `rgba(25, 233, 124, ${opacity})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function drawParticles() {
+            particles.forEach(particle => {
+                // Mouse interaction
+                const dx = mouse.x - particle.x;
+                const dy = mouse.y - particle.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < MOUSE_RADIUS) {
+                    const force = (MOUSE_RADIUS - distance) / MOUSE_RADIUS;
+                    const angle = Math.atan2(dy, dx);
+                    particle.vx -= Math.cos(angle) * force * 0.01;
+                    particle.vy -= Math.sin(angle) * force * 0.01;
+                    particle.size = particle.originalSize * (1 + force * 0.5);
+                } else {
+                    particle.size = particle.originalSize;
+                }
+                
+                // Update position
+                particle.x += particle.vx;
+                particle.y += particle.vy;
+                
+                // Boundary collision
+                if (particle.x < 0 || particle.x > w) particle.vx *= -1;
+                if (particle.y < 0 || particle.y > h) particle.vy *= -1;
+                
+                // Keep particles in bounds
+                particle.x = Math.max(0, Math.min(w, particle.x));
+                particle.y = Math.max(0, Math.min(h, particle.y));
+                
+                // Draw particle
+                ctx.fillStyle = `rgba(178, 224, 255, ${particle.opacity})`;
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, w, h);
+            drawLines();
+            drawParticles();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+    </script>
+</body>
+</html>

@@ -24,6 +24,11 @@
     <meta name="keywords" content="lowcode, no-code, application development, enterprise software, automation, NextGen">
     <meta name="author" content="BrainySoft Ltd">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+    <link rel="apple-touch-icon" href="images/favicon.svg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -133,12 +138,62 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 80px 40px;
+            padding: 120px 40px 80px 40px;
             text-align: center;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: flex-end;
+            gap: 60px;
+        }
+
+        .hero-left {
+            flex: 1;
+            text-align: left;
+            align-self: flex-end;
+        }
+
+        .hero-right {
+            flex: 1;
+            text-align: left;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                padding: 80px 20px 60px 20px;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 30px;
+                max-width: 600px;
+                width: 100%;
+            }
+            
+            .hero-left,
+            .hero-right {
+                text-align: center;
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+
+            .hero-left,
+            .hero-right {
+                text-align: center;
+            }
         }
 
         .hero-badge {
@@ -157,7 +212,8 @@
             font-size: clamp(3rem, 8vw, 6rem);
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 20px;
+            margin: 0;
+            padding: 0;
             background: linear-gradient(135deg, #ffffff, #b2e0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -168,7 +224,7 @@
             font-size: clamp(1.2rem, 3vw, 2rem);
             font-weight: 300;
             color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 40px;
+            margin-bottom: 15px;
             line-height: 1.4;
         }
 
@@ -182,13 +238,14 @@
         .cta-buttons {
             display: flex;
             gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
+            margin: 0 15px 15px 0;
         }
 
         .btn {
             padding: 15px 30px;
-            border-radius: 50px;
+            border-radius: 0px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -200,7 +257,7 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, #19e97c, #b2e0ff);
+            background: #19e97c;
             color: #0a0a0a;
         }
 
@@ -523,15 +580,19 @@
 
         <main class="hero">
             <div class="hero-content">
-                <div class="hero-badge">🚀 Low Code. High Impact.</div>
-                <h1 class="hero-title">Automate. Integrate.<br>Scale.</h1>
-                <h2 class="hero-subtitle">Grow smarter. Move faster.</h2>
-                <p class="hero-description">
-                    Powerful visual builder and process automation. Turn innovation into reality—no complex coding required.
-                </p>
-                <div class="cta-buttons">
-                    <a href="presentations.html" class="btn btn-primary">View Presentation</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <div class="hero-left">
+                    <div class="hero-badge">🚀 Low Code. High Impact.</div>
+                    <h1 class="hero-title">Automate. Integrate.<br>Scale.</h1>
+                </div>
+                <div class="hero-right">
+                    <h2 class="hero-subtitle">Grow smarter. Move faster.</h2>
+                    <p class="hero-description">
+                        Powerful visual builder and process automation. Turn innovation into reality—no complex coding required.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="presentations.html" class="btn btn-primary">View Presentation</a>
+                        <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                    </div>
                 </div>
             </div>
         </main>

@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /images/
+Allow: /files/
+Disallow: /coming_soon.html
+
+# Sitemap
+Sitemap: https://nxgenlowcode.biz/presentations/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1

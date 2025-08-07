@@ -57,7 +57,7 @@
   <text x="80" y="400" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="400" fill="rgba(255,255,255,0.8)">Turn innovation into reality—no complex coding required.</text>
   
   <!-- URL -->
-  <text x="80" y="480" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="500" fill="#b2e0ff">brainysoft.ltd</text>
+  <text x="80" y="480" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="500" fill="#b2e0ff">nxgenlowcode.biz</text>
   
   <!-- Tech dashboard mockup -->
   <rect x="750" y="180" width="380" height="280" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(178,224,255,0.15)" stroke-width="2"/>

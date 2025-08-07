@@ -41,7 +41,7 @@
   <text x="100" y="430" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="300" fill="rgba(255,255,255,0.7)">Turn innovation into reality—no complex coding required.</text>
   
   <!-- URL -->
-  <text x="100" y="500" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="400" fill="#b2e0ff">brainysoft.ltd</text>
+  <text x="100" y="500" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="400" fill="#b2e0ff">nxgenlowcode.biz</text>
   
   <!-- Decorative tech elements -->
   <rect x="800" y="200" width="300" height="200" rx="20" fill="rgba(255,255,255,0.05)" stroke="rgba(178,224,255,0.2)" stroke-width="1"/>

@@ -1,0 +1,40 @@
+{
+    "name": "NextGen Low-Code Platform - Presentations",
+    "short_name": "NextGen Presentations",
+    "description": "NextGen enterprise low-code platform presentations and documentation",
+    "start_url": "/presentations/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#2563eb",
+    "orientation": "portrait-primary",
+    "scope": "/presentations/",
+    "lang": "en",
+    "dir": "ltr",
+    "icons": [
+        {
+            "src": "images/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "images/favicon_nx.svg",
+            "sizes": "192x192",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "images/favicon_nx.svg",
+            "sizes": "512x512",
+            "type": "image/svg+xml"
+        }
+    ],
+    "categories": ["business", "productivity", "developer"],
+    "screenshots": [
+        {
+            "src": "images/nextgen-preview.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        }
+    ]
+}

@@ -1,9 +1,9 @@
 Contact: mailto:security@nxgenlowcode.biz
 Contact: mailto:info@nxgenlowcode.biz
 Expires: 2025-12-31T23:59:59.000Z
-Encryption: https://nxgenlowcode.biz/presentations/.well-known/pgp-key.txt
+Encryption: https://nxgenlowcode.biz/.well-known/pgp-key.txt
 Preferred-Languages: en, uk, ru
-Canonical: https://nxgenlowcode.biz/presentations/.well-known/security.txt
-Policy: https://nxgenlowcode.biz/presentations/security-policy.html
-Hiring: https://nxgenlowcode.biz/presentations/careers.html
-Acknowledgments: https://nxgenlowcode.biz/presentations/security-acknowledgments.html
+Canonical: https://nxgenlowcode.biz/.well-known/security.txt
+Policy: https://nxgenlowcode.biz/security-policy.html
+Hiring: https://nxgenlowcode.biz/careers.html
+Acknowledgments: https://nxgenlowcode.biz/security-acknowledgments.html

@@ -187,6 +187,11 @@
             gap: 30px;
         }
 
+        /* Hide mobile navigation on desktop */
+        .mobile-nav {
+            display: none;
+        }
+
         .nav-item {
             position: relative;
         }
@@ -766,6 +771,37 @@
                 border-right: 1px solid rgba(178, 224, 255, 0.2);
             }
 
+            /* Hide desktop nav on mobile */
+            .header .nav {
+                display: none;
+            }
+
+            /* Show mobile navigation on mobile */
+            .mobile-nav {
+                display: flex;
+            }
+
+            /* Mobile navigation styles */
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 80px 30px 30px;
+                transition: left 0.3s ease;
+                z-index: 99999 !important;
+                border-right: 1px solid rgba(178, 224, 255, 0.2);
+            }
+
+            .mobile-nav.active {
+                left: 0;
+            }
+
             .nav.active {
                 left: 0;
             }
@@ -867,8 +903,16 @@
     
     
     
-    <!-- Mobile navigation moved outside main-container -->
-    <nav class="nav">
+    <div class="main-container">
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">nx</div>
+                <div>
+                    nextgen
+                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
+                </div>
+            </div>
+            <nav class="nav">
                 <div class="nav-item">
                     <a href="index.html" class="nav-link">Platform</a>
                 </div>
@@ -893,21 +937,39 @@
                     <a href="contact.html" class="nav-link">Contact</a>
                 </div>
             </nav>
-    <div class="main-container">
-        <header class="header">
-            <div class="logo">
-                <div class="logo-icon">nx</div>
-                <div>
-                    nextgen
-                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
-                </div>
-            </div>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </header>
+
+        <!-- Mobile navigation for mobile devices only -->
+        <nav class="nav mobile-nav">
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Platform</a>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                    <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="presentations.html" class="dropdown-link">Presentations</a>
+                    <a href="file_archive.html" class="dropdown-link">Files</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </nav>
 
         <main class="hero">
             <div class="hero-content">
@@ -1173,7 +1235,7 @@
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.nav');
+            const nav = document.querySelector('.mobile-nav');
             
             if (mobileToggle && nav) {
                 // Handle both click and touch events for better mobile support

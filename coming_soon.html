@@ -353,13 +353,24 @@
             display: none;
             flex-direction: column;
             justify-content: space-around;
-            width: 30px;
-            height: 30px;
+            width: 44px;
+            height: 44px;
             background: transparent;
             border: none;
             cursor: pointer;
-            padding: 0;
-            z-index: 10000;
+            padding: 7px;
+            z-index: 10001;
+            position: relative;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-toggle:active {
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .mobile-menu-toggle span {
@@ -406,7 +417,7 @@
                 gap: 0;
                 padding: 80px 30px 30px;
                 transition: left 0.3s ease;
-                z-index: 9999;
+                z-index: 10000;
                 border-right: 1px solid rgba(178, 224, 255, 0.2);
             }
 
@@ -637,13 +648,11 @@
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.nav');
-            
-            if (mobileToggle && nav) {
-                mobileToggle.addEventListener('click', function() {
-                    mobileToggle.classList.toggle('active');
-                    nav.classList.toggle('active');
-                });
+            const nav = document.querySelector('.nav');            if (mobileToggle && nav) {
+                mobileToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();                    mobileToggle.classList.toggle('active');
+                    nav.classList.toggle('active');                });
                 
                 // Close menu when clicking outside
                 document.addEventListener('click', function(e) {

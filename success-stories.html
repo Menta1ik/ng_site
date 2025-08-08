@@ -440,6 +440,8 @@
             position: relative;
             border-radius: 4px;
             transition: background-color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
 
         .mobile-menu-toggle:hover {
@@ -865,29 +867,39 @@
             const nav = document.querySelector('.nav');
             
             if (mobileToggle && nav) {
-                mobileToggle.addEventListener('click', function(e) {
+                // Handle both click and touch events for better mobile support
+                function toggleMenu(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     
                     mobileToggle.classList.toggle('active');
                     nav.classList.toggle('active');
-                });
+                }
                 
-                // Close menu when clicking outside
-                document.addEventListener('click', function(e) {
+                mobileToggle.addEventListener('click', toggleMenu);
+                mobileToggle.addEventListener('touchstart', toggleMenu, { passive: false });
+                
+                // Close menu when clicking/touching outside
+                function closeMenu(e) {
                     if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
                         mobileToggle.classList.remove('active');
                         nav.classList.remove('active');
                     }
-                });
+                }
                 
-                // Close menu when clicking on nav links
+                document.addEventListener('click', closeMenu);
+                document.addEventListener('touchstart', closeMenu);
+                
+                // Close menu when clicking/touching on nav links
                 const navLinks = nav.querySelectorAll('.nav-link, .dropdown-link');
                 navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
+                    function closeMobileMenu() {
                         mobileToggle.classList.remove('active');
                         nav.classList.remove('active');
-                    });
+                    }
+                    
+                    link.addEventListener('click', closeMobileMenu);
+                    link.addEventListener('touchstart', closeMobileMenu);
                 });
             }
         });

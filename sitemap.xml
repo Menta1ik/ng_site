@@ -8,7 +8,7 @@
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/index.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -116,8 +116,14 @@
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/coming_soon.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-01-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://nxgenlowcode.biz/404.html</loc>
+        <lastmod>2025-01-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.1</priority>
     </url>
 </urlset>

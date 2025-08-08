@@ -82,6 +82,13 @@
             flex-direction: column;
         }
 
+        /* Ensure mobile nav is above main container */
+        @media (max-width: 768px) {
+            .main-container {
+                z-index: 0;
+            }
+        }
+
         /* Header */
         .header {
             padding: 20px 40px;

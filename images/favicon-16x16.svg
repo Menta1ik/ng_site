@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
   <defs>
-    <linearGradient id="grad16" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#b2e0ff;stop-opacity:1" />
       <stop offset="100%" style="stop-color:#19e97c;stop-opacity:1" />
     </linearGradient>
   </defs>
-  <rect width="16" height="16" rx="3" fill="url(#grad16)"/>
-  <text x="8" y="12" font-family="Inter, sans-serif" font-size="8" font-weight="800" text-anchor="middle" fill="#0a0a0a">NG</text>
+  <rect width="16" height="16" rx="3" fill="url(#grad)"/>
+  <text x="2" y="14" font-family="Inter, sans-serif" font-size="8" font-weight="800" text-anchor="start" fill="#0a0a0a">nx</text>
 </svg>

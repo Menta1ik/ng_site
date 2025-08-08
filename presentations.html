@@ -119,12 +119,19 @@
             gap: 30px;
         }
 
+        .nav-item {
+            position: relative;
+        }
+
         .nav-link {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-link:hover {
@@ -149,6 +156,52 @@
         .nav-link:hover::after,
         .nav-link.active::after {
             width: 100%;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         /* Content */
@@ -376,8 +429,20 @@
             </div>
             <nav class="nav">
                 <a href="index.html" class="nav-link">Platform</a>
-                <a href="presentations.html" class="nav-link active">Presentation</a>
-                <a href="file_archive.html" class="nav-link">Files</a>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                        <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="presentations.html" class="dropdown-link">Presentations</a>
+                        <a href="file_archive.html" class="dropdown-link">Files</a>
+                    </div>
+                </div>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="contact.html" class="nav-link">Contact</a>
             </nav>

@@ -5,7 +5,7 @@ Allow: /files/
 Disallow: /coming_soon.html
 
 # Sitemap
-Sitemap: https://menta1ik.github.io/ng_site/sitemap.xml
+Sitemap: https://nxgenlowcode.biz/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

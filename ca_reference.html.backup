@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Stories | NextGen</title>
+    <title>Success Story - INDEXBANK (Credit Agricole Group) | NextGen</title>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nxgenlowcode.biz/success-stories.html">
-    <meta property="og:title" content="Success Stories | NextGen">
-    <meta property="og:description" content="Discover how leading financial institutions transformed their operations with NextGen platform. Real success stories from our clients.">
+    <meta property="og:url" content="https://nxgenlowcode.biz/ca_reference.html">
+    <meta property="og:title" content="Success Story - INDEXBANK (Credit Agricole Group) | NextGen">
+    <meta property="og:description" content="Automated Credit Decisioning success story with INDEXBANK (Credit Agricole Group) using NextGen platform.">
     <meta property="og:image" content="images/nextgen-preview.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nxgenlowcode.biz/success-stories.html">
-    <meta property="twitter:title" content="Success Stories | NextGen">
-    <meta property="twitter:description" content="Discover how leading financial institutions transformed their operations with NextGen platform. Real success stories from our clients.">
+    <meta property="twitter:url" content="https://nxgenlowcode.biz/ca_reference.html">
+    <meta property="twitter:title" content="Success Story - INDEXBANK (Credit Agricole Group) | NextGen">
+    <meta property="twitter:description" content="Automated Credit Decisioning success story with INDEXBANK (Credit Agricole Group) using NextGen platform.">
     <meta property="twitter:image" content="images/nextgen-preview.png">
     
     <!-- Additional meta tags -->
-    <meta name="description" content="Success stories from leading financial institutions using NextGen platform. Discover real transformations in credit scoring, loan origination, and decision management.">
-    <meta name="keywords" content="success stories, NextGen platform, financial technology, credit scoring, loan origination, digital transformation">
+    <meta name="description" content="Success story: Automated Credit Decisioning for INDEXBANK (Credit Agricole Group) using NextGen platform. Complete automation of credit analysis and decision-making workflows.">
+    <meta name="keywords" content="credit decisioning, banking automation, digital transformation, NextGen, INDEXBANK, Credit Agricole">
     <meta name="author" content="BrainySoft Ltd">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RJQ64XZB6T');
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel=stylesheet">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -37,7 +44,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #ffffff;
             min-height: 100vh;
@@ -90,7 +97,6 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: white;
-            text-decoration: none;
         }
 
         .logo-icon {
@@ -110,15 +116,26 @@
             gap: 30px;
         }
 
+        .nav-item {
+            position: relative;
+        }
+
         .nav-link {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
         .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .nav-link.active {
             color: #b2e0ff;
         }
 
@@ -133,18 +150,13 @@
             transition: width 0.3s ease;
         }
 
-        .nav-link:hover::after {
+        .nav-link:hover::after,
+        .nav-link.active::after {
             width: 100%;
-        }
-
-        .nav-item {
-            position: relative;
-            display: inline-block;
         }
 
         .dropdown-arrow {
             font-size: 0.8rem;
-            margin-left: 5px;
             transition: transform 0.3s ease;
         }
 
@@ -156,16 +168,17 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background: rgba(0, 0, 0, 0.95);
-            border: 1px solid rgba(25, 233, 124, 0.3);
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            min-width: 180px;
+            padding: 10px 0;
+            min-width: 200px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s ease;
             z-index: 1000;
-            backdrop-filter: blur(10px);
         }
 
         .nav-item:hover .dropdown {
@@ -176,41 +189,34 @@
 
         .dropdown-link {
             display: block;
-            padding: 12px 16px;
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 400;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(25, 233, 124, 0.1);
-        }
-
-        .dropdown-link:last-child {
-            border-bottom: none;
         }
 
         .dropdown-link:hover {
-            background: rgba(25, 233, 124, 0.1);
-            color: #19e97c;
-            padding-left: 20px;
+            color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.05);
         }
-
-        /* Content sections */
+        /* Content */
         .content {
             flex: 1;
-            padding: 80px 40px;
+            padding: 60px 40px;
         }
 
         .content-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .page-title {
             text-align: center;
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            background: linear-gradient(135deg, #ffffff, #b2e0ff, #19e97c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -223,143 +229,217 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 60px;
             line-height: 1.4;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .intro-section {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .intro-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 900px;
-            margin: 0 auto 40px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #19e97c;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-        }
-
-        .clients-section {
+        .section {
             margin-bottom: 80px;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             background: linear-gradient(135deg, #ffffff, #b2e0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .client-card {
+        .section-content {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 40px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            text-decoration: none;
-            color: inherit;
         }
 
-        .client-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(178, 224, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        .section-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: rgba(25, 233, 124, 0.1);
+            border: 1px solid rgba(25, 233, 124, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .client-name {
+            color: #19e97c;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 20px;
         }
 
         .client-logo {
             width: 120px;
-            height: 80px;
+            height: auto;
+            max-height: 100px;
             object-fit: contain;
-            margin: 0 auto 25px;
+            flex-shrink: 0;
             background: rgba(255, 255, 255, 0.9);
             padding: 15px;
             border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .client-details {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .client-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .client-logo {
+                width: 100px;
+                max-height: 75px;
+            }
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 20px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: #b2e0ff;
+            opacity: 0.5;
+        }
+
+        .quote-author {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: 600;
+            color: #19e97c;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(178, 224, 255, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
             display: block;
         }
 
-        .client-name {
-            font-size: 1.3rem;
+        .benefit-title {
+            font-size: 1.1rem;
             font-weight: 600;
+            margin-bottom: 10px;
             color: #19e97c;
-            margin-bottom: 15px;
         }
 
-        .client-description {
+        .benefit-description {
             color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
 
-        .client-solution {
-            font-size: 0.9rem;
-            color: #b2e0ff;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .requirements-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #19e97c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .results-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .results-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .results-list li::before {
+            content: '🎯';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
         }
 
         .cta-section {
             text-align: center;
-            background: rgba(25, 233, 124, 0.05);
+            background: rgba(25, 233, 124, 0.1);
+            border: 1px solid rgba(25, 233, 124, 0.3);
             border-radius: 20px;
-            padding: 60px 40px;
-            border: 1px solid rgba(25, 233, 124, 0.2);
+            padding: 50px 40px;
+            margin-top: 60px;
         }
 
         .cta-title {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #19e97c;
         }
 
         .cta-text {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -374,13 +454,12 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(25, 233, 124, 0.3);
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(25, 233, 124, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(25, 233, 124, 0.4);
         }
 
         /* Footer */
@@ -388,7 +467,7 @@
             padding: 40px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .footer-text {
@@ -396,7 +475,7 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive design */
+        /* Responsive */
         @media (max-width: 768px) {
             .header {
                 padding: 15px 20px;
@@ -420,17 +499,24 @@
                 font-size: 1.1rem;
             }
 
-            .clients-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .section-title {
+                font-size: 1.5rem;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .section-content {
+                padding: 30px 20px;
             }
 
             .cta-section {
                 padding: 40px 20px;
+            }
+
+            .cta-title {
+                font-size: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -454,11 +540,11 @@
         }
 
         .mobile-menu-toggle:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .mobile-menu-toggle:active {
-            background-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .mobile-menu-toggle span {
@@ -608,36 +694,34 @@
 <body>
     <canvas id="particles-bg"></canvas>
     
+    
+    
     <!-- Mobile navigation moved outside main-container -->
     <nav class="nav">
-        <a href="index.html" class="nav-link">Platform</a>
-        <div class="nav-item">
-            <a href="#" class="nav-link active">Solutions <span class="dropdown-arrow">▼</span></a>
-            <div class="dropdown">
-                <a href="success-stories.html" class="dropdown-link">Success Stories</a>
-                <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
-            </div>
-        </div>
-        <div class="nav-item">
-            <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
-            <div class="dropdown">
-                <a href="presentations.html" class="dropdown-link">Presentations</a>
-                <a href="file_archive.html" class="dropdown-link">Files</a>
-            </div>
-        </div>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-    
+                <a href="index.html" class="nav-link">Platform</a>
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">Solutions <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                        <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="presentations.html" class="dropdown-link">Presentations</a>
+                        <a href="file_archive.html" class="dropdown-link">Files</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
     <div class="main-container">
         <header class="header">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">nx</div>
-                <div>
-                    nextgen
-                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
-                </div>
-            </a>
+            <div class="logo">
+                <div class="logo-icon">NG</div>
+                <span>NextGen</span>
+            </div>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
@@ -647,92 +731,123 @@
 
         <main class="content">
             <div class="content-container">
-                <h1 class="page-title">Success Stories</h1>
-                <p class="page-subtitle">Discover how leading financial institutions transformed their operations with NextGen platform</p>
+                <h1 class="page-title">Success Story</h1>
+                <p class="page-subtitle">Automated Credit Decisioning for INDEXBANK (Credit Agricole Group, Ukraine)</p>
 
-                <div class="intro-section">
-                    <p class="intro-text">
-                        NextGen has empowered financial institutions across the globe to revolutionize their credit scoring, loan origination, and decision management processes. Our low-code platform enables rapid development and deployment of sophisticated financial solutions, reducing time-to-market and operational costs while enhancing customer experience.
-                    </p>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Success Stories</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">90%</div>
-                            <div class="stat-label">Time Reduction</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Support</div>
+                <div class="section">
+                    <h2 class="section-title">Client Overview</h2>
+                    <div class="section-content">
+                        <div class="client-info">
+                            <img src="images/logos/credit-agricole-logo.svg" alt="INDEXBANK Credit Agricole Group Logo" class="client-logo">
+                            <div class="client-details">
+                                <p class="section-text">
+                                    <span class="client-name">INDEXBANK PJSC</span> (now Credit Agricole Bank Ukraine) is a universal bank, part of Credit Agricole Group—one of Europe's largest and most respected financial institutions. With a presence in Ukraine since 1993, the bank offers a full range of modern banking services to both corporate and private clients.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="clients-section">
-                    <h2 class="section-title">Our Clients</h2>
-                    
-                    <div class="clients-grid">
-                        <a href="afg_reference.html" class="client-card">
-                            <picture>
-                                <source srcset="images/logos/asia-finance-group-logo.png" type="image/png">
-                                <source srcset="images/logos/1asia-finance-group-logo.svg" type="image/svg+xml">
-                                <img src="images/logos/asia-finance-group-logo.png" alt="AFG India Holdings Logo" class="client-logo">
-                            </picture>
-                            <h3 class="client-name">AFG India Holdings</h3>
-                            <p class="client-description">
-                                Dynamic financial services company focused on credit solutions and decision management in the Indian market.
-                            </p>
-                            <div class="client-solution">In-House Credit Scoring Development</div>
-                        </a>
+                <div class="section">
+                    <h2 class="section-title">Challenge</h2>
+                    <div class="section-content">
+                        <p class="section-text">
+                            Amidst rapid growth in lending volumes, INDEXBANK needed to reduce loan application processing times and improve the quality of credit analysis. The main objectives were:
+                        </p>
+                        <ul class="requirements-list">
+                            <li>Automated collection and analysis of data from multiple internal and external sources (including credit bureaus)</li>
+                            <li>Integration with the existing IT infrastructure</li>
+                            <li>Flexible management of risk assessment strategies and decision rules</li>
+                            <li>Scalability and ease of use for business teams</li>
+                        </ul>
+                    </div>
+                </div>
 
-                        <a href="ef_reference.html" class="client-card">
-                            <img src="images/logos/enifinance-logo.svg" alt="eny Finance Logo" class="client-logo">
-                            <h3 class="client-name">eny Finance AG</h3>
-                            <p class="client-description">
-                                Swiss financial technology company specializing in innovative lending solutions and digital financial services.
-                            </p>
-                            <div class="client-solution">Full Online Lending Automation</div>
-                        </a>
+                <div class="section">
+                    <h2 class="section-title">Solution</h2>
+                    <div class="section-content">
+                        <p class="section-text">
+                            After a thorough tender process, the Company and Platform was selected for its:
+                        </p>
+                        <ul class="requirements-list">
+                            <li>High reliability and robust performance</li>
+                            <li>Simplicity of implementation and integration</li>
+                            <li>User-friendly design suitable for non-technical staff</li>
+                            <li>Modular system for business process automation and multi-source data integration</li>
+                        </ul>
+                    </div>
+                </div>
 
-                        <a href="ca_reference.html" class="client-card">
-                            <img src="images/logos/credit-agricole-logo.svg" alt="Credit Agricole Logo" class="client-logo">
-                            <h3 class="client-name">INDEXBANK</h3>
-                            <p class="client-description">
-                                Part of Credit Agricole Group, one of Ukraine's leading banks providing comprehensive financial services.
-                            </p>
-                            <div class="client-solution">Automated Credit Decisioning</div>
-                        </a>
+                <div class="section">
+                    <h2 class="section-title">Implementation & Results</h2>
+                    <div class="section-content">
+                        <ul class="results-list">
+                            <li>Successful integration with multiple credit bureaus and databases</li>
+                            <li>Automation of data collection and risk assessment</li>
+                            <li>Dramatic reduction in loan application analysis time</li>
+                            <li>Flexible configuration for adding new data sources and updating decision rules</li>
+                            <li>Project delivered on time, with close cooperation between teams (bank's and company)</li>
+                        </ul>
+                    </div>
+                </div>
 
-                        <a href="sg_reference.html" class="client-card">
-                            <img src="images/logos/societe-generale-logo.svg" alt="Société Générale Logo" class="client-logo">
-                            <h3 class="client-name">Bank Republic</h3>
-                            <p class="client-description">
-                                Member of Société Générale Group, providing modern banking solutions and digital financial services.
+                <div class="section">
+                    <h2 class="section-title">Client Feedback</h2>
+                    <div class="section-content">
+                        <div class="highlight-box">
+                            <p class="quote">
+                                Automation of collecting and evaluating information from different sources allowed us to cut down the time for loan application analysis and collect full and trustworthy information on potential customers. The system enables experts to quickly define and change decision-making rules.
                             </p>
-                            <div class="client-solution">Digital Loan Origination</div>
-                        </a>
+                            <p class="quote">
+                                The project has been recognized by the Bank as one of the best IT-projects. Company team proved to be highly qualified, delivering on time and working in true partnership with our experts.
+                            </p>
+                            <p class="quote-author">— Jerome Legrain, Board Member, Chief Executive Officer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2 class="section-title">Key Benefits</h2>
+                    <div class="section-content">
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <span class="benefit-icon">⚡</span>
+                                <h3 class="benefit-title">Faster Processing</h3>
+                                <p class="benefit-description">Faster loan application processing with automated workflows</p>
+                            </div>
+                            <div class="benefit-card">
+                                <span class="benefit-icon">🎯</span>
+                                <h3 class="benefit-title">Comprehensive Evaluation</h3>
+                                <p class="benefit-description">Comprehensive and trustworthy credit evaluation from multiple sources</p>
+                            </div>
+                            <div class="benefit-card">
+                                <span class="benefit-icon">🔧</span>
+                                <h3 class="benefit-title">Flexible Solution</h3>
+                                <p class="benefit-description">Flexible, scalable solution tailored to business needs</p>
+                            </div>
+                            <div class="benefit-card">
+                                <span class="benefit-icon">🏆</span>
+                                <h3 class="benefit-title">Award-Winning</h3>
+                                <p class="benefit-description">Recognized as one of the Bank's best IT projects</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="cta-section">
-                    <h2 class="cta-title">Ready to Transform Your Financial Operations?</h2>
+                    <h2 class="cta-title">Transform Your Credit Processes</h2>
                     <p class="cta-text">
-                        Join these leading financial institutions and discover how NextGen can revolutionize your business processes.
+                        Looking to transform your credit processes? Discover how NextGen delivers fast, reliable, and scalable solutions for leading banks.
                     </p>
                     <a href="contact.html" class="cta-button">Get Started Today</a>
                 </div>
             </div>
         </main>
-        
+
         <footer class="footer">
-            <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+            <p class="footer-text">
+                © 2024 BrainySoft Ltd. All rights reserved. | NextGen Platform
+            </p>
         </footer>
     </div>
 
@@ -770,9 +885,9 @@
             mouse.x = e.clientX;
             mouse.y = e.clientY;
         });
-        
+
         function randomBetween(a, b) { return a + Math.random() * (b - a); }
-        
+
         function createParticles() {
             particles = [];
             for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -855,29 +970,13 @@
             requestAnimationFrame(animateParticles);
         }
         
-        // Event listeners
-         window.addEventListener('resize', resizeCanvas);
-         canvas.addEventListener('mousemove', (e) => {
-             const rect = canvas.getBoundingClientRect();
-             mouse.x = e.clientX - rect.left;
-             mouse.y = e.clientY - rect.top;
-         });
-         canvas.addEventListener('mouseleave', () => {
-             mouse.x = -1000;
-             mouse.y = -1000;
-         });
-         
-         // Initialize
-         resizeCanvas();
-         animateParticles();
-     </script>
+        animateParticles();
+    </script>
     <script>
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.nav');
-            
-            if (mobileToggle && nav) {
+            const nav = document.querySelector('.nav');            if (mobileToggle && nav) {
                 // Handle both click and touch events for better mobile support
                 function toggleMenu(e) {
                     e.preventDefault();
@@ -890,6 +989,7 @@
                 mobileToggle.addEventListener('click', toggleMenu);
                 mobileToggle.addEventListener('touchstart', toggleMenu, { passive: false });
                 
+                // Close menu when clicking outside
                 // Close menu when clicking/touching outside
                 function closeMenu(e) {
                     if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {

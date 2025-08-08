@@ -3,31 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Success Stories | NextGen</title>
+    <title>eny Finance Success Story - NextGen Platform</title>
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nxgenlowcode.biz/success-stories.html">
-    <meta property="og:title" content="Success Stories | NextGen">
-    <meta property="og:description" content="Discover how leading financial institutions transformed their operations with NextGen platform. Real success stories from our clients.">
+    <meta property="og:url" content="https://nxgenlowcode.biz/ef_reference.html">
+    <meta property="og:title" content="eny Finance Success Story - NextGen Platform">
+    <meta property="og:description" content="Full Online Lending Automation success story with eny Finance using NextGen platform.">
     <meta property="og:image" content="images/nextgen-preview.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nxgenlowcode.biz/success-stories.html">
-    <meta property="twitter:title" content="Success Stories | NextGen">
-    <meta property="twitter:description" content="Discover how leading financial institutions transformed their operations with NextGen platform. Real success stories from our clients.">
+    <meta property="twitter:url" content="https://nxgenlowcode.biz/ef_reference.html">
+    <meta property="twitter:title" content="eny Finance Success Story - NextGen Platform">
+    <meta property="twitter:description" content="Full Online Lending Automation success story with eny Finance using NextGen platform.">
     <meta property="twitter:image" content="images/nextgen-preview.png">
     
     <!-- Additional meta tags -->
-    <meta name="description" content="Success stories from leading financial institutions using NextGen platform. Discover real transformations in credit scoring, loan origination, and decision management.">
-    <meta name="keywords" content="success stories, NextGen platform, financial technology, credit scoring, loan origination, digital transformation">
+    <meta name="description" content="Success story: Full Online Lending Automation for eny Finance using NextGen platform. Complete automation of loan origination, servicing, scoring, collections, and reporting.">
+    <meta name="keywords" content="lending automation, banking automation, digital transformation, NextGen, eny Finance">
     <meta name="author" content="BrainySoft Ltd">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RJQ64XZB6T');
+    </script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel=stylesheet">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -37,7 +44,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', sans-serif;
             background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
             color: #ffffff;
             min-height: 100vh;
@@ -90,7 +97,6 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: white;
-            text-decoration: none;
         }
 
         .logo-icon {
@@ -110,12 +116,89 @@
             gap: 30px;
         }
 
+        .nav-item {
+            position: relative;
+        }
+
         .nav-link {
             color: rgba(255, 255, 255, 0.8);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .nav-link.active {
+            color: #b2e0ff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b2e0ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.05);
         }
 
         .nav-link:hover {
@@ -137,80 +220,23 @@
             width: 100%;
         }
 
-        .nav-item {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-arrow {
-            font-size: 0.8rem;
-            margin-left: 5px;
-            transition: transform 0.3s ease;
-        }
-
-        .nav-item:hover .dropdown-arrow {
-            transform: rotate(180deg);
-        }
-
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: rgba(0, 0, 0, 0.95);
-            border: 1px solid rgba(25, 233, 124, 0.3);
-            border-radius: 8px;
-            min-width: 180px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-item:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown-link {
-            display: block;
-            padding: 12px 16px;
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(25, 233, 124, 0.1);
-        }
-
-        .dropdown-link:last-child {
-            border-bottom: none;
-        }
-
-        .dropdown-link:hover {
-            background: rgba(25, 233, 124, 0.1);
-            color: #19e97c;
-            padding-left: 20px;
-        }
-
-        /* Content sections */
+        /* Content */
         .content {
             flex: 1;
-            padding: 80px 40px;
+            padding: 60px 40px;
         }
 
         .content-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .page-title {
             text-align: center;
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: 3.5rem;
             font-weight: 800;
-            line-height: 1.1;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            background: linear-gradient(135deg, #ffffff, #b2e0ff, #19e97c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -223,143 +249,217 @@
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 60px;
             line-height: 1.4;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .intro-section {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .intro-text {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: rgba(255, 255, 255, 0.9);
-            max-width: 900px;
-            margin: 0 auto 40px;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #19e97c;
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 500;
-        }
-
-        .clients-section {
+        .section {
             margin-bottom: 80px;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: 700;
-            text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             background: linear-gradient(135deg, #ffffff, #b2e0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .clients-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .client-card {
+        .section-content {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 40px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            text-decoration: none;
-            color: inherit;
         }
 
-        .client-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(178, 224, 255, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        .section-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .highlight-box {
+            background: rgba(25, 233, 124, 0.1);
+            border: 1px solid rgba(25, 233, 124, 0.3);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .client-name {
+            color: #19e97c;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 20px;
         }
 
         .client-logo {
             width: 120px;
-            height: 80px;
+            height: auto;
+            max-height: 100px;
             object-fit: contain;
-            margin: 0 auto 25px;
+            flex-shrink: 0;
             background: rgba(255, 255, 255, 0.9);
             padding: 15px;
             border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .client-details {
+            flex: 1;
+        }
+
+        @media (max-width: 768px) {
+            .client-info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .client-logo {
+                width: 100px;
+                max-height: 75px;
+            }
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.95);
+            margin: 20px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -10px;
+            font-size: 3rem;
+            color: #b2e0ff;
+            opacity: 0.5;
+        }
+
+        .quote-author {
+            text-align: right;
+            margin-top: 20px;
+            font-weight: 600;
+            color: #19e97c;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(178, 224, 255, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
             display: block;
         }
 
-        .client-name {
-            font-size: 1.3rem;
+        .benefit-title {
+            font-size: 1.1rem;
             font-weight: 600;
+            margin-bottom: 10px;
             color: #19e97c;
-            margin-bottom: 15px;
         }
 
-        .client-description {
+        .benefit-description {
             color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            margin-bottom: 20px;
+            line-height: 1.5;
+            font-size: 0.95rem;
         }
 
-        .client-solution {
-            font-size: 0.9rem;
-            color: #b2e0ff;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .requirements-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .requirements-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #19e97c;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .results-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .results-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .results-list li::before {
+            content: '🎯';
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
         }
 
         .cta-section {
             text-align: center;
-            background: rgba(25, 233, 124, 0.05);
+            background: rgba(25, 233, 124, 0.1);
+            border: 1px solid rgba(25, 233, 124, 0.3);
             border-radius: 20px;
-            padding: 60px 40px;
-            border: 1px solid rgba(25, 233, 124, 0.2);
+            padding: 50px 40px;
+            margin-top: 60px;
         }
 
         .cta-title {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #ffffff;
+            color: #19e97c;
         }
 
         .cta-text {
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
             margin-bottom: 30px;
             line-height: 1.6;
         }
@@ -374,13 +474,12 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(25, 233, 124, 0.3);
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(25, 233, 124, 0.3);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(25, 233, 124, 0.4);
         }
 
         /* Footer */
@@ -388,7 +487,7 @@
             padding: 40px;
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.02);
         }
 
         .footer-text {
@@ -396,7 +495,7 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive design */
+        /* Responsive */
         @media (max-width: 768px) {
             .header {
                 padding: 15px 20px;
@@ -420,17 +519,24 @@
                 font-size: 1.1rem;
             }
 
-            .clients-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
+            .section-title {
+                font-size: 1.5rem;
             }
 
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .section-content {
+                padding: 30px 20px;
             }
 
             .cta-section {
                 padding: 40px 20px;
+            }
+
+            .cta-title {
+                font-size: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -454,11 +560,11 @@
         }
 
         .mobile-menu-toggle:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .mobile-menu-toggle:active {
-            background-color: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .mobile-menu-toggle span {
@@ -608,36 +714,34 @@
 <body>
     <canvas id="particles-bg"></canvas>
     
+    
+    
     <!-- Mobile navigation moved outside main-container -->
     <nav class="nav">
-        <a href="index.html" class="nav-link">Platform</a>
-        <div class="nav-item">
-            <a href="#" class="nav-link active">Solutions <span class="dropdown-arrow">▼</span></a>
-            <div class="dropdown">
-                <a href="success-stories.html" class="dropdown-link">Success Stories</a>
-                <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
-            </div>
-        </div>
-        <div class="nav-item">
-            <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
-            <div class="dropdown">
-                <a href="presentations.html" class="dropdown-link">Presentations</a>
-                <a href="file_archive.html" class="dropdown-link">Files</a>
-            </div>
-        </div>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-    </nav>
-    
+                <a href="index.html" class="nav-link">Platform</a>
+                <div class="nav-item">
+                    <a href="#" class="nav-link active">Solutions <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                        <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="presentations.html" class="dropdown-link">Presentations</a>
+                        <a href="file_archive.html" class="dropdown-link">Files</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
     <div class="main-container">
         <header class="header">
-            <a href="index.html" class="logo">
-                <div class="logo-icon">nx</div>
-                <div>
-                    nextgen
-                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
-                </div>
-            </a>
+            <div class="logo">
+                <div class="logo-icon">NG</div>
+                <span>NextGen</span>
+            </div>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
                 <span></span>
@@ -647,92 +751,126 @@
 
         <main class="content">
             <div class="content-container">
-                <h1 class="page-title">Success Stories</h1>
-                <p class="page-subtitle">Discover how leading financial institutions transformed their operations with NextGen platform</p>
-
-                <div class="intro-section">
-                    <p class="intro-text">
-                        NextGen has empowered financial institutions across the globe to revolutionize their credit scoring, loan origination, and decision management processes. Our low-code platform enables rapid development and deployment of sophisticated financial solutions, reducing time-to-market and operational costs while enhancing customer experience.
-                    </p>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number">50+</div>
-                            <div class="stat-label">Success Stories</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">90%</div>
-                            <div class="stat-label">Time Reduction</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">100%</div>
-                            <div class="stat-label">Client Satisfaction</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">24/7</div>
-                            <div class="stat-label">Support</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="clients-section">
-                    <h2 class="section-title">Our Clients</h2>
-                    
-                    <div class="clients-grid">
-                        <a href="afg_reference.html" class="client-card">
-                            <picture>
-                                <source srcset="images/logos/asia-finance-group-logo.png" type="image/png">
-                                <source srcset="images/logos/1asia-finance-group-logo.svg" type="image/svg+xml">
-                                <img src="images/logos/asia-finance-group-logo.png" alt="AFG India Holdings Logo" class="client-logo">
-                            </picture>
-                            <h3 class="client-name">AFG India Holdings</h3>
-                            <p class="client-description">
-                                Dynamic financial services company focused on credit solutions and decision management in the Indian market.
-                            </p>
-                            <div class="client-solution">In-House Credit Scoring Development</div>
-                        </a>
-
-                        <a href="ef_reference.html" class="client-card">
+                <h1 class="page-title">Success Story</h1>
+                <p class="page-subtitle">Full Online Lending Automation for eny Finance (Switzerland)</p>
+        
+                <section class="section">
+                    <h2 class="section-title">Client Overview</h2>
+                    <div class="section-content">
+                        <div class="client-info">
                             <img src="images/logos/enifinance-logo.svg" alt="eny Finance Logo" class="client-logo">
-                            <h3 class="client-name">eny Finance AG</h3>
-                            <p class="client-description">
-                                Swiss financial technology company specializing in innovative lending solutions and digital financial services.
-                            </p>
-                            <div class="client-solution">Full Online Lending Automation</div>
-                        </a>
-
-                        <a href="ca_reference.html" class="client-card">
-                            <img src="images/logos/credit-agricole-logo.svg" alt="Credit Agricole Logo" class="client-logo">
-                            <h3 class="client-name">INDEXBANK</h3>
-                            <p class="client-description">
-                                Part of Credit Agricole Group, one of Ukraine's leading banks providing comprehensive financial services.
-                            </p>
-                            <div class="client-solution">Automated Credit Decisioning</div>
-                        </a>
-
-                        <a href="sg_reference.html" class="client-card">
-                            <img src="images/logos/societe-generale-logo.svg" alt="Société Générale Logo" class="client-logo">
-                            <h3 class="client-name">Bank Republic</h3>
-                            <p class="client-description">
-                                Member of Société Générale Group, providing modern banking solutions and digital financial services.
-                            </p>
-                            <div class="client-solution">Digital Loan Origination</div>
-                        </a>
+                            <div class="client-details">
+                                <div class="client-name">eny Finance AG</div>
+                                <p class="section-text">eny Finance AG is Switzerland's largest non-bank online lender, headquartered in Zurich. Since 2012, eny Finance has been offering fast, flexible personal loans entirely online, setting the benchmark for digital lending in Switzerland.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Challenge</h2>
+                    <div class="section-content">
+                        <p class="section-text">To drive business growth and boost operational efficiency, eny Finance required a next-generation system for loan origination, servicing, scoring, collections, and reporting—all seamlessly integrated.</p>
+                        <p class="section-text"><strong>Key business needs included:</strong></p>
+                        <ul class="requirements-list">
+                            <li>Automated borrower evaluation and scoring</li>
+                            <li>Flexible, rule-based management of credit policies and business processes</li>
+                            <li>Integration with multiple third-party services (credit bureaus, DMS, accounting, insurance, web front-end)</li>
+                            <li>End-to-end reporting and compliance</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Solution</h2>
+                    <div class="section-content">
+                        <p class="section-text">After a thorough market evaluation, eny Finance selected the company and out-of-the-box lowcode platform renowned for its configurability, ease of use, and powerful automation capabilities.</p>
+                        <p class="section-text"><strong>The implementation included:</strong></p>
+                        <ul class="requirements-list">
+                            <li>Migration from a legacy, in-house system to a unified new platform</li>
+                            <li>Analysis and mapping of hundreds of internal documents and fields</li>
+                            <li>Integration with two major credit bureaus (ZEK, CRIF), document management, accounting, insurance, and the public website</li>
+                            <li>Automated onboarding, loan origination, scoring, servicing, and debt collection—all on a single platform</li>
+                            <li>Support for dynamic business rules, AML filters, and compliance reporting</li>
+                            <li>Transfer of the live lending business and historical loan portfolio into the new system</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Implementation & Results</h2>
+                    <div class="section-content">
+                        <ul class="results-list">
+                            <li>Seamless migration of data and business processes with minimal disruption to ongoing operations</li>
+                            <li>Complex integrations with third-party providers, efficiently orchestrated by Company team</li>
+                            <li>Agile adaptation to new business requirements, rapid changes and updates supported 24/7</li>
+                            <li>Full automation of loan lifecycle, including reporting and compliance</li>
+                            <li>Business growth enabled by faster product launches and scalable infrastructure</li>
+                        </ul>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Client Feedback</h2>
+                    <div class="section-content">
+                        <div class="highlight-box">
+                            <div class="quote">
+                                The solution developed and supported by the Scorto team has been highly effective and flexible, enabling us to achieve our goals within an optimized and efficient system that continues to operate successfully to this day.
+                                <br><br>
+                                The Company specialists did an outstanding job analyzing our business, adapting the system, and supporting our teams and third-party providers. Even under the pressure of complex integrations and rapid changes, their professionalism, technical competence, and customer focus were always evident.
+                                <br><br>
+                                We would recommend the Company and NextGen to any lender seeking a reliable, configurable, and fully supported solution for online lending and decision automation.
+                                <div class="quote-author">— Dr. Irina Starobinskaya, FRM CRO, eny Finance AG</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section">
+                    <h2 class="section-title">Key Benefits</h2>
+                    <div class="section-content">
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <div class="benefit-icon">🔄</div>
+                                <div class="benefit-title">Seamless Migration</div>
+                                <div class="benefit-description">Data migration and process transformation with minimal disruption</div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">⚡</div>
+                                <div class="benefit-title">Real-time Decisioning</div>
+                                <div class="benefit-description">Automated, real-time credit decisioning capabilities</div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">🔗</div>
+                                <div class="benefit-title">Complex Integrations</div>
+                                <div class="benefit-description">Seamless integration with external providers and systems</div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">⚙️</div>
+                                <div class="benefit-title">Flexible Business Logic</div>
+                                <div class="benefit-description">Rule-based business logic and compliance management</div>
+                            </div>
+                            <div class="benefit-card">
+                                <div class="benefit-icon">🛠️</div>
+                                <div class="benefit-title">24/7 Support</div>
+                                <div class="benefit-description">Fast, responsive support—mission-critical for online lending</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
                 <div class="cta-section">
-                    <h2 class="cta-title">Ready to Transform Your Financial Operations?</h2>
-                    <p class="cta-text">
-                        Join these leading financial institutions and discover how NextGen can revolutionize your business processes.
-                    </p>
-                    <a href="contact.html" class="cta-button">Get Started Today</a>
+                    <h2 class="cta-title">Ready to Transform Your Lending Business?</h2>
+                    <p class="cta-text">Let's discuss how NextGen can deliver the same success for you.</p>
+                    <a href="#contact" class="cta-button">Get Started Today</a>
                 </div>
             </div>
         </main>
-        
+
         <footer class="footer">
-            <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+            <div class="footer-text">
+                © 2024 BrainySoft Ltd. All rights reserved.
+            </div>
         </footer>
     </div>
 
@@ -770,9 +908,9 @@
             mouse.x = e.clientX;
             mouse.y = e.clientY;
         });
-        
+
         function randomBetween(a, b) { return a + Math.random() * (b - a); }
-        
+
         function createParticles() {
             particles = [];
             for (let i = 0; i < PARTICLE_COUNT; i++) {
@@ -855,29 +993,13 @@
             requestAnimationFrame(animateParticles);
         }
         
-        // Event listeners
-         window.addEventListener('resize', resizeCanvas);
-         canvas.addEventListener('mousemove', (e) => {
-             const rect = canvas.getBoundingClientRect();
-             mouse.x = e.clientX - rect.left;
-             mouse.y = e.clientY - rect.top;
-         });
-         canvas.addEventListener('mouseleave', () => {
-             mouse.x = -1000;
-             mouse.y = -1000;
-         });
-         
-         // Initialize
-         resizeCanvas();
-         animateParticles();
-     </script>
+        animateParticles();
+    </script>
     <script>
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.nav');
-            
-            if (mobileToggle && nav) {
+            const nav = document.querySelector('.nav');            if (mobileToggle && nav) {
                 // Handle both click and touch events for better mobile support
                 function toggleMenu(e) {
                     e.preventDefault();
@@ -890,6 +1012,7 @@
                 mobileToggle.addEventListener('click', toggleMenu);
                 mobileToggle.addEventListener('touchstart', toggleMenu, { passive: false });
                 
+                // Close menu when clicking outside
                 // Close menu when clicking/touching outside
                 function closeMenu(e) {
                     if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {

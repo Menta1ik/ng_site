@@ -683,6 +683,163 @@
         .hero-subtitle { animation-delay: 0.3s; }
         .hero-description { animation-delay: 0.4s; }
         .cta-buttons { animation-delay: 0.5s; }
+
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Mobile Navigation Styles */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+                position: relative;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 80px 30px 30px;
+                transition: left 0.3s ease;
+                z-index: 1000;
+                border-right: 1px solid rgba(178, 224, 255, 0.2);
+            }
+
+            .nav.active {
+                left: 0;
+            }
+
+            .nav-item {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                padding: 15px 0;
+                justify-content: space-between;
+                color: #ffffff;
+                border-bottom: none;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: rgba(255, 255, 255, 0.05);
+                border: none;
+                border-radius: 8px;
+                margin-top: 10px;
+                padding: 10px 0;
+                min-width: auto;
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease;
+            }
+
+            .nav-item:hover .dropdown,
+            .nav-item.active .dropdown {
+                max-height: 200px;
+            }
+
+            .dropdown-link {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .dropdown-link:hover {
+                color: #19e97c;
+                background: rgba(25, 233, 124, 0.1);
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 15px;
+            }
+
+            .nav {
+                width: 100%;
+                left: -100%;
+                padding: 70px 20px 20px;
+            }
+
+            .nav-link {
+                font-size: 0.95rem;
+                padding: 12px 0;
+            }
+
+            .dropdown-link {
+                padding: 8px 12px;
+                font-size: 0.85rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -697,6 +854,11 @@
                     <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
                 </div>
             </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav class="nav">
                 <div class="nav-item">
                     <a href="index.html" class="nav-link">Platform</a>
@@ -984,5 +1146,36 @@
         
         animateParticles();
     </script>
-</body>
+<script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.nav');
+            
+            if (mobileToggle && nav) {
+                mobileToggle.addEventListener('click', function() {
+                    mobileToggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        mobileToggle.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                });
+                
+                // Close menu when clicking on nav links
+                const navLinks = nav.querySelectorAll('.nav-link, .dropdown-link');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileToggle.classList.remove('active');
+                        nav.classList.remove('active');
+                    });
+                });
+            }
+        });
+    </script>
+    </body>
 </html>

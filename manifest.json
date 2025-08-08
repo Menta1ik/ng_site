@@ -2,20 +2,35 @@
     "name": "NextGen Low-Code Platform - Presentations",
     "short_name": "NextGen Presentations",
     "description": "NextGen enterprise low-code platform presentations and documentation",
-    "start_url": "/presentations/",
+    "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#2563eb",
     "orientation": "portrait-primary",
-    "scope": "/presentations/",
+    "scope": "/",
     "lang": "en",
     "dir": "ltr",
     "icons": [
+        {
+            "src": "images/favicon-16x16.svg",
+            "sizes": "16x16",
+            "type": "image/svg+xml"
+        },
+        {
+            "src": "images/favicon-32x32.svg",
+            "sizes": "32x32",
+            "type": "image/svg+xml"
+        },
         {
             "src": "images/favicon.svg",
             "sizes": "any",
             "type": "image/svg+xml",
             "purpose": "any maskable"
+        },
+        {
+            "src": "images/apple-touch-icon.svg",
+            "sizes": "180x180",
+            "type": "image/svg+xml"
         },
         {
             "src": "images/favicon_nx.svg",

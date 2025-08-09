@@ -499,11 +499,20 @@
                 margin-top: 10px;
                 padding: 10px 0;
                 min-width: auto;
+                max-height: 200px;
+                overflow: visible;
+                transition: max-height 0.3s ease;
             }
 
             .dropdown-link {
-                padding: 8px 15px;
+                padding: 10px 15px;
                 font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .dropdown-link:hover {
+                color: #19e97c;
+                background: rgba(25, 233, 124, 0.1);
             }
         }
 

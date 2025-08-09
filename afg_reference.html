@@ -486,11 +486,6 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header {
-                padding: 15px 20px;
-                flex-direction: column;
-                gap: 20px;
-            }
 
             .nav {
                 gap: 20px;
@@ -517,6 +512,32 @@
         /* Hide mobile navigation on desktop */
         .mobile-nav {
             display: none;
+        }
+
+        /* Mobile navigation styles */
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 20px 30px 30px;
+                transition: left 0.3s ease;
+                z-index: 100000 !important;
+                border-right: 1px solid rgba(178, 224, 255, 0.2);
+            }
+
+            .mobile-nav.active {
+                left: 0;
+            }
         }
 
         /* Mobile Menu Toggle Button */
@@ -572,10 +593,19 @@
             .header {
                 padding: 15px 20px;
                 position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                min-height: 60px;
+            }
+
+            .logo {
+                order: 1;
             }
 
             .mobile-menu-toggle {
                 display: flex;
+                order: 2;
             }
 
             .nav {
@@ -588,7 +618,7 @@
                 backdrop-filter: blur(20px);
                 flex-direction: column;
                 gap: 0;
-                padding: 80px 30px 30px;
+                padding: 20px 30px 30px;
                 transition: left 0.3s ease;
                 z-index: 99999 !important;
                 border-right: 1px solid rgba(178, 224, 255, 0.2);
@@ -990,7 +1020,7 @@
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.nav');            if (mobileToggle && nav) {
+            const nav = document.querySelector('.mobile-nav');            if (mobileToggle && nav) {
                 // Handle both click and touch events for better mobile support
                 function toggleMenu(e) {
                     e.preventDefault();

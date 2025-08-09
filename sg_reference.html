@@ -647,14 +647,9 @@
                 padding: 10px 0;
                 min-width: auto;
                 width: 100%;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease;
-            }
-
-            .nav-item:hover .dropdown,
-            .nav-item.active .dropdown {
                 max-height: 200px;
+                overflow: visible;
+                transition: max-height 0.3s ease;
             }
 
             .dropdown-link {
@@ -999,7 +994,9 @@
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.mobile-nav');            if (mobileToggle && nav) {
+            const nav = document.querySelector('.nav');
+            
+            if (mobileToggle && nav) {
                 // Handle both click and touch events for better mobile support
                 function toggleMenu(e) {
                     e.preventDefault();

@@ -59,8 +59,9 @@ ErrorDocument 500 /404.html
 </Files>
 
 # Disallow indexing of /v2/ until release
+<IfModule mod_rewrite.c>
+    RewriteRule ^v2/ - [E=NOINDEXV2:1]
+</IfModule>
 <IfModule mod_headers.c>
-    <Location "/v2/">
-        Header set X-Robots-Tag "noindex, nofollow"
-    </Location>
+    Header set X-Robots-Tag "noindex, nofollow" env=NOINDEXV2
 </IfModule>

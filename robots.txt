@@ -3,6 +3,7 @@ Allow: /
 Allow: /images/
 Allow: /files/
 Disallow: /coming_soon.html
+Disallow: /v2/
 
 # Sitemap
 Sitemap: https://nxgenlowcode.biz/sitemap.xml

@@ -57,3 +57,10 @@ ErrorDocument 500 /404.html
     Order allow,deny
     Deny from all
 </Files>
+
+# Disallow indexing of /v2/ until release
+<IfModule mod_headers.c>
+    <Location "/v2/">
+        Header set X-Robots-Tag "noindex, nofollow"
+    </Location>
+</IfModule>

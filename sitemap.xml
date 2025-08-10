@@ -6,15 +6,10 @@
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
-    <url>
-        <loc>https://nxgenlowcode.biz/index.html</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
+    <!-- Removed duplicate /index.html entry -->
     <url>
         <loc>https://nxgenlowcode.biz/about.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -26,19 +21,19 @@
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/presentations.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/success-stories.html</loc>
-        <lastmod>2025-01-28</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/industry-solutions.html</loc>
-        <lastmod>2025-01-28</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -56,7 +51,7 @@
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/security_presentation.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -86,44 +81,33 @@
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/file_archive.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/afg_reference.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/ca_reference.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/ef_reference.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://nxgenlowcode.biz/sg_reference.html</loc>
-        <lastmod>2025-01-27</lastmod>
+        <lastmod>2025-08-10</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
-    <url>
-        <loc>https://nxgenlowcode.biz/coming_soon.html</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    <url>
-        <loc>https://nxgenlowcode.biz/404.html</loc>
-        <lastmod>2025-01-28</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.1</priority>
-    </url>
+    <!-- Removed disallowed coming_soon.html and error 404.html entries -->
 </urlset>

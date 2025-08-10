@@ -49,8 +49,8 @@ RewriteCond %{REQUEST_URI} (.+)/$
 RewriteRule ^(.+)/$ /$1 [R=301,L]
 
 # Custom error pages
-ErrorDocument 404 /presentations/404.html
-ErrorDocument 500 /presentations/500.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /404.html
 
 # Prevent access to sensitive files
 <Files ~ "^\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">

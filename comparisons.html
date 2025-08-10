@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform Comparisons - NextGen vs Leading Low-Code Solutions</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nxgenlowcode.biz/comparisons.html">
+    <meta property="og:title" content="Platform Comparisons - NextGen vs Leading Low-Code Solutions">
+    <meta property="og:description" content="Comprehensive comparison of NextGen platform vs leading low-code solutions. Compare features, security, pricing, and capabilities side-by-side.">
+    <meta property="og:image" content="images/nextgen-preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nxgenlowcode.biz/comparisons.html">
+    <meta property="twitter:title" content="Platform Comparisons - NextGen vs Leading Low-Code Solutions">
+    <meta property="twitter:description" content="See why NextGen outperforms other low-code platforms in security, scalability, and enterprise features.">
+    <meta property="twitter:image" content="images/nextgen-preview.png">
+    
+    <!-- Additional meta tags -->
+    <meta name="description" content="Compare NextGen low-code platform with Microsoft Power Platform, OutSystems, Mendix, ServiceNow, Salesforce, and other leading solutions. Detailed feature comparison, security analysis, pricing comparison, and capability matrix for enterprise decision makers.">
+    <meta name="keywords" content="low-code platform comparison, NextGen vs Power Platform, OutSystems comparison, Mendix vs NextGen, ServiceNow alternatives, Salesforce comparison, enterprise low-code platforms, platform evaluation matrix, vendor comparison, competitive analysis, low-code RFP, platform selection guide, enterprise software comparison, digital transformation platforms, application development platforms, business process automation, workflow platforms, enterprise security comparison, compliance platforms, banking software comparison, financial services platforms, government low-code, regulated industry platforms, platform capabilities matrix, feature comparison table, pricing comparison, ROI analysis, TCO comparison, deployment options, integration capabilities, scalability comparison, performance benchmarks, enterprise architecture, platform assessment, vendor evaluation, procurement comparison, technology comparison, software selection, enterprise solutions comparison">
+    <meta name="author" content="BrainySoft Ltd">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    
+    <link rel="canonical" href="https://nxgenlowcode.biz/comparisons.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/favicon-16x16.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="images/favicon-32x32.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RJQ64XZB6T');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel=stylesheet">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles background */
+        #particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Main container */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0a0a0a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .nav-link.active {
+            color: #b2e0ff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b2e0ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #ffffff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+        }
+
+        .mobile-nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: #ffffff;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 80px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.2rem;
+            color: #b3c5d1;
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Comparison sections */
+        .comparison-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #b3c5d1;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Comparison table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 18px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            vertical-align: top;
+        }
+
+        .comparison-table th {
+            background: rgba(178, 224, 255, 0.1);
+            font-weight: 600;
+            color: #b2e0ff;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-table td {
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .comparison-table .feature-category {
+            background: rgba(25, 233, 124, 0.1);
+            font-weight: 600;
+            color: #19e97c;
+        }
+
+        .comparison-table .nextgen-column {
+            background: rgba(25, 233, 124, 0.05);
+            border-left: 3px solid #19e97c;
+        }
+
+        /* Advantage indicators */
+        .advantage {
+            color: #19e97c;
+            font-weight: 500;
+        }
+
+        .neutral {
+            color: #ffd700;
+        }
+
+        .disadvantage {
+            color: #ff6b6b;
+        }
+
+        .check-mark {
+            color: #19e97c;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .cross-mark {
+            color: #ff6b6b;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .partial-mark {
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Key differentiators */
+        .key-differentiators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .differentiator-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .differentiator-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(178, 224, 255, 0.3);
+        }
+
+        .differentiator-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .differentiator-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #b2e0ff;
+        }
+
+        .differentiator-description {
+            color: #b3c5d1;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, rgba(178, 224, 255, 0.1), rgba(25, 233, 124, 0.1));
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin: 60px 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: #b3c5d1;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            color: #0a0a0a;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(178, 224, 255, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #b2e0ff;
+            border: 2px solid #b2e0ff;
+        }
+
+        .cta-button.secondary:hover {
+            background: #b2e0ff;
+            color: #0a0a0a;
+        }
+
+        /* Resources section */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(178, 224, 255, 0.3);
+        }
+
+        .resource-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #b2e0ff;
+        }
+
+        .resource-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .resource-description {
+            color: #b3c5d1;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-nav-toggle {
+                display: flex;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .comparison-section {
+                padding: 25px 20px;
+            }
+
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 12px 8px;
+            }
+
+            .key-differentiators {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                white-space: normal;
+                min-width: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles background -->
+    <div id="particles-bg"></div>
+
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">NG</div>
+                NextGen
+            </a>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="industry-solutions.html" class="nav-link">Solutions</a>
+                </div>
+                <div class="nav-item">
+                    <a href="comparisons.html" class="nav-link active">Comparisons</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="presentations.html" class="dropdown-link">Presentations</a>
+                        <a href="file_archive.html" class="dropdown-link">File Archive</a>
+                        <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <div class="mobile-nav-toggle" onclick="toggleMobileNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+
+        <!-- Mobile Nav Menu -->
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-close" onclick="toggleMobileNav()">×</div>
+            <a href="index.html" class="mobile-nav-link">Home</a>
+            <a href="about.html" class="mobile-nav-link">About</a>
+            <a href="industry-solutions.html" class="mobile-nav-link">Solutions</a>
+            <a href="comparisons.html" class="mobile-nav-link">Comparisons</a>
+            <a href="presentations.html" class="mobile-nav-link">Presentations</a>
+            <a href="file_archive.html" class="mobile-nav-link">File Archive</a>
+            <a href="success-stories.html" class="mobile-nav-link">Success Stories</a>
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
+        </div>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="container">
+                <h1 class="page-title">Platform Comparisons</h1>
+                <p class="page-subtitle">
+                    See how NextGen stands out against leading low-code platforms. Compare features, security, 
+                    enterprise capabilities, and total cost of ownership to make informed decisions.
+                </p>
+
+                <!-- Feature Comparison Section -->
+                <section class="comparison-section">
+                    <h2 class="section-title">Feature Comparison Matrix</h2>
+                    <p class="section-subtitle">
+                        Comprehensive comparison of NextGen against major low-code platforms across key enterprise requirements
+                    </p>
+                    
+                    <div style="overflow-x: auto;">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Feature / Platform</th>
+                                    <th class="nextgen-column">NextGen</th>
+                                    <th>Microsoft Power Platform</th>
+                                    <th>OutSystems</th>
+                                    <th>Mendix</th>
+                                    <th>ServiceNow</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="feature-category">
+                                    <td><strong>Security & Compliance</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Banking-grade Security</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Native ISO 27001, SOC 2</td>
+                                    <td class="partial-mark">⚬ Basic compliance</td>
+                                    <td class="partial-mark">⚬ Add-on modules</td>
+                                    <td class="partial-mark">⚬ Third-party solutions</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Enterprise focus</td>
+                                </tr>
+                                <tr>
+                                    <td>Multi-tenancy with Data Isolation</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Full isolation</td>
+                                    <td class="partial-mark">⚬ Limited isolation</td>
+                                    <td class="partial-mark">⚬ Shared resources</td>
+                                    <td class="partial-mark">⚬ Partial isolation</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Good isolation</td>
+                                </tr>
+                                <tr>
+                                    <td>Audit Trail & Compliance Reporting</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Comprehensive</td>
+                                    <td class="partial-mark">⚬ Basic auditing</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Good auditing</td>
+                                    <td class="partial-mark">⚬ Limited reporting</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Excellent auditing</td>
+                                </tr>
+                                <tr class="feature-category">
+                                    <td><strong>Enterprise Architecture</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>On-premise / Hybrid Deployment</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Full support</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> Cloud-only focus</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Hybrid options</td>
+                                    <td class="partial-mark">⚬ Limited on-premise</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Flexible deployment</td>
+                                </tr>
+                                <tr>
+                                    <td>API-first Architecture</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Complete API layer</td>
+                                    <td class="partial-mark">⚬ Mixed approach</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Strong APIs</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Good API support</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> REST/GraphQL</td>
+                                </tr>
+                                <tr>
+                                    <td>Enterprise Integration (SAP, Oracle)</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Native connectors</td>
+                                    <td class="partial-mark">⚬ Premium connectors</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Enterprise focus</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Strong integration</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> ITSM focus</td>
+                                </tr>
+                                <tr class="feature-category">
+                                    <td><strong>Development Capabilities</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Visual Development</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Drag-and-drop</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Power Apps Studio</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Service Studio</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Studio Pro</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> App Engine Studio</td>
+                                </tr>
+                                <tr>
+                                    <td>Code Extensibility</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Full code access</td>
+                                    <td class="partial-mark">⚬ Limited coding</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Full extensibility</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Java/.NET support</td>
+                                    <td class="partial-mark">⚬ Scripting only</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile App Development</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Native + PWA</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Power Apps Mobile</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Native mobile</td>
+                                    <td class="advantage"><span class="check-mark">✓</span> Progressive web</td>
+                                    <td class="partial-mark">⚬ Mobile portal</td>
+                                </tr>
+                                <tr class="feature-category">
+                                    <td><strong>Cost & Licensing</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>Transparent Pricing</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Clear pricing model</td>
+                                    <td class="partial-mark">⚬ Complex per-user</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> Quote-based</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> Quote-based</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> Quote-based</td>
+                                </tr>
+                                <tr>
+                                    <td>No Vendor Lock-in</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Open standards</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> Microsoft ecosystem</td>
+                                    <td class="partial-mark">⚬ Platform dependent</td>
+                                    <td class="partial-mark">⚬ Mendix runtime</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> ServiceNow platform</td>
+                                </tr>
+                                <tr>
+                                    <td>Total Cost of Ownership</td>
+                                    <td class="nextgen-column advantage"><span class="check-mark">✓</span> Lower TCO</td>
+                                    <td class="partial-mark">⚬ Moderate TCO</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> High TCO</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> High TCO</td>
+                                    <td class="disadvantage"><span class="cross-mark">✗</span> Very high TCO</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Key Differentiators -->
+                <section class="comparison-section">
+                    <h2 class="section-title">Why Choose NextGen?</h2>
+                    <p class="section-subtitle">
+                        Key differentiators that make NextGen the preferred choice for regulated industries and enterprise environments
+                    </p>
+                    
+                    <div class="key-differentiators">
+                        <div class="differentiator-card">
+                            <span class="differentiator-icon">🏦</span>
+                            <h3 class="differentiator-title">Banking-Native Security</h3>
+                            <p class="differentiator-description">
+                                Built from the ground up for financial institutions with ISO 27001, SOC 2, and PCI DSS compliance. 
+                                Unlike competitors that add security as an afterthought, NextGen makes it foundational.
+                            </p>
+                        </div>
+                        
+                        <div class="differentiator-card">
+                            <span class="differentiator-icon">💰</span>
+                            <h3 class="differentiator-title">Transparent Pricing</h3>
+                            <p class="differentiator-description">
+                                Clear, predictable pricing without hidden costs or complex per-user licensing. 
+                                Our TCO is typically 40-60% lower than major competitors like OutSystems or Mendix.
+                            </p>
+                        </div>
+                        
+                        <div class="differentiator-card">
+                            <span class="differentiator-icon">🔓</span>
+                            <h3 class="differentiator-title">No Vendor Lock-in</h3>
+                            <p class="differentiator-description">
+                                Based on open standards and modern architecture. You own your applications and data, 
+                                with full portability and the freedom to deploy anywhere.
+                            </p>
+                        </div>
+                        
+                        <div class="differentiator-card">
+                            <span class="differentiator-icon">🚀</span>
+                            <h3 class="differentiator-title">Rapid Time-to-Market</h3>
+                            <p class="differentiator-description">
+                                Deploy production-ready applications in weeks, not months. 
+                                Our visual development environment accelerates delivery by 10x compared to traditional coding.
+                            </p>
+                        </div>
+                        
+                        <div class="differentiator-card">
+                            <span class="differentiator-icon">🏢</span>
+                            <h3 class="differentiator-title">Enterprise-Grade Architecture</h3>
+                            <p class="differentiator-description">
+                                True multi-tenancy, horizontal scaling, and hybrid deployment options. 
+                                Built for enterprises that need both cloud agility and on-premise control.
+                            </p>
+                        </div>
+                        
+                        <div class="differentiator-card">
+                            <span class="differentiator-icon">🤝</span>
+                            <h3 class="differentiator-title">Expert Support</h3>
+                            <p class="differentiator-description">
+                                Direct access to platform architects and developers. No outsourced support centers – 
+                                get expert help from the team that built the platform.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Resources Section -->
+                <section class="comparison-section">
+                    <h2 class="section-title">Comparison Resources</h2>
+                    <p class="section-subtitle">
+                        Detailed analysis, benchmarks, and evaluation materials to support your platform selection process
+                    </p>
+                    
+                    <div class="resources-grid">
+                        <a href="files/nextgen_platform_comparison_2025.en.pdf" class="resource-card" target="_blank">
+                            <div class="resource-icon">📊</div>
+                            <h3 class="resource-title">Platform Comparison Report 2025</h3>
+                            <p class="resource-description">
+                                Comprehensive 50-page analysis comparing NextGen with 8 leading low-code platforms across 
+                                40+ criteria including features, security, pricing, and enterprise readiness.
+                            </p>
+                        </a>
+                        
+                        <a href="tco_roi_presentation.html" class="resource-card">
+                            <div class="resource-icon">💹</div>
+                            <h3 class="resource-title">TCO & ROI Analysis</h3>
+                            <p class="resource-description">
+                                Interactive presentation showing detailed cost comparisons, ROI calculations, and economic 
+                                benefits of choosing NextGen over traditional development and competing platforms.
+                            </p>
+                        </a>
+                        
+                        <a href="security_presentation.html" class="resource-card">
+                            <div class="resource-icon">🔒</div>
+                            <h3 class="resource-title">Security Framework Comparison</h3>
+                            <p class="resource-description">
+                                Deep dive into security capabilities, compliance standards, and enterprise security features 
+                                that distinguish NextGen from mainstream low-code platforms.
+                            </p>
+                        </a>
+                        
+                        <a href="files/rfp_checklist_for_nextgen_platform_with_competitors.pdf" class="resource-card" target="_blank">
+                            <div class="resource-icon">✅</div>
+                            <h3 class="resource-title">RFP Evaluation Checklist</h3>
+                            <p class="resource-description">
+                                Complete vendor evaluation framework with scoring criteria, must-have features, and 
+                                comparison checklist for low-code platform procurement decisions.
+                            </p>
+                        </a>
+                        
+                        <a href="rfp_evaluation_presentation.html" class="resource-card">
+                            <div class="resource-icon">🎯</div>
+                            <h3 class="resource-title">Platform Selection Guide</h3>
+                            <p class="resource-description">
+                                Step-by-step guide for evaluating low-code platforms, including key questions to ask vendors, 
+                                proof-of-concept guidelines, and decision frameworks.
+                            </p>
+                        </a>
+                        
+                        <a href="use_cases_presentation.html" class="resource-card">
+                            <div class="resource-icon">🏆</div>
+                            <h3 class="resource-title">Success Stories & Use Cases</h3>
+                            <p class="resource-description">
+                                Real-world implementations and success stories showing how NextGen outperformed 
+                                alternative platforms in enterprise deployments across various industries.
+                            </p>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section">
+                    <h2 class="cta-title">Ready to Experience the NextGen Advantage?</h2>
+                    <p class="cta-description">
+                        Don't just take our word for it. Schedule a personalized demo and see how NextGen compares 
+                        to your current platform or other solutions you're evaluating.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="cta-button">Schedule Demo</a>
+                        <a href="files/nextgen_platform_comparison_2025.en.pdf" class="cta-button secondary" target="_blank">Download Comparison Report</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Particles.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Particles configuration
+        particlesJS("particles-bg", {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#b2e0ff"
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    }
+                },
+                opacity: {
+                    value: 0.2,
+                    random: false,
+                    anim: {
+                        enable: false,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: false,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#b2e0ff",
+                    opacity: 0.1,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false,
+                        rotateX: 600,
+                        rotateY: 1200
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    },
+                    resize: true
+                },
+                modes: {
+                    grab: {
+                        distance: 400,
+                        line_linked: {
+                            opacity: 1
+                        }
+                    },
+                    bubble: {
+                        distance: 400,
+                        size: 40,
+                        duration: 2,
+                        opacity: 8,
+                        speed: 3
+                    },
+                    repulse: {
+                        distance: 200,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    },
+                    remove: {
+                        particles_nb: 2
+                    }
+                }
+            },
+            retina_detect: true
+        });
+
+        // Mobile navigation
+        function toggleMobileNav() {
+            const mobileNav = document.getElementById('mobileNav');
+            mobileNav.classList.toggle('active');
+        }
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileNav = document.getElementById('mobileNav');
+            const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+            
+            if (!mobileNav.contains(event.target) && !mobileNavToggle.contains(event.target)) {
+                mobileNav.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

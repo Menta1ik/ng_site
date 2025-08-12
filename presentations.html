@@ -776,7 +776,7 @@
                         </div>
                     </a>
 
-                    <a href="coming_soon.html" class="presentation-card">
+                    <a href="security_presentation.html" class="presentation-card">
                         <div class="presentation-title">Security Framework</div>
                         <div class="presentation-description">Comprehensive overview of NextGen security architecture, compliance standards, and data protection mechanisms.</div>
                         <div class="presentation-meta">
@@ -976,6 +976,18 @@
             }
         });
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+      (function(){
+        try {
+          var isVercel = /vercel\.app$/.test(location.hostname) || (typeof window !== 'undefined' && window.__VERCEL_ENV__);
+          if (isVercel) {
+            var s = document.createElement('script');
+            s.defer = true;
+            s.src = '/_vercel/insights/script.js';
+            document.head.appendChild(s);
+          }
+        } catch(e) {}
+      })();
+    </script>
 </body>
 </html>

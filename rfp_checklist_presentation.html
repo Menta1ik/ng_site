@@ -266,7 +266,7 @@
             box-shadow: 0 15px 35px rgba(25, 233, 124, 0.2);
         }
 
-        .stat-number {
+        .stat-card .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             background: linear-gradient(135deg, #19e97c 0%, #0ea5e9 100%);
@@ -279,7 +279,7 @@
             text-align: center;
         }
 
-        .stat-label {
+        .stat-card .stat-label {
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.95rem;
             font-weight: 500;
@@ -1561,6 +1561,18 @@
     window.previousSlide = previousSlide;
     window.goToFirstSlide = goToFirstSlide;
   </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+      (function(){
+        try {
+          var isVercel = /vercel\.app$/.test(location.hostname) || (typeof window !== 'undefined' && window.__VERCEL_ENV__);
+          if (isVercel) {
+            var s = document.createElement('script');
+            s.defer = true;
+            s.src = '/_vercel/insights/script.js';
+            document.head.appendChild(s);
+          }
+        } catch(e) {}
+      })();
+    </script>
 </body>
 </html>

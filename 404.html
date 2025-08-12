@@ -817,6 +817,18 @@
             }
         });
     </script>
-    <script defer src="/_vercel/insights/script.js"></script>
+    <script>
+      (function(){
+        try {
+          var isVercel = /vercel\.app$/.test(location.hostname) || (typeof window !== 'undefined' && window.__VERCEL_ENV__);
+          if (isVercel) {
+            var s = document.createElement('script');
+            s.defer = true;
+            s.src = '/_vercel/insights/script.js';
+            document.head.appendChild(s);
+          }
+        } catch(e) {}
+      })();
+    </script>
 </body>
 </html>

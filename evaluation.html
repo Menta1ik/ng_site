@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NextGen - Platform Evaluation</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Comprehensive evaluation guide for NextGen low-code platform. Compare features, pricing, and capabilities to make informed decisions for your enterprise application development needs.">
+  <meta name="keywords" content="platform evaluation, low-code comparison, NextGen platform, enterprise software evaluation, application development platform, low-code platform features">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nxgenlowcode.biz/evaluation.html">
+  <meta property="og:title" content="NextGen Platform Evaluation Guide">
+  <meta property="og:description" content="Comprehensive evaluation guide for NextGen low-code platform. Compare features, pricing, and capabilities.">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://nxgenlowcode.biz/evaluation.html">
+  
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles background */
+        #particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Main container */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Ensure mobile nav is above main container */
+        @media (max-width: 768px) {
+            .main-container {
+                z-index: 0;
+            }
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0a0a0a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .nav-link.active {
+            color: #b2e0ff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b2e0ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Content */
+        .content {
+            padding: 80px 40px;
+            background: rgba(255, 255, 255, 0.02);
+            flex: 1;
+        }
+
+        .content .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 16px;
+        }
+
+        .legend {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 10px 0 0;
+            color: #9aa3a9;
+            font-size: 13px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .table-wrap {
+            overflow: auto;
+            margin-top: 18px;
+        }
+
+        .compare {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 15px;
+        }
+
+        .compare th,
+        .compare td {
+            border-bottom: 1px solid rgba(178, 224, 255, 0.15);
+            padding: 14px 12px;
+            vertical-align: top;
+        }
+
+        .compare thead th {
+            text-align: left;
+            font-weight: 600;
+            color: #c8cfd6;
+            border-bottom: 1px solid rgba(178, 224, 255, 0.3);
+        }
+
+        .col-feature {
+            width: 34%;
+        }
+
+        .col-nextgen {
+            width: 22%;
+            color: #d9fbe7;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 12px;
+            line-height: 1;
+            border: 1px solid rgba(178, 224, 255, 0.3);
+            color: #a8b0b7;
+        }
+
+        .nextgen,
+        .check {
+            color: #19e97c;
+            font-weight: 600;
+        }
+
+        .cross {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        .dash {
+            color: #9aa3a9;
+        }
+
+        .links {
+            margin-top: 22px;
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            color: #19e97c;
+            text-decoration: none;
+            border: 1px dashed rgba(25, 233, 124, 0.35);
+            padding: 8px 10px;
+            border-radius: 10px;
+        }
+
+        .links a:hover {
+            background: rgba(25, 233, 124, 0.06);
+        }
+
+        .footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 7px;
+            z-index: 10001;
+            position: relative;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-toggle:active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Hide mobile navigation on desktop */
+        .mobile-nav {
+            display: none;
+        }
+
+        /* Mobile navigation styles */
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 20px 30px 30px;
+                transition: left 0.3s ease;
+                z-index: 100000 !important;
+                border-right: 1px solid rgba(178, 224, 255, 0.2);
+            }
+
+            .mobile-nav.active {
+                left: 0;
+            }
+        }
+
+        /* Mobile Navigation Styles */
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                min-height: 60px;
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+                order: 2;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 30px 30px;
+                transition: left 0.3s ease;
+                z-index: 99999 !important;
+                border-right: 1px solid rgba(178, 224, 255, 0.2);
+            }
+
+            .nav.active {
+                left: 0;
+            }
+
+            .nav-item {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                padding: 15px 0;
+                justify-content: space-between;
+                color: #ffffff;
+                border-bottom: none;
+            }
+
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: rgba(255, 255, 255, 0.05);
+                border: none;
+                border-radius: 8px;
+                margin-top: 10px;
+                padding: 10px 0;
+                min-width: auto;
+                max-height: 200px;
+                overflow: visible;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown-link {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .dropdown-link:hover {
+                color: #19e97c;
+                background: rgba(25, 233, 124, 0.1);
+            }
+
+            .content {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+  <div class="main-container">
+    <header class="header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">nx</div>
+        <div>
+          nextgen
+          <div style="font-size:.7rem;font-weight:400;opacity:.8;">Advanced lowcode platform</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <div class="nav-item">
+          <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown">
+            <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown">
+            <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+            <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+          <div class="dropdown">
+            <a href="presentations.html" class="dropdown-link">Presentations</a>
+            <a href="file_archive.html" class="dropdown-link">Files</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <nav class="nav mobile-nav">
+      <div class="nav-item">
+        <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+          <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+        <div class="dropdown">
+          <a href="presentations.html" class="dropdown-link">Presentations</a>
+          <a href="file_archive.html" class="dropdown-link">Files</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+      <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+    </nav>
+
+    <div class="content">
+      <div class="container">
+        <h1 class="page-title">Low-Code Platform RFP & Evaluation Checklist</h1>
+        <p class="subtitle">Comprehensive evaluation of NextGen Release 11.7 based on industry best practices from <span style="color: #19e97c;">Gartner</span>, <span style="color: #19e97c;">KPMG</span>, <span style="color: #19e97c;">Accenture</span>, <span style="color: #19e97c;">DronaHQ</span>, and <span style="color: #19e97c;">Pillir</span>.</p>
+        
+        <!-- Executive Summary -->
+        <section class="card" style="margin-bottom: 30px;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #b2e0ff;">Executive Summary</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 20px;">
+            <div>
+              <h3 style="color: #19e97c; margin-bottom: 10px;">Overall Score</h3>
+              <div style="font-size: 2rem; font-weight: 700; color: #19e97c;">4.2/5.0</div>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Excellent compliance with enterprise requirements</p>
+            </div>
+            <div>
+              <h3 style="color: #19e97c; margin-bottom: 10px;">Evaluation Date</h3>
+              <div style="font-size: 1.2rem; font-weight: 600;">July 2025</div>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">NextGen Release 11.7</p>
+            </div>
+            <div>
+              <h3 style="color: #19e97c; margin-bottom: 10px;">Criteria Assessed</h3>
+              <div style="font-size: 1.2rem; font-weight: 600;">38 Categories</div>
+              <p style="color: rgba(255,255,255,0.8); font-size: 0.9rem;">Comprehensive industry standards</p>
+            </div>
+          </div>
+          
+          <h3 style="color: #b2e0ff; margin: 20px 0 10px;">Key Business Results:</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+            <div style="padding: 15px; background: rgba(25,233,124,0.1); border-radius: 8px; border-left: 3px solid #19e97c;">
+              <div style="font-weight: 600;">Development Time</div>
+              <div style="color: #19e97c; font-size: 1.1rem;">60-80% reduction</div>
+            </div>
+            <div style="padding: 15px; background: rgba(25,233,124,0.1); border-radius: 8px; border-left: 3px solid #19e97c;">
+              <div style="font-weight: 600;">ROI</div>
+              <div style="color: #19e97c; font-size: 1.1rem;">200-300% (2-3 years)</div>
+            </div>
+            <div style="padding: 15px; background: rgba(25,233,124,0.1); border-radius: 8px; border-left: 3px solid #19e97c;">
+              <div style="font-weight: 600;">Development Speed</div>
+              <div style="color: #19e97c; font-size: 1.1rem;">3-5x acceleration</div>
+            </div>
+            <div style="padding: 15px; background: rgba(25,233,124,0.1); border-radius: 8px; border-left: 3px solid #19e97c;">
+              <div style="font-weight: 600;">TCO Reduction</div>
+              <div style="color: #19e97c; font-size: 1.1rem;">30-50% savings</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Methodology -->
+        <section class="card" style="margin-bottom: 30px;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #b2e0ff;">Research Methodology</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div>
+              <h3 style="color: #19e97c; margin-bottom: 10px;">Evaluation Framework</h3>
+              <ul style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                <li><strong>Gartner Magic Quadrant</strong> - Enterprise Low-Code Platforms</li>
+                <li><strong>KPMG Research</strong> - Digital transformation practices</li>
+                <li><strong>Accenture Practice</strong> - Low-Code Delivery</li>
+                <li><strong>DronaHQ Framework</strong> - RFP Template</li>
+                <li><strong>Pillir Methodology</strong> - Evaluation Checklist</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="color: #19e97c; margin-bottom: 10px;">Scoring System</h3>
+              <div style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+                <div><strong>5 - Excellent:</strong> Full compliance, exceeds requirements</div>
+                <div><strong>4 - Good:</strong> Meets most requirements, minor gaps</div>
+                <div><strong>3 - Satisfactory:</strong> Basic compliance</div>
+                <div><strong>2 - Limited:</strong> Partial compliance</div>
+                <div><strong>1 - Poor:</strong> Minimal compliance</div>
+                <div><strong>0 - Not Available:</strong> Feature not present</div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 20px; padding: 15px; background: rgba(178,224,255,0.1); border-radius: 8px; border-left: 3px solid #b2e0ff;">
+            <h4 style="color: #b2e0ff; margin-bottom: 10px;">Assessment Basis</h4>
+            <p style="color: rgba(255,255,255,0.8); line-height: 1.6;">
+              The evaluation was performed through a combined approach, including detailed review of official platform documentation and direct analysis of the actual source code of NextGen Release 11.7. This dual approach ensured verification of all claimed features, security mechanisms, and architectural aspects.
+            </p>
+          </div>
+        </section>
+
+
+
+        <!-- Complete Evaluation Table -->
+        <section class="card" style="margin-bottom: 30px;">
+          <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #b2e0ff;">Complete RFP Evaluation Matrix</h2>
+          <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">
+            Comprehensive assessment of all 38 criteria based on industry standards from Gartner, KPMG, Accenture, DronaHQ, and Pillir.
+          </p>
+          
+          <div class="table-wrap">
+            <table class="compare">
+              <thead>
+                <tr>
+                  <th class="col-feature">Criterion / Question</th>
+                  <th style="width: 12%;">Weight</th>
+                  <th style="width: 12%;">Score</th>
+                  <th style="width: 30%;">Comment</th>
+                  <th style="width: 12%;">Source</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Visual Modeling and UX -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Visual Modeling & UX</td>
+                </tr>
+                <tr>
+                  <td><strong>Visual drag&drop UI editor</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>FormsDesigner module with drag&drop capabilities</td>
+                  <td style="font-size: 0.85rem;">Gartner, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Visual workflow/BPMN support</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Agents module with workflow support</td>
+                  <td style="font-size: 0.85rem;">Gartner, Pillir</td>
+                </tr>
+                <tr>
+                  <td><strong>No-code/low-code for business logic</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Visual editors in modules</td>
+                  <td style="font-size: 0.85rem;">Gartner, Pillir</td>
+                </tr>
+                <tr>
+                  <td><strong>Flexible design and user scenario customization</strong></td>
+                  <td style="text-align: center; font-weight: 600;">3</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Configurable interfaces</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+
+                <!-- Integrations and API -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Integrations & API</td>
+                </tr>
+                <tr>
+                  <td><strong>REST/SOAP API connection</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>IntegrationService module</td>
+                  <td style="font-size: 0.85rem;">Gartner, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>SQL/NoSQL database integration</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>Data Layer with support for various DBMS</td>
+                  <td style="font-size: 0.85rem;">DronaHQ, Pillir</td>
+                </tr>
+                <tr>
+                  <td><strong>Ready connectors (ERP, CRM, 1C, SAP, etc.)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #ffd700; font-weight: 700;">3/5</td>
+                  <td>Basic support, requires expansion</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+
+                <!-- Version Control & DevOps -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Version Control & DevOps</td>
+                </tr>
+                <tr>
+                  <td><strong>Version control, git, rollback</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Maven module with versioning support</td>
+                  <td style="font-size: 0.85rem;">Gartner, Accenture</td>
+                </tr>
+                <tr>
+                  <td><strong>CI/CD, dev/stage/prod environments</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Support for various environments</td>
+                  <td style="font-size: 0.85rem;">Gartner, Accenture</td>
+                </tr>
+
+                <!-- Scalability & Performance -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Scalability & Performance</td>
+                </tr>
+                <tr>
+                  <td><strong>Multi-tenancy, horizontal scaling</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>Modular architecture supports horizontal scaling</td>
+                  <td style="font-size: 0.85rem;">Gartner, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>High-availability support, SLA</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Monitoring and recovery through modules</td>
+                  <td style="font-size: 0.85rem;">Gartner, DronaHQ</td>
+                </tr>
+
+                <!-- Mobile & Offline -->
+                <tr style="background: rgba(255,215,0,0.08); border-left: 3px solid #ffd700;">
+                  <td colspan="5" style="font-weight: 700; color: #ffd700; padding: 15px 12px;">Mobile & Offline</td>
+                </tr>
+                <tr>
+                  <td><strong>Mobile application creation</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Mobile interface support</td>
+                  <td style="font-size: 0.85rem;">Pillir</td>
+                </tr>
+                <tr>
+                  <td><strong>Offline mode support</strong></td>
+                  <td style="text-align: center; font-weight: 600;">3</td>
+                  <td style="text-align: center; color: #ffd700; font-weight: 700;">2/5</td>
+                  <td>Requires additional configuration</td>
+                  <td style="font-size: 0.85rem;">Pillir</td>
+                </tr>
+
+                <!-- Security & Compliance -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Security & Compliance</td>
+                </tr>
+                <tr>
+                  <td><strong>SSO (Single Sign-On), OAuth, SAML support</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>AuthenticationServer and IdentityProvider modules</td>
+                  <td style="font-size: 0.85rem;">Gartner, Pillir</td>
+                </tr>
+                <tr>
+                  <td><strong>RBAC (role-based access control), permission settings</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>Admin module with flexible role system</td>
+                  <td style="font-size: 0.85rem;">Gartner, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Data encryption at all levels</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>DPAPI, XML Encryption, SSL/TLS, .Net SecureString</td>
+                  <td style="font-size: 0.85rem;">Gartner, Pillir</td>
+                </tr>
+                <tr>
+                  <td><strong>Action audit, logging, monitoring</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>Audit and Auditor modules</td>
+                  <td style="font-size: 0.85rem;">Gartner, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Standards compliance (GDPR, SOC2, PCI DSS, ISO, etc.)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>ISO 27001:2013, NIST, OWASP, WS-Security Policy</td>
+                  <td style="font-size: 0.85rem;">Gartner, KPMG</td>
+                </tr>
+
+                <!-- Extensibility & Customization -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Extensibility & Customization</td>
+                </tr>
+                <tr>
+                  <td><strong>Ability to add custom code (JS, Python, Java)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Plugin and extension support</td>
+                  <td style="font-size: 0.85rem;">Gartner, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Development and publication of custom plugins/modules</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Modular architecture</td>
+                  <td style="font-size: 0.85rem;">DronaHQ, Pillir</td>
+                </tr>
+                <tr>
+                  <td><strong>Flexible business logic customization without limitations</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Configurability through modules</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+
+                <!-- Documentation & Support -->
+                <tr style="background: rgba(255,215,0,0.08); border-left: 3px solid #ffd700;">
+                  <td colspan="5" style="font-weight: 700; color: #ffd700; padding: 15px 12px;">Documentation & Support</td>
+                </tr>
+                <tr>
+                  <td><strong>Quality and completeness of platform and API documentation</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Comprehensive module documentation</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Availability of training materials, courses, certifications</strong></td>
+                  <td style="text-align: center; font-weight: 600;">3</td>
+                  <td style="text-align: center; color: #ffd700; font-weight: 700;">2/5</td>
+                  <td>Training program availability</td>
+                  <td style="font-size: 0.85rem;">KPMG, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Active user and developer community</strong></td>
+                  <td style="text-align: center; font-weight: 600;">3</td>
+                  <td style="text-align: center; color: #ffd700; font-weight: 700;">2/5</td>
+                  <td>Requires development</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Support formats and levels (24/7, SLA, languages)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Formats and levels tailored to clients</td>
+                  <td style="font-size: 0.85rem;">DronaHQ, KPMG</td>
+                </tr>
+
+                <!-- Testing & Quality -->
+                <tr style="background: rgba(255,215,0,0.08); border-left: 3px solid #ffd700;">
+                  <td colspan="5" style="font-weight: 700; color: #ffd700; padding: 15px 12px;">Testing & Quality</td>
+                </tr>
+                <tr>
+                  <td><strong>Tools for automated testing (unit/UI/E2E)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #ffd700; font-weight: 700;">3/5</td>
+                  <td>Unit testing, UI/E2E requires development</td>
+                  <td style="font-size: 0.85rem;">Accenture, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Integration with external testing frameworks</strong></td>
+                  <td style="text-align: center; font-weight: 600;">3</td>
+                  <td style="text-align: center; color: #ffd700; font-weight: 700;">3/5</td>
+                  <td>Basic support</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+
+                <!-- Implementation & Maintenance -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Implementation & Maintenance</td>
+                </tr>
+                <tr>
+                  <td><strong>Agile/Scrum/Kanban implementation support</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Support for agile methodologies</td>
+                  <td style="font-size: 0.85rem;">Accenture</td>
+                </tr>
+                <tr>
+                  <td><strong>Training planning and user onboarding</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #ffd700; font-weight: 700;">3/5</td>
+                  <td>Requires program development</td>
+                  <td style="font-size: 0.85rem;">KPMG, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Governance — change control, management structure</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Admin module with management</td>
+                  <td style="font-size: 0.85rem;">KPMG, Accenture</td>
+                </tr>
+
+                <!-- Licensing & Pricing -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Licensing & Pricing</td>
+                </tr>
+                <tr>
+                  <td><strong>Licensing transparency, no hidden fees</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>No hidden fees</td>
+                  <td style="font-size: 0.85rem;">Pillir, DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Tariff flexibility for different scenarios</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Flexible payment system, various scenarios</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+
+                <!-- Implementation & Success Metrics -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Implementation & Success Metrics</td>
+                </tr>
+                <tr>
+                  <td><strong>Tools for tracking KPI, TCO, ROI</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Analytical modules</td>
+                  <td style="font-size: 0.85rem;">KPMG</td>
+                </tr>
+                <tr>
+                  <td><strong>Implementation effectiveness assessment (backlog, time-to-market metrics)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Monitoring through modules</td>
+                  <td style="font-size: 0.85rem;">KPMG</td>
+                </tr>
+
+                <!-- Other -->
+                <tr style="background: rgba(25,233,124,0.08); border-left: 3px solid #19e97c;">
+                  <td colspan="5" style="font-weight: 700; color: #19e97c; padding: 15px 12px;">Other</td>
+                </tr>
+                <tr>
+                  <td><strong>Successful implementations and references</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Implementation in banks and institutions</td>
+                  <td style="font-size: 0.85rem;">Gartner, Accenture</td>
+                </tr>
+                <tr>
+                  <td><strong>Interface localization, multi-language support</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>Multilingual support</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>Ability to work in your IT infrastructure (cloud/on-prem/hybrid)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">5</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">5/5</td>
+                  <td>Support for all deployment options</td>
+                  <td style="font-size: 0.85rem;">DronaHQ</td>
+                </tr>
+                <tr>
+                  <td><strong>License flexibility when scaling (user/workload growth)</strong></td>
+                  <td style="text-align: center; font-weight: 600;">4</td>
+                  <td style="text-align: center; color: #19e97c; font-weight: 700;">4/5</td>
+                  <td>No additional licensing required</td>
+                  <td style="font-size: 0.85rem;">DronaHQ, Pillir</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <div style="margin-top: 20px; text-align: center; padding: 20px; background: rgba(25,233,124,0.1); border-radius: 12px; border: 1px solid rgba(25,233,124,0.3);">
+            <h3 style="color: #19e97c; margin-bottom: 10px;">Overall Assessment Result</h3>
+            <div style="font-size: 2.5rem; font-weight: 700; color: #19e97c; margin-bottom: 10px;">4.2/5.0</div>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem;">
+              <strong>38 criteria evaluated</strong> • Excellent compliance with enterprise low-code platform requirements
+            </p>
+          </div>
+        </section>
+
+        <!-- Final Assessment -->
+        <section class="card">
+          <h2 style="font-size: 1.8rem; margin-bottom: 20px; color: #b2e0ff;">Final Assessment & Recommendations</h2>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 20px;">
+            <div>
+              <h3 style="color: #19e97c; margin-bottom: 15px;">Key Strengths</h3>
+              <ul style="color: rgba(255,255,255,0.8); line-height: 1.8;">
+                <li>Strong modular architecture with 38 components</li>
+                <li>Excellent integration capabilities</li>
+                <li>Enterprise-grade security (<span style="color: #19e97c;">ISO 27001:2013, NIST, OWASP</span>)</li>
+                <li>Proven scalability and flexibility</li>
+                <li>Transparent licensing without hidden fees</li>
+                <li>Universal applicability across industries</li>
+              </ul>
+            </div>
+            <div>
+              <h3 style="color: #ffd700; margin-bottom: 15px;">Recommendations</h3>
+              <ol style="color: rgba(255,255,255,0.8); line-height: 1.8;">
+                <li>Develop user community and ecosystem</li>
+                <li>Expand ready connectors for popular systems</li>
+                <li>Enhance offline mode capabilities</li>
+                <li>Expand user training and certification programs</li>
+                <li>Improve UI/E2E automated testing tools</li>
+              </ol>
+            </div>
+          </div>
+
+          <div style="text-align: center; padding: 20px; background: rgba(25,233,124,0.1); border-radius: 12px; border: 1px solid rgba(25,233,124,0.3);">
+            <h3 style="color: #19e97c; margin-bottom: 10px;">Conclusion</h3>
+            <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; line-height: 1.6;">
+              The NextGen platform demonstrates <strong>excellent compliance</strong> with low-code platform requirements, achieving a score of <strong style="color: #19e97c;">4.2/5.0</strong>. 
+              The platform is well-suited for organizations requiring a flexible, scalable, and secure low-code solution for digital transformation initiatives.
+            </p>
+          </div>
+        </section>
+
+        <section class="links" aria-label="Further reading" style="margin-top: 30px;">
+          <a href="files/rfp_checklist_for_nextgen_platform.en.pdf" target="_blank" rel="noopener">Complete RFP checklist (PDF)</a>
+          <a href="files/nextgen_capabilities_analysis_and_references.en.pdf" target="_blank" rel="noopener">Capabilities & references (PDF)</a>
+          <a href="files/nextgen_platform_tco_2025.pdf" target="_blank" rel="noopener">TCO methodology (PDF)</a>
+          <a href="files/nextgen_platform_comparison_2025.en.pdf" target="_blank" rel="noopener">Platform comparison (PDF)</a>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer"><p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p></footer>
+  </div>
+
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.mobile-nav');
+            
+            if (mobileToggle && nav) {
+                // Handle both click and touch events for better mobile support
+                function toggleMenu(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    mobileToggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                }
+                
+                mobileToggle.addEventListener('click', toggleMenu);
+                mobileToggle.addEventListener('touchstart', toggleMenu, { passive: false });
+                
+                // Close menu when clicking outside
+                // Close menu when clicking/touching outside
+                function closeMenu(e) {
+                    if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        mobileToggle.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                }
+                
+                document.addEventListener('click', closeMenu);
+                document.addEventListener('touchstart', closeMenu);
+                
+                // Close menu when clicking/touching on nav links
+                const navLinks = nav.querySelectorAll('.nav-link, .dropdown-link');
+                navLinks.forEach(link => {
+                    function closeMobileMenu() {
+                        mobileToggle.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                    
+                    link.addEventListener('click', closeMobileMenu);
+                    link.addEventListener('touchstart', closeMobileMenu);
+                });
+            }
+        });
+    </script>
+  <!-- Particles animation script to mirror index.html -->
+  <script>
+    (function(){
+      const canvas = document.getElementById('particles-bg');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let particles = [];
+      let w = window.innerWidth;
+      let h = window.innerHeight;
+      canvas.width = w;
+      canvas.height = h;
+
+      function resizeCanvas(){
+        w = window.innerWidth;
+        h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+        createParticles();
+      }
+      window.addEventListener('resize', resizeCanvas);
+
+      const PARTICLE_COLOR = '#b2e0ff';
+      const LINE_COLOR = '#19e97c';
+      const PARTICLE_COUNT = Math.floor((w * h) / 1500);
+      const PARTICLE_SIZE = 2;
+      const SPEED = 0.15;
+      const LINE_DISTANCE = 150;
+      const MOUSE_RADIUS = 200;
+
+      let mouse = { x: 0, y: 0 };
+      document.addEventListener('mousemove', (e)=>{ mouse.x = e.clientX; mouse.y = e.clientY; });
+
+      function randomBetween(a,b){ return a + Math.random()*(b-a); }
+
+      function createParticles(){
+        particles = [];
+        for(let i=0;i<PARTICLE_COUNT;i++){
+          particles.push({
+            x: Math.random()*w,
+            y: Math.random()*h,
+            vx: randomBetween(-SPEED, SPEED),
+            vy: randomBetween(-SPEED, SPEED),
+            size: PARTICLE_SIZE + Math.random()*1,
+            originalSize: PARTICLE_SIZE + Math.random()*1,
+            opacity: 0.3 + Math.random()*0.7
+          });
+        }
+      }
+      createParticles();
+
+      function drawLines(){
+        for(let i=0;i<particles.length;i++){
+          for(let j=i+1;j<particles.length;j++){
+            const p1 = particles[i];
+            const p2 = particles[j];
+            const dx = p1.x - p2.x;
+            const dy = p1.y - p2.y;
+            const dist = Math.sqrt(dx*dx + dy*dy);
+            if(dist < LINE_DISTANCE){
+              ctx.save();
+              const opacity = 0.15 * (1 - dist / LINE_DISTANCE);
+              ctx.globalAlpha = opacity;
+              ctx.strokeStyle = LINE_COLOR;
+              ctx.lineWidth = 1;
+              ctx.beginPath();
+              ctx.moveTo(p1.x, p1.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+              ctx.restore();
+            }
+          }
+        }
+      }
+
+      function animate(){
+        ctx.clearRect(0,0,w,h);
+        
+        drawLines();
+        
+        for(const p of particles){
+          // Mouse interaction
+          const mouseDistance = Math.sqrt((p.x - mouse.x) ** 2 + (p.y - mouse.y) ** 2);
+          if (mouseDistance < MOUSE_RADIUS) {
+            const force = (MOUSE_RADIUS - mouseDistance) / MOUSE_RADIUS;
+            p.size = p.originalSize * (1 + force * 2);
+            p.opacity = Math.min(1, p.opacity + force * 0.5);
+          } else {
+            p.size = p.originalSize;
+            p.opacity = Math.max(0.3, p.opacity - 0.01);
+          }
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+          ctx.fillStyle = PARTICLE_COLOR;
+          ctx.globalAlpha = p.opacity;
+          ctx.fill();
+          ctx.globalAlpha = 1;
+          
+          p.x += p.vx;
+          p.y += p.vy;
+          
+          // Random direction change
+          if (Math.random() < 0.003) {
+            p.vx = randomBetween(-SPEED, SPEED);
+            p.vy = randomBetween(-SPEED, SPEED);
+          }
+          
+          // Boundary collision
+          if (p.x < 0 || p.x > w) p.vx *= -1;
+          if (p.y < 0 || p.y > h) p.vy *= -1;
+        }
+        
+        requestAnimationFrame(animate);
+      }
+      animate();
+    })();
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

@@ -293,6 +293,9 @@
             padding: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
 
         .solution-card:hover {
@@ -331,6 +334,10 @@
             left: 0;
             color: #19e97c;
             font-weight: bold;
+        }
+
+        .solution-footer {
+            margin-top: auto;
         }
 
         .clients-showcase {
@@ -687,6 +694,17 @@
                 height: 30px;
             }
         }
+
+        .learn-more-link {
+            color: #19e97c;
+            text-decoration: underline;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .learn-more-link:hover {
+            color: #7cf2b7;
+        }
     </style>
 </head>
 <body>
@@ -805,6 +823,9 @@
                                 <li>Regulatory compliance built-in</li>
                                 <li>Integration with credit bureaus</li>
                             </ul>
+                              <div class="solution-footer">
+                                  <a href="credit-scoring-risk-management.html" class="learn-more-link">Learn More ↗</a>
+                              </div>
                         </div>
                         
                         <div class="solution-card">
@@ -818,6 +839,9 @@
                                 <li>Document management</li>
                                 <li>Multi-channel origination</li>
                             </ul>
+                            <div class="solution-footer">
+                                 <a href="loan-origination-system.html" class="learn-more-link">Learn More ↗</a>
+                             </div>
                         </div>
                         
                         <div class="solution-card">
@@ -831,6 +855,9 @@
                                 <li>Automated contract generation & e-signature</li>
                                 <li>Instant account activation & customer notification</li>
                             </ul>
+                            <div class="solution-footer">
+                                 <a href="customer-onboarding-system.html" class="learn-more-link">Learn More ↗</a>
+                             </div>
                         </div>
                     </div>
                 </div>

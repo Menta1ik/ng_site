@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Origination System Solution | NextGen</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nxgenlowcode.biz/loan-origination-system.html">
+    <meta property="og:title" content="Loan Origination System Solution | NextGen">
+    <meta property="og:description" content="Implement robust Loan Origination Systems faster with NextGen low-code platform: automated underwriting, KYC/AML, risk scoring, and seamless integrations.">
+    <meta property="og:image" content="images/nextgen-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nxgenlowcode.biz/loan-origination-system.html">
+    <meta property="twitter:title" content="Loan Origination System Solution | NextGen">
+    <meta property="twitter:description" content="Build enterprise-grade loan origination systems 10x faster using NextGen low-code platform.">
+    <meta property="twitter:image" content="images/nextgen-preview.png">
+
+    <!-- Additional meta tags -->
+    <meta name="description" content="Loan Origination System built on NextGen low-code platform. Automate application intake, document collection, underwriting, decisioning, and disbursement with full compliance and analytics. Reduce time-to-yes by 40–70% and cut operational costs by up to 50%.">
+    <meta name="keywords" content="loan origination, LOS, underwriting, decisioning, low-code platform, NextGen, KYC, AML, credit scoring, financial services, banking, lending, risk management, document verification, e-signature, disbursement, automation">
+    <meta name="author" content="BrainySoft Ltd">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://nxgenlowcode.biz/loan-origination-system.html">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/favicon-16x16.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="images/favicon-32x32.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RJQ64XZB6T');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        #particles-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
+        .main-container { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+        @media (max-width: 768px) { .main-container { z-index: 0; } }
+
+        .header { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(10px); background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
+        .logo-icon { width: 40px; height: 40px; background: linear-gradient(135deg, #b2e0ff, #19e97c); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #0a0a0a; }
+        .nav { display: flex; gap: 30px; align-items: center; }
+        .nav-link { color: #ffffff; text-decoration: none; font-weight: 500; transition: all .3s ease; position: relative; display: flex; align-items: center; gap: 5px; }
+        .nav-link:hover { color: #b2e0ff; }
+        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #b2e0ff; transition: width .3s ease; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-item { position: relative; display: inline-block; }
+        .dropdown-arrow { font-size: .8rem; margin-left: 5px; transition: transform .3s ease; }
+        .nav-item:hover .dropdown-arrow { transform: rotate(180deg); }
+        .dropdown { position: absolute; top: 100%; left: 0; background: rgba(26,26,46,.95); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: 10px 0; min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all .3s ease; z-index: 1000; }
+        .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-link { display: block; color: #fff; text-decoration: none; padding: 10px 20px; font-weight: 400; transition: all .3s ease; }
+        .dropdown-link:hover { color: #b2e0ff; background: rgba(255,255,255,.05); }
+
+        .main-content { flex: 1; padding: 60px 40px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .page-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 40px; text-align: center; background: linear-gradient(135deg, #ffffff, #b2e0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-subtitle { font-size: 1.3rem; color: rgba(255,255,255,.7); text-align: center; margin-bottom: 60px; line-height: 1.6; }
+
+        .content-section { background: rgba(255,255,255,.05); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.1); margin-bottom: 40px; }
+        .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 25px; color: #b2e0ff; display: flex; align-items: center; gap: 15px; }
+        .section-number { background: linear-gradient(135deg, #b2e0ff, #19e97c); color: #0a0a0a; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; }
+        .section-content { font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,.9); }
+        .section-content p { margin-bottom: 20px; }
+        .feature-list { list-style: none; margin: 25px 0; }
+        .feature-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 15px; color: rgba(255,255,255,.9); }
+        .feature-list li::before { content: '✓'; color: #19e97c; font-weight: bold; font-size: 1.2rem; flex-shrink: 0; }
+
+        .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 40px 0; }
+        .kpi-item { background: rgba(255,255,255,.08); border-radius: 15px; padding: 30px; text-align: center; border: 1px solid rgba(255,255,255,.1); }
+        .kpi-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        .kpi-title { font-size: 1.1rem; font-weight: 600; color: #b2e0ff; margin-bottom: 10px; }
+        .kpi-value { font-size: 1.3rem; font-weight: 700; color: #19e97c; margin-bottom: 8px; }
+        .kpi-description { font-size: .9rem; color: rgba(255,255,255,.7); line-height: 1.4; }
+        .kpi-label { font-size: .9rem; color: rgba(255,255,255,.9); margin-bottom: 5px; }
+        .kpi-note { font-size: .8rem; color: rgba(255,255,255,.6); line-height: 1.3; margin-top: 8px; font-style: italic; }
+        .enhanced-description { background: rgba(25,233,124,.08); border-left: 3px solid #19e97c; padding: 15px; margin-top: 20px; border-radius: 0 8px 8px 0; font-size: .9rem; line-height: 1.5; color: rgba(255,255,255,.85); }
+
+        .footer { background: rgba(255,255,255,.05); border-top: 1px solid rgba(255,255,255,.1); text-align: center; padding: 40px; }
+        .footer-text { color: rgba(255,255,255,.6); font-size: .9rem; }
+
+        .mobile-menu-toggle { display: none; flex-direction: column; background: transparent; border: none; cursor: pointer; padding: 8px; }
+        .mobile-menu-toggle span { width: 25px; height: 3px; background: white; margin: 3px 0; transition: .3s; border-radius: 3px; }
+        .mobile-menu-toggle:hover span { background: #b2e0ff; }
+        .mobile-menu-toggle:active span { background: #19e97c; }
+        .mobile-menu-toggle.active span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+        .mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-menu-toggle.active span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+        .mobile-nav { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(26,26,46,.98); backdrop-filter: blur(10px); z-index: 1000; flex-direction: column; justify-content: center; align-items: center; gap: 30px; opacity: 0; visibility: hidden; transition: all .3s ease; }
+        .mobile-nav.active { opacity: 1; visibility: visible; display: flex; }
+        .mobile-nav .nav-link { font-size: 1.5rem; font-weight: 600; }
+
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .mobile-menu-toggle { display: flex; }
+            .header { padding: 15px 20px; }
+            .main-content { padding: 40px 20px; }
+            .content-section { padding: 30px 20px; }
+            .section-title { font-size: 1.5rem; flex-direction: column; text-align: center; gap: 10px; }
+            .kpi-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+        @media (max-width: 480px) {
+            .page-title { font-size: 2rem; }
+            .page-subtitle { font-size: 1.1rem; }
+            .section-content { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-bg"></canvas>
+    <div class="main-container">
+        <header class="header">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon">nx</div>
+                <div>
+                    nextgen
+                    <div style="font-size: .7rem; font-weight: 400; opacity: .8;">Advanced lowcode platform</div>
+                </div>
+            </a>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                        <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="presentations.html" class="dropdown-link">Presentations</a>
+                        <a href="file_archive.html" class="dropdown-link">Files</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <nav class="nav mobile-nav">
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                    <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="presentations.html" class="dropdown-link">Presentations</a>
+                    <a href="file_archive.html" class="dropdown-link">Files</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <div class="container">
+                <h1 class="page-title">Loan Origination System</h1>
+                <p class="page-subtitle">From application intake to disbursement — NextGen low-code platform streamlines the entire loan origination lifecycle with automation, compliance, and analytics.</p>
+
+                <!-- Section 1 -->
+                <section class="content-section">
+                    <h2 class="section-title"><span class="section-number">1</span> Application Intake & Pre-Processing</h2>
+                    <div class="section-content">
+                        <p>Collect, validate, and normalize applications across channels:</p>
+                        <ul class="feature-list">
+                            <li>Multi-channel intake: web, mobile, partners</li>
+                            <li>Automated data validation and enrichment</li>
+                            <li>Initial KYC/AML screening with configurable rules</li>
+                        </ul>
+                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Dynamic forms minimize friction with progressive disclosure, while integrated data services pre-fill customer information to reduce errors.</p>
+                    </div>
+                </section>
+
+                <!-- Section 2 -->
+                <section class="content-section">
+                    <h2 class="section-title"><span class="section-number">2</span> Document Collection & Verification</h2>
+                    <div class="section-content">
+                        <p>Automate document intake and verification:</p>
+                        <ul class="feature-list">
+                            <li>Capture identity, income, collateral, and financial documents</li>
+                            <li>OCR and data extraction with validation rules</li>
+                            <li>Biometric and liveness checks where required</li>
+                        </ul>
+                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Document pipelines include quality checks, duplicate detection, and automated follow-ups for missing items.</p>
+                    </div>
+                </section>
+
+                <!-- Section 3 -->
+                <section class="content-section">
+                    <h2 class="section-title"><span class="section-number">3</span> Risk Scoring & Underwriting</h2>
+                    <div class="section-content">
+                        <p>Flexible decisioning with rules, scorecards, and ML models:</p>
+                        <ul class="feature-list">
+                            <li>Credit scoring with PD/LGD estimation</li>
+                            <li>Policy rules and debt-to-income checks</li>
+                            <li>Automated and manual underwriting workflows</li>
+                        </ul>
+                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Champion–challenger testing and cut-off calibration optimize approval strategies while maintaining risk appetite.</p>
+                    </div>
+                </section>
+
+                <!-- Section 4 -->
+                <section class="content-section">
+                    <h2 class="section-title"><span class="section-number">4</span> Offer Generation & E-Signature</h2>
+                    <div class="section-content">
+                        <p>Create compliant offers and finalize with digital signatures:</p>
+                        <ul class="feature-list">
+                            <li>Personalized terms, pricing, and repayment schedules</li>
+                            <li>Automated document generation</li>
+                            <li>E-signature with MFA and audit trails</li>
+                        </ul>
+                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Real-time pricing engines and counter-offer workflows maximize conversion while meeting regulatory requirements.</p>
+                    </div>
+                </section>
+
+                <!-- Section 5 -->
+                <section class="content-section">
+                    <h2 class="section-title"><span class="section-number">5</span> Disbursement & Core Integration</h2>
+                    <div class="section-content">
+                        <p>Seamless integration with banking systems and third parties:</p>
+                        <ul class="feature-list">
+                            <li>Core banking, ERP, and payment rails integration</li>
+                            <li>Collateral registration and insurance partners</li>
+                            <li>Event-driven updates and reconciliation</li>
+                        </ul>
+                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Retry patterns, idempotent APIs, and circuit breakers ensure reliable operations across external dependencies.</p>
+                    </div>
+                </section>
+
+                <!-- Section 6 -->
+                <section class="content-section">
+                    <h2 class="section-title"><span class="section-number">6</span> Monitoring & Analytics</h2>
+                    <div class="section-content">
+                        <p>Operational dashboards and performance reporting:</p>
+                        <ul class="feature-list">
+                            <li>Time-to-yes and time-to-cash metrics</li>
+                            <li>Approval rates, declines, and reasons taxonomy</li>
+                            <li>Portfolio quality and early delinquency signals</li>
+                        </ul>
+                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Real-time alerts for SLA breaches and anomaly detection reduce operational risk and improve customer satisfaction.</p>
+                    </div>
+                </section>
+
+                <!-- KPIs -->
+                <section class="content-section">
+                    <h2 class="section-title"><span class="section-number">7</span> Expected KPIs & Impact</h2>
+                    <div class="section-content">
+                        <p>Organizations deploying Loan Origination Systems on NextGen commonly observe:</p>
+                    </div>
+                    <div class="kpi-grid">
+                        <div class="kpi-item">
+                            <span class="kpi-icon"></span>
+                            <div class="kpi-title">Time-to-Yes</div>
+                            <div class="kpi-value">40–70% Reduction</div>
+                            <div class="kpi-description">Accelerated decisioning</div>
+                            <div class="kpi-note">Parallel checks, pre-filled data, and automation shorten approval cycles.</div>
+                        </div>
+                        <div class="kpi-item">
+                            <span class="kpi-icon"></span>
+                            <div class="kpi-title">Approval Rate</div>
+                            <div class="kpi-value">10–25% Increase</div>
+                            <div class="kpi-description">Smarter underwriting</div>
+                            <div class="kpi-note">Better risk differentiation finds good segments without raising risk.</div>
+                        </div>
+                        <div class="kpi-item">
+                            <span class="kpi-icon"></span>
+                            <div class="kpi-title">Operational Costs</div>
+                            <div class="kpi-value">Up to 50% Reduction</div>
+                            <div class="kpi-description">Process automation</div>
+                            <div class="kpi-note">Digital workflows reduce manual touchpoints and callouts.</div>
+                        </div>
+                        <div class="kpi-item">
+                            <span class="kpi-icon"></span>
+                            <div class="kpi-title">Time-to-Market</div>
+                            <div class="kpi-value">2–3x Faster</div>
+                            <div class="kpi-description">Rapid product launches</div>
+                            <div class="kpi-note">Low-code enables faster experimentation and rollout.</div>
+                        </div>
+                        <div class="kpi-item">
+                            <span class="kpi-icon"></span>
+                            <div class="kpi-title">Model Accuracy</div>
+                            <div class="kpi-value">AUC > 0.80</div>
+                            <div class="kpi-description">Higher predictive power</div>
+                            <div class="kpi-note">Regular calibrations and feature engineering improve lift.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <div class="section-content">
+                        <p><strong>Note:</strong> This page describes a reference Loan Origination System architecture. NextGen low-code enables fast adaptation to any product type, regulatory context, and operational model.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Enhanced Particles Animation (same as index.html)
+        const canvas = document.getElementById('particles-bg');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let w = window.innerWidth;
+        let h = window.innerHeight;
+        canvas.width = w;
+        canvas.height = h;
+
+        function resizeCanvas() {
+            w = window.innerWidth;
+            h = window.innerHeight;
+            canvas.width = w;
+            canvas.height = h;
+            createParticles();
+        }
+        window.addEventListener('resize', resizeCanvas);
+
+        const PARTICLE_COLOR = '#b2e0ff';
+        const LINE_COLOR = '#19e97c';
+        const PARTICLE_COUNT = Math.floor((w * h) / 1500);
+        const PARTICLE_SIZE = 2;
+        const SPEED = 0.15;
+        const LINE_DISTANCE = 150;
+        const MOUSE_RADIUS = 200;
+
+        let mouse = { x: 0, y: 0 };
+
+        // Mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        function randomBetween(a, b) { return a + Math.random() * (b - a); }
+
+        function createParticles() {
+            particles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                particles.push({
+                    x: Math.random() * w,
+                    y: Math.random() * h,
+                    vx: randomBetween(-SPEED, SPEED),
+                    vy: randomBetween(-SPEED, SPEED),
+                    size: PARTICLE_SIZE + Math.random() * 1,
+                    originalSize: PARTICLE_SIZE + Math.random() * 1,
+                    opacity: 0.3 + Math.random() * 0.7
+                });
+            }
+        }
+        createParticles();
+
+        function drawLines() {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p1 = particles[i];
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (dist < LINE_DISTANCE) {
+                        ctx.save();
+                        const opacity = 0.15 * (1 - dist / LINE_DISTANCE);
+                        ctx.globalAlpha = opacity;
+                        ctx.strokeStyle = LINE_COLOR;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                }
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, w, h);
+            
+            drawLines();
+            
+            for (let p of particles) {
+                // Mouse interaction
+                const mouseDistance = Math.sqrt((p.x - mouse.x) ** 2 + (p.y - mouse.y) ** 2);
+                if (mouseDistance < MOUSE_RADIUS) {
+                    const force = (MOUSE_RADIUS - mouseDistance) / MOUSE_RADIUS;
+                    p.size = p.originalSize * (1 + force * 2);
+                    p.opacity = Math.min(1, p.opacity + force * 0.5);
+                } else {
+                    p.size = p.originalSize;
+                    p.opacity = Math.max(0.3, p.opacity - 0.01);
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+                ctx.fillStyle = PARTICLE_COLOR;
+                ctx.globalAlpha = p.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+                
+                p.x += p.vx;
+                p.y += p.vy;
+                
+                // Random direction change
+                if (Math.random() < 0.003) {
+                    p.vx = randomBetween(-SPEED, SPEED);
+                    p.vy = randomBetween(-SPEED, SPEED);
+                }
+                
+                // Boundary collision
+                if (p.x < 0 || p.x > w) p.vx *= -1;
+                if (p.y < 0 || p.y > h) p.vy *= -1;
+            }
+            
+            requestAnimationFrame(animateParticles);
+        }
+
+        const mobileMenuToggle=document.querySelector('.mobile-menu-toggle');
+        const mobileNav=document.querySelector('.mobile-nav');
+        mobileMenuToggle.addEventListener('click',()=>{ mobileMenuToggle.classList.toggle('active'); mobileNav.classList.toggle('active'); });
+        document.addEventListener('click',e=>{ if(!mobileMenuToggle.contains(e.target)&&!mobileNav.contains(e.target)){ mobileMenuToggle.classList.remove('active'); mobileNav.classList.remove('active'); }});
+
+        animateParticles();
+    </script>
+</body>
+</html>

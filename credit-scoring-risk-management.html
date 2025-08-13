@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Scoring & Risk Management Solution | NextGen</title>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nxgenlowcode.biz/credit-scoring-risk-management.html">
+    <meta property="og:title" content="Credit Scoring & Risk Management Solution | NextGen">
+    <meta property="og:description" content="Discover how NextGen low-code platform enables rapid development of credit scoring and risk management systems with real-time assessment, automated decisions, and advanced analytics.">
+    <meta property="og:image" content="images/nextgen-preview.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nxgenlowcode.biz/credit-scoring-risk-management.html">
+    <meta property="twitter:title" content="Credit Scoring & Risk Management Solution | NextGen">
+    <meta property="twitter:description" content="Build advanced credit scoring and risk management systems 10x faster with NextGen low-code platform.">
+    <meta property="twitter:image" content="images/nextgen-preview.png">
+    
+    <!-- Additional meta tags -->
+    <meta name="description" content="Credit Scoring & Risk Management solution on NextGen low-code platform. Build sophisticated credit assessment systems with data integration, automated scoring, real-time decisions, and comprehensive analytics. Reduce defaults by 10-20% and accelerate processing by 40-70%.">
+    <meta name="keywords" content="credit scoring, risk management, low-code platform, NextGen, credit assessment, financial technology, fintech, automated decisions, banking solutions, loan origination, credit bureau integration, ML models, risk analytics, PD LGD models, regulatory compliance, financial services, credit risk, portfolio management, automated underwriting, credit decision engine">
+    <meta name="author" content="BrainySoft Ltd">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    
+    <link rel="canonical" href="https://nxgenlowcode.biz/credit-scoring-risk-management.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/favicon-16x16.svg">
+    <link rel="icon" type="image/svg+xml" sizes="32x32" href="images/favicon-32x32.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RJQ64XZB6T');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles background */
+        #particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Main container */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Ensure mobile nav is above main container */
+        @media (max-width: 768px) {
+            .main-container {
+                z-index: 0;
+            }
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0a0a0a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #b2e0ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-item {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Main content */
+        .main-content {
+            flex: 1;
+            padding: 60px 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .page-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 40px;
+            text-align: center;
+            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            margin-bottom: 60px;
+            line-height: 1.6;
+        }
+
+        /* Content sections */
+        .content-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #b2e0ff;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-number {
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            color: #0a0a0a;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .section-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .section-content p {
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 25px 0;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            color: #19e97c;
+            font-weight: bold;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        /* KPI Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .kpi-item {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .kpi-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .kpi-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #b2e0ff;
+            margin-bottom: 10px;
+        }
+
+        .kpi-value {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #19e97c;
+            margin-bottom: 8px;
+        }
+
+        .kpi-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.4;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(255, 255, 255, 0.05);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            padding: 40px;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile menu toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+        .mobile-menu-toggle:hover span {
+            background: #b2e0ff;
+        }
+
+        .mobile-menu-toggle:active span {
+            background: #19e97c;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            visibility: visible;
+            display: flex;
+        }
+
+        .mobile-nav .nav-link {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .header {
+                padding: 15px 20px;
+            }
+
+            .main-content {
+                padding: 40px 20px;
+            }
+
+            .content-section {
+                padding: 30px 20px;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles Background -->
+    <canvas id="particles-bg"></canvas>
+
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">N</div>
+                NextGen
+            </a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <div class="nav-item">
+                    <a href="industry-solutions.html" class="nav-link">
+                        Solutions <span class="dropdown-arrow">▼</span>
+                    </a>
+                    <div class="dropdown">
+                        <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                        <a href="credit-scoring-risk-management.html" class="dropdown-link">Credit Scoring & Risk Management</a>
+                    </div>
+                </div>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="success-stories.html" class="nav-link">Success Stories</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav mobile-nav">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="industry-solutions.html" class="nav-link">Industry Solutions</a>
+            <a href="credit-scoring-risk-management.html" class="nav-link">Credit Scoring & Risk Management</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="success-stories.html" class="nav-link">Success Stories</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <h1 class="page-title">Credit Scoring & Risk Management</h1>
+                <p class="page-subtitle">
+                    Build sophisticated credit scoring and risk management systems with NextGen low-code platform. 
+                    From data integration to advanced analytics and automated decisions — delivered 10x faster than traditional development.
+                </p>
+
+                <!-- Section 1: Data Integration -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">1</span>
+                        Data Source Integration
+                    </h2>
+                    <div class="section-content">
+                        <p>The platform seamlessly consolidates information from various sources to create a comprehensive risk assessment foundation:</p>
+                        <ul class="feature-list">
+                            <li>Internal banking systems (CRM, LMS, Data Warehouses)</li>
+                            <li>External APIs from credit bureaus and government registries</li>
+                            <li>Real-time transactional and behavioral data streams</li>
+                        </ul>
+                        <p>Integration is achieved through pre-built connectors or visual integration scenarios without manual coding.</p>
+                    </div>
+                </section>
+
+                <!-- Section 2: Customer Profile -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">2</span>
+                        Customer Profile Formation
+                    </h2>
+                    <div class="section-content">
+                        <p>Using visual data modeling, you can:</p>
+                        <ul class="feature-list">
+                            <li>Create unified customer record structures</li>
+                            <li>Automate calculation of debt burden, credit rating, and payment history</li>
+                            <li>Configure real-time data updates when new information arrives</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 3: Scoring Logic -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">3</span>
+                        Scoring Logic Configuration
+                    </h2>
+                    <div class="section-content">
+                        <p>The built-in business rules and formula constructor enables:</p>
+                        <ul class="feature-list">
+                            <li>Define credit score calculation models</li>
+                            <li>Apply both simple formulas and external ML models</li>
+                            <li>Flexibly modify parameters without changing source code</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 4: Decision Automation -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">4</span>
+                        Decision Automation
+                    </h2>
+                    <div class="section-content">
+                        <p>Using workflow and rule engine modules, you can:</p>
+                        <ul class="feature-list">
+                            <li>Automatically approve applications meeting specified criteria</li>
+                            <li>Route borderline cases for additional review</li>
+                            <li>Generate notifications to customers and staff</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 5: Monitoring & Analytics -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">5</span>
+                        Monitoring & Analytics
+                    </h2>
+                    <div class="section-content">
+                        <p>The platform enables creation of dashboards and reports for:</p>
+                        <ul class="feature-list">
+                            <li>Tracking dynamics of scoring and portfolio indicators (PD, LGD)</li>
+                            <li>Analyzing risk concentrations by segments</li>
+                            <li>Preparing regulatory and management reporting</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Section 6: Flexibility & Scalability -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">6</span>
+                        Flexibility & Scalability
+                    </h2>
+                    <div class="section-content">
+                        <ul class="feature-list">
+                            <li>Add new data sources without rewriting core systems</li>
+                            <li>Change business rules in minutes</li>
+                            <li>Easy adaptation for new products and markets</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- KPIs Section -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">7</span>
+                        Expected KPIs & Implementation Impact
+                    </h2>
+                    <div class="section-content">
+                        <p>Organizations implementing similar solutions on low-code platforms typically achieve:</p>
+                    </div>
+                    
+                    <div class="kpi-grid">
+                        <div class="kpi-item">
+                            <span class="kpi-icon">⏱</span>
+                            <div class="kpi-title">Application Processing Time</div>
+                            <div class="kpi-value">40–70% Reduction</div>
+                            <div class="kpi-description">Faster decision-making through automation</div>
+                        </div>
+                        
+                        <div class="kpi-item">
+                            <span class="kpi-icon">📉</span>
+                            <div class="kpi-title">Default Rate</div>
+                            <div class="kpi-value">10–20% Decrease</div>
+                            <div class="kpi-description">Better risk assessment accuracy</div>
+                        </div>
+                        
+                        <div class="kpi-item">
+                            <span class="kpi-icon">✅</span>
+                            <div class="kpi-title">Auto-Approval Rate</div>
+                            <div class="kpi-value">60–80% Increase</div>
+                            <div class="kpi-description">Streamlined approval workflows</div>
+                        </div>
+                        
+                        <div class="kpi-item">
+                            <span class="kpi-icon">🚀</span>
+                            <div class="kpi-title">Time-to-Market</div>
+                            <div class="kpi-value">2–3x Faster</div>
+                            <div class="kpi-description">Accelerated product launches</div>
+                        </div>
+                        
+                        <div class="kpi-item">
+                            <span class="kpi-icon">💰</span>
+                            <div class="kpi-title">Development Costs</div>
+                            <div class="kpi-value">Up to 50% Reduction</div>
+                            <div class="kpi-description">Lower development and maintenance costs</div>
+                        </div>
+                        
+                        <div class="kpi-item">
+                            <span class="kpi-icon">🎯</span>
+                            <div class="kpi-title">Model Accuracy</div>
+                            <div class="kpi-value">AUC > 0.80</div>
+                            <div class="kpi-description">GINI improvement of 5–10 points</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Important Note -->
+                <section class="content-section">
+                    <div class="section-content">
+                        <p><strong>Important:</strong> This is an example of one of many possible configurations that can be created on our platform. Low-code development technology enables rapid deployment and adaptation of solutions for specific business tasks, regulatory requirements, and market changes.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+        </footer>
+    </div>
+
+    <!-- Particles Animation Script -->
+    <script>
+        // Particles animation
+        const canvas = document.getElementById('particles-bg');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const particleCount = 80;
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.globalAlpha = this.opacity;
+                ctx.fillStyle = '#b2e0ff';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(particle => {
+                particle.update();
+                particle.draw();
+            });
+
+            // Draw connections
+            ctx.globalAlpha = 0.1;
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 100) {
+                        ctx.strokeStyle = '#b2e0ff';
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        // Mobile menu toggle
+        const mobileToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            mobileNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active');
+                mobileNav.classList.remove('active');
+            });
+        });
+    </script>
+
+    <!-- Vercel Insights -->
+    <script>
+        // Conditional loading for Vercel Insights
+        if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+            const script = document.createElement('script');
+            script.src = '/_vercel/insights/script.js';
+            script.defer = true;
+            document.head.appendChild(script);
+        }
+    </script>
+</body>
+</html>

@@ -52,6 +52,47 @@
       gtag('js', new Date());
       gtag('config', 'G-RJQ64XZB6T');
     </script>
+    <script>
+        // Mobile menu toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.querySelector('.mobile-menu-toggle');
+            const nav = document.querySelector('.mobile-nav');
+            
+            if (mobileToggle && nav) {
+                function toggleMenu(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    mobileToggle.classList.toggle('active');
+                    nav.classList.toggle('active');
+                }
+                
+                mobileToggle.addEventListener('click', toggleMenu);
+                mobileToggle.addEventListener('touchstart', toggleMenu, { passive: false });
+                
+                function closeMenu(e) {
+                    if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                        mobileToggle.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                }
+                
+                document.addEventListener('click', closeMenu);
+                document.addEventListener('touchstart', closeMenu);
+                
+                const navLinks = nav.querySelectorAll('.nav-link, .dropdown-link');
+                navLinks.forEach(link => {
+                    function closeMobileMenu() {
+                        mobileToggle.classList.remove('active');
+                        nav.classList.remove('active');
+                    }
+                    
+                    link.addEventListener('click', closeMobileMenu);
+                    link.addEventListener('touchstart', closeMobileMenu);
+                });
+            }
+        });
+    </script>
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nxgenlowcode.biz/">

@@ -32,8 +32,9 @@
   ],
   "redirects": [
     {
-      "source": "https://www.nxgenlowcode.biz/:path*",
-      "destination": "https://nxgenlowcode.biz/:path*",
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.nxgenlowcode.biz" }],
+      "destination": "https://nxgenlowcode.biz/:1",
       "permanent": true
     }
   ]

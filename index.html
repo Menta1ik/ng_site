@@ -56,35 +56,35 @@
         // Mobile menu toggle functionality
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.mobile-nav');
+            const mobileNav = document.querySelector('.mobile-nav');
             
-            if (mobileToggle && nav) {
+            if (mobileToggle && mobileNav) {
                 function toggleMenu(e) {
                     e.preventDefault();
                     e.stopPropagation();
                     
                     mobileToggle.classList.toggle('active');
-                    nav.classList.toggle('active');
+                    mobileNav.classList.toggle('active');
                 }
                 
                 mobileToggle.addEventListener('click', toggleMenu);
                 mobileToggle.addEventListener('touchstart', toggleMenu, { passive: false });
                 
                 function closeMenu(e) {
-                    if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    if (!mobileNav.contains(e.target) && !mobileToggle.contains(e.target)) {
                         mobileToggle.classList.remove('active');
-                        nav.classList.remove('active');
+                        mobileNav.classList.remove('active');
                     }
                 }
                 
                 document.addEventListener('click', closeMenu);
                 document.addEventListener('touchstart', closeMenu);
                 
-                const navLinks = nav.querySelectorAll('.nav-link, .dropdown-link');
+                const navLinks = mobileNav.querySelectorAll('.nav-link, .dropdown-link');
                 navLinks.forEach(link => {
                     function closeMobileMenu() {
                         mobileToggle.classList.remove('active');
-                        nav.classList.remove('active');
+                        mobileNav.classList.remove('active');
                     }
                     
                     link.addEventListener('click', closeMobileMenu);
@@ -811,23 +811,7 @@
                 flex: 0 0 auto;
             }
 
-            .nav {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 280px;
-                height: 100vh;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                gap: 0;
-                padding: 20px 30px 30px;
-                transition: left 0.3s ease;
-                z-index: 99999 !important;
-                border-right: 1px solid rgba(178, 224, 255, 0.2);
-            }
-
-            /* Hide desktop nav links on mobile */
+            /* Hide desktop nav on mobile */
             .header .nav {
                 display: none;
             }
@@ -838,13 +822,9 @@
                 display: flex;
             }
 
-            /* Show mobile navigation on mobile */
-            .mobile-nav {
-                display: flex;
-            }
-
             /* Mobile navigation styles */
             .mobile-nav {
+                display: flex;
                 position: fixed;
                 top: 0;
                 left: -100%;
@@ -861,10 +841,6 @@
             }
 
             .mobile-nav.active {
-                left: 0;
-            }
-
-            .nav.active {
                 left: 0;
             }
 

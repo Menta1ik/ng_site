@@ -943,23 +943,9 @@
         
         animateParticles();
 
-        // Mobile menu toggle
-        const mobileToggle = document.querySelector('.mobile-menu-toggle');
-        const mobileNav = document.querySelector('.mobile-nav');
 
-        mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            mobileNav.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on links
-        document.querySelectorAll('.mobile-nav .nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                mobileNav.classList.remove('active');
-            });
-        });
     </script>
+    <script src="mobile-menu.js" defer></script>
 
     <!-- Vercel Insights -->
     <script>

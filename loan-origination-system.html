@@ -508,12 +508,8 @@
             requestAnimationFrame(animateParticles);
         }
 
-        const mobileMenuToggle=document.querySelector('.mobile-menu-toggle');
-        const mobileNav=document.querySelector('.mobile-nav');
-        mobileMenuToggle.addEventListener('click',()=>{ mobileMenuToggle.classList.toggle('active'); mobileNav.classList.toggle('active'); });
-        document.addEventListener('click',e=>{ if(!mobileMenuToggle.contains(e.target)&&!mobileNav.contains(e.target)){ mobileMenuToggle.classList.remove('active'); mobileNav.classList.remove('active'); }});
-
         animateParticles();
     </script>
+    <script src="mobile-menu.js" defer></script>
 </body>
 </html>

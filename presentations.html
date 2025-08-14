@@ -933,49 +933,7 @@
         
         animateParticles();
     </script>
-    <script>
-        // Mobile menu toggle functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileToggle = document.querySelector('.mobile-menu-toggle');
-            const nav = document.querySelector('.mobile-nav');            if (mobileToggle && nav) {
-                // Handle both click and touch events for better mobile support
-                function toggleMenu(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    
-                    mobileToggle.classList.toggle('active');
-                    nav.classList.toggle('active');
-                }
-                
-                mobileToggle.addEventListener('click', toggleMenu);
-                mobileToggle.addEventListener('touchstart', toggleMenu, { passive: false });
-                
-                // Close menu when clicking outside
-                // Close menu when clicking/touching outside
-                function closeMenu(e) {
-                    if (!nav.contains(e.target) && !mobileToggle.contains(e.target)) {
-                        mobileToggle.classList.remove('active');
-                        nav.classList.remove('active');
-                    }
-                }
-                
-                document.addEventListener('click', closeMenu);
-                document.addEventListener('touchstart', closeMenu);
-                
-                // Close menu when clicking/touching on nav links
-                const navLinks = nav.querySelectorAll('.nav-link, .dropdown-link');
-                navLinks.forEach(link => {
-                    function closeMobileMenu() {
-                        mobileToggle.classList.remove('active');
-                        nav.classList.remove('active');
-                    }
-                    
-                    link.addEventListener('click', closeMobileMenu);
-                    link.addEventListener('touchstart', closeMobileMenu);
-                });
-            }
-        });
-    </script>
+    <script src="mobile-menu.js" defer></script>
     <script>
       (function(){
         try {

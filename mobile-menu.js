@@ -1,0 +1,117 @@
+// Enhanced mobile menu functionality with better touch support
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileNav = document.querySelector('.mobile-nav');
+    
+    if (!mobileToggle || !mobileNav) return;
+    
+    let isToggling = false;
+    let touchStartY = 0;
+    
+    // Toggle menu function with debouncing
+    function toggleMenu(e) {
+        if (isToggling) return;
+        
+        e.preventDefault();
+        e.stopPropagation();
+        
+        isToggling = true;
+        
+        const isActive = mobileToggle.classList.contains('active');
+        
+        if (isActive) {
+            // Closing menu
+            mobileToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        } else {
+            // Opening menu
+            mobileToggle.classList.add('active');
+            mobileNav.classList.add('active');
+        }
+        
+        // Reset debounce flag after animation
+        setTimeout(() => {
+            isToggling = false;
+        }, 350);
+    }
+    
+    // Handle touch start to track vertical scroll
+    function handleTouchStart(e) {
+        touchStartY = e.touches[0].clientY;
+    }
+    
+    // Handle touch end/cancel
+    function handleTouchEnd(e) {
+        const touchEndY = e.changedTouches[0].clientY;
+        const verticalMove = Math.abs(touchEndY - touchStartY);
+        
+        // Only trigger if it's a tap (minimal vertical movement)
+        if (verticalMove < 10) {
+            toggleMenu(e);
+        }
+    }
+    
+    // Close menu when clicking/touching outside
+    function closeMenu(e) {
+        if (mobileNav.classList.contains('active') && 
+            !mobileNav.contains(e.target) && 
+            !mobileToggle.contains(e.target)) {
+            
+            mobileToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    }
+    
+    // Close menu when clicking/touching nav links
+    function closeMobileMenu(e) {
+        if (mobileNav.classList.contains('active')) {
+            mobileToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    }
+    
+    // Attach event listeners
+    // Use touch events for mobile devices
+    if ('ontouchstart' in window) {
+        mobileToggle.addEventListener('touchstart', handleTouchStart, { passive: true });
+        mobileToggle.addEventListener('touchend', handleTouchEnd, { passive: false });
+        
+        document.addEventListener('touchstart', function(e) {
+            if (mobileNav.classList.contains('active') && 
+                !mobileNav.contains(e.target) && 
+                !mobileToggle.contains(e.target)) {
+                closeMenu(e);
+            }
+        });
+    } else {
+        // Use click events for desktop
+        mobileToggle.addEventListener('click', toggleMenu);
+        document.addEventListener('click', closeMenu);
+    }
+    
+    // Handle nav link clicks
+    const navLinks = mobileNav.querySelectorAll('.nav-link, .dropdown-link');
+    navLinks.forEach(link => {
+        if ('ontouchstart' in window) {
+            link.addEventListener('touchend', closeMobileMenu, { passive: false });
+        } else {
+            link.addEventListener('click', closeMobileMenu);
+        }
+    });
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+            mobileToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    });
+    
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
+            mobileToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+        }
+    });
+});

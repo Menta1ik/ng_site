@@ -226,7 +226,6 @@
             border: none;
             cursor: pointer;
             padding: 5px;
-            border-radius: 4px;
             transition: all 0.3s ease;
         }
 
@@ -236,7 +235,6 @@
             background: #ffffff;
             margin: 3px 0;
             transition: all 0.3s ease;
-            border-radius: 2px;
         }
 
         .mobile-menu-toggle.active span:nth-child(1) {
@@ -269,7 +267,7 @@
         }
 
         .rfi-title {
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2rem, 4vw, 3rem);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 20px;
@@ -291,11 +289,11 @@
         .form-section {
             margin-bottom: 40px;
             padding-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
         }
 
         .form-section:last-child {
-            border-bottom: none;
+            /* border-bottom: none; */
             margin-bottom: 0;
         }
 
@@ -310,16 +308,7 @@
         }
 
         .section-number {
-            background: linear-gradient(135deg, #b2e0ff, #19e97c);
-            color: #0a0a0a;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1rem;
+            display: none;
         }
 
         .form-group {
@@ -340,7 +329,7 @@
             padding: 15px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            border-radius: 12px;
             color: #ffffff;
             font-size: 1rem;
             transition: all 0.3s ease;
@@ -406,7 +395,7 @@
 
         .file-upload {
             border: 2px dashed rgba(255, 255, 255, 0.3);
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 40px 20px;
             text-align: center;
             transition: all 0.3s ease;
@@ -424,11 +413,10 @@
         }
 
         .file-upload-btn {
-            background: linear-gradient(135deg, #b2e0ff, #19e97c);
-            color: #0a0a0a;
-            border: none;
+            background: transparent; /* remove fill */
+            color: #ffffff; /* make text white */
+            border: 1px solid #ffffff; /* white outline */
             padding: 12px 24px;
-            border-radius: 8px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -443,32 +431,108 @@
             text-align: center;
             margin-top: 40px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
         }
 
         .submit-btn {
-            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            background: #19e97c; /* green flat color */
             color: #0a0a0a;
             border: none;
             padding: 16px 40px;
-            border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            /* text-transform: uppercase; */
+            letter-spacing: 0.2px;
         }
 
         .submit-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(178, 224, 255, 0.4);
+            box-shadow: 0 12px 30px rgba(25, 233, 124, 0.35);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Notification styles */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 20px 30px;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transform: translateX(400px);
+            transition: all 0.4s ease;
+            z-index: 1000;
+            max-width: 350px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: linear-gradient(135deg, rgba(25, 233, 124, 0.9), rgba(46, 204, 113, 0.9));
+            border-color: rgba(25, 233, 124, 0.3);
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, rgba(231, 76, 60, 0.9), rgba(192, 57, 43, 0.9));
+            border-color: rgba(231, 76, 60, 0.3);
+        }
+
+        .notification-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .notification-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+        }
+
+        .notification-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .loading {
+            display: none;
+        }
+
+        .submit-btn.loading .loading {
+            display: inline;
+            margin-left: 8px;
         }
 
         .response-info {
             background: rgba(25, 233, 124, 0.1);
             border: 1px solid rgba(25, 233, 124, 0.3);
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 20px;
             margin-top: 30px;
             text-align: center;
@@ -490,8 +554,12 @@
             text-align: center;
             padding: 40px 20px;
             margin-top: auto;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            /* border-top: 1px solid rgba(255, 255, 255, 0.1); */
             background: rgba(0, 0, 0, 0.2);
+        }
+
+        .rfi-content, .dropdown, .info-banner, .form-section, .upload-section {
+            border-radius: 8px;
         }
 
         .footer-text {
@@ -536,12 +604,9 @@
 
             .nav-item {
                 width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
             }
 
-            .nav-item:last-child {
-                border-bottom: none;
-            }
 
             .nav-link {
                 font-size: 1rem;
@@ -697,7 +762,7 @@
                 </p>
             </div>
 
-            <form id="rfi-form" action="#" method="POST">
+            <form id="rfi-form" action="https://formspree.io/f/xovlbwdo" method="POST" enctype="multipart/form-data">
                 <!-- Section 1: Organization Information -->
                 <div class="form-section">
                     <h2 class="section-title">
@@ -934,26 +999,11 @@
                     </div>
                 </div>
 
-                <!-- Section 7: Additional Materials -->
-                <div class="form-section">
-                    <h2 class="section-title">
-                        <span class="section-number">7</span>
-                        Additional Materials
-                    </h2>
-                    
-                    <div class="file-upload">
-                        <div class="file-upload-text">Optional: Attach files that will help us understand your request</div>
-                        <button type="button" class="file-upload-btn">Choose Files</button>
-                        <input type="file" id="file-upload" name="attachments[]" multiple style="display: none;" accept=".pdf,.doc,.docx,.ppt,.pptx,.txt">
-                        <div style="margin-top: 10px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.6);">
-                            Technical specifications, project presentations, or other relevant documents
-                        </div>
-                    </div>
-                </div>
+
 
                 <!-- Submit Section -->
                 <div class="submit-section">
-                    <button type="submit" class="submit-btn">Submit RFI Request</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Submit RFI Request</button>
                     
                     <div class="response-info">
                         <div class="response-info-title">What happens next?</div>
@@ -1088,27 +1138,83 @@
         animateParticles();
 
         // File upload functionality
-        document.querySelector('.file-upload-btn').addEventListener('click', function() {
-            document.getElementById('file-upload').click();
-        });
+        const ALLOWED_EXTENSIONS = new Set(['pdf','doc','docx','ppt','pptx','xls','xlsx']);
+        function isAllowedFile(file) {
+            const name = file.name || '';
+            const ext = name.includes('.') ? name.split('.').pop().toLowerCase() : '';
+            return ALLOWED_EXTENSIONS.has(ext);
+        }
 
-        document.getElementById('file-upload').addEventListener('change', function(e) {
-            const files = e.target.files;
-            const fileUploadText = document.querySelector('.file-upload-text');
+
+ 
+         // Notification utility (copied/adapted from contact.html)
+         function showNotification(icon, message, type) {
+            // Remove existing notifications
+            const existingNotifications = document.querySelectorAll('.notification');
+            existingNotifications.forEach(n => n.remove());
             
-            if (files.length > 0) {
-                const fileNames = Array.from(files).map(file => file.name).join(', ');
-                fileUploadText.textContent = `Selected: ${fileNames}`;
-            } else {
-                fileUploadText.textContent = 'Optional: Attach files that will help us understand your request';
-            }
-        });
+            // Create new notification
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.innerHTML = `
+                <span class="notification-icon">${icon}</span>
+                <span class="notification-message">${message}</span>
+                <button class="notification-close" onclick="this.parentElement.remove()">&times;</button>
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 100);
+            
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.classList.remove('show');
+                    setTimeout(() => notification.parentElement && notification.remove(), 400);
+                }
+            }, 5000);
+        }
 
-        // Form submission
-        document.getElementById('rfi-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your RFI submission! We will contact you within 3-5 business days.');
-        });
+        // Form submission (aligned with contact.html)
+        const rfiForm = document.getElementById('rfi-form');
+        const submitBtn = document.getElementById('submitBtn');
+        if (rfiForm) {
+            rfiForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+
+                
+                // Loading state
+                submitBtn.disabled = true;
+                submitBtn.classList.add('loading');
+                const originalLabel = submitBtn.textContent;
+                submitBtn.innerHTML = 'Sending... <span class="loading">⏳</span>';
+                
+                try {
+                    const formData = new FormData(rfiForm);
+                    const response = await fetch(rfiForm.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        showNotification('✅', 'RFI sent successfully! We will contact you within 3-5 business days.', 'success');
+                        rfiForm.reset();
+
+                    } else {
+                        const data = await response.json().catch(() => ({}));
+                        throw new Error(data.error || 'Error sending request');
+                    }
+                } catch (err) {
+                    console.error('Submit error:', err);
+                    showNotification('❌', 'An error occurred while sending the RFI. Please try again.', 'error');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('loading');
+                    submitBtn.innerHTML = originalLabel || 'Submit RFI Request';
+                }
+            });
+        }
     </script>
     
     <script>

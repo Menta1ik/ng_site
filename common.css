@@ -4,6 +4,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Global logo link styles */
+.logo,
+.logo:hover,
+.logo:visited,
+.logo:active {
+    text-decoration: none !important;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #16a085 0%, #27ae60 100%);

@@ -1334,3 +1334,128 @@ span.metric-icon {
     .quote-box { background: linear-gradient(135deg, rgba(40, 40, 40, 0.95), rgba(50, 50, 50, 0.95)); border-left-color: #27ae60; }
     .quote-box blockquote { color: #ccc; }
 }
+
+/* Стили для мобильной навигации */
+@media (max-width: 768px) {
+    .main-nav {
+        display: none;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .mobile-nav {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(20px);
+        transition: left 0.3s ease;
+        z-index: 10000;
+        padding: 80px 0 0;
+        overflow-y: auto;
+    }
+    
+    .mobile-nav.active {
+        left: 0;
+    }
+    
+    .mobile-nav-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        padding: 20px;
+    }
+    
+    .mobile-nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .mobile-nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-nav-link {
+        display: block;
+        padding: 20px;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 1.1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        border-radius: 0;
+    }
+    
+    .mobile-nav-link:hover {
+        background: rgba(178, 224, 255, 0.1);
+        color: #b2e0ff;
+    }
+    
+    .mobile-dropdown {
+        position: static;
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: none;
+        border-radius: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .mobile-dropdown.active {
+        max-height: 500px;
+    }
+    
+    .mobile-dropdown-link {
+        padding: 15px 40px;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    .mobile-dropdown-link:last-child {
+        border-bottom: none;
+    }
+    
+    .mobile-dropdown-link:hover {
+        background: rgba(178, 224, 255, 0.1);
+        color: #b2e0ff;
+    }
+    
+    .mobile-dropdown-toggle {
+        cursor: pointer;
+        user-select: none;
+    }
+    
+    .mobile-dropdown-toggle::after {
+        content: ' ▼';
+        font-size: 0.8rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .mobile-dropdown-toggle.active::after {
+        transform: rotate(180deg);
+    }
+}
+
+/* Глобальные стили для форм и элементов select */
+.form-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 48px; /* Дополнительное место для стрелки */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b2e0ff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center; /* Позиция стрелки: отступ от правого края */
+    background-size: 14px 14px;
+    cursor: pointer;
+}
+
+.form-select::-ms-expand {
+    display: none; /* Скрываем нативную стрелку в IE */
+}

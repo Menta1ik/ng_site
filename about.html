@@ -377,183 +377,88 @@
         .about-content {
             animation-delay: 0.2s;
         }
-    
-        /* Hide mobile navigation on desktop */
-        .mobile-nav {
-            display: none;
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin-top: 80px;
         }
 
-        /* Mobile navigation styles */
-        @media (max-width: 768px) {
-            .mobile-nav {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 280px;
-                height: 100vh;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                gap: 0;
-                padding: 20px 30px 30px;
-                transition: left 0.3s ease;
-                z-index: 100000 !important;
-                border-right: 1px solid rgba(178, 224, 255, 0.2);
-            }
-
-            .mobile-nav.active {
-                left: 0;
-            }
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff, #b2e0ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Mobile Menu Toggle Button */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 44px;
-            height: 44px;
-            background: transparent;
+        .cta-text {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            padding: 15px 30px;
+            border-radius: 0;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            padding: 7px;
-            z-index: 10001;
-            position: relative;
-            border-radius: 4px;
-            transition: background-color 0.3s ease;
-            -webkit-tap-highlight-color: transparent;
-            touch-action: manipulation;
+            font-size: 1rem;
+            background: #19e97c;
+            color: #0a0a0a;
+            display: inline-block;
         }
 
-        .mobile-menu-toggle:hover {
-            background: rgba(255, 255, 255, 0.1);
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(25, 233, 124, 0.3);
         }
 
-        .mobile-menu-toggle:active {
-            background: rgba(255, 255, 255, 0.2);
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
         }
 
-        .mobile-menu-toggle span {
-            width: 100%;
-            height: 3px;
-            background: #ffffff;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-            transform-origin: center;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(7px, 7px);
-        }
-
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* Mobile Navigation Styles */
         @media (max-width: 768px) {
-            .header {
-                padding: 15px 20px;
-                position: relative;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                min-height: 60px;
+            .nav {
+                display: none;
             }
-
-            .logo {
-                order: 1;
-            }
-
+            
             .mobile-menu-toggle {
                 display: flex;
-                order: 2;
-            }
-
-            .nav {
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 280px;
-                height: 100vh;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(20px);
                 flex-direction: column;
-                gap: 0;
-                padding: 20px 30px 30px;
-                transition: left 0.3s ease;
-                z-index: 99999 !important;
-                border-right: 1px solid rgba(178, 224, 255, 0.2);
-            }
-
-            .nav.active {
-                left: 0;
-            }
-
-            .nav-item {
-                width: 100%;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            }
-
-            .nav-item:last-child {
-                border-bottom: none;
-            }
-
-            .nav-link {
-                font-size: 1rem;
-                padding: 15px 0;
-                justify-content: space-between;
-                color: #ffffff;
-                border-bottom: none;
-            }
-
-            .dropdown {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                background: rgba(255, 255, 255, 0.05);
+                gap: 4px;
+                background: none;
                 border: none;
-                border-radius: 8px;
-                margin-top: 10px;
-                padding: 10px 0;
-                min-width: auto;
-                max-height: 200px;
-                overflow: visible;
-                transition: max-height 0.3s ease;
+                cursor: pointer;
             }
-
-            .dropdown-link {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-                color: rgba(255, 255, 255, 0.8);
-            }
-
-            .dropdown-link:hover {
-                color: #19e97c;
-                background: rgba(25, 233, 124, 0.1);
+            
+            .mobile-menu-toggle span {
+                width: 24px;
+                height: 2px;
+                background: #ffffff;
+                transition: all 0.3s ease;
             }
         }
-
     </style>
 </head>
 <body>
     <canvas id="particles-bg"></canvas>
     
-    
-    
-    
-    
     <div class="main-container">
         <header class="header">
-            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+            <a href="index.html" class="logo">
                 <div class="logo-icon">nx</div>
                 <div>
                     nextgen
@@ -594,36 +499,6 @@
                 <span></span>
             </button>
         </header>
-
-        <!-- Mobile navigation for mobile devices only -->
-        <nav class="nav mobile-nav">
-            <div class="nav-item">
-                <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
-                <div class="dropdown">
-                    <a href="evaluation.html" class="dropdown-link">Evaluation</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
-                <div class="dropdown">
-                    <a href="success-stories.html" class="dropdown-link">Success Stories</a>
-                    <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
-                <div class="dropdown">
-                    <a href="presentations.html" class="dropdown-link">Presentations</a>
-                    <a href="file_archive.html" class="dropdown-link">Files</a>
-                </div>
-            </div>
-            <div class="nav-item">
-                <a href="about.html" class="nav-link active">About</a>
-            </div>
-            <div class="nav-item">
-                <a href="contact.html" class="nav-link">Contact</a>
-            </div>
-        </nav>
 
         <main class="content">
             <div class="container">
@@ -667,6 +542,15 @@
                         <p>We are open for strategic partnerships, co-innovation, and international expansion. Join us on the journey to the next generation of digital transformation.</p>
                     </div>
                 </div>
+
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h2 class="cta-title">Ready to take the next step?</h2>
+                    <p class="cta-text">
+                        Let’s turn your ideas into powerful solutions. Whether you’re looking to explore NextGen’s capabilities, request a tailored RFI, or discuss partnership and investment opportunities — we’re here to help you move forward.
+                    </p>
+                    <a href="request-for-information.html" class="cta-button">Request RFI</a>
+                </div>
             </div>
         </main>
 
@@ -676,11 +560,10 @@
     </div>
 
     <script>
-        // Particles animation
+        // Enhanced Particles Animation
         const canvas = document.getElementById('particles-bg');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        
         let w = window.innerWidth;
         let h = window.innerHeight;
         canvas.width = w;
@@ -732,68 +615,70 @@
         function drawLines() {
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    const p1 = particles[i];
+                    const p2 = particles[j];
+                    const dx = p1.x - p2.x;
+                    const dy = p1.y - p2.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
                     
-                    if (distance < LINE_DISTANCE) {
-                        const opacity = (1 - distance / LINE_DISTANCE) * 0.5;
-                        ctx.strokeStyle = `rgba(25, 233, 124, ${opacity})`;
-                        ctx.lineWidth = 0.5;
+                    if (dist < LINE_DISTANCE) {
+                        ctx.save();
+                        const opacity = 0.15 * (1 - dist / LINE_DISTANCE);
+                        ctx.globalAlpha = opacity;
+                        ctx.strokeStyle = LINE_COLOR;
+                        ctx.lineWidth = 1;
                         ctx.beginPath();
-                        ctx.moveTo(particles[i].x, particles[i].y);
-                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.moveTo(p1.x, p1.y);
+                        ctx.lineTo(p2.x, p2.y);
                         ctx.stroke();
+                        ctx.restore();
                     }
                 }
             }
         }
 
-        function drawParticles() {
-            particles.forEach(particle => {
+        function animateParticles() {
+            ctx.clearRect(0, 0, w, h);
+            
+            drawLines();
+            
+            for (let p of particles) {
                 // Mouse interaction
-                const dx = mouse.x - particle.x;
-                const dy = mouse.y - particle.y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < MOUSE_RADIUS) {
-                    const force = (MOUSE_RADIUS - distance) / MOUSE_RADIUS;
-                    const angle = Math.atan2(dy, dx);
-                    particle.vx -= Math.cos(angle) * force * 0.01;
-                    particle.vy -= Math.sin(angle) * force * 0.01;
-                    particle.size = particle.originalSize * (1 + force * 0.5);
+                const mouseDistance = Math.sqrt((p.x - mouse.x) ** 2 + (p.y - mouse.y) ** 2);
+                if (mouseDistance < MOUSE_RADIUS) {
+                    const force = (MOUSE_RADIUS - mouseDistance) / MOUSE_RADIUS;
+                    p.size = p.originalSize * (1 + force * 2);
+                    p.opacity = Math.min(1, p.opacity + force * 0.5);
                 } else {
-                    particle.size = particle.originalSize;
+                    p.size = p.originalSize;
+                    p.opacity = Math.max(0.3, p.opacity - 0.01);
+                }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, 2 * Math.PI);
+                ctx.fillStyle = PARTICLE_COLOR;
+                ctx.globalAlpha = p.opacity;
+                ctx.fill();
+                ctx.globalAlpha = 1;
+                
+                p.x += p.vx;
+                p.y += p.vy;
+                
+                // Random direction change
+                if (Math.random() < 0.003) {
+                    p.vx = randomBetween(-SPEED, SPEED);
+                    p.vy = randomBetween(-SPEED, SPEED);
                 }
                 
-                // Update position
-                particle.x += particle.vx;
-                particle.y += particle.vy;
-                
                 // Boundary collision
-                if (particle.x < 0 || particle.x > w) particle.vx *= -1;
-                if (particle.y < 0 || particle.y > h) particle.vy *= -1;
-                
-                // Keep particles in bounds
-                particle.x = Math.max(0, Math.min(w, particle.x));
-                particle.y = Math.max(0, Math.min(h, particle.y));
-                
-                // Draw particle
-                ctx.fillStyle = `rgba(178, 224, 255, ${particle.opacity})`;
-                ctx.beginPath();
-                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-                ctx.fill();
-            });
+                if (p.x < 0 || p.x > w) p.vx *= -1;
+                if (p.y < 0 || p.y > h) p.vy *= -1;
+            }
+            
+            requestAnimationFrame(animateParticles);
         }
-
-        function animate() {
-            ctx.clearRect(0, 0, w, h);
-            drawLines();
-            drawParticles();
-            requestAnimationFrame(animate);
-        }
-
-        animate();
+        
+        animateParticles();
     </script>
     <script src="mobile-menu.js" defer></script>
     <script>

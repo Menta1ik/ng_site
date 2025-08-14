@@ -29,5 +29,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "https://www.nxgenlowcode.biz/:path*",
+      "destination": "https://nxgenlowcode.biz/:path*",
+      "permanent": true
+    }
   ]
 }

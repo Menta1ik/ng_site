@@ -1,98 +1,57 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title8 desc8">
+  <title id="title8">NextGen - Real results with lowcode</title>
+  <desc id="desc8">Case-study style social preview with headline, outcome metrics, and brand</desc>
   <defs>
-    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    <linearGradient id="bg8" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#b2e0ff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#19e97c;stop-opacity:1" />
+    <linearGradient id="accent8" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
-    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#b2e0ff;stop-opacity:1" />
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-      <feMerge> 
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
-  
-  <!-- Background -->
-  <rect width="1200" height="630" fill="url(#bgGradient)"/>
-  
-  <!-- Background pattern -->
-  <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-    </pattern>
-  </defs>
-  <rect width="1200" height="630" fill="url(#grid)"/>
-  
-  <!-- Decorative elements -->
-  <circle cx="150" cy="120" r="60" fill="#19e97c" opacity="0.08"/>
-  <circle cx="1050" cy="500" r="100" fill="#b2e0ff" opacity="0.06"/>
-  <rect x="900" y="80" width="250" height="3" rx="1.5" fill="#19e97c" opacity="0.4"/>
-  <rect x="50" y="520" width="200" height="3" rx="1.5" fill="#b2e0ff" opacity="0.4"/>
-  
-  <!-- Logo container -->
-  <rect x="80" y="140" width="100" height="100" rx="20" fill="url(#logoGradient)" filter="url(#glow)"/>
-  <text x="130" y="210" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="52" font-weight="900" fill="#0a0a0a" text-anchor="middle">NG</text>
-  
-  <!-- Main Title -->
-  <text x="220" y="170" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="68" font-weight="900" fill="url(#textGradient)">NextGen</text>
-  <text x="220" y="210" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.85)">Advanced Lowcode Platform</text>
-  
-  <!-- Feature highlight -->
-  <rect x="220" y="240" width="280" height="40" rx="20" fill="rgba(25,233,124,0.12)" stroke="rgba(25,233,124,0.3)" stroke-width="1"/>
-  <text x="360" y="265" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="700" fill="#19e97c" text-anchor="middle">🚀 Low Code. High Impact.</text>
-  
-  <!-- Description -->
-  <text x="80" y="330" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="26" font-weight="600" fill="rgba(255,255,255,0.95)">Automate. Integrate. Scale.</text>
-  <text x="80" y="370" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="400" fill="rgba(255,255,255,0.8)">Powerful visual builder and process automation.</text>
-  <text x="80" y="400" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="400" fill="rgba(255,255,255,0.8)">Turn innovation into reality—no complex coding required.</text>
-  
-  <!-- URL -->
-  <text x="80" y="480" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="20" font-weight="500" fill="#b2e0ff">nxgenlowcode.biz</text>
-  
-  <!-- Tech dashboard mockup -->
-  <rect x="750" y="180" width="380" height="280" rx="24" fill="rgba(255,255,255,0.04)" stroke="rgba(178,224,255,0.15)" stroke-width="2"/>
-  
-  <!-- Dashboard header -->
-  <rect x="770" y="200" width="340" height="40" rx="8" fill="rgba(255,255,255,0.08)"/>
-  <circle cx="790" cy="220" r="6" fill="#19e97c"/>
-  <circle cx="810" cy="220" r="6" fill="#b2e0ff"/>
-  <circle cx="830" cy="220" r="6" fill="rgba(255,255,255,0.4)"/>
-  <text x="860" y="227" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="600" fill="rgba(255,255,255,0.9)">NextGen Dashboard</text>
-  
-  <!-- Dashboard content -->
-  <rect x="770" y="260" width="100" height="6" rx="3" fill="rgba(255,255,255,0.3)"/>
-  <rect x="770" y="280" width="140" height="6" rx="3" fill="rgba(178,224,255,0.6)"/>
-  <rect x="770" y="300" width="80" height="6" rx="3" fill="rgba(25,233,124,0.6)"/>
-  
-  <rect x="770" y="330" width="160" height="30" rx="6" fill="rgba(25,233,124,0.15)" stroke="#19e97c" stroke-width="1"/>
-  <text x="850" y="350" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700" fill="#19e97c" text-anchor="middle">BUILD APP</text>
-  
-  <rect x="770" y="380" width="120" height="30" rx="6" fill="rgba(178,224,255,0.15)" stroke="#b2e0ff" stroke-width="1"/>
-  <text x="830" y="400" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700" fill="#b2e0ff" text-anchor="middle">DEPLOY</text>
-  
-  <!-- Stats visualization -->
-  <rect x="950" y="260" width="140" height="80" rx="8" fill="rgba(25,233,124,0.08)"/>
-  <rect x="960" y="270" width="20" height="40" rx="2" fill="#19e97c" opacity="0.8"/>
-  <rect x="990" y="280" width="20" height="30" rx="2" fill="#19e97c" opacity="0.6"/>
-  <rect x="1020" y="275" width="20" height="35" rx="2" fill="#19e97c" opacity="0.9"/>
-  <rect x="1050" y="270" width="20" height="40" rx="2" fill="#19e97c"/>
-  
-  <!-- Floating elements -->
-  <circle cx="1000" cy="150" r="4" fill="#19e97c" opacity="0.7" filter="url(#glow)"/>
-  <circle cx="1080" cy="180" r="3" fill="#b2e0ff" opacity="0.8" filter="url(#glow)"/>
-  <circle cx="920" cy="140" r="2" fill="#19e97c" opacity="0.6"/>
-  
-  <circle cx="200" cy="520" r="3" fill="#19e97c" opacity="0.5"/>
-  <circle cx="120" cy="480" r="4" fill="#b2e0ff" opacity="0.7" filter="url(#glow)"/>
-  <circle cx="280" cy="500" r="2" fill="#b2e0ff" opacity="0.6"/>
+
+  <rect width="1200" height="630" fill="url(#bg8)"/>
+
+  <!-- Header -->
+  <g transform="translate(60,60)">
+    <rect x="0" y="-30" width="56" height="56" rx="12" fill="#34d399"/>
+    <text x="8" y="14" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#0b1020">nx</text>
+    <text x="80" y="8" font-family="Inter,sans-serif" font-size="44" font-weight="800" fill="#ffffff">NextGen</text>
+  </g>
+
+  <!-- Headline -->
+  <text x="60" y="160" font-family="Inter,sans-serif" font-size="52" font-weight="800" fill="#ffffff">Launch complex apps in weeks, not months</text>
+  <text x="60" y="205" font-family="Inter,sans-serif" font-size="22" fill="#cbd5e1">Lowcode platform for secure, mission-critical systems</text>
+
+  <!-- Metrics -->
+  <g transform="translate(60,260)" font-family="Inter,sans-serif" fill="#e5e7eb">
+    <g>
+      <rect x="0" y="0" width="320" height="160" rx="16" fill="#111827"/>
+      <text x="24" y="70" font-size="48" font-weight="800" fill="#34d399">10×</text>
+      <text x="24" y="104" font-size="18" fill="#cbd5e1">Faster delivery</text>
+    </g>
+    <g transform="translate(350,0)">
+      <rect x="0" y="0" width="320" height="160" rx="16" fill="#111827"/>
+      <text x="24" y="70" font-size="48" font-weight="800" fill="#34d399">60%</text>
+      <text x="24" y="104" font-size="18" fill="#cbd5e1">Lower TCO</text>
+    </g>
+    <g transform="translate(700,0)">
+      <rect x="0" y="0" width="320" height="160" rx="16" fill="#111827"/>
+      <text x="24" y="70" font-size="48" font-weight="800" fill="#34d399">99.99%</text>
+      <text x="24" y="104" font-size="18" fill="#cbd5e1">Uptime ready</text>
+    </g>
+  </g>
+
+  <!-- Industries sentence without bank-only focus -->
+  <text x="60" y="470" font-family="Inter,sans-serif" font-size="20" fill="#9ca3af">Trusted by teams in Government, Healthcare, Logistics, Telecom, Finance</text>
+
+  <!-- URL strip -->
+  <g transform="translate(0,540)">
+    <rect x="0" y="0" width="1200" height="90" fill="#0b1220"/>
+    <text x="60" y="56" font-family="Inter,sans-serif" font-size="22" fill="#a7f3d0">nxgenlowcode.biz</text>
+    <rect x="60" y="20" width="220" height="4" fill="url(#accent8)"/>
+  </g>
 </svg>

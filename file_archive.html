@@ -10,14 +10,18 @@
     <meta property="og:url" content="https://nxgenlowcode.biz/file_archive.html">
     <meta property="og:title" content="NextGen - File Archive | Platform Documentation & Technical Resources">
     <meta property="og:description" content="Access comprehensive NextGen platform documentation: use cases, TCO analysis, security framework, banking modules, RFP checklists, and technical specifications. Download PDF resources for enterprise evaluation.">
-    <meta property="og:image" content="images/nextgen-preview.png">
+    <meta property="og:image" content="https://nxgenlowcode.biz/images/nextgen-preview.png">
+    <meta property="og:image:alt" content="NextGen Low-Code Platform preview image">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://nxgenlowcode.biz/file_archive.html">
-    <meta property="twitter:title" content="NextGen - File Archive | Platform Documentation & Technical Resources">
-    <meta property="twitter:description" content="Download comprehensive documentation, technical specifications, and analysis documents for NextGen low-code platform evaluation and implementation.">
-    <meta property="twitter:image" content="images/nextgen-preview.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://nxgenlowcode.biz/file_archive.html">
+    <meta name="twitter:title" content="NextGen - File Archive | Platform Documentation & Technical Resources">
+    <meta name="twitter:description" content="Download comprehensive documentation, technical specifications, and analysis documents for NextGen low-code platform evaluation and implementation.">
+    <meta name="twitter:image" content="https://nxgenlowcode.biz/images/nextgen-preview.png">
+    <meta name="twitter:image:alt" content="NextGen Low-Code Platform preview image">
     
     <!-- Additional meta tags -->
     <meta name="description" content="Access comprehensive NextGen platform documentation: use cases, TCO analysis, security framework, banking modules, RFP checklists, and technical specifications. Download PDF resources for enterprise evaluation.">
@@ -28,13 +32,23 @@
     <meta name="revisit-after" content="7 days">
     <meta name="distribution" content="global">
     
-    <link rel="canonical" href="https://nxgenlowcode.biz/file_archive.html">
-    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/favicon-16x16.svg">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="images/favicon-32x32.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg">
+    <link rel="mask-icon" href="images/favicon.svg" color="#2563eb">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Additional SEO meta tags -->
+    <meta name="theme-color" content="#2563eb">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="msapplication-TileColor" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="NextGen File Archive">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
@@ -45,8 +59,60 @@
       gtag('config', 'G-RJQ64XZB6T');
     </script>
     
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nxgenlowcode.biz/file_archive.html">
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BrainySoft Ltd",
+        "url": "https://nxgenlowcode.biz",
+        "logo": "https://nxgenlowcode.biz/images/favicon.svg",
+        "description": "NextGen enterprise low-code platform for building secure, scalable applications with visual drag-and-drop tools",
+        "foundingDate": "2010",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+380-44-123-4567",
+            "contactType": "Customer Service",
+            "email": "info@nxgenlowcode.biz",
+            "availableLanguage": ["English", "Ukrainian", "Russian"]
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kyiv, Ukraine",
+            "addressCountry": "UA"
+        },
+        "sameAs": [
+            "https://linkedin.com/company/brainysoft",
+            "https://github.com/brainysoft"
+        ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "NextGen Low-Code Platform",
+        "url": "https://nxgenlowcode.biz/",
+        "description": "Advanced low-code platform for enterprise application development with visual tools and enterprise-grade security",
+        "publisher": {
+            "@type": "Organization",
+            "name": "BrainySoft Ltd"
+        },
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://nxgenlowcode.biz/?search={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -184,8 +250,8 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background: rgba(0, 0, 0, 0.95);
-            border: 1px solid rgba(25, 233, 124, 0.3);
+            background: rgba(26, 26, 46, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             min-width: 180px;
             opacity: 0;
@@ -208,7 +274,7 @@
             color: #ffffff;
             text-decoration: none;
             transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(25, 233, 124, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .dropdown-link:last-child {
@@ -216,10 +282,11 @@
         }
 
         .dropdown-link:hover {
-            background: rgba(25, 233, 124, 0.1);
-            color: #19e97c;
-            padding-left: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            color: #b2e0ff;
+            padding-left: 16px;
         }
+
 
         /* Content */
         .content {
@@ -350,10 +417,13 @@
         .footer {
             padding: 40px;
             text-align: center;
-            color: rgba(255, 255, 255, 0.6);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
         /* Responsive */
@@ -419,32 +489,6 @@
             display: none;
         }
 
-        /* Mobile navigation styles */
-        @media (max-width: 768px) {
-            .mobile-nav {
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: -100%;
-                width: 280px;
-                height: 100vh;
-                background: rgba(10, 10, 10, 0.95);
-                backdrop-filter: blur(20px);
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: flex-start;
-                gap: 0;
-                padding: 20px 30px 30px;
-                transition: left 0.3s ease;
-                z-index: 100000 !important;
-                border-right: 1px solid rgba(178, 224, 255, 0.2);
-            }
-
-            .mobile-nav.active {
-                left: 0;
-            }
-        }
-
         /* Mobile Menu Toggle Button */
         .mobile-menu-toggle {
             display: none;
@@ -465,11 +509,11 @@
         }
 
         .mobile-menu-toggle:hover {
-            background: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1);
         }
 
         .mobile-menu-toggle:active {
-            background: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         .mobile-menu-toggle span {
@@ -493,7 +537,7 @@
             transform: rotate(-45deg) translate(7px, -7px);
         }
 
-        /* Mobile Navigation Styles */
+        /* Mobile navigation styles */
         @media (max-width: 768px) {
             .header {
                 padding: 15px 20px;
@@ -506,14 +550,28 @@
 
             .logo {
                 order: 1;
+                flex: 0 0 auto;
             }
 
             .mobile-menu-toggle {
                 display: flex;
                 order: 2;
+                flex: 0 0 auto;
             }
 
-            .nav {
+            /* Hide desktop nav on mobile */
+            .header .nav {
+                display: none;
+            }
+
+            /* Ensure logo and mobile toggle are visible */
+            .header .logo,
+            .header .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .mobile-nav {
+                display: flex;
                 position: fixed;
                 top: 0;
                 left: -100%;
@@ -529,7 +587,7 @@
                 border-right: 1px solid rgba(178, 224, 255, 0.2);
             }
 
-            .nav.active {
+            .mobile-nav.active {
                 left: 0;
             }
 
@@ -538,85 +596,26 @@
                 border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
 
-            .nav-item:last-child {
-                border-bottom: none;
-            }
+            .nav-item:last-child { border-bottom: none; }
 
-            .nav-link {
-                font-size: 1rem;
-                padding: 15px 0;
-                justify-content: space-between;
-                color: #ffffff;
-                border-bottom: none;
-            }
+            .nav-link { font-size: 1rem; padding: 15px 0; justify-content: space-between; color: #ffffff; border-bottom: none; }
 
-            .dropdown {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                background: rgba(255, 255, 255, 0.05);
-                border: none;
-                border-radius: 8px;
-                margin-top: 10px;
-                padding: 10px 0;
-                min-width: auto;
-                width: 100%;
-                max-height: 200px;
-                overflow: visible;
-                transition: max-height 0.3s ease;
-            }
+            .dropdown { position: static; opacity: 1; visibility: visible; transform: none; background: rgba(255, 255, 255, 0.05); border: none; border-radius: 8px; margin-top: 10px; padding: 10px 0; min-width: auto; width: 100%; max-height: 200px; overflow: visible; transition: max-height 0.3s ease; }
 
-            .dropdown-link {
-                padding: 10px 15px;
-                font-size: 0.9rem;
-                color: rgba(255, 255, 255, 0.8);
-            }
+            .dropdown-link { padding: 10px 15px; font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); }
+            .dropdown-link:hover { color: #19e97c; background: rgba(25, 233, 124, 0.1); }
 
-            .dropdown-link:hover {
-                color: #19e97c;
-                background: rgba(25, 233, 124, 0.1);
-            }
-
-            .logo {
-                font-size: 1.3rem;
-            }
-
-            .logo-icon {
-                width: 35px;
-                height: 35px;
-            }
+            .logo { font-size: 1.3rem; }
+            .logo-icon { width: 35px; height: 35px; }
         }
 
         @media (max-width: 480px) {
-            .header {
-                padding: 10px 15px;
-            }
-
-            .nav {
-                width: 100%;
-                left: -100%;
-                padding: 70px 20px 20px;
-            }
-
-            .nav-link {
-                font-size: 0.95rem;
-                padding: 12px 0;
-            }
-
-            .dropdown-link {
-                padding: 8px 12px;
-                font-size: 0.85rem;
-            }
-
-            .logo {
-                font-size: 1.2rem;
-            }
-
-            .logo-icon {
-                width: 30px;
-                height: 30px;
-            }
+            .header { padding: 10px 15px; }
+            .nav { width: 100%; left: -100%; padding: 70px 20px 20px; }
+            .nav-link { font-size: 0.95rem; padding: 12px 0; }
+            .dropdown-link { padding: 8px 12px; font-size: 0.85rem; }
+            .logo { font-size: 1.2rem; }
+            .logo-icon { width: 30px; height: 30px; }
         }
     </style>
 </head>
@@ -796,7 +795,7 @@
         </main>
 
         <footer class="footer">
-            <p>© 2025 NextGen | Comprehensive Digital Transformation Solutions</p>
+            <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
         </footer>
     </div>
 

@@ -3,61 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Origination System Solution | NextGen</title>
-
-    <!-- Open Graph -->
+    <title>Payment Solutions | NextGen</title>
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://nxgenlowcode.biz/loan-origination-system.html">
-    <meta property="og:title" content="Loan Origination System Solution | NextGen">
-    <meta property="og:description" content="Build enterprise-grade loan origination systems 10x faster using NextGen low-code platform. Complete automation, compliance, and scalability.">
+    <meta property="og:url" content="https://nxgenlowcode.biz/payment-solutions.html">
+    <meta property="og:title" content="Payment Solutions | NextGen">
+    <meta property="og:description" content="Build flexible and scalable payment solutions 10x faster with NextGen low-code platform.">
     <meta property="og:image" content="https://nxgenlowcode.biz/images/nextgen-preview.png">
     <meta property="og:image:alt" content="NextGen Low-Code Platform preview image">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    
+
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://nxgenlowcode.biz/loan-origination-system.html">
-    <meta name="twitter:title" content="Loan Origination System Solution | NextGen">
-    <meta name="twitter:description" content="Build enterprise-grade loan origination systems 10x faster using NextGen low-code platform.">
+    <meta name="twitter:url" content="https://nxgenlowcode.biz/payment-solutions.html">
+    <meta name="twitter:title" content="Payment Solutions | NextGen">
+    <meta name="twitter:description" content="Build flexible and scalable payment solutions 10x faster with NextGen low-code platform.">
     <meta name="twitter:image" content="https://nxgenlowcode.biz/images/nextgen-preview.png">
     <meta name="twitter:image:alt" content="NextGen Low-Code Platform preview image">
-    <meta name="twitter:image:width" content="1200">
-    <meta name="twitter:image:height" content="630">
     
     <!-- Additional meta tags -->
-    <meta name="description" content="Loan Origination System built on NextGen low-code platform. Automate application intake, document collection, underwriting, decisioning, and disbursement with full compliance and analytics. Reduce time-to-yes by 40–70% and cut operational costs by up to 50%.">
-    <meta name="keywords" content="loan origination, LOS, underwriting, decisioning, low-code platform, NextGen, KYC, AML, credit scoring, financial services, banking, lending, risk management, document verification, e-signature, disbursement, automation">
+    <meta name="description" content="Payment Solutions on NextGen low-code platform. Build sophisticated payment processing systems with transaction routing, fraud detection, multi-provider integration, real-time monitoring, and comprehensive analytics. Reduce processing time by 70-90% and operational costs by 40%.">
+    <meta name="keywords" content="payment solutions, low-code platform, NextGen, payment processing, fintech, banking solutions, transaction routing, fraud detection, payment gateway, PSP integration, digital payments, e-commerce, POS integration, payment analytics, financial technology, payment compliance, real-time processing, payment orchestration">
     <meta name="author" content="BrainySoft Ltd">
     <meta name="robots" content="index, follow">
-
-    <link rel="canonical" href="https://nxgenlowcode.biz/loan-origination-system.html">
-
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    
+    <link rel="canonical" href="https://nxgenlowcode.biz/payment-solutions.html">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="images/favicon-16x16.svg">
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="images/favicon-32x32.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg">
     <link rel="mask-icon" href="images/favicon.svg" color="#2563eb">
-    
+
     <!-- PWA Manifest -->
     <link rel="manifest" href="manifest.json">
-    
+
     <!-- Theme and browser settings -->
     <meta name="theme-color" content="#2563eb">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="msapplication-TileColor" content="#2563eb">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="NextGen LOS">
+    <meta name="apple-mobile-web-app-title" content="NextGen PS">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RJQ64XZB6T');
+      (function() {
+        var isProd = location.hostname.endsWith('nxgenlowcode.biz') && location.protocol === 'https:';
+        if (isProd) {
+          var gtagScript = document.createElement('script');
+          gtagScript.async = true;
+          gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T';
+          document.head.appendChild(gtagScript);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-RJQ64XZB6T');
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){};
+        }
+      })();
     </script>
 
     <!-- JSON-LD Structured Data -->
@@ -93,9 +107,9 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "NextGen Loan Origination System",
-        "url": "https://nxgenlowcode.biz/loan-origination-system.html",
-        "description": "Build enterprise-grade loan origination systems 10x faster using NextGen low-code platform",
+        "name": "NextGen Payment Solutions",
+        "url": "https://nxgenlowcode.biz/payment-solutions.html",
+        "description": "Build flexible and scalable payment solutions 10x faster with NextGen low-code platform",
         "publisher": {
             "@type": "Organization",
             "name": "BrainySoft Ltd"
@@ -106,16 +120,16 @@
     {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "Loan Origination System",
+        "name": "Payment Solutions",
         "provider": {
              "@type": "Organization",
              "name": "NextGen by BrainySoftware",
              "url": "https://nxgenlowcode.biz",
              "logo": "https://nxgenlowcode.biz/images/nextgen-preview.png"
          },
-        "description": "Comprehensive loan origination platform that streamlines the entire lending process from application to disbursement with automated workflows, real-time decision making, and regulatory compliance.",
+        "description": "Comprehensive payment processing solutions covering transaction routing, fraud detection, multi-provider integration, compliance checks, and real-time analytics with automated workflows.",
         "serviceType": "Financial Technology",
-        "category": "Loan Management Software",
+        "category": "Payment Processing Software",
         "audience": {
             "@type": "Audience",
             "audienceType": "Financial Institutions"
@@ -125,19 +139,19 @@
             "@type": "Offer",
             "category": "Software Solution"
         },
-        "url": "https://nxgenlowcode.biz/loan-origination-system.html",
+        "url": "https://nxgenlowcode.biz/payment-solutions.html",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https://nxgenlowcode.biz/loan-origination-system.html"
+            "@id": "https://nxgenlowcode.biz/payment-solutions.html"
         }
     }
     </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" crossorigin>
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -226,14 +240,17 @@
     </style>
 </head>
 <body>
+    <!-- Particles Background -->
     <canvas id="particles-bg"></canvas>
+
     <div class="main-container">
+        <!-- Header -->
         <header class="header">
             <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
                 <div class="logo-icon">nx</div>
                 <div>
                     nextgen
-                    <div style="font-size: .7rem; font-weight: 400; opacity: .8;">Advanced lowcode platform</div>
+                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
                 </div>
             </a>
             <nav class="nav">
@@ -271,6 +288,7 @@
             </button>
         </header>
 
+        <!-- Mobile navigation for mobile devices only -->
         <nav class="nav mobile-nav">
             <div class="nav-item">
                 <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
@@ -300,150 +318,220 @@
             </div>
         </nav>
 
+        <!-- Main Content -->
         <main class="main-content">
             <div class="container">
-                <h1 class="page-title">Loan Origination System</h1>
-                <p class="page-subtitle">From application intake to disbursement — NextGen low-code platform streamlines the entire loan origination lifecycle with automation, compliance, and analytics.</p>
+                <h1 class="page-title">Payment Solutions</h1>
+                <p class="page-subtitle">
+                    Build flexible and scalable payment solutions with NextGen low-code platform. 
+                    From transaction processing to system integration - deliver fast, secure, and compliant payment systems.
+                </p>
 
-                <!-- Section 1 -->
+                <!-- Section 1: Process Modeling -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">1</span> Application Intake & Pre-Processing</h2>
+                    <h2 class="section-title">
+                        <span class="section-number">1</span>
+                        Process Modeling
+                    </h2>
                     <div class="section-content">
-                        <p>Collect, validate, and normalize applications across channels:</p>
+                        <p>Visual workflow editor enables creation of comprehensive payment processing strategies:</p>
                         <ul class="feature-list">
-                            <li>Multi-channel intake: web, mobile, partners</li>
-                            <li>Automated data validation and enrichment</li>
-                            <li>Initial KYC/AML screening with configurable rules</li>
+                            <li>Design end-to-end transaction flows from data input to system recording</li>
+                            <li>Configure business rules validation and compliance checks</li>
+                            <li>Enable seamless collaboration between business analysts and developers</li>
                         </ul>
-                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Dynamic forms minimize friction with progressive disclosure, while integrated data services pre-fill customer information to reduce errors.</p>
+                        <p>Each step can be modified without rewriting the entire system, ensuring maximum flexibility.</p>
+                        <p class="enhanced-description">
+                            <strong>Enhanced capabilities:</strong> Drag-and-drop process designer with pre-built payment templates. Visual rule engine allows non-technical users to modify payment logic, while version control ensures safe deployment of process changes.
+                        </p>
                     </div>
                 </section>
 
-                <!-- Section 2 -->
+                <!-- Section 2: Payment Reception and Routing -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">2</span> Document Collection & Verification</h2>
+                    <h2 class="section-title">
+                        <span class="section-number">2</span>
+                        Payment Reception and Routing
+                    </h2>
                     <div class="section-content">
-                        <p>Automate document intake and verification:</p>
+                        <p>Comprehensive multi-channel payment acceptance and intelligent routing:</p>
                         <ul class="feature-list">
-                            <li>Capture identity, income, collateral, and financial documents</li>
-                            <li>OCR and data extraction with validation rules</li>
-                            <li>Biometric and liveness checks where required</li>
+                            <li>Support for online payments through websites and mobile applications</li>
+                            <li>Integration with POS terminals and third-party payment systems</li>
+                            <li>Alternative payment methods: e-wallets, QR codes, cryptocurrency payments</li>
                         </ul>
-                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Document pipelines include quality checks, duplicate detection, and automated follow-ups for missing items.</p>
+                        <p>Platform automatically routes transactions based on business rules and regional requirements.</p>
+                        <p class="enhanced-description">
+                            <strong>Enhanced capabilities:</strong> Smart routing algorithms optimize success rates and costs. Real-time failover ensures high availability, while dynamic routing adapts to provider performance and cost changes automatically.
+                        </p>
                     </div>
                 </section>
 
-                <!-- Section 3 -->
+                <!-- Section 3: Compliance and Verification -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">3</span> Risk Scoring & Underwriting</h2>
+                    <h2 class="section-title">
+                        <span class="section-number">3</span>
+                        Compliance and Verification Checks
+                    </h2>
                     <div class="section-content">
-                        <p>Flexible decisioning with rules, scorecards, and ML models:</p>
+                        <p>Automated compliance and fraud prevention capabilities:</p>
                         <ul class="feature-list">
-                            <li>Credit scoring with PD/LGD estimation</li>
-                            <li>Policy rules and debt-to-income checks</li>
-                            <li>Automated and manual underwriting workflows</li>
+                            <li>Automatic KYC/AML verification processes</li>
+                            <li>Real-time payer credentials validation</li>
+                            <li>Advanced anti-fraud rules and machine learning detection</li>
                         </ul>
-                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Champion–challenger testing and cut-off calibration optimize approval strategies while maintaining risk appetite.</p>
+                        <p>This reduces fraudulent transactions and ensures regulatory compliance across all operations.</p>
+                        <p class="enhanced-description">
+                            <strong>Enhanced capabilities:</strong> Machine learning models continuously adapt to new fraud patterns. Risk scoring engines evaluate transactions in milliseconds, while configurable thresholds balance security with user experience.
+                        </p>
                     </div>
                 </section>
 
-                <!-- Section 4 -->
+                <!-- Section 4: Payment Provider Integration -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">4</span> Offer Generation & E-Signature</h2>
+                    <h2 class="section-title">
+                        <span class="section-number">4</span>
+                        Payment Provider Integration
+                    </h2>
                     <div class="section-content">
-                        <p>Create compliant offers and finalize with digital signatures:</p>
+                        <p>Flexible integration with multiple payment service providers:</p>
                         <ul class="feature-list">
-                            <li>Personalized terms, pricing, and repayment schedules</li>
-                            <li>Automated document generation</li>
-                            <li>E-signature with MFA and audit trails</li>
+                            <li>REST/SOAP API connections for any PSP (Visa, Mastercard, PayPal, Stripe, etc.)</li>
+                            <li>Backup channel support for primary provider failures</li>
+                            <li>Custom gateway configuration capabilities</li>
                         </ul>
-                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Real-time pricing engines and counter-offer workflows maximize conversion while meeting regulatory requirements.</p>
+                        <p>This approach provides businesses with flexibility and independence from single provider dependency.</p>
+                        <p class="enhanced-description">
+                            <strong>Enhanced capabilities:</strong> Universal payment abstraction layer simplifies multi-provider management. Automated health monitoring switches to backup providers instantly, while load balancing optimizes transaction distribution.
+                        </p>
                     </div>
                 </section>
 
-                <!-- Section 5 -->
+                <!-- Section 5: Confirmations and Notifications -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">5</span> Disbursement & Core Integration</h2>
+                    <h2 class="section-title">
+                        <span class="section-number">5</span>
+                        Confirmations and Notifications
+                    </h2>
                     <div class="section-content">
-                        <p>Seamless integration with banking systems and third parties:</p>
+                        <p>Comprehensive confirmation and communication system:</p>
                         <ul class="feature-list">
-                            <li>Core banking, ERP, and payment rails integration</li>
-                            <li>Collateral registration and insurance partners</li>
-                            <li>Event-driven updates and reconciliation</li>
+                            <li>Automatic receipt and invoice generation</li>
+                            <li>Multi-channel notifications: push, email, and SMS for customers</li>
+                            <li>CRM integration for complete payment history tracking</li>
                         </ul>
-                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Retry patterns, idempotent APIs, and circuit breakers ensure reliable operations across external dependencies.</p>
+                        <p>Customers receive immediate confirmation while businesses maintain complete digital audit trails.</p>
+                        <p class="enhanced-description">
+                            <strong>Enhanced capabilities:</strong> Customizable notification templates adapt to customer preferences. Real-time delivery tracking ensures message receipt, while integration APIs enable omnichannel communication orchestration.
+                        </p>
                     </div>
                 </section>
 
-                <!-- Section 6 -->
+                <!-- Section 6: Internal System Integration -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">6</span> Monitoring & Analytics</h2>
+                    <h2 class="section-title">
+                        <span class="section-number">6</span>
+                        Internal System Integration
+                    </h2>
                     <div class="section-content">
-                        <p>Operational dashboards and performance reporting:</p>
+                        <p>Seamless integration with existing business systems:</p>
                         <ul class="feature-list">
-                            <li>Time-to-yes and time-to-cash metrics</li>
-                            <li>Approval rates, declines, and reasons taxonomy</li>
-                            <li>Portfolio quality and early delinquency signals</li>
+                            <li>Automatic data recording in ERP and accounting systems</li>
+                            <li>BI system and reporting API support</li>
+                            <li>Loyalty platform integration for automatic bonus accrual</li>
                         </ul>
-                        <p class="enhanced-description"><strong>Enhanced capabilities:</strong> Real-time alerts for SLA breaches and anomaly detection reduce operational risk and improve customer satisfaction.</p>
+                        <p>This eliminates manual data entry and errors, accelerating financial reporting processes.</p>
+                        <p class="enhanced-description">
+                            <strong>Enhanced capabilities:</strong> Event-driven architecture ensures real-time data synchronization. Intelligent mapping handles data transformation between systems, while audit trails maintain complete transaction visibility.
+                        </p>
                     </div>
                 </section>
 
-                <!-- KPIs -->
+                <!-- Section 7: Monitoring and Analytics -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">7</span> Expected KPIs & Impact</h2>
+                    <h2 class="section-title">
+                        <span class="section-number">7</span>
+                        Monitoring and Analytics
+                    </h2>
                     <div class="section-content">
-                        <p>Organizations deploying Loan Origination Systems on NextGen commonly observe:</p>
+                        <p>Built-in dashboards provide comprehensive operational insights:</p>
+                        <ul class="feature-list">
+                            <li>Real-time transaction status and processing speed monitoring</li>
+                            <li>Channel-based payment conversion analysis</li>
+                            <li>Fee structure and commission volume tracking</li>
+                            <li>Incident management and declined transaction analysis</li>
+                        </ul>
+                        <p>This enables proactive payment business management and optimization.</p>
+                        <p class="enhanced-description">
+                            <strong>Enhanced capabilities:</strong> Predictive analytics identify potential issues before they impact customers. Customizable KPI dashboards provide role-based views, while automated alerting ensures immediate response to critical events.
+                        </p>
                     </div>
+                </section>
+
+                <!-- KPIs Section -->
+                <section class="content-section">
+                    <h2 class="section-title">
+                        <span class="section-number">8</span>
+                        Expected KPIs & Implementation Impact
+                    </h2>
+                    <div class="section-content">
+                        <p>Companies implementing Payment Solutions on NextGen typically achieve:</p>
+                    </div>
+                    
                     <div class="kpi-grid">
                         <div class="kpi-item">
-                            <span class="kpi-icon"></span>
-                            <div class="kpi-title">Time-to-Yes</div>
-                            <div class="kpi-value">40–70% Reduction</div>
-                            <div class="kpi-description">Accelerated decisioning</div>
-                            <div class="kpi-note">Parallel checks, pre-filled data, and automation shorten approval cycles.</div>
+                            <span class="kpi-icon">⏱</span>
+                            <div class="kpi-title">Transaction Processing Time</div>
+                            <div class="kpi-value">70–90% Reduction</div>
+                            <div class="kpi-description">Streamlined processing workflows</div>
+                            <div class="kpi-note">Automated routing and validation significantly reduce processing delays.</div>
                         </div>
+                        
                         <div class="kpi-item">
-                            <span class="kpi-icon"></span>
-                            <div class="kpi-title">Approval Rate</div>
-                            <div class="kpi-value">10–25% Increase</div>
-                            <div class="kpi-description">Smarter underwriting</div>
-                            <div class="kpi-note">Better risk differentiation finds good segments without raising risk.</div>
+                            <span class="kpi-icon">📈</span>
+                            <div class="kpi-title">Successful Payment Rate</div>
+                            <div class="kpi-value">15–25% Increase</div>
+                            <div class="kpi-description">Optimized routing strategies</div>
+                            <div class="kpi-note">Smart provider selection and retry logic improve completion rates.</div>
                         </div>
+                        
                         <div class="kpi-item">
-                            <span class="kpi-icon"></span>
-                            <div class="kpi-title">Operational Costs</div>
-                            <div class="kpi-value">Up to 50% Reduction</div>
-                            <div class="kpi-description">Process automation</div>
-                            <div class="kpi-note">Digital workflows reduce manual touchpoints and callouts.</div>
+                            <span class="kpi-icon">🔐</span>
+                            <div class="kpi-title">Fraud Reduction</div>
+                            <div class="kpi-value">Up to 60% Decrease</div>
+                            <div class="kpi-description">Advanced detection systems</div>
+                            <div class="kpi-note">ML-powered fraud detection and real-time rule engines reduce losses.</div>
                         </div>
+                        
                         <div class="kpi-item">
-                            <span class="kpi-icon"></span>
-                            <div class="kpi-title">Time-to-Market</div>
+                            <span class="kpi-icon">💼</span>
+                            <div class="kpi-title">Operational Cost Savings</div>
+                            <div class="kpi-value">Up to 40% Reduction</div>
+                            <div class="kpi-description">Reduced integration overhead</div>
+                            <div class="kpi-note">Unified platform reduces maintenance and support costs.</div>
+                        </div>
+                        
+                        <div class="kpi-item">
+                            <span class="kpi-icon">🚀</span>
+                            <div class="kpi-title">New Payment Method Launch</div>
                             <div class="kpi-value">2–3x Faster</div>
-                            <div class="kpi-description">Rapid product launches</div>
-                            <div class="kpi-note">Low-code enables faster experimentation and rollout.</div>
-                        </div>
-                        <div class="kpi-item">
-                            <span class="kpi-icon"></span>
-                            <div class="kpi-title">Model Accuracy</div>
-                            <div class="kpi-value">AUC > 0.80</div>
-                            <div class="kpi-description">Higher predictive power</div>
-                            <div class="kpi-note">Regular calibrations and feature engineering improve lift.</div>
+                            <div class="kpi-description">Accelerated implementation</div>
+                            <div class="kpi-note">Pre-built connectors and templates speed up new provider integration.</div>
                         </div>
                     </div>
                 </section>
 
+                <!-- Important Note -->
                 <section class="content-section">
                     <div class="section-content">
-                        <p><strong>Note:</strong> This page describes a reference Loan Origination System architecture. NextGen low-code enables fast adaptation to any product type, regulatory context, and operational model.</p>
+                        <p><strong>Important:</strong> This is an example of one possible Payment Solutions configuration. Low-code technology enables rapid adaptation of payment processes to specific business requirements, regulatory demands, and market conditions.</p>
                     </div>
                 </section>
             </div>
         </main>
-    </div>
 
-    <footer class="footer">
+        <!-- Footer -->
+        <footer class="footer">
             <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
         </footer>
     </div>

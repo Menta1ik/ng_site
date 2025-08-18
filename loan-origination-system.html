@@ -172,11 +172,11 @@
 
         .main-content { flex: 1; padding: 60px 40px; }
         .container { max-width: 1000px; margin: 0 auto; }
-        .page-title { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 40px; text-align: center; background: linear-gradient(135deg, #ffffff, #b2e0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .page-title { font-size: 2.8rem; font-weight: 800; line-height: 1.1; margin-bottom: 40px; text-align: center; background: linear-gradient(135deg, #b2e0ff, #19e97c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
         .page-subtitle { font-size: 1.3rem; color: rgba(255,255,255,.7); text-align: center; margin-bottom: 60px; line-height: 1.6; }
 
         .content-section { background: rgba(255,255,255,.05); border-radius: 20px; padding: 40px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,.1); margin-bottom: 40px; }
-        .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 25px; color: #b2e0ff; display: flex; align-items: center; gap: 15px; }
+        .section-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 25px; background: linear-gradient(135deg, #b2e0ff, #19e97c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: flex; align-items: center; gap: 15px; }
         .section-number { background: linear-gradient(135deg, #b2e0ff, #19e97c); color: #0a0a0a; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.2rem; }
         .section-content { font-size: 1.1rem; line-height: 1.8; color: rgba(255,255,255,.9); }
         .section-content p { margin-bottom: 20px; }
@@ -219,7 +219,7 @@
             .kpi-grid { grid-template-columns: 1fr; gap: 20px; }
         }
         @media (max-width: 480px) {
-            .page-title { font-size: 2rem; }
+            .page-title { font-size: 2.8rem; }
             .page-subtitle { font-size: 1.1rem; }
             .section-content { font-size: 1rem; }
         }
@@ -307,7 +307,8 @@
 
                 <!-- Section 1 -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">1</span> Application Intake & Pre-Processing</h2>
+                    <h2 class="section-title"> 
+                        Application Intake & Pre-Processing</h2>
                     <div class="section-content">
                         <p>Collect, validate, and normalize applications across channels:</p>
                         <ul class="feature-list">
@@ -321,7 +322,8 @@
 
                 <!-- Section 2 -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">2</span> Document Collection & Verification</h2>
+                    <h2 class="section-title"> 
+                        Document Collection & Verification</h2>
                     <div class="section-content">
                         <p>Automate document intake and verification:</p>
                         <ul class="feature-list">
@@ -335,7 +337,8 @@
 
                 <!-- Section 3 -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">3</span> Risk Scoring & Underwriting</h2>
+                    <h2 class="section-title"> 
+                        Risk Scoring & Underwriting</h2>
                     <div class="section-content">
                         <p>Flexible decisioning with rules, scorecards, and ML models:</p>
                         <ul class="feature-list">
@@ -349,7 +352,8 @@
 
                 <!-- Section 4 -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">4</span> Offer Generation & E-Signature</h2>
+                    <h2 class="section-title">
+                         Offer Generation & E-Signature</h2>
                     <div class="section-content">
                         <p>Create compliant offers and finalize with digital signatures:</p>
                         <ul class="feature-list">
@@ -363,7 +367,8 @@
 
                 <!-- Section 5 -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">5</span> Disbursement & Core Integration</h2>
+                    <h2 class="section-title">
+                        Disbursement & Core Integration</h2>
                     <div class="section-content">
                         <p>Seamless integration with banking systems and third parties:</p>
                         <ul class="feature-list">
@@ -377,7 +382,8 @@
 
                 <!-- Section 6 -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">6</span> Monitoring & Analytics</h2>
+                    <h2 class="section-title">
+                        Monitoring & Analytics</h2>
                     <div class="section-content">
                         <p>Operational dashboards and performance reporting:</p>
                         <ul class="feature-list">
@@ -391,7 +397,8 @@
 
                 <!-- KPIs -->
                 <section class="content-section">
-                    <h2 class="section-title"><span class="section-number">7</span> Expected KPIs & Impact</h2>
+                    <h2 class="section-title">
+                        Expected KPIs & Impact</h2>
                     <div class="section-content">
                         <p>Organizations deploying Loan Origination Systems on NextGen commonly observe:</p>
                     </div>
@@ -399,14 +406,14 @@
                         <div class="kpi-item">
                             <span class="kpi-icon"></span>
                             <div class="kpi-title">Time-to-Yes</div>
-                            <div class="kpi-value">40–70% Reduction</div>
+                            <div class="kpi-value">40-70% Reduction</div>
                             <div class="kpi-description">Accelerated decisioning</div>
                             <div class="kpi-note">Parallel checks, pre-filled data, and automation shorten approval cycles.</div>
                         </div>
                         <div class="kpi-item">
                             <span class="kpi-icon"></span>
                             <div class="kpi-title">Approval Rate</div>
-                            <div class="kpi-value">10–25% Increase</div>
+                            <div class="kpi-value">10-25% Increase</div>
                             <div class="kpi-description">Smarter underwriting</div>
                             <div class="kpi-note">Better risk differentiation finds good segments without raising risk.</div>
                         </div>
@@ -420,7 +427,7 @@
                         <div class="kpi-item">
                             <span class="kpi-icon"></span>
                             <div class="kpi-title">Time-to-Market</div>
-                            <div class="kpi-value">2–3x Faster</div>
+                            <div class="kpi-value">2-3 Faster</div>
                             <div class="kpi-description">Rapid product launches</div>
                             <div class="kpi-note">Low-code enables faster experimentation and rollout.</div>
                         </div>

@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RFP Checklist for Low-Code Platforms — NextGen 11.7</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Полный RFP чеклист для оценки low-code платформ: архитектура, интеграции, безопасность, масштабирование, TCO/ROI, сравнение NextGen с лидерами рынка." />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nxgenlowcode.biz/rfp-checklist-for-low-code-platform.html" />
+    <meta property="og:title" content="RFP Checklist for Low-Code Platforms — NextGen 11.7" />
+    <meta property="og:description" content="Полный RFP чеклист для оценки low-code платформ: архитектура, интеграции, безопасность, масштабирование, TCO/ROI, сравнение и лучшие практики." />
+    <meta property="og:image" content="https://nxgenlowcode.biz/images/nextgen-preview.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://nxgenlowcode.biz/rfp-checklist-for-low-code-platform.html" />
+    <meta name="twitter:title" content="RFP Checklist for Low-Code Platforms — NextGen 11.7" />
+    <meta name="twitter:description" content="Полный RFP чеклист для оценки low-code платформ с акцентом на NextGen 11.7." />
+    <meta name="twitter:image" content="https://nxgenlowcode.biz/images/nextgen-preview.png" />
+
+    <!-- Favicon & PWA -->
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Analytics (prod only) -->
+    <script>
+        (function(){
+          var isProd = location.hostname.endsWith('nxgenlowcode.biz') && location.protocol === 'https:';
+          if (isProd) {
+            var s = document.createElement('script');
+            s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T';
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+            gtag('js', new Date()); gtag('config','G-RJQ64XZB6T');
+          } else { window.gtag = function(){} }
+        })();
+    </script>
+    <script src="mobile-menu.js" defer></script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nxgenlowcode.biz/rfp-checklist-for-low-code-platform.html" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "BrainySoft Ltd",
+        "url": "https://nxgenlowcode.biz",
+        "logo": "https://nxgenlowcode.biz/images/favicon.svg",
+        "description": "NextGen enterprise low-code platform for building secure, scalable applications with visual drag-and-drop tools",
+        "foundingDate": "2010",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+380-44-123-4567",
+          "contactType": "Customer Service",
+          "email": "info@nxgenlowcode.biz",
+          "availableLanguage": ["English", "Ukrainian", "Russian"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Kyiv, Ukraine",
+          "addressCountry": "UA"
+        },
+        "sameAs": [
+          "https://linkedin.com/company/brainysoft",
+          "https://github.com/brainysoft"
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "RFP Checklist for Low-Code Platforms — NextGen 11.7",
+        "url": "https://nxgenlowcode.biz/rfp-checklist-for-low-code-platform.html",
+        "description": "Полный RFP чеклист для оценки low-code платформ: архитектура, интеграции, безопасность, масштабирование, TCO/ROI, сравнение и инструкции по использованию.",
+        "publisher": {"@type": "Organization", "name": "BrainySoft Ltd"}
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700;800&display=swap" rel="stylesheet" crossorigin>
+    
+    <!-- Chart.js for Magic Quadrant -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #ffffff;
+            line-height: 1.6;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Particles background */
+        #particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Main container */
+        .main-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        /* Уменьшаем вертикальные отступы между названием и тэглайном, как на index */
+        .logo > div { line-height: 1.2; }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: #0a0a0a;
+        }
+
+        .nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-link:hover {
+            color: #b2e0ff;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-item:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(26, 26, 46, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 10px 0;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-link:hover {
+            color: #b2e0ff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 44px;
+            height: 44px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 7px;
+            z-index: 10001;
+            position: relative;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        .mobile-menu-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-toggle:active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .mobile-menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background: #ffffff;
+            border-radius: 2px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* Content area */
+        .content {
+            flex-grow: 1;
+            padding: 50px 40px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(25, 233, 124, 0.15);
+            color: #19e97c;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border: 1px solid rgba(25, 233, 124, 0.3);
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #b2e0ff, #19e97c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .card h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #19e97c;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #b2e0ff;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #19e97c;
+            font-weight: bold;
+        }
+
+        /* Plain list variant without bullets for Vendor Overview */
+        .list-plain p {
+            margin: 0 0 15px;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        table th,
+        table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        table th {
+            background: rgba(25, 233, 124, 0.2);
+            font-weight: 600;
+            color: #19e97c;
+        }
+
+        .status-ok {
+            color: #19e97c;
+            font-weight: 600;
+        }
+
+        .status-part {
+            color: #ffb347;
+            font-weight: 600;
+        }
+
+        .status-no {
+            color: #ff6b6b;
+            font-weight: 600;
+        }
+
+        .chart-container {
+            margin: 20px 0;
+            height: 400px;
+            position: relative;
+        }
+
+        #magicQuadrant {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .footer {
+            padding: 30px 40px;
+            background: rgba(0, 0, 0, 0.2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 20px;
+            }
+
+            /* как в index.html — контейнер под мобильным меню */
+            .main-container {
+                z-index: 0;
+            }
+            
+            .nav {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            /* Off-canvas mobile navigation (align with index.html) */
+            .mobile-nav {
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 30px 30px;
+                transition: left 0.3s ease;
+                z-index: 99999 !important;
+                border-right: 1px solid rgba(178, 224, 255, 0.2);
+            }
+
+            .mobile-nav.active {
+                left: 0;
+            }
+
+            /* Mobile nav items and links */
+            .nav-item {
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+                padding: 15px 0;
+                justify-content: space-between;
+                color: #ffffff;
+                border-bottom: none;
+            }
+
+            /* Make dropdowns visible and inline for mobile */
+            .dropdown {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                background: rgba(255, 255, 255, 0.05);
+                border: none;
+                border-radius: 8px;
+                margin-top: 10px;
+                padding: 10px 0;
+                min-width: auto;
+                width: 100%;
+                max-height: 200px;
+                overflow: visible;
+                transition: max-height 0.3s ease;
+            }
+
+            .dropdown-link {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .dropdown-link:hover {
+                color: #19e97c;
+                background: rgba(25, 233, 124, 0.1);
+            }
+
+            /* Match index.html logo scaling on tablets */
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .logo-icon {
+                width: 35px;
+                height: 35px;
+            }
+
+            .content {
+                padding: 40px 20px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            table th,
+            table td {
+                padding: 8px 10px;
+                font-size: 0.9rem;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+
+            .footer {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                padding: 30px 15px;
+            }
+
+            .card {
+                padding: 15px;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            table {
+                min-width: 500px;
+            }
+
+            /* Match index.html logo scaling on phones */
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles-bg"></canvas>
+    
+    <div class="main-container">
+        <header class="header">
+            <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
+                <div class="logo-icon">nx</div>
+                <div>
+                    nextgen
+                    <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
+                </div>
+            </a>
+            <nav class="nav">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                        <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                    <div class="dropdown">
+                        <a href="presentations.html" class="dropdown-link">Presentations</a>
+                        <a href="file_archive.html" class="dropdown-link">Files</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </div>
+                <div class="nav-item">
+                    <a href="contact.html" class="nav-link">Contact</a>
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+
+        <!-- Mobile navigation for mobile devices only -->
+        <nav class="nav mobile-nav">
+            <div class="nav-item">
+                <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="success-stories.html" class="dropdown-link">Success Stories</a>
+                    <a href="industry-solutions.html" class="dropdown-link">Industry Solutions</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+                <div class="dropdown">
+                    <a href="presentations.html" class="dropdown-link">Presentations</a>
+                    <a href="file_archive.html" class="dropdown-link">Files</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <a href="about.html" class="nav-link">About</a>
+            </div>
+            <div class="nav-item">
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </nav>
+
+        <main class="content">
+            <div class="container">
+                <div class="badge">📑 RFP • Checklist</div>
+                <h1 class="page-title">RFP Checklist for Evaluating Low-Code Platforms</h1>
+                <p class="subtitle">Comprehensive checklist for evaluating low-code platforms based on internal methods (Gartner/KPMG/Accenture/DronaHQ/Pillir) and analysis of NextGen 11.7 with TCO/ROI and implementation examples.</p>
+
+                <section class="card">
+                    <h2>1. Vendor Overview</h2>
+                    <div class="list-plain">
+                        <p>✅ Full name, country of registration, legal form — NextGen, international development, corporate structure</p>
+                        <p>✅ Year of foundation, team size, market experience — 10+ years, large team, experience in various industries</p>
+                        <p>✅ Key clients, regions, industries — Banks, finance, retail, public sector, manufacturing, logistics, Digital Transformation, wide range of industries</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>2. Platform Architecture</h2>
+                    <div class="list-plain">
+                        <p>✅ Cloud, on-premise, hybrid support — All deployment options, including Cloud</p>
+                        <p>✅ Microservice/modular architecture — Modular, microservices supported</p>
+                        <p>✅ Scalability, fault tolerance, disaster recovery — Enterprise load, DevOps, clustering</p>
+                        <p>✅ Security certification (ISO 27001, SOC2, etc.) — Supported. Depends on implementation specifics and region</p>
+                        <p>✅ API, SDK, marketplace support — REST API, SDK, plugins, no public marketplace</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>3. Core Capabilities</h2>
+                    <div class="list-plain">
+                        <p>✅ Visual editor (drag-and-drop, workflow) — FormsDesigner, visual editors</p>
+                        <p>✅ BPM/process automation tools — Agents, Maven, workflow engine</p>
+                        <p>🔶 Web and mobile app development — Web, adaptive interface, no separate mobile SDK</p>
+                        <p>✅ Versioning, rollback, publishing — Versioning, migrations, publishing supported</p>
+                        <p>✅ Multichannel: email, SMS, messengers, chatbots — NotificationService, integration with external channels</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>4. Integration Layer</h2>
+                    <div class="list-plain">
+                        <p>✅ REST, SOAP, GraphQL, Webhooks, TCP/IP support — REST, SOAP, webhooks, queues, no GraphQL out of the box</p>
+                        <p>✅ Connectors to ERP, CRM, banking systems (SAP, Oracle, Microsoft, Salesforce, 1C, etc.) — IntegrationService, plugins, custom connectors</p>
+                        <p>✅ SDK/API for custom integrations — SDK, REST API, extensibility</p>
+                        <p>✅ ETL, BI/analytics, data pipelines — OLAP, BI integration, data export</p>
+                        <p>✅ Legacy systems support — Plugins, custom connectors</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>5. Data Layer & DB Support</h2>
+                    <div class="list-plain">
+                        <p>✅ DBMS: MSSQL, PostgreSQL, Oracle, MySQL, cloud DBs — All major DBMS supported</p>
+                        <p>✅ Data governance, access control, audit trail — Audit, centralized audit, RBAC</p>
+                        <p>✅ Import/export, data migration, data lineage — Import/export, migrations, lineage via audit</p>
+                        <p>✅ Data warehouse/data lake, BI/analytics integration — BI integration, data export</p>
+                        <p>✅ Storage scalability — Architecture supports scaling</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>6. Security & Compliance</h2>
+                    <div class="list-plain">
+                        <p>✅ Authentication: SSO, LDAP, OAuth2, SAML — SSO, OAuth2, LDAP, corporate standards</p>
+                        <p>✅ RBAC/ABAC, MFA, password policy — RBAC, MFA, password policy</p>
+                        <p>✅ Encryption (at rest, in transit) — Encryption supported</p>
+                        <p>✅ GDPR, ISO, regional law compliance — Supported. Depends on implementation specifics and region</p>
+                        <p>✅ Logging, audit trail, incident response — Centralized audit, logging</p>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>7. Scalability & Performance</h2>
+                    <div class="list-plain">
+                        <p>✅ Enterprise load, clustering — Clustering, scalability supported</p>
+                        <p>✅ SLA, fault tolerance — SLA, monitoring, ApplicationTimeService</p>
+                        <p>✅ Auto-scaling, DevOps/CI-CD — DevOps, CI/CD, containerization</p>
+                        <p>✅ Metrics, monitoring, alerts — Monitoring, alerts, reports</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>8. UX/UI & User Experience</h2>
+                    <div class="list-plain">
+                        <p>🔶 No-code/low-code tools for business — Visual editors, not full no-code</p>
+                        <p>✅ Interface customization (themes, white label) — Customization, white label, themes</p>
+                        <p>✅ Developer documentation (API, SDK) — Documentation, API, SDK</p>
+                        <p>✅ Localization, multilingual — Multilingual support, localization (Arabic/English)</p>
+                        <p>🔶 Online training, knowledge base, community — Knowledge base, training materials, no large open community</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>9. Ecosystem & Marketplace</h2>
+                    <div class="list-plain">
+                        <p>🔶 Marketplace of ready modules/connectors — Plugins, extensibility, no public marketplace</p>
+                        <p>✅ Third-party developer support, module publishing — SDK, API, extensibility</p>
+                        <p>🔶 Integrator/VAR network, training, certification — Partner network, training, no mass certification</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>10. Support & Training</h2>
+                    <div class="list-plain">
+                        <p>🔶 SLA (24/7, premium support) — Possible organizationally, technically supported</p>
+                        <p>✅ Knowledge base, documentation, forum, chats — Knowledge base, documentation, chats</p>
+                        <p>🔶 Training courses, user/partner certification — Courses and training, certification on request</p>
+                        <p>✅ Support flexibility for industry/client — Flexible support, customization, localization</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>11. Pricing & Licensing</h2>
+                    <div class="list-plain">
+                        <p>✅ Licensing: per user, per app, per usage, perpetual/SaaS — Flexible models, customer-friendly</p>
+                        <p>🔶 Free trial/freemium — By agreement, depends on partner</p>
+                        <p>✅ TCO transparency for 3-5 years — 5-year TCO: 60-75% savings (vs. traditional dev)</p>
+                        <p>✅ Special rates (gov/large clients/startups) — Individual rates, government program support</p>
+                        <p>✅ Upgrade/expansion terms — Flexible upgrade terms</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>12. Innovation & Roadmap</h2>
+                    <div class="list-plain">
+                        <p>✅ AI/ML support, hyperautomation, advanced analytics — ScoringScripts, ML/AI, analytics</p>
+                        <p>🔶 Public/private roadmap — Roadmap on request, not public</p>
+                        <p>✅ Co-development with customer/partners — Possible, supported</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>13. Customer Success & References</h2>
+                    <div class="list-plain">
+                        <p>✅ Implementation examples (scale, industry, region) — Public services, business, startups, wide range of industries</p>
+                        <p>✅ Client feedback, NPS, user stories — Real scenarios from various industries</p>
+                        <p>✅ Time-to-market, business effect (KPI, ROI) — MVP in 2-4 months, ROI 250-400%, 60-75% budget savings</p>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>🟩 Platform Comparison Table</h2>
+                    <div class="table-wrap">
+                        <table class="compare">
+                            <thead>
+                                <tr>
+                                    <th>Criterion</th>
+                                    <th style="width: 22%">Status</th>
+                                    <th>Short Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Visual editor (drag-and-drop)</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>FormsDesigner, visual editors</td>
+                                </tr>
+                                <tr>
+                                    <td>Mobile apps</td>
+                                    <td class="status-part">🔶 Partially</td>
+                                    <td>Adaptive web, no separate mobile SDK</td>
+                                </tr>
+                                <tr>
+                                    <td>REST API</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>Supported in all modules</td>
+                                </tr>
+                                <tr>
+                                    <td>ERP/CRM connectors</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>IntegrationService, plugins</td>
+                                </tr>
+                                <tr>
+                                    <td>Data governance/audit</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>Audit, centralized audit</td>
+                                </tr>
+                                <tr>
+                                    <td>Data encryption</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>Encryption supported</td>
+                                </tr>
+                                <tr>
+                                    <td>BI/ETL support</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>OLAP, BI, data export</td>
+                                </tr>
+                                <tr>
+                                    <td>SLA (response time)</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>SLA, monitoring</td>
+                                </tr>
+                                <tr>
+                                    <td>No-code/low-code tools for business</td>
+                                    <td class="status-part">🔶 Partially</td>
+                                    <td>Visual editors, not full no-code</td>
+                                </tr>
+                                <tr>
+                                    <td>Localization, multilingual</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>Multilingual support, Arabic/English</td>
+                                </tr>
+                                <tr>
+                                    <td>Marketplace/ready modules</td>
+                                    <td class="status-part">🔶 Partially</td>
+                                    <td>Plugins, no public marketplace</td>
+                                </tr>
+                                <tr>
+                                    <td>SLA 24/7</td>
+                                    <td class="status-part">🔶 Partially</td>
+                                    <td>Technically supported</td>
+                                </tr>
+                                <tr>
+                                    <td>TCO transparency</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>5-year TCO: 60-75% savings</td>
+                                </tr>
+                                <tr>
+                                    <td>AI/ML integration</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>ScoringScripts, ML/AI</td>
+                                </tr>
+                                <tr>
+                                    <td>Successful implementations/cases</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>Implementations, fast ROI, industry use cases</td>
+                                </tr>
+                                <tr>
+                                    <td>Time-to-market (launch speed)</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>MVP in 2-4 months, 4-7x faster</td>
+                                </tr>
+                                <tr>
+                                    <td>Change flexibility</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>10x faster changes</td>
+                                </tr>
+                                <tr>
+                                    <td>IP ownership</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>IP always with customer</td>
+                                </tr>
+                                <tr>
+                                    <td>Local market impact</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>Local team support, reduced budget leakage</td>
+                                </tr>
+                                <tr>
+                                    <td>Industry universality</td>
+                                    <td class="status-ok">✅ Fully Meets</td>
+                                    <td>Use cases for gov, Smart City, finance, education, healthcare, LegalTech, PropTech, HRTech, etc.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h2>🟢 Usage Instructions</h2>
+                    <ul>
+                        <li>Each item is marked: ✅ — fully meets, 🔶 — partially, ❌ — not met.</li>
+                        <li>The "Short Comment" column provides implementation details, economic effects, and industry scenarios.</li>
+                        <li>Use for internal audit, tenders, or automated LLM analysis.</li>
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <h2>📊 Magic Quadrant for Low-Code Platforms (2024)</h2>
+                    <p>Позиционирование NextGen среди лидеров рынка enterprise low-code application platforms:</p>
+                    
+                    <div class="chart-container">
+                        <canvas id="magicQuadrant"></canvas>
+                    </div>
+
+                    <h3>Quadrant Labels:</h3>
+                    <ul>
+                        <li><strong>Leaders (top right):</strong> high vision and execution (Mendix, Microsoft, OutSystems, NextGen)</li>
+                        <li><strong>Challengers (top left):</strong> strong execution, less innovative (Oracle, Salesforce, Zoho)</li>
+                        <li><strong>Visionaries (bottom right):</strong> strong vision, less mature execution (Retool, SAP)</li>
+                        <li><strong>Niche Players (bottom left):</strong> focus on narrow tasks or regions (Creatio, Newgen)</li>
+                    </ul>
+
+                    <h3>Notes:</h3>
+                    <ul>
+                        <li><strong>NextGen</strong> — added to the Leaders quadrant, alongside Mendix, Microsoft, OutSystems, reflecting universality, real implementations, flexibility, multilingual support, and economic efficiency.</li>
+                        <li><strong>Other platform positions</strong> match the current Gartner Magic Quadrant (2024).</li>
+                    </ul>
+
+                    <p><strong>Conclusion:</strong> NextGen, by all key criteria (RFP, use cases, economic effect, universality), is among the Leaders in the Low-Code market.</p>
+                </section>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+        </footer>
+    </div>
+
+    <script src="particles-animation.js" defer></script>
+
+    <!-- Magic Quadrant Chart Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof Chart === 'undefined') return;
+
+            var ctx = document.getElementById('magicQuadrant').getContext('2d');
+            var data = [
+                {x: 90, y: 92, label: 'Mendix'},
+                {x: 88, y: 90, label: 'Microsoft'},
+                {x: 85, y: 88, label: 'OutSystems'},
+                {x: 84, y: 86, label: 'NextGen'},
+                {x: 65, y: 82, label: 'Oracle'},
+                {x: 70, y: 80, label: 'Salesforce'},
+                {x: 60, y: 78, label: 'Zoho'},
+                {x: 78, y: 60, label: 'Retool'},
+                {x: 75, y: 58, label: 'SAP'},
+                {x: 55, y: 55, label: 'Creatio'},
+                {x: 48, y: 52, label: 'Newgen'}
+            ];
+
+            new Chart(ctx, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Vendors',
+                        data: data,
+                        pointBackgroundColor: function(context) {
+                            return context.raw.label === 'NextGen' ? '#19e97c' : '#b2e0ff';
+                        },
+                        pointBorderColor: '#ffffff',
+                        pointRadius: function(context) {
+                            return context.raw.label === 'NextGen' ? 8 : 6;
+                        },
+                        pointHoverRadius: 10
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    animation: {
+                        duration: 800
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(26, 26, 46, 0.9)',
+                            titleColor: '#ffffff',
+                            bodyColor: '#ffffff',
+                            borderColor: 'rgba(255, 255, 255, 0.1)',
+                            borderWidth: 1,
+                            callbacks: {
+                                label: function(context) {
+                                    var point = context.raw;
+                                    return point.label + ' — Vision: ' + point.x + ', Execute: ' + point.y;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            title: {
+                                display: true,
+                                text: 'Completeness of Vision',
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                font: {
+                                    size: 14
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                stepSize: 25
+                            }
+                        },
+                        y: {
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                            title: {
+                                display: true,
+                                text: 'Ability to Execute',
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                font: {
+                                    size: 14
+                                }
+                            },
+                            grid: {
+                                color: 'rgba(255, 255, 255, 0.1)'
+                            },
+                            ticks: {
+                                color: 'rgba(255, 255, 255, 0.8)',
+                                stepSize: 25
+                            }
+                        }
+                    }
+                },
+                plugins: [{
+                    id: 'quadrantLines',
+                    afterDraw: function(chart) {
+                        const {ctx, chartArea: {left, right, top, bottom}, scales: {x, y}} = chart;
+                        const midX = x.getPixelForValue(50);
+                        const midY = y.getPixelForValue(50);
+                        
+                        ctx.save();
+                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+                        ctx.lineWidth = 1;
+                        
+                        // Vertical line
+                        ctx.beginPath();
+                        ctx.moveTo(midX, top);
+                        ctx.lineTo(midX, bottom);
+                        ctx.stroke();
+                        
+                        // Horizontal line
+                        ctx.beginPath();
+                        ctx.moveTo(left, midY);
+                        ctx.lineTo(right, midY);
+                        ctx.stroke();
+                        
+                        ctx.restore();
+                    }
+                }]
+            });
+        });
+    </script>
+
+    <script>
+        (function(){
+            try {
+                var isVercel = /vercel\.app$/.test(location.hostname) || (typeof window !== 'undefined' && window.__VERCEL_ENV__);
+                if (isVercel) {
+                    var s = document.createElement('script');
+                    s.defer = true;
+                    s.src = '/_vercel/insights/script.js';
+                    document.head.appendChild(s);
+                }
+            } catch(e) {}
+        })();
+    </script>
+</body>
+</html>

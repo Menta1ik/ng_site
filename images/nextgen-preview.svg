@@ -18,8 +18,8 @@
   <!-- Header -->
   <g transform="translate(60,60)">
     <rect x="0" y="-30" width="56" height="56" rx="12" fill="#34d399"/>
-    <text x="8" y="14" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#0b1020">nx</text>
-    <text x="80" y="8" font-family="Inter,sans-serif" font-size="44" font-weight="800" fill="#ffffff">NextGen</text>
+    <text x="8" y="14" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#000000">nx</text>
+    <text x="80" y="8" font-family="Inter,sans-serif" font-size="44" font-weight="800" fill="#000000">NextGen</text>
   </g>
 
   <!-- Headline -->

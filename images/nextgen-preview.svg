@@ -3,22 +3,54 @@
   <title id="title8">NextGen - Real results with lowcode</title>
   <desc id="desc8">Case-study style social preview with headline, outcome metrics, and brand</desc>
   <defs>
+    <!-- Base dark gradient -->
     <linearGradient id="bg8" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0b1020"/>
       <stop offset="100%" stop-color="#0f172a"/>
     </linearGradient>
+
+    <!-- Accent line gradient -->
     <linearGradient id="accent8" x1="0%" y1="0%" x2="100%" y2="0%">
       <stop offset="0%" stop-color="#34d399"/>
       <stop offset="100%" stop-color="#22d3ee"/>
     </linearGradient>
+
+    <!-- Soft radial glow gradients for background decoration -->
+    <radialGradient id="glow-green" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 260) rotate(0) scale(340)">
+      <stop offset="0%" stop-color="#19E97C" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#19E97C" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#19E97C" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow-cyan" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 120) rotate(0) scale(300)">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.45"/>
+      <stop offset="65%" stop-color="#22d3ee" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Subtle film grain -->
+    <filter id="noise" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.06"/>
+      </feComponentTransfer>
+    </filter>
   </defs>
 
+  <!-- Background base -->
   <rect width="1200" height="630" fill="url(#bg8)"/>
+  <!-- Decorative glows -->
+  <circle cx="240" cy="300" r="300" fill="url(#glow-green)"/>
+  <circle cx="980" cy="140" r="260" fill="url(#glow-cyan)"/>
+  <!-- Noise overlay -->
+  <rect width="1200" height="630" fill="#000000" filter="url(#noise)" opacity="0.12"/>
 
-  <!-- Header -->
+  <!-- Header (bottom-aligned logo and titles) -->
   <g transform="translate(60,60)">
-    <rect x="0" y="-30" width="56" height="56" rx="12" fill="#19E97C"/>
-    <text x="8" y="14" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#000000">nx</text>
+    <!-- Align bottom of green square with subtitle baseline at y=36 -->
+    <rect x="0" y="-20" width="56" height="56" rx="12" fill="#19E97C"/>
+    <!-- Keep nx roughly centered after moving square down by 10 units -->
+    <text x="8" y="24" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#000000">nx</text>
     <text x="80" y="8" font-family="Inter,sans-serif" font-size="44" font-weight="800" fill="#ffffff">nextgen</text>
     <text x="80" y="36" font-family="Inter,sans-serif" font-size="18" font-weight="500" fill="#ffffff">advanced lowcode platform</text>
   </g>

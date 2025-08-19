@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Low-Code, No-Code and High-Code — Choosing the Right Path | NextGen</title>
+  <meta name="description" content="A practical article explaining Low‑Code, No‑Code, and High‑Code — definitions, trade‑offs, when to use each, and why Low‑Code is a strategic choice for enterprises.">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Low-Code, No-Code and High-Code — Choosing the Right Path">
+  <meta property="og:description" content="Definitions, comparisons, usage scenarios, and why Low‑Code wins the future.">
+  <meta name="twitter:card" content="summary_large_image">
   
   <!-- Favicons -->
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
@@ -63,7 +68,13 @@
     li { margin: 8px 0; line-height: 1.7; }
     a.inline { color: #19e97c; text-decoration: none; }
 
-    /* CTA blocks */
+    /* Article layout */
+    .article { max-width: 780px; margin: 0 auto; }
+    .byline { display: flex; gap: 10px; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); font-size: .95rem; margin: 6px 0 18px; }
+    .byline .dot { width: 4px; height: 4px; background: rgba(255,255,255,0.35); border-radius: 50%; display: inline-block; }
+    .toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 16px 18px; margin: 18px 0 22px; }
+    .toc strong { color: #19e97c; }
+    .toc ul { margin: 10px 0 0 18px; }
     .cta-group { display: grid; gap: 18px; margin-top: 10px; }
     .cta { background: rgba(25,233,124,0.06); border: 1px solid rgba(25,233,124,0.25); border-radius: 14px; padding: 20px 22px; }
     .cta h3 { font-size: 1.15rem; color: #19e97c; margin-bottom: 8px; }
@@ -78,7 +89,7 @@
     @media (max-width: 768px) {
       .nav { display: none; }
       .content { padding: 60px 20px; }
-      .section-card { padding: 26px 22px; }
+      .section-card { padding: 0; margin: 24px 0; }
       .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; }
       .mobile-menu-toggle span { width: 24px; height: 2px; background: #fff; }
     }
@@ -109,10 +120,26 @@
 
     <main class="content">
       <div class="container">
-        <h1 class="page-title">Low-Code, No-Code and High-Code: Choosing the Right Path</h1>
-        <p class="lead">In today’s digital landscape, organizations face a critical question: <em>How should we build software?</em> Traditional <strong>High-Code approaches</strong>, modern <strong>No-Code platforms</strong>, and the increasingly popular <strong>Low-Code paradigm</strong> each promise different advantages. But understanding their strengths — and their limits — is essential before making a choice.</p>
-        <a class="jump-link" href="#why-low-code-wins-the-future">👉 Jump to Why Low-Code Wins the Future</a>
-        <div class="divider"></div>
+        <article class="article" itemscope itemtype="https://schema.org/Article">
+          <h1 class="page-title" itemprop="headline">Low-Code, No-Code and High-Code: Choosing the Right Path</h1>
+          <div class="byline">
+            <span itemprop="author" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">NextGen Editorial</span></span>
+            <span class="dot"></span>
+            <time itemprop="dateModified" datetime="2025-08-19">Updated Aug 19, 2025</time>
+          </div>
+          <p class="lead">In today’s digital landscape, organizations face a critical question: <em>How should we build software?</em> Traditional <strong>High-Code approaches</strong>, modern <strong>No-Code platforms</strong>, and the increasingly popular <strong>Low-Code paradigm</strong> each promise different advantages. But understanding their strengths — and their limits — is essential before making a choice.</p>
+          <nav class="toc" aria-label="Table of contents">
+            <strong>Contents</strong>
+            <ul>
+              <li><a class="inline" href="#what-is-low-code">What Is Low-Code?</a></li>
+              <li><a class="inline" href="#low-code-vs-no-code">Low-Code vs No-Code</a></li>
+              <li><a class="inline" href="#low-code-vs-high-code">Low-Code vs High-Code</a></li>
+              <li><a class="inline" href="#when-to-use">When to Use Each Approach</a></li>
+              <li><a class="inline" href="#why-low-code-wins-the-future">Why Low-Code Wins the Future</a></li>
+              <li><a class="inline" href="#call-to-action">Call to Action</a></li>
+            </ul>
+          </nav>
+          <div class="divider"></div>
 
         <section class="section-card" id="what-is-low-code">
           <h2 class="section">What Is Low-Code?</h2>
@@ -214,3 +241,22 @@
   <script src="mobile-menu.js" defer></script>
 </body>
 </html>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Low-Code, No-Code and High-Code — Choosing the Right Path",
+  "author": {
+    "@type": "Organization",
+    "name": "NextGen"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "NextGen",
+    "logo": {"@type": "ImageObject", "url": "images/favicon.svg"}
+  },
+  "datePublished": "2025-08-19",
+  "dateModified": "2025-08-19",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "low-code-no-code-high-code.html"}
+}
+</script>

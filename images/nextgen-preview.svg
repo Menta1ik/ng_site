@@ -19,7 +19,8 @@
   <g transform="translate(60,60)">
     <rect x="0" y="-30" width="56" height="56" rx="12" fill="#19E97C"/>
     <text x="8" y="14" font-family="Inter,sans-serif" font-size="28" font-weight="800" fill="#000000">nx</text>
-    <text x="80" y="8" font-family="Inter,sans-serif" font-size="44" font-weight="800" fill="#000000">nextgen</text>
+    <text x="80" y="8" font-family="Inter,sans-serif" font-size="44" font-weight="800" fill="#ffffff">nextgen</text>
+    <text x="80" y="36" font-family="Inter,sans-serif" font-size="18" font-weight="500" fill="#ffffff">advanced lowcode platform</text>
   </g>
 
   <!-- Headline -->

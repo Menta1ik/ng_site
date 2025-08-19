@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Low-Code, No-Code and High-Code — Choosing the Right Path | NextGen</title>
+  
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg" />
+  
+  <!-- Fonts (optimized) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" crossorigin onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" crossorigin></noscript>
+  
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @font-face { font-family: 'Inter'; font-display: swap; src: local('Inter'); }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+      color: #ffffff; min-height: 100vh; overflow-x: hidden; position: relative;
+    }
+
+    /* Particles background */
+    #particles-bg { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
+
+    /* Layout */
+    .main-container { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+    /* Header */
+    .header {
+      padding: 20px 40px; display: flex; justify-content: space-between; align-items: center;
+      backdrop-filter: blur(10px); background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 700; color: #fff; text-decoration: none; }
+    .logo-icon { width: 40px; height: 40px; background: #19E97C; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #0a0a0a; }
+    .nav { display: flex; gap: 30px; }
+    .nav-item { position: relative; }
+    .nav-link { color: #fff; text-decoration: none; font-weight: 500; transition: all .3s ease; position: relative; display: flex; align-items: center; gap: 5px; }
+    .nav-link:hover { color: #b2e0ff; }
+    .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #b2e0ff; transition: width .3s ease; }
+    .nav-link:hover::after { width: 100%; }
+
+    /* Content */
+    .content { flex: 1; padding: 80px 40px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .page-title {
+      font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 28px; text-align: center;
+      background: linear-gradient(135deg, #b2e0ff, #19e97c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .lead { text-align: center; font-size: 1.1rem; color: rgba(255,255,255,0.9); line-height: 1.8; margin: 0 auto 24px; max-width: 880px; }
+    .jump-link { display: block; text-align: center; margin: 12px 0 24px; color: #19e97c; text-decoration: none; font-weight: 600; }
+    .divider { height: 1px; background: rgba(255,255,255,0.15); margin: 28px 0; }
+
+    .section-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 36px 32px; margin: 22px 0; backdrop-filter: blur(10px); }
+    h2.section { font-size: clamp(1.6rem, 3.2vw, 2rem); font-weight: 700; margin-bottom: 14px; color: #19e97c; }
+    p { font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.92); margin-bottom: 14px; }
+    ul { margin: 10px 0 10px 22px; }
+    li { margin: 8px 0; line-height: 1.7; }
+    a.inline { color: #19e97c; text-decoration: none; }
+
+    /* CTA blocks */
+    .cta-group { display: grid; gap: 18px; margin-top: 10px; }
+    .cta { background: rgba(25,233,124,0.06); border: 1px solid rgba(25,233,124,0.25); border-radius: 14px; padding: 20px 22px; }
+    .cta h3 { font-size: 1.15rem; color: #19e97c; margin-bottom: 8px; }
+    .cta a { color: #b2e0ff; text-decoration: none; font-weight: 600; }
+
+    /* Footer */
+    .footer { padding: 40px; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); }
+    .footer p { color: rgba(255,255,255,0.6); font-size: .9rem; }
+
+    /* Mobile */
+    .mobile-menu-toggle { display: none; }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .content { padding: 60px 20px; }
+      .section-card { padding: 26px 22px; }
+      .mobile-menu-toggle { display: flex; flex-direction: column; gap: 4px; background: none; border: none; cursor: pointer; }
+      .mobile-menu-toggle span { width: 24px; height: 2px; background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+  <div class="main-container">
+    <header class="header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">nx</div>
+        <div>
+          nextgen
+          <div style="font-size:.7rem;font-weight:400;opacity:.8;">Advanced lowcode platform</div>
+        </div>
+      </a>
+      <nav class="nav">
+        <div class="nav-item"><a href="index.html" class="nav-link">Platform</a></div>
+        <div class="nav-item"><a href="success-stories.html" class="nav-link">Success Stories</a></div>
+        <div class="nav-item"><a href="presentations.html" class="nav-link">Presentations</a></div>
+        <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+        <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <main class="content">
+      <div class="container">
+        <h1 class="page-title">Low-Code, No-Code and High-Code: Choosing the Right Path</h1>
+        <p class="lead">In today’s digital landscape, organizations face a critical question: <em>How should we build software?</em> Traditional <strong>High-Code approaches</strong>, modern <strong>No-Code platforms</strong>, and the increasingly popular <strong>Low-Code paradigm</strong> each promise different advantages. But understanding their strengths — and their limits — is essential before making a choice.</p>
+        <a class="jump-link" href="#why-low-code-wins-the-future">👉 Jump to Why Low-Code Wins the Future</a>
+        <div class="divider"></div>
+
+        <section class="section-card" id="what-is-low-code">
+          <h2 class="section">What Is Low-Code?</h2>
+          <p><strong>Low-Code development combines visual design tools with the ability to extend solutions through traditional programming.</strong></p>
+          <ul>
+            <li><strong>Speed:</strong> Pre-built components accelerate delivery.</li>
+            <li><strong>Flexibility:</strong> Developers can insert custom logic where needed.</li>
+            <li><strong>Scalability:</strong> Designed to handle enterprise-grade workloads.</li>
+          </ul>
+          <p>Low-Code enables faster time-to-market without sacrificing control or compliance.</p>
+          <p>📌 <a class="inline" href="#cta-overview">Download detailed overview</a></p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section-card" id="low-code-vs-no-code">
+          <h2 class="section">Low-Code vs No-Code</h2>
+          <p><strong>No-Code platforms are intended for non-technical users</strong> who need simple applications quickly. They often rely on templates and drag-and-drop interfaces. <em>While great for lightweight tools, they rarely scale to enterprise complexity.</em></p>
+          <p><strong>Low-Code offers a middle ground</strong> — still fast and visual, but with technical depth.</p>
+          <p><strong>Key differences:</strong></p>
+          <ul>
+            <li><strong>Users:</strong> No-Code → business users; Low-Code → developers + business teams.</li>
+            <li><strong>Customization:</strong> No-Code → limited; Low-Code → extensible.</li>
+            <li><strong>Longevity:</strong> No-Code → short-term solutions; Low-Code → sustainable systems.</li>
+          </ul>
+          <p>📌 <a class="inline" href="#cta-comparison">See comparison matrix</a></p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section-card" id="low-code-vs-high-code">
+          <h2 class="section">Low-Code vs High-Code</h2>
+          <p><strong>High-Code remains the gold standard for maximum flexibility and control.</strong> Every line of logic is manually written, which allows full customization — <em>but at the cost of time, resources, and scalability of teams.</em></p>
+          <p><strong>Low-Code shortens development cycles</strong> and broadens participation in software creation, while still integrating with <strong>enterprise systems and coding standards.</strong></p>
+          <p><strong>Trade-off in practice:</strong></p>
+          <ul>
+            <li><strong>High-Code:</strong> full freedom, slow results, high cost.</li>
+            <li><strong>Low-Code:</strong> balanced flexibility, rapid delivery, lower TCO.</li>
+          </ul>
+          <p>📌 <a class="inline" href="#cta-case-studies">Learn how enterprises use Low-Code</a></p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section-card" id="when-to-use">
+          <h2 class="section">When to Use Each Approach</h2>
+          <ul>
+            <li><strong>No-Code:</strong> prototyping, internal tools, short-lived apps.</li>
+            <li><strong>Low-Code:</strong> complex workflows, regulatory environments, scalable digital products.</li>
+            <li><strong>High-Code:</strong> highly specialized systems, performance-critical applications.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section-card" id="why-low-code-wins-the-future">
+          <h2 class="section">Why Low-Code Wins the Future</h2>
+          <p>With business demands outpacing IT resources, <strong>Low-Code is increasingly seen as the strategic solution.</strong> It unites the speed of No-Code with the depth of High-Code, enabling organizations to innovate while staying compliant and secure.</p>
+          <p><strong>NextGen Low-Code takes this even further by offering:</strong></p>
+          <ul>
+            <li><strong>Compliance</strong> with ISO/IEC 27001 and OWASP standards.</li>
+            <li><strong>Support</strong> for major databases (MSSQL, Oracle, PostgreSQL, MySQL).</li>
+            <li><strong>Modular architecture</strong> for fast deployment and scaling.</li>
+            <li><strong>Advanced security features</strong> such as multi-layer encryption, 2FA, and granular access control.</li>
+          </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="section-card" id="call-to-action">
+          <h2 class="section">Call to Action</h2>
+          <div class="cta-group">
+            <a id="cta-overview"></a>
+            <div class="cta">
+              <h3>Want to explore more?</h3>
+              <p>👉 <a href="#">Download the platform overview</a></p>
+            </div>
+            <a id="cta-comparison"></a>
+            <div class="cta">
+              <h3>Need detailed evaluation?</h3>
+              <p>👉 <a href="#">Request RFI and comparison</a></p>
+            </div>
+            <a id="cta-case-studies"></a>
+            <div class="cta">
+              <h3>Learn from real-world success</h3>
+              <p>👉 <a href="#">Explore customer case studies</a></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2025 NextGen by BrainySoftware — Shaping the Future of Application Development.</p>
+    </footer>
+  </div>
+
+  <script src="particles-animation.js" defer></script>
+  <script src="mobile-menu.js" defer></script>
+</body>
+</html>

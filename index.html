@@ -219,7 +219,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: 0;
+            z-index: -1;
             pointer-events: none;
         }
 
@@ -235,7 +235,7 @@
         /* Ensure mobile nav is above main container */
         @media (max-width: 768px) {
             .main-container {
-                z-index: 0;
+                z-index: 1;
             }
         }
 
@@ -248,6 +248,10 @@
             backdrop-filter: blur(10px);
             background: rgba(255, 255, 255, 0.05);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .logo {
@@ -596,10 +600,16 @@
 
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 40px;
             max-width: 800px;
+            width: 100%;
             margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         .stat-item {
@@ -623,6 +633,8 @@
             padding: 80px 0;
             background: transparent;
             backdrop-filter: none;
+            position: relative;
+            z-index: 1;
         }
 
         .clients-title {
@@ -836,7 +848,9 @@
         @media (max-width: 768px) {
             .header {
                 padding: 15px 20px;
-                position: relative;
+                position: sticky;
+                top: 0;
+                z-index: 1000;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -1230,11 +1244,38 @@
             overflow: hidden;
         }
         
+        /* Fix clipping and spacing for stats section */
+        .stats.cta-insights {
+            overflow: visible !important;
+            padding: 56px 20px;
+            margin-bottom: 8px;
+        }
+        @media (max-width: 768px) {
+            .stats.cta-insights {
+                padding: 52px 20px 64px;
+                padding-left: calc(20px + env(safe-area-inset-left));
+                padding-right: calc(20px + env(safe-area-inset-right));
+            }
+        }
+        @media (max-width: 480px) {
+            .stats.cta-insights {
+                padding: 48px 16px 60px;
+                padding-left: calc(16px + env(safe-area-inset-left));
+                padding-right: calc(16px + env(safe-area-inset-right));
+            }
+            .stats.cta-insights .stat-number {
+                font-size: 2.6rem;
+            }
+            .stats.cta-insights .stats-grid {
+                gap: 28px;
+            }
+        }
+        /* Make container horizontal padding responsive */
         .cta-insights-container {
             max-width: 1000px;
             margin: 0 auto;
             text-align: center;
-            padding: 24px 32px;
+            padding: 24px clamp(16px, 4vw, 32px);
             position: relative;
             z-index: 2;
         }
@@ -1673,6 +1714,10 @@
                     <div class="stat-item">
                         <div class="stat-number">24/7</div>
                         <div class="stat-label">Global Support</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">70%</div>
+                        <div class="stat-label">Cost savings on development projects</div>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,55 @@
 // Enhanced mobile menu functionality with better touch support
 document.addEventListener('DOMContentLoaded', function() {
+    // Inject sticky header styles globally (for pages without common.css)
+    try {
+        if (!document.getElementById('nx-sticky-header-style')) {
+            const style = document.createElement('style');
+            style.id = 'nx-sticky-header-style';
+            style.textContent = `
+                .header { 
+                    position: sticky !important; 
+                    top: 0 !important; 
+                    z-index: 1000 !important; 
+                    transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease; 
+                }
+                .header.header--scrolled { 
+                    padding-top: 10px; 
+                    padding-bottom: 10px; 
+                    background: rgba(10, 10, 10, 0.6); 
+                    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
+                }
+                @media (max-width: 768px) {
+                    .header.header--scrolled { 
+                        padding-top: 8px; 
+                        padding-bottom: 8px; 
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    } catch (e) {
+        // no-op if style injection fails
+    }
+
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
     
-    if (!mobileToggle || !mobileNav) return;
+    if (!mobileToggle || !mobileNav) {
+        // Even if there is no mobile nav, still apply sticky header on scroll below
+        const headerEl = document.querySelector('.header');
+        if (headerEl) {
+            const applyHeaderScrollState = () => {
+                if (window.scrollY > 10) {
+                    headerEl.classList.add('header--scrolled');
+                } else {
+                    headerEl.classList.remove('header--scrolled');
+                }
+            };
+            applyHeaderScrollState();
+            window.addEventListener('scroll', applyHeaderScrollState, { passive: true });
+        }
+        return;
+    }
     
     let isToggling = false;
     let touchStartY = 0;
@@ -101,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
+        if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('active')) {
             mobileToggle.classList.remove('active');
             mobileNav.classList.remove('active');
         }
@@ -114,4 +160,18 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileNav.classList.remove('active');
         }
     });
+
+    // Sticky header on scroll
+    const headerEl = document.querySelector('.header');
+    if (headerEl) {
+        const applyHeaderScrollState = () => {
+            if (window.scrollY > 10) {
+                headerEl.classList.add('header--scrolled');
+            } else {
+                headerEl.classList.remove('header--scrolled');
+            }
+        };
+        applyHeaderScrollState();
+        window.addEventListener('scroll', applyHeaderScrollState, { passive: true });
+    }
 });

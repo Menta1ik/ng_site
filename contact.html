@@ -1020,5 +1020,56 @@
         } catch(e) {}
       })();
     </script>
+    <script>
+      (function(){
+        const form = document.querySelector('.contact-form-section form');
+        if (!form) return;
+    
+        const submitBtn = document.getElementById('submitBtn');
+        const loadingEl = document.getElementById('loading');
+        const note = document.getElementById('notification');
+    
+        function showNotification(type, message){
+          if (!note) return;
+          note.className = 'notification ' + type + ' show';
+          note.innerHTML = (type === 'success' ? '✅ ' : '⚠️ ') + message;
+          clearTimeout(showNotification._t);
+          showNotification._t = setTimeout(()=>{
+            note.classList.remove('show');
+          }, 5000);
+        }
+    
+        function setLoading(state){
+          if (!submitBtn) return;
+          submitBtn.disabled = state;
+          if (loadingEl) loadingEl.classList.toggle('show', state);
+        }
+    
+        form.addEventListener('submit', async function(e){
+          try {
+            e.preventDefault();
+            setLoading(true);
+            const resp = await fetch(form.action, {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: new FormData(form),
+              mode: 'cors',
+            });
+            if (resp.ok) {
+              form.reset();
+              showNotification('success', 'Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.');
+            } else {
+              let errText = 'Не удалось отправить форму. Попробуйте ещё раз позднее.';
+              try { const data = await resp.json(); if (data && data.errors && data.errors[0] && data.errors[0].message) errText = data.errors[0].message; } catch(_){ }
+              showNotification('error', errText);
+            }
+          } catch (err) {
+            showNotification('error', 'Сетевая ошибка. Проверьте подключение к интернету и повторите попытку.');
+          } finally {
+            setLoading(false);
+          }
+        });
+      })();
+    </script>
 </body>
 </html>

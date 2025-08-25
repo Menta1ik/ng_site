@@ -933,7 +933,7 @@
                 <section class="card">
                     <h2>🟢 Usage Instructions</h2>
                     <ul>
-                        <li>Each item is marked: ✅ — fully meets, 🔶 — partially, ❌ — not met.</li>
+                        <li>Each item is marked: ✅ - fully meets, 🔶 - partially, ❌ - not met.</li>
                         <li>The "Short Comment" column provides implementation details, economic effects, and industry scenarios.</li>
                         <li>Use for internal audit, tenders, or automated LLM analysis.</li>
                     </ul>
@@ -941,7 +941,7 @@
 
                 <section class="card">
                     <h2>📊 Magic Quadrant for Low-Code Platforms (2024)</h2>
-                    <p>Позиционирование NextGen среди лидеров рынка enterprise low-code application platforms:</p>
+                    <p>Positioning NextGen among the market leaders of enterprise low-code application platforms:</p>
                     
                     <div class="chart-container">
                         <canvas id="magicQuadrant"></canvas>
@@ -1082,20 +1082,47 @@
                         const midY = y.getPixelForValue(50);
                         
                         ctx.save();
-                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+
+                        // Fill subtle background in each quadrant (restore the visible "square")
+                        ctx.fillStyle = 'rgba(178, 224, 255, 0.04)';
+                        // top-left
+                        ctx.fillRect(left, top, midX - left, midY - top);
+                        // top-right
+                        ctx.fillRect(midX, top, right - midX, midY - top);
+                        // bottom-left
+                        ctx.fillRect(left, midY, midX - left, bottom - midY);
+                        // bottom-right
+                        ctx.fillRect(midX, midY, right - midX, bottom - midY);
+
+                        // Outer border of the plotting area
+                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.25)';
                         ctx.lineWidth = 1;
+                        ctx.strokeRect(left, top, right - left, bottom - top);
                         
-                        // Vertical line
+                        // Vertical and horizontal mid lines
+                        ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
                         ctx.beginPath();
                         ctx.moveTo(midX, top);
                         ctx.lineTo(midX, bottom);
-                        ctx.stroke();
-                        
-                        // Horizontal line
-                        ctx.beginPath();
                         ctx.moveTo(left, midY);
                         ctx.lineTo(right, midY);
                         ctx.stroke();
+
+                        // Quadrant labels
+                        ctx.font = '600 12px Inter, -apple-system, BlinkMacSystemFont, sans-serif';
+                        ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                        ctx.textAlign = 'center';
+                        ctx.textBaseline = 'middle';
+
+                        const centerTop = (top + midY) / 2;
+                        const centerBottom = (midY + bottom) / 2;
+                        const centerLeft = (left + midX) / 2;
+                        const centerRight = (midX + right) / 2;
+
+                        ctx.fillText('Challengers', centerLeft, centerTop);
+                        ctx.fillText('Leaders', centerRight, centerTop);
+                        ctx.fillText('Niche Players', centerLeft, centerBottom);
+                        ctx.fillText('Visionaries', centerRight, centerBottom);
                         
                         ctx.restore();
                     }

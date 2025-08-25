@@ -329,10 +329,10 @@
 
         .card {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 30px;
             margin-bottom: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(25, 233, 124, 0.2);
             backdrop-filter: blur(10px);
         }
 
@@ -613,6 +613,7 @@
                     <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
                     <div class="dropdown">
                         <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+                        <a href="rfp-checklist-for-low-code-platform.html" class="dropdown-link">Magic Quadrant</a>
                     </div>
                 </div>
                 <div class="nav-item">
@@ -649,6 +650,7 @@
                 <a href="index.html" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
                 <div class="dropdown">
                     <a href="evaluation.html" class="dropdown-link">Evaluation</a>
+                    <a href="rfp-checklist-for-low-code-platform.html" class="dropdown-link">Magic Quadrant</a>
                 </div>
             </div>
             <div class="nav-item">
@@ -677,138 +679,137 @@
             <div class="container">
                 <div class="badge">📑 RFP • Checklist</div>
                 <h1 class="page-title">RFP Checklist for Evaluating Low-Code Platforms</h1>
-                <p class="subtitle">Comprehensive checklist for evaluating low-code platforms based on internal methods (Gartner/KPMG/Accenture/DronaHQ/Pillir) and analysis of NextGen 11.7 with TCO/ROI and implementation examples.</p>
 
                 <section class="card">
                     <h2>1. Vendor Overview</h2>
                     <div class="list-plain">
-                        <p>✅ Full name, country of registration, legal form — NextGen, international development, corporate structure</p>
-                        <p>✅ Year of foundation, team size, market experience — 10+ years, large team, experience in various industries</p>
-                        <p>✅ Key clients, regions, industries — Banks, finance, retail, public sector, manufacturing, logistics, Digital Transformation, wide range of industries</p>
+                        <p>✅ Full name, country of registration, legal form - NextGen, international development, corporate structure</p>
+                        <p>✅ Year of foundation, team size, market experience - 10+ years, large team, experience in various industries</p>
+                        <p>✅ Key clients, regions, industries - Banks, finance, retail, public sector, manufacturing, logistics, Digital Transformation, wide range of industries</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>2. Platform Architecture</h2>
                     <div class="list-plain">
-                        <p>✅ Cloud, on-premise, hybrid support — All deployment options, including Cloud</p>
-                        <p>✅ Microservice/modular architecture — Modular, microservices supported</p>
-                        <p>✅ Scalability, fault tolerance, disaster recovery — Enterprise load, DevOps, clustering</p>
-                        <p>✅ Security certification (ISO 27001, SOC2, etc.) — Supported. Depends on implementation specifics and region</p>
-                        <p>✅ API, SDK, marketplace support — REST API, SDK, plugins, no public marketplace</p>
+                        <p>✅ Cloud, on-premise, hybrid support - All deployment options, including Cloud</p>
+                        <p>✅ Microservice/modular architecture - Modular, microservices supported</p>
+                        <p>✅ Scalability, fault tolerance, disaster recovery - Enterprise load, DevOps, clustering</p>
+                        <p>✅ Security certification (ISO 27001, SOC2, etc.) - Supported. Depends on implementation specifics and region</p>
+                        <p>✅ API, SDK, marketplace support - REST API, SDK, plugins, no public marketplace</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>3. Core Capabilities</h2>
                     <div class="list-plain">
-                        <p>✅ Visual editor (drag-and-drop, workflow) — FormsDesigner, visual editors</p>
-                        <p>✅ BPM/process automation tools — Agents, Maven, workflow engine</p>
-                        <p>🔶 Web and mobile app development — Web, adaptive interface, no separate mobile SDK</p>
-                        <p>✅ Versioning, rollback, publishing — Versioning, migrations, publishing supported</p>
-                        <p>✅ Multichannel: email, SMS, messengers, chatbots — NotificationService, integration with external channels</p>
+                        <p>✅ Visual editor (drag-and-drop, workflow) - FormsDesigner, visual editors</p>
+                        <p>✅ BPM/process automation tools - Agents, Maven, workflow engine</p>
+                        <p>🔶 Web and mobile app development - Web, adaptive interface, no separate mobile SDK</p>
+                        <p>✅ Versioning, rollback, publishing - Versioning, migrations, publishing supported</p>
+                        <p>✅ Multichannel: email, SMS, messengers, chatbots - NotificationService, integration with external channels</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>4. Integration Layer</h2>
                     <div class="list-plain">
-                        <p>✅ REST, SOAP, GraphQL, Webhooks, TCP/IP support — REST, SOAP, webhooks, queues, no GraphQL out of the box</p>
-                        <p>✅ Connectors to ERP, CRM, banking systems (SAP, Oracle, Microsoft, Salesforce, 1C, etc.) — IntegrationService, plugins, custom connectors</p>
-                        <p>✅ SDK/API for custom integrations — SDK, REST API, extensibility</p>
-                        <p>✅ ETL, BI/analytics, data pipelines — OLAP, BI integration, data export</p>
-                        <p>✅ Legacy systems support — Plugins, custom connectors</p>
+                        <p>✅ REST, SOAP, GraphQL, Webhooks, TCP/IP support - REST, SOAP, webhooks, queues out of the box</p>
+                        <p>✅ IntegrationService, plugins, custom connectors</p>
+                        <p>✅ SDK/API for custom integrations - SDK, REST API, extensibility</p>
+                        <p>✅ ETL, BI/analytics, data pipelines - OLAP, BI integration, data export</p>
+                        <p>✅ Legacy systems support - Plugins, custom connectors</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>5. Data Layer & DB Support</h2>
                     <div class="list-plain">
-                        <p>✅ DBMS: MSSQL, PostgreSQL, Oracle, MySQL, cloud DBs — All major DBMS supported</p>
-                        <p>✅ Data governance, access control, audit trail — Audit, centralized audit, RBAC</p>
-                        <p>✅ Import/export, data migration, data lineage — Import/export, migrations, lineage via audit</p>
-                        <p>✅ Data warehouse/data lake, BI/analytics integration — BI integration, data export</p>
-                        <p>✅ Storage scalability — Architecture supports scaling</p>
+                        <p>✅ DBMS: MSSQL, PostgreSQL, Oracle, MySQL, cloud DBs - All major DBMS supported</p>
+                        <p>✅ Data governance, access control, audit trail - Audit, centralized audit, RBAC</p>
+                        <p>✅ Import/export, data migration, data lineage - Import/export, migrations, lineage via audit</p>
+                        <p>✅ Data warehouse/data lake, BI/analytics integration - BI integration, data export</p>
+                        <p>✅ Storage scalability - Architecture supports scaling</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>6. Security & Compliance</h2>
                     <div class="list-plain">
-                        <p>✅ Authentication: SSO, LDAP, OAuth2, SAML — SSO, OAuth2, LDAP, corporate standards</p>
-                        <p>✅ RBAC/ABAC, MFA, password policy — RBAC, MFA, password policy</p>
-                        <p>✅ Encryption (at rest, in transit) — Encryption supported</p>
-                        <p>✅ GDPR, ISO, regional law compliance — Supported. Depends on implementation specifics and region</p>
-                        <p>✅ Logging, audit trail, incident response — Centralized audit, logging</p>
+                        <p>✅ Authentication: SSO, LDAP, OAuth2, SAML - SSO, OAuth2, LDAP, corporate standards</p>
+                        <p>✅ RBAC/ABAC, MFA, password policy - RBAC, MFA, password policy</p>
+                        <p>✅ Encryption (at rest, in transit) - Encryption supported</p>
+                        <p>✅ GDPR, ISO, regional law compliance - Supported. Depends on implementation specifics and region</p>
+                        <p>✅ Logging, audit trail, incident response - Centralized audit, logging</p>
                     </ul>
                 </section>
 
                 <section class="card">
                     <h2>7. Scalability & Performance</h2>
                     <div class="list-plain">
-                        <p>✅ Enterprise load, clustering — Clustering, scalability supported</p>
-                        <p>✅ SLA, fault tolerance — SLA, monitoring, ApplicationTimeService</p>
-                        <p>✅ Auto-scaling, DevOps/CI-CD — DevOps, CI/CD, containerization</p>
-                        <p>✅ Metrics, monitoring, alerts — Monitoring, alerts, reports</p>
+                        <p>✅ Enterprise load, clustering - Clustering, scalability supported</p>
+                        <p>✅ SLA, fault tolerance - SLA, monitoring, ApplicationTimeService</p>
+                        <p>✅ Auto-scaling, DevOps/CI-CD - DevOps, CI/CD, containerization</p>
+                        <p>✅ Metrics, monitoring, alerts - Monitoring, alerts, reports</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>8. UX/UI & User Experience</h2>
                     <div class="list-plain">
-                        <p>🔶 No-code/low-code tools for business — Visual editors, not full no-code</p>
-                        <p>✅ Interface customization (themes, white label) — Customization, white label, themes</p>
-                        <p>✅ Developer documentation (API, SDK) — Documentation, API, SDK</p>
-                        <p>✅ Localization, multilingual — Multilingual support, localization (Arabic/English)</p>
-                        <p>🔶 Online training, knowledge base, community — Knowledge base, training materials, no large open community</p>
+                        <p>🔶 No-code/low-code tools for business - Visual editors, not full no-code</p>
+                        <p>✅ Interface customization (themes, white label) - Customization, white label, themes</p>
+                        <p>✅ Developer documentation (API, SDK) - Documentation, API, SDK</p>
+                        <p>✅ Localization, multilingual - Multilingual support, localization (Arabic/English)</p>
+                        <p>🔶 Online training, knowledge base, community - Knowledge base, training materials, no large open community</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>9. Ecosystem & Marketplace</h2>
                     <div class="list-plain">
-                        <p>🔶 Marketplace of ready modules/connectors — Plugins, extensibility, no public marketplace</p>
-                        <p>✅ Third-party developer support, module publishing — SDK, API, extensibility</p>
-                        <p>🔶 Integrator/VAR network, training, certification — Partner network, training, no mass certification</p>
+                        <p>🔶 Marketplace of ready modules/connectors - Plugins, extensibility, no public marketplace</p>
+                        <p>✅ Third-party developer support, module publishing - SDK, API, extensibility</p>
+                        <p>🔶 Integrator/VAR network, training, certification - Partner network, training, no mass certification</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>10. Support & Training</h2>
                     <div class="list-plain">
-                        <p>🔶 SLA (24/7, premium support) — Possible organizationally, technically supported</p>
-                        <p>✅ Knowledge base, documentation, forum, chats — Knowledge base, documentation, chats</p>
-                        <p>🔶 Training courses, user/partner certification — Courses and training, certification on request</p>
-                        <p>✅ Support flexibility for industry/client — Flexible support, customization, localization</p>
+                        <p>🔶 SLA (24/7, premium support) - Possible organizationally, technically supported</p>
+                        <p>✅ Knowledge base, documentation, forum, chats - Knowledge base, documentation, chats</p>
+                        <p>🔶 Training courses, user/partner certification - Courses and training, certification on request</p>
+                        <p>✅ Support flexibility for industry/client - Flexible support, customization, localization</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>11. Pricing & Licensing</h2>
                     <div class="list-plain">
-                        <p>✅ Licensing: per user, per app, per usage, perpetual/SaaS — Flexible models, customer-friendly</p>
-                        <p>🔶 Free trial/freemium — By agreement, depends on partner</p>
-                        <p>✅ TCO transparency for 3-5 years — 5-year TCO: 60-75% savings (vs. traditional dev)</p>
-                        <p>✅ Special rates (gov/large clients/startups) — Individual rates, government program support</p>
-                        <p>✅ Upgrade/expansion terms — Flexible upgrade terms</p>
+                        <p>✅ Licensing: per user, per app, per usage, perpetual/SaaS - Flexible models, customer-friendly</p>
+                        <p>🔶 Free trial/freemium - By agreement, depends on partner</p>
+                        <p>✅ TCO transparency for 3-5 years - 5-year TCO: 60-75% savings (vs. traditional dev)</p>
+                        <p>✅ Special rates (gov/large clients/startups) - Individual rates, government program support</p>
+                        <p>✅ Upgrade/expansion terms - Flexible upgrade terms</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>12. Innovation & Roadmap</h2>
                     <div class="list-plain">
-                        <p>✅ AI/ML support, hyperautomation, advanced analytics — ScoringScripts, ML/AI, analytics</p>
-                        <p>🔶 Public/private roadmap — Roadmap on request, not public</p>
-                        <p>✅ Co-development with customer/partners — Possible, supported</p>
+                        <p>✅ AI/ML support, hyperautomation, advanced analytics - ScoringScripts, ML/AI, analytics</p>
+                        <p>🔶 Public/private roadmap - Roadmap on request, not public</p>
+                        <p>✅ Co-development with customer/partners - Possible, supported</p>
                     </div>
                 </section>
 
                 <section class="card">
                     <h2>13. Customer Success & References</h2>
                     <div class="list-plain">
-                        <p>✅ Implementation examples (scale, industry, region) — Public services, business, startups, wide range of industries</p>
-                        <p>✅ Client feedback, NPS, user stories — Real scenarios from various industries</p>
-                        <p>✅ Time-to-market, business effect (KPI, ROI) — MVP in 2-4 months, ROI 250-400%, 60-75% budget savings</p>
+                        <p>✅ Implementation examples (scale, industry, region) - Public services, business, startups, wide range of industries</p>
+                        <p>✅ Client feedback, NPS, user stories - Real scenarios from various industries</p>
+                        <p>✅ Time-to-market, business effect (KPI, ROI) - MVP in 2-4 months, ROI 250-400%, 60-75% budget savings</p>
                     </div>
                 </section>
 

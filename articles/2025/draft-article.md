@@ -4,7 +4,7 @@ description: ""
 slug: draft-article
 tags: []
 canonical: 
-date: 2025-08-26T13:37:55.652Z
+date: 2025-08-26T14:00:38.072Z
 ---
 
 # Draft article

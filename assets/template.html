@@ -52,7 +52,7 @@
     function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-RJQ64XZB6T');
   </script>
 
-  <script src="/mobile-menu.js" defer></script>
+  <script src="mobile-menu.js" defer></script>
   <!-- Fonts -->
   <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -73,19 +73,22 @@
 
     /* Header/Nav - Matching index.html exactly */
     .header { padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; backdrop-filter: blur(10px); background: rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 1000; transition: padding 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease; }
-    .logo { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 700; color: white; text-decoration: none; }
-    .logo-icon { width: 40px; height: 40px; background: #19E97C; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #0a0a0a; }
+    .logo { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 700; color: #000000; text-decoration: none; }
+    .logo-icon { width: 40px; height: 40px; background: #19E97C; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; color: #000000; }
     .nav { display: flex; gap: 30px; }
     /* Hide mobile navigation on desktop */
     .mobile-nav { display: none; }
     .nav-item { position: relative; }
     .nav-link { color: #ffffff; text-decoration: none; font-weight: 500; transition: all .3s ease; position: relative; display: flex; align-items: center; gap: 5px; }
     .nav-link:hover, .nav-link.active { color: #b2e0ff; }
+    .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: #b2e0ff; transition: width 0.3s ease; }
+    .nav-link:hover::after { width: 100%; }
     .dropdown { position: absolute; top: 100%; left: 0; background: rgba(26,26,46,0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 10px 0; min-width: 200px; opacity: 0; visibility: hidden; transform: translateY(-10px); transition: all .3s ease; z-index: 1000; }
     .nav-item:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
     .dropdown-link { display: block; color: #ffffff; text-decoration: none; padding: 10px 20px; font-weight: 400; transition: all .3s ease; }
     .dropdown-link:hover { color: #b2e0ff; background: rgba(255,255,255,0.05); }
-    .dropdown-arrow { font-size: 0.7rem; opacity: 0.7; transition: transform 0.3s ease; }
+    .dropdown-arrow { font-size: 0.8rem; transition: transform 0.3s ease; }
+    .nav-item:hover .dropdown-arrow { transform: rotate(180deg); }
 
     /* Mobile Menu Toggle Button */
     .mobile-menu-toggle {
@@ -444,6 +447,6 @@
       <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
     </footer>
   </div>
-  <script src="/particles-animation.js" defer></script>
+  <script src="particles-animation.js" defer></script>
 </body>
 </html>

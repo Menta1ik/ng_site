@@ -1,5 +1,22 @@
 [
   {
+    "id": "why-most-ai-startups-will-fail-and-what-enterprises-can-learn",
+    "title": "Why Most AI Startups Will Fail — and What Enterprises Can Learn",
+    "date": "2025-09-02",
+    "author": "NextGen Team",
+    "category": "Strategy",
+    "tags": ["AI", "Strategy", "Low-code"],
+    "excerpt": "The recent article argues that 99% of AI startups will be dead by 2026 due to unsustainable business models, lack of defensible IP, overreliance on foundational model providers, and limited differentiation. While the exact percentage is debatable, the underlying message is clear: most AI-first ventures are chasing hype rather than building resilient, governable, and enterprise-ready solutions.",
+    "readTime": 5,
+    "path": "/blog/2025/09/why-most-ai-startups-will-fail-and-what-enterprises-can-learn.html",
+    "image": { "src": "/images/nextgen-preview.svg", "alt": "NextGen Blog preview image" },
+    "seo": {
+      "title": "Why Most AI Startups Will Fail — and What Enterprises Can Learn",
+      "description": "Why Most AI Startups Will Fail — and What Enterprises Can Learn",
+      "canonical": "https://nxgenlowcode.biz/blog/2025/09/why-most-ai-startups-will-fail-and-what-enterprises-can-learn.html"
+    }
+  },
+  {
     "id": "vibe-hacking-and-no-code-ransomware-ais-dark-side-is-here-forrester",
     "title": "Vibe Hacking and No-Code Ransomware: AI’s Dark Side Is Here — Forrester",
     "date": "2025-08-28",

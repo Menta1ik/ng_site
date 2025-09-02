@@ -18,14 +18,19 @@
   <meta property="og:image:alt" content="NextGen Blog preview image">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="article:published_time" content="2025-09-01">
-  <meta property="article:modified_time" content="2025-09-01">
+  <meta property="og:site_name" content="NextGen Low-Code Platform">
+  <meta property="og:locale" content="en_US">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html">
-  <meta name="twitter:title" content="Managing Security Risks in Low-Code Development">
-  <meta name="twitter:description" content="Balancing low-code speed with governance and security: enterprise patterns, mitigations, and real outcomes.">
-  <meta name="twitter:image" content="https://nxgenlowcode.biz/images/og-default-1200x630.png">
+   <meta property="article:published_time" content="2025-09-01">
+   <meta property="article:modified_time" content="2025-09-01">
+
+   <meta name="twitter:card" content="summary_large_image">
+   <meta name="twitter:url" content="https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html">
+   <meta name="twitter:title" content="Managing Security Risks in Low-Code Development">
+   <meta name="twitter:description" content="Balancing low-code speed with governance and security: enterprise patterns, mitigations, and real outcomes.">
+   <meta name="twitter:image" content="https://nxgenlowcode.biz/images/og-default-1200x630.png">
+  <meta name="twitter:site" content="@nxgenlowcode">
+  <meta name="twitter:creator" content="@nxgenlowcode">
 
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="icon" type="image/svg+xml" sizes="16x16" href="/images/favicon-16x16.svg">
@@ -37,8 +42,26 @@
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-RJQ64XZB6T');</script>
+  <script>
+    (function() {
+      var isProd = location.hostname.endsWith('nxgenlowcode.biz') && location.protocol === 'https:';
+      if (isProd) {
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T';
+        document.head.appendChild(gtagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-RJQ64XZB6T');
+      } else {
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function(){};
+      }
+    })();
+  </script>
 
   <script src="/mobile-menu.js" defer></script>
 
@@ -119,6 +142,37 @@
 
   <script type="application/ld+json">
   {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nxgenlowcode.biz/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nxgenlowcode.biz/blog.html"},
+      {"@type": "ListItem", "position": 3, "name": "Managing Security Risks in Low-Code Development", "item": "https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "NextGen Low-Code Platform",
+      "url": "https://nxgenlowcode.biz/",
+      "description": "Advanced low-code platform for enterprise application development with visual tools and enterprise-grade security",
+      "publisher": {
+          "@type": "Organization",
+          "name": "BrainySoft Ltd"
+      },
+      "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://nxgenlowcode.biz/blog.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+      }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
     "@context":"https://schema.org",
     "@type":"Article",
     "headline":"Managing Security Risks in Low-Code Development",
@@ -126,9 +180,12 @@
     "author":{"@type":"Person","name":"NextGen Team"},
     "datePublished":"2025-09-01",
     "dateModified":"2025-09-01",
-    "mainEntityOfPage":{"@type":"WebPage","@id":"https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html"},
-    "image":["https://nxgenlowcode.biz/images/og-default-1200x630.png"],
-    "publisher":{"@type":"Organization","name":"BrainySoft Ltd","logo":{"@type":"ImageObject","url":"https://nxgenlowcode.biz/images/favicon.svg"}}
+    "inLanguage":"en",
+    "url":"https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html",
+    "articleSection":"Blog",
+     "mainEntityOfPage":{"@type":"WebPage","@id":"https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html"},
+     "image":["https://nxgenlowcode.biz/images/og-default-1200x630.png"],
+     "publisher":{"@type":"Organization","name":"BrainySoft Ltd","logo":{"@type":"ImageObject","url":"https://nxgenlowcode.biz/images/favicon.svg"}}
   }
   </script>
 </head>

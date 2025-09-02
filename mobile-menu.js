@@ -33,6 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const mobileToggle = document.querySelector('.mobile-menu-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
+
+    // Active menu highlight for Blog pages (works regardless of mobile menu presence)
+    try {
+        var path = location.pathname;
+        var isBlog = (path === '/blog.html' || path.indexOf('/blog/') === 0);
+        if (isBlog) {
+            document.querySelectorAll('a[href="/blog.html"]').forEach(function(a) {
+                a.classList.add('active');
+            });
+        }
+    } catch (e) {}
     
     if (!mobileToggle || !mobileNav) {
         // Even if there is no mobile nav, still apply sticky header on scroll below
@@ -174,6 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
         applyHeaderScrollState();
         window.addEventListener('scroll', applyHeaderScrollState, { passive: true });
     }
+// removed duplicate active menu highlight block here
 });
 
 // Local dev helper: rewrite "/blog" links to "/blog.html" so the Blog menu works like the reference without server rewrites
@@ -181,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
   try {
     var isLocal = (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:');
     if (!isLocal) return; // only in local/dev
-    var blogLinks = document.querySelectorAll('a[href="/blog/"], a[href="/blog"], a[href="/blog.html"]');
+    var blogLinks = document.querySelectorAll('a[href="/blog/"], a[href="/blog"]');
     blogLinks.forEach(function(a) {
       a.setAttribute('data-href-original', a.getAttribute('href'));
       a.setAttribute('href', '/blog.html');

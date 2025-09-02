@@ -178,6 +178,12 @@
         <priority>0.7</priority>
     </url>
     <url>
+        <loc>https://nxgenlowcode.biz/loan-origination-system.html</loc>
+        <lastmod>2025-01-30</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://nxgenlowcode.biz/payment-solutions.html</loc>
         <lastmod>2025-08-17</lastmod>
         <changefreq>monthly</changefreq>
@@ -189,10 +195,41 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
+    <!-- Newly added content pages -->
+    <url>
+        <loc>https://nxgenlowcode.biz/low-code-no-code-high-code.html</loc>
+        <lastmod>2025-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nxgenlowcode.biz/rfp-checklist-for-low-code-platform.html</loc>
+        <lastmod>2025-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
     <url>
         <loc>https://nxgenlowcode.biz/wealth-management.html</loc>
         <lastmod>2025-08-17</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://nxgenlowcode.biz/blog.html</loc>
+        <lastmod>2025-09-02</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://nxgenlowcode.biz/blog/2025/08/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.html</loc>
+        <lastmod>2025-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html</loc>
+        <lastmod>2025-09-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
 </urlset>

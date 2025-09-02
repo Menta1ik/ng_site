@@ -17,6 +17,11 @@
       "permanent": false
     },
     {
+      "source": "/blog/",
+      "destination": "/blog.html",
+      "permanent": false
+    },
+    {
       "source": "/favicon.ico",
       "destination": "/images/favicon.svg",
       "permanent": true

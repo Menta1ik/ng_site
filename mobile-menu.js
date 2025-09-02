@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function() {
   try {
     var isLocal = (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:');
     if (!isLocal) return; // only in local/dev
-    var blogLinks = document.querySelectorAll('a[href="/blog/"], a[href="/blog"]');
+    var blogLinks = document.querySelectorAll('a[href="/blog/"], a[href="/blog"], a[href="/blog.html"]');
     blogLinks.forEach(function(a) {
       a.setAttribute('data-href-original', a.getAttribute('href'));
       a.setAttribute('href', '/blog.html');

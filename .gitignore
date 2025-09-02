@@ -46,3 +46,4 @@ pids
 # Ignore test pages
 /test-typography.html
 /dev
+lighthouse/

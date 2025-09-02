@@ -21,14 +21,14 @@
   <meta property="og:site_name" content="NextGen Low-Code Platform">
   <meta property="og:locale" content="en_US">
 
-   <meta property="article:published_time" content="2025-09-01">
-   <meta property="article:modified_time" content="2025-09-01">
+  <meta property="article:published_time" content="2025-09-01">
+  <meta property="article:modified_time" content="2025-09-01">
 
-   <meta name="twitter:card" content="summary_large_image">
-   <meta name="twitter:url" content="https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html">
-   <meta name="twitter:title" content="Managing Security Risks in Low-Code Development">
-   <meta name="twitter:description" content="Balancing low-code speed with governance and security: enterprise patterns, mitigations, and real outcomes.">
-   <meta name="twitter:image" content="https://nxgenlowcode.biz/images/og-default-1200x630.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html">
+  <meta name="twitter:title" content="Managing Security Risks in Low-Code Development">
+  <meta name="twitter:description" content="Balancing low-code speed with governance and security: enterprise patterns, mitigations, and real outcomes.">
+  <meta name="twitter:image" content="https://nxgenlowcode.biz/images/og-default-1200x630.png">
   <meta name="twitter:site" content="@nxgenlowcode">
   <meta name="twitter:creator" content="@nxgenlowcode">
 
@@ -38,19 +38,16 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.svg">
   <link rel="mask-icon" href="/images/favicon.svg" color="#2563eb">
   <link rel="manifest" href="/manifest.json">
-
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
 
   <script>
-    (function() {
+    (function(){
       var isProd = location.hostname.endsWith('nxgenlowcode.biz') && location.protocol === 'https:';
       if (isProd) {
-        var gtagScript = document.createElement('script');
-        gtagScript.async = true;
-        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T';
-        document.head.appendChild(gtagScript);
-
+        var s = document.createElement('script');
+        s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T';
+        document.head.appendChild(s);
         window.dataLayer = window.dataLayer || [];
         function gtag(){ dataLayer.push(arguments); }
         window.gtag = gtag;
@@ -71,7 +68,6 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"></noscript>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap"></noscript>
 
@@ -80,6 +76,7 @@
     body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2e 50%,#16213e 100%);color:#fff;min-height:100vh;overflow-x:hidden;position:relative}
     #particles-bg{position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:0;pointer-events:none}
     .main-container{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column}
+
     .header{padding:20px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(10px);background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.1)}
     .logo{display:flex;align-items:center;gap:12px;font-size:1.5rem;font-weight:700;color:#fff;text-decoration:none}
     .logo-icon{width:40px;height:40px;background:#19E97C;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#0a0a0a}
@@ -95,9 +92,8 @@
     .nav-item:hover .dropdown{opacity:1;visibility:visible;transform:none}
     .dropdown-link{display:block;color:#fff;text-decoration:none;padding:10px 20px;transition:.3s}
     .dropdown-link:hover{color:#b2e0ff;background:rgba(255,255,255,.05)}
-    .mobile-nav{display:none}
 
-    /* Mobile Menu Toggle (match about.html) */
+    .mobile-nav{display:none}
     .mobile-menu-toggle{display:none}
     .mobile-menu-toggle span{width:24px;height:2px;background:#ffffff;transition:all .3s ease;transform-origin:center}
     .mobile-menu-toggle.active span:nth-child(1){transform:rotate(45deg) translate(7px,7px)}
@@ -112,6 +108,7 @@
       .mobile-nav.active{left:0}
       .main-container{z-index:0}
     }
+
     .content{flex:1;padding:40px 40px}
     .container{max-width:1000px;margin:0 auto}
     .post-header{padding:30px 0 10px}
@@ -121,17 +118,16 @@
     .post .content p{margin:1rem 0;color:rgba(255,255,255,.95)}
     .post .content h2{margin:1.5rem 0 .75rem;font-size:1.6rem;color:#19e97c}
     .post .content h3{margin:1.25rem 0 .5rem;font-size:1.3rem;color:#b2e0ff}
-    .post .content a{color:#19e97c;text-decoration:underline;font-weight:600;transition:color .3s ease}
-    .post .content a:hover{color:#7cf2b7}
+    .post .content a:not(.btn){color:#19e97c;text-decoration:underline;font-weight:600;transition:color .3s ease}
+    .post .content a:not(.btn){color:#19e97c;text-decoration:underline;font-weight:600;transition:color .3s ease}
+    .post .content a:not(.btn):hover{color:#7cf2b7}
     .post .content ul,.post .content ol{padding-left:1.25rem;margin:.75rem 0}
     .post .content li{margin:.4rem 0}
     .post .content blockquote{margin:1.25rem 0;padding:.75rem 1rem;border-left:3px solid #19e97c;background:rgba(25,233,124,.06);color:rgba(255,255,255,.92);border-radius:6px}
     .post .content code{background:rgba(255,255,255,.08);padding:.15rem .35rem;border-radius:4px;font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.95em}
     .post .content pre{background:rgba(255,255,255,.08);padding:1rem;border-radius:8px;overflow:auto;font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
 
-    /* JetBrains Mono for the article section */
     article.post, article.post .content {font-family:'JetBrains Mono','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
-    /* JetBrains Mono for title and date */
     .post-header .post-title,
     .post-header .post-meta,
     .post-header .post-meta time {font-family:'JetBrains Mono','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif}
@@ -143,65 +139,17 @@
     .cta-block{margin:2rem 0 1.25rem;padding:32px 24px;border:1px solid rgba(178,224,255,.15);border-radius:16px;background:linear-gradient(135deg, rgba(12,32,43,0.9), rgba(2,22,28,0.95)), radial-gradient(1200px 400px at 50% -20%, rgba(25,233,124,.15), transparent), radial-gradient(800px 300px at -10% 120%, rgba(178,224,255,.12), transparent);text-align:center;position:relative;overflow:hidden}
     .cta-title{font-size:clamp(1.5rem,3.5vw,2rem);margin:0 0 .5rem;color:#ffffff;font-weight:800}
     .cta-subtitle{color:rgba(255,255,255,.9);margin:0 0 1.25rem}
-    .cta-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;font-weight:700;border-radius:9999px;padding:.9rem 1.4rem;transition:all .25s cubic-bezier(.4,0,.2,1);border:1.5px solid transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
+    .cta-actions{display:flex;gap:1.25rem;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;font-weight:700;border-radius:0;padding:16px 28px;transition:all .25s cubic-bezier(.4,0,.2,1);border:2px solid transparent}
+.btn:hover,.btn:focus,.btn:active,.btn:visited{text-decoration:none}
 .btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(25,233,124,.35)}
 .btn:active{transform:translateY(0)}
-.btn-primary{background:linear-gradient(180deg,#1cf07e,#13c968);color:#071b12;box-shadow:0 10px 30px rgba(25,233,124,.35)}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 34px rgba(25,233,124,.45)}
-.btn-secondary{background:transparent;border:1.5px solid rgba(25,233,124,.55);color:#19e97c}
-.btn-secondary:hover{background:rgba(25,233,124,.1);border-color:#7cf2b7;color:#7cf2b7;box-shadow:0 10px 24px rgba(25,233,124,.2)}
+.btn-primary{background:#19e97c;color:#0b0b0b;border-color:transparent;font-weight:800}
+.btn-primary:hover{filter:brightness(.95)}
+.btn-secondary{background:transparent;border:2px solid #fff;color:#fff}
+.btn-secondary:hover{background:#ffffff;border-color:#ffffff;color:#0b0b0b}
     @media(max-width:480px){.cta-actions{flex-direction:column}}
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nxgenlowcode.biz/"},
-      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nxgenlowcode.biz/blog.html"},
-      {"@type": "ListItem", "position": 3, "name": "Managing Security Risks in Low-Code Development", "item": "https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html"}
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "NextGen Low-Code Platform",
-      "url": "https://nxgenlowcode.biz/",
-      "description": "Advanced low-code platform for enterprise application development with visual tools and enterprise-grade security",
-      "publisher": {
-          "@type": "Organization",
-          "name": "BrainySoft Ltd"
-      },
-      "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://nxgenlowcode.biz/blog.html?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-      }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Article",
-    "headline":"Managing Security Risks in Low-Code Development",
-    "description":"Executive commentary on managing security risks in low-code development: governance, compliance, auditability, and practical enterprise patterns for secure adoption.",
-    "author":{"@type":"Person","name":"NextGen Team"},
-    "datePublished":"2025-09-01",
-    "dateModified":"2025-09-01",
-    "inLanguage":"en",
-    "url":"https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html",
-    "articleSection":"Blog",
-     "mainEntityOfPage":{"@type":"WebPage","@id":"https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html"},
-     "image":["https://nxgenlowcode.biz/images/og-default-1200x630.png"],
-     "publisher":{"@type":"Organization","name":"BrainySoft Ltd","logo":{"@type":"ImageObject","url":"https://nxgenlowcode.biz/images/favicon.svg"}}
-  }
-  </script>
 </head>
 <body>
   <canvas id="particles-bg"></canvas>
@@ -235,7 +183,6 @@
     </header>
 
     <nav class="nav mobile-nav">
-      <!-- дубль меню для мобилки -->
       <div class="nav-item"><a href="/" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
         <div class="dropdown"><a href="/evaluation.html" class="dropdown-link">Evaluation</a><a href="/rfp-checklist-for-low-code-platform.html" class="dropdown-link">Magic Quadrant</a></div>
       </div>
@@ -259,6 +206,7 @@
         <article class="post">
           <div class="post-body">
             <div class="content">
+              <h2>Executive Commentary: Managing Security Risks in Low-Code Development</h2>
               <p>The recent Tripwire analysis highlights a fundamental tension in the low-code landscape: platforms accelerate delivery, but they also introduce new risk surfaces—particularly around security, governance, and maintainability. The article underscores that low-code environments, if left unchecked, can lead to shadow IT, misconfigured permissions, insecure connectors, and limited visibility for enterprise security teams. The message is clear: speed without oversight creates vulnerabilities. Enterprises need a pragmatic balance between agility and disciplined governance.</p>
 
               <h2>Why This Matters for Enterprises</h2>
@@ -293,19 +241,15 @@
               <h2>Closing</h2>
               <p>Low-code is not inherently insecure or unsustainable—it depends on how enterprises implement governance, security, and lifecycle practices. The organizations that succeed view low-code as part of their <strong>strategic digital transformation</strong>, not a shortcut.</p>
               <p>At NextGen, we help clients combine <strong>speed with discipline</strong>, ensuring low-code platforms deliver measurable outcomes without compromising on compliance or resilience.</p>
-              <p><strong>Learn more at NextGen.</strong></p>
 
               <div class="cta-block">
                 <h3 class="cta-title">Built around your requirements — not the other way around</h3>
-                <p class="cta-subtitle">Get the assessment checklist and implementation recommendations.</p>
+                <p class="cta-subtitle">Watch the security-focused presentation or contact us for an assessment.</p>
                 <div class="cta-actions">
-                  <a class="btn btn-primary" href="/evaluation.html">Start Assessment</a>
-                  <a class="btn btn-secondary" href="/request-for-information.html">Request RFI</a>
+                  <a class="btn btn-primary" href="/evaluation.html">Evaluate</a>
+                  <a class="btn btn-secondary" href="/contact.html">Contact Us</a>
                 </div>
               </div>
-
-              <p class="source" style="margin-top:1rem"><a href="https://www.tripwire.com/state-of-security/mitigating-security-risks-low-code-development-environments" target="_blank" rel="noopener">Source ↗</a></p>
-
             </div>
           </div>
         </article>

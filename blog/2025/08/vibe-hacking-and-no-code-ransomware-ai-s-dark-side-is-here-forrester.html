@@ -121,8 +121,8 @@
     .post .content p{margin:1rem 0;color:rgba(255,255,255,.95)}
     .post .content h2{margin:1.5rem 0 .75rem;font-size:1.6rem;color:#19e97c}
     .post .content h3{margin:1.25rem 0 .5rem;font-size:1.3rem;color:#b2e0ff}
-    .post .content a{color:#19e97c;text-decoration:underline;font-weight:600;transition:color .3s ease}
-    .post .content a:hover{color:#7cf2b7}
+    .post .content a:not(.btn){color:#19e97c;text-decoration:underline;font-weight:600;transition:color .3s ease}
+    .post .content a:not(.btn):hover{color:#7cf2b7}
     .post .content ul,.post .content ol{padding-left:1.25rem;margin:.75rem 0}
     .post .content li{margin:.4rem 0}
     .post .content blockquote{margin:1.25rem 0;padding:.75rem 1rem;border-left:3px solid #19e97c;background:rgba(25,233,124,.06);color:rgba(255,255,255,.92);border-radius:6px}
@@ -147,11 +147,64 @@
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;font-weight:700;border-radius:9999px;padding:.9rem 1.4rem;transition:all .25s cubic-bezier(.4,0,.2,1);border:1.5px solid transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06)}
 .btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(25,233,124,.35)}
 .btn:active{transform:translateY(0)}
-.btn-primary{background:linear-gradient(180deg,#1cf07e,#13c968);color:#071b12;box-shadow:0 10px 30px rgba(25,233,124,.35)}
+.btn-primary{background:linear-gradient(180deg,#1cf07e,#13c968);color:#ffffff;box-shadow:0 10px 30px rgba(25,233,124,.35)}
 .btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 34px rgba(25,233,124,.45)}
-.btn-secondary{background:transparent;border:1.5px solid rgba(25,233,124,.55);color:#19e97c}
-.btn-secondary:hover{background:rgba(25,233,124,.1);border-color:#7cf2b7;color:#7cf2b7;box-shadow:0 10px 24px rgba(25,233,124,.2)}
+.btn-secondary{background:transparent;border:1.5px solid rgba(25,233,124,.55);color:#ffffff}
+.btn-secondary:hover{background:rgba(25,233,124,.1);border-color:#7cf2b7;color:#ffffff;box-shadow:0 10px 24px rgba(25,233,124,.2)}
     @media(max-width:480px){.cta-actions{flex-direction:column}}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://nxgenlowcode.biz/"},
+      {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nxgenlowcode.biz/blog.html"},
+      {"@type": "ListItem", "position": 3, "name": "Vibe Hacking And No-Code Ransomware: AI’s Dark Side Is Here - Forrester", "item": "https://nxgenlowcode.biz/blog/2025/08/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.html"}
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://nxgenlowcode.biz/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://nxgenlowcode.biz/blog.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Vibe Hacking And No-Code Ransomware: AI’s Dark Side Is Here - Forrester",
+    "description":"Vibe Hacking And No-Code Ransomware: AI’s Dark Side Is Here  Forrester",
+    "author":{"@type":"Person","name":"NextGen Team"},
+    "datePublished":"2025-08-28",
+    "dateModified":"2025-08-28",
+    "inLanguage":"en",
+    "url":"https://nxgenlowcode.biz/blog/2025/08/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.html",
+    "articleSection":"Blog",
+     "mainEntityOfPage":{"@type":"WebPage","@id":"https://nxgenlowcode.biz/blog/2025/08/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.html"},
+    "image":["https://nxgenlowcode.biz/images/og-default-1200x630.png"],
+    "publisher":{"@type":"Organization","name":"BrainySoft Ltd","logo":{"@type":"ImageObject","url":"https://nxgenlowcode.biz/images/favicon.svg"}}
+  }
+  </script>
+  <style>
+  /* CTA buttons: override to match reference (scoped to CTA block) */
+  .cta-block .btn { border-radius: 0; padding: 16px 28px; box-shadow: none; border: 2px solid transparent; }
+  .cta-block .btn:hover, .cta-block .btn:focus, .cta-block .btn:active, .cta-block .btn:visited { text-decoration: none; }
+  .cta-block .btn-primary { background: #19e97c; color: #0b0b0b; border-color: transparent; font-weight: 800; }
+  .cta-block .btn-primary:hover { filter: brightness(.95); }
+  .cta-block .btn-secondary { background: transparent; border: 2px solid #fff; color: #fff; }
+  .cta-block .btn-secondary:hover { background: #ffffff; border-color: #ffffff; color: #0b0b0b; }
+  .cta-actions{gap:1.25rem}
+  @media(max-width:480px){.cta-actions{flex-direction:column}}
   </style>
 
   <script type="application/ld+json">

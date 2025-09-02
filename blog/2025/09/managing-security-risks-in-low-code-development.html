@@ -140,14 +140,14 @@
     .footer-text{color:rgba(255,255,255,.6);font-size:.9rem}
 
     /* CTA block styles */
-    .cta-block{margin:2rem 0 1.25rem;padding:20px;border:1px solid rgba(178,224,255,.2);border-radius:12px;background:rgba(255,255,255,.05)}
-    .cta-title{font-size:1.25rem;margin:0 0 .5rem;background:linear-gradient(135deg,#b2e0ff,#19e97c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .cta-subtitle{color:rgba(255,255,255,.9);margin:0 0 1rem}
-    .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:10px;padding:.66rem 1rem;transition:.2s ease}
-    .btn-primary{background:#19e97c;color:#0a0a0a}
-    .btn-primary:hover{background:#7cf2b7;color:#0a0a0a}
-    .btn-secondary{border:1px solid #b2e0ff;color:#b2e0ff}
+    .cta-block{margin:2rem 0 1.25rem;padding:32px 24px;border:1px solid rgba(178,224,255,.15);border-radius:16px;background:linear-gradient(135deg, rgba(12,32,43,0.9), rgba(2,22,28,0.95)), radial-gradient(1200px 400px at 50% -20%, rgba(25,233,124,.15), transparent), radial-gradient(800px 300px at -10% 120%, rgba(178,224,255,.12), transparent);text-align:center;position:relative;overflow:hidden}
+    .cta-title{font-size:clamp(1.5rem,3.5vw,2rem);margin:0 0 .5rem;color:#ffffff;font-weight:800}
+    .cta-subtitle{color:rgba(255,255,255,.9);margin:0 0 1.25rem}
+    .cta-actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:9999px;padding:.75rem 1.25rem;transition:.2s ease}
+    .btn-primary{background:#19e97c;color:#0a0a0a;box-shadow:0 6px 20px rgba(25,233,124,.25)}
+    .btn-primary:hover{background:#7cf2b7;color:#0a0a0a;box-shadow:0 8px 26px rgba(25,233,124,.35)}
+    .btn-secondary{border:1px solid #b2e0ff;color:#b2e0ff;background:transparent}
     .btn-secondary:hover{background:rgba(178,224,255,.08);border-color:#ffffff;color:#ffffff}
     @media(max-width:480px){.cta-actions{flex-direction:column}}
   </style>
@@ -294,11 +294,11 @@
               <p><strong>Learn more at NextGen.</strong></p>
 
               <div class="cta-block">
-                <h3 class="cta-title">Под ваши требования, не наоборот</h3>
-                <p class="cta-subtitle">Получите чек-лист оценки и рекомендации по внедрению.</p>
+                <h3 class="cta-title">Built around your requirements — not the other way around</h3>
+                <p class="cta-subtitle">Get the assessment checklist and implementation recommendations.</p>
                 <div class="cta-actions">
-                  <a class="btn btn-primary" href="/evaluation.html">Пройти оценку</a>
-                  <a class="btn btn-secondary" href="/request-for-information.html">Запросить RFI</a>
+                  <a class="btn btn-primary" href="/evaluation.html">Start Assessment</a>
+                  <a class="btn btn-secondary" href="/request-for-information.html">Request RFI</a>
                 </div>
               </div>
 

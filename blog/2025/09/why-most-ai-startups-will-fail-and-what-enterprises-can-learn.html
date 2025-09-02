@@ -136,6 +136,18 @@
 
     .footer{padding:40px;text-align:center;border-top:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.3)}
     .footer-text{color:rgba(255,255,255,.6);font-size:.9rem}
+
+    /* CTA block styles */
+    .cta-block{margin:2rem 0 1.25rem;padding:20px;border:1px solid rgba(178,224,255,.2);border-radius:12px;background:rgba(255,255,255,.05)}
+    .cta-title{font-size:1.25rem;margin:0 0 .5rem;background:linear-gradient(135deg,#b2e0ff,#19e97c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .cta-subtitle{color:rgba(255,255,255,.9);margin:0 0 1rem}
+    .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;text-decoration:none;font-weight:700;border-radius:10px;padding:.66rem 1rem;transition:.2s ease}
+    .btn-primary{background:#19e97c;color:#0a0a0a}
+    .btn-primary:hover{background:#7cf2b7;color:#0a0a0a}
+    .btn-secondary{border:1px solid #b2e0ff;color:#b2e0ff}
+    .btn-secondary:hover{background:rgba(178,224,255,.08);border-color:#ffffff;color:#ffffff}
+    @media(max-width:480px){.cta-actions{flex-direction:column}}
   </style>
 
   <script type="application/ld+json">
@@ -270,6 +282,15 @@
               <h2>Closing Thoughts</h2>
               <p>The AI startup bubble may burst, but the <strong>enterprise demand for AI-enabled automation will only grow</strong>. The lesson for decision makers: don't gamble on fragile providers. Instead, adopt a <strong>low-code platform strategy</strong> that ensures governance, compliance, scalability — and above all, permanent ownership of the digital assets you create.</p>
               <p>Learn more about how NextGen supports enterprise-grade AI adoption with governance, speed, and IP ownership at <a href="/" target="_blank" rel="noopener">NextGen</a>.</p>
+
+              <div class="cta-block">
+                <h3 class="cta-title">Под ваши требования, не наоборот</h3>
+                <p class="cta-subtitle">Получите чек-лист оценки и рекомендации по внедрению.</p>
+                <div class="cta-actions">
+                  <a class="btn btn-primary" href="/evaluation.html">Пройти оценку</a>
+                  <a class="btn btn-secondary" href="/request-for-information.html">Запросить RFI</a>
+                </div>
+              </div>
 
               <p class="source" style="margin-top:1rem"><a href="https://skooloflife.medium.com/99-of-ai-startups-will-be-dead-by-2026-heres-why-bfc974edd968" target="_blank" rel="noopener">Source ↗</a></p>
             </div>

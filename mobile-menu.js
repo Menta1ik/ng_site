@@ -175,3 +175,18 @@ document.addEventListener('DOMContentLoaded', function() {
         window.addEventListener('scroll', applyHeaderScrollState, { passive: true });
     }
 });
+
+// Local dev helper: rewrite "/blog" links to "/blog.html" so the Blog menu works like the reference without server rewrites
+(function() {
+  try {
+    var isLocal = (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:');
+    if (!isLocal) return; // only in local/dev
+    var blogLinks = document.querySelectorAll('a[href="/blog/"], a[href="/blog"]');
+    blogLinks.forEach(function(a) {
+      a.setAttribute('data-href-original', a.getAttribute('href'));
+      a.setAttribute('href', '/blog.html');
+    });
+  } catch (e) {
+    console.warn('Blog link local rewrite skipped:', e);
+  }
+})();

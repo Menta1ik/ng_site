@@ -1,0 +1,33 @@
+[
+  {
+    "id": "vibe-hacking-and-no-code-ransomware-ais-dark-side-is-here-forrester",
+    "title": "Vibe Hacking and No-Code Ransomware: AI’s Dark Side Is Here — Forrester",
+    "date": "2025-08-28",
+    "author": "NextGen Team",
+    "category": "Security",
+    "tags": ["AI", "Security", "Ransomware", "Low-code"],
+    "excerpt": "The recent Forrester report highlights the emerging risks associated with AI technologies, particularly in the context of low-code platforms. The concept of \"vibe hacking\" and the potential for no-code ransomware illustrate how malicious actors can exploit these tools for nefarious purposes. As organizations increasingly adopt low-code solutions for agility and efficiency, they must also contend with these new security threats that could compromise sensitive data and operational integrity.",
+    "readTime": 6,
+    "path": "/blog/2025/08/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.html",
+    "image": {
+      "src": "/images/nextgen-preview.svg",
+      "alt": "NextGen Blog preview image"
+    },
+    "seo": {
+      "title": "Vibe Hacking and No-Code Ransomware: AI’s Dark Side Is Here — Forrester",
+      "description": "Vibe Hacking And No-Code Ransomware: AI’s Dark Side Is Here — Forrester",
+      "canonical": "https://nxgenlowcode.biz/blog/2025/08/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.html"
+    }
+  },
+  {
+    "id": "managing-security-risks-in-low-code-development",
+    "title": "Managing Security Risks in Low-Code Development",
+    "date": "2025-09-01",
+    "author": "NextGen Team",
+    "category": "Security",
+    "readTime": "6 min read",
+    "path": "/blog/2025/09/managing-security-risks-in-low-code-development.html",
+    "excerpt": "The recent Tripwire analysis highlights a fundamental tension in the low-code landscape: platforms accelerate delivery, but they also introduce new risk surfaces—particularly around security, governance, and maintainability. The article underscores that low-code environments, if left unchecked, can lead to shadow IT, misconfigured permissions, insecure connectors, and limited visibility for enterprise security teams.",
+    "canonical": "https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html"
+  }
+]

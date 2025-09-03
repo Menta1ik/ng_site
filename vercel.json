@@ -32,6 +32,336 @@
       "permanent": true
     },
     {
+      "source": "/afg_reference",
+      "destination": "/afg_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/afg_reference/",
+      "destination": "/afg_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/business-process-automation",
+      "destination": "/business-process-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/business-process-automation/",
+      "destination": "/business-process-automation.html",
+      "permanent": true
+    },
+    {
+      "source": "/ca_reference",
+      "destination": "/ca_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/ca_reference/",
+      "destination": "/ca_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-management",
+      "destination": "/case-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/case-management/",
+      "destination": "/case-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/citizen-services-portal",
+      "destination": "/citizen-services-portal.html",
+      "permanent": true
+    },
+    {
+      "source": "/citizen-services-portal/",
+      "destination": "/citizen-services-portal.html",
+      "permanent": true
+    },
+    {
+      "source": "/coming_soon",
+      "destination": "/coming_soon.html",
+      "permanent": true
+    },
+    {
+      "source": "/coming_soon/",
+      "destination": "/coming_soon.html",
+      "permanent": true
+    },
+    {
+      "source": "/compliance-regulatory",
+      "destination": "/compliance-regulatory.html",
+      "permanent": true
+    },
+    {
+      "source": "/compliance-regulatory/",
+      "destination": "/compliance-regulatory.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/credit-scoring-risk-management",
+      "destination": "/credit-scoring-risk-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/credit-scoring-risk-management/",
+      "destination": "/credit-scoring-risk-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/customer-onboarding-system",
+      "destination": "/customer-onboarding-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/customer-onboarding-system/",
+      "destination": "/customer-onboarding-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/customer-relationship-management",
+      "destination": "/customer-relationship-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/customer-relationship-management/",
+      "destination": "/customer-relationship-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/digital_authority_presentation",
+      "destination": "/digital_authority_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/digital_authority_presentation/",
+      "destination": "/digital_authority_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/ef_reference",
+      "destination": "/ef_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/ef_reference/",
+      "destination": "/ef_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/enterprise-resource-planning",
+      "destination": "/enterprise-resource-planning.html",
+      "permanent": true
+    },
+    {
+      "source": "/enterprise-resource-planning/",
+      "destination": "/enterprise-resource-planning.html",
+      "permanent": true
+    },
+    {
+      "source": "/evaluation",
+      "destination": "/evaluation.html",
+      "permanent": true
+    },
+    {
+      "source": "/evaluation/",
+      "destination": "/evaluation.html",
+      "permanent": true
+    },
+    {
+      "source": "/file_archive",
+      "destination": "/file_archive.html",
+      "permanent": true
+    },
+    {
+      "source": "/file_archive/",
+      "destination": "/file_archive.html",
+      "permanent": true
+    },
+    {
+      "source": "/industry-solutions",
+      "destination": "/industry-solutions.html",
+      "permanent": true
+    },
+    {
+      "source": "/industry-solutions/",
+      "destination": "/industry-solutions.html",
+      "permanent": true
+    },
+    {
+      "source": "/lending-platforms",
+      "destination": "/lending-platforms.html",
+      "permanent": true
+    },
+    {
+      "source": "/lending-platforms/",
+      "destination": "/lending-platforms.html",
+      "permanent": true
+    },
+    {
+      "source": "/loan-origination-system",
+      "destination": "/loan-origination-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/loan-origination-system/",
+      "destination": "/loan-origination-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/low-code-no-code-high-code",
+      "destination": "/low-code-no-code-high-code.html",
+      "permanent": true
+    },
+    {
+      "source": "/low-code-no-code-high-code/",
+      "destination": "/low-code-no-code-high-code.html",
+      "permanent": true
+    },
+    {
+      "source": "/payment-solutions",
+      "destination": "/payment-solutions.html",
+      "permanent": true
+    },
+    {
+      "source": "/payment-solutions/",
+      "destination": "/payment-solutions.html",
+      "permanent": true
+    },
+    {
+      "source": "/perception_presentation",
+      "destination": "/perception_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/perception_presentation/",
+      "destination": "/perception_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/presentations",
+      "destination": "/presentations.html",
+      "permanent": true
+    },
+    {
+      "source": "/presentations/",
+      "destination": "/presentations.html",
+      "permanent": true
+    },
+    {
+      "source": "/request-for-information",
+      "destination": "/request-for-information.html",
+      "permanent": true
+    },
+    {
+      "source": "/request-for-information/",
+      "destination": "/request-for-information.html",
+      "permanent": true
+    },
+    {
+      "source": "/rfp-checklist-for-low-code-platform",
+      "destination": "/rfp-checklist-for-low-code-platform.html",
+      "permanent": true
+    },
+    {
+      "source": "/rfp-checklist-for-low-code-platform/",
+      "destination": "/rfp-checklist-for-low-code-platform.html",
+      "permanent": true
+    },
+    {
+      "source": "/rfp_checklist_presentation",
+      "destination": "/rfp_checklist_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/rfp_checklist_presentation/",
+      "destination": "/rfp_checklist_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/rfp_evaluation_presentation",
+      "destination": "/rfp_evaluation_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/rfp_evaluation_presentation/",
+      "destination": "/rfp_evaluation_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/security_presentation",
+      "destination": "/security_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/security_presentation/",
+      "destination": "/security_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/sg_reference",
+      "destination": "/sg_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/sg_reference/",
+      "destination": "/sg_reference.html",
+      "permanent": true
+    },
+    {
+      "source": "/success-stories",
+      "destination": "/success-stories.html",
+      "permanent": true
+    },
+    {
+      "source": "/success-stories/",
+      "destination": "/success-stories.html",
+      "permanent": true
+    },
+    {
+      "source": "/tco_roi_presentation",
+      "destination": "/tco_roi_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/tco_roi_presentation/",
+      "destination": "/tco_roi_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/use_cases_presentation",
+      "destination": "/use_cases_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/use_cases_presentation/",
+      "destination": "/use_cases_presentation.html",
+      "permanent": true
+    },
+    {
+      "source": "/wealth-management",
+      "destination": "/wealth-management.html",
+      "permanent": true
+    },
+    {
+      "source": "/wealth-management/",
+      "destination": "/wealth-management.html",
+      "permanent": true
+    },
+    {
       "source": "/favicon.ico",
       "destination": "/images/favicon.svg",
       "permanent": true

@@ -1,1 +1,3 @@
 lighthouse/
+# Exclude local typography test page from deployment
+test-typography.html

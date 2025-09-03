@@ -362,16 +362,6 @@
       "permanent": true
     },
     {
-      "source": "/test-typography",
-      "destination": "/test-typography.html",
-      "permanent": true
-    },
-    {
-      "source": "/test-typography/",
-      "destination": "/test-typography.html",
-      "permanent": true
-    },
-    {
       "source": "/favicon.ico",
       "destination": "/images/favicon.svg",
       "permanent": true

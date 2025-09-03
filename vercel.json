@@ -22,6 +22,16 @@
       "permanent": false
     },
     {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
       "source": "/favicon.ico",
       "destination": "/images/favicon.svg",
       "permanent": true

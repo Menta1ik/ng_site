@@ -315,147 +315,188 @@
       .content { padding: 40px 16px; }
       article.post { padding: 22px; }
     }
-  </style>
 
-  <!-- JSON-LD Article Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "{{TITLE}}",
-    "description": "{{DESC}}",
-    "inLanguage": "en",
-    "url": "{{CANONICAL}}",
-    "articleSection": "Blog",
-    "author": {
-      "@type": "Person",
-      "name": "{{BLOG_AUTHOR}}"
-    },
-    "datePublished": "{{DATE_ISO}}",
-    "dateModified": "{{DATE_ISO}}",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "{{CANONICAL}}" },
-    "image": ["{{BLOG_OG_IMAGE}}"],
-    "publisher": {
-      "@type": "Organization",
-      "name": "BrainySoft Ltd",
-      "logo": { "@type": "ImageObject", "url": "https://nxgenlowcode.biz/images/favicon.svg" }
+    /* Share block */
+    .share-block{margin:1.5rem 0 0;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+    .share-label{color:#a3b3c2;margin-right:.25rem}
+    .share-btn{display:inline-flex;align-items:center;gap:.5rem;padding:10px 14px;border:1.5px solid rgba(255,255,255,.25);border-radius:0;color:#fff;text-decoration:none;transition:all .2s ease;background:transparent}
+    .share-btn:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+    .share-btn svg{width:18px;height:18px;display:block}
+    .share-linkedin{border-color:#0a66c2;color:#0a66c2}
+    .share-twitter{border-color:#1da1f2;color:#1da1f2}
+    .share-whatsapp{border-color:#25D366;color:#25D366}
+    .share-linkedin:hover{background:#0a66c2;border-color:#0a66c2;color:#fff}
+    .share-twitter:hover{background:#1da1f2;border-color:#1da1f2;color:#fff}
+    .share-whatsapp:hover{background:#25D366;border-color:#25D366;color:#fff}
+    
+    /* Ensure 100% white text and icons on hover */
+    .share-block .share-btn:hover,
+    .share-block .share-btn:hover *,
+    .share-block .share-btn:hover span,
+    .share-block .share-btn:hover strong {
+        color: #ffffff !important;
+        text-decoration-color: #ffffff !important;
     }
-  }
-  </script>
+    .share-block .share-btn:hover svg,
+    .share-block .share-btn:hover svg *,
+    .share-block .share-btn:hover .icon {
+         fill: #ffffff !important;
+         stroke: #ffffff !important;
+         color: #ffffff !important;
+     }
+    
+  </style>
 </head>
 <body>
-  <!-- Particles background -->
-  <canvas id="particles-bg"></canvas>
-  
   <div class="main-container">
+    <!-- Header -->
     <header class="header">
-      <a href="/" class="logo" style="text-decoration: none; color: inherit;">
-        <div class="logo-icon">nx</div>
-        <div>
-          nextgen
-          <div style="font-size: 0.7rem; font-weight: 400; opacity: 0.8;">Advanced lowcode platform</div>
-        </div>
+      <a href="/" class="logo">
+        <div class="logo-icon">N</div>
+        NextGen
       </a>
       <nav class="nav">
         <div class="nav-item">
-          <a href="/" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
+          <a href="/#solutions" class="nav-link">
+            Solutions <span class="dropdown-arrow">▼</span>
+          </a>
           <div class="dropdown">
-            <a href="/evaluation.html" class="dropdown-link">Evaluation</a>
-            <a href="/rfp-checklist-for-low-code-platform.html" class="dropdown-link">Magic Quadrant</a>
+            <a href="/business-process-automation.html" class="dropdown-link">Business Process Automation</a>
+            <a href="/customer-relationship-management.html" class="dropdown-link">CRM System</a>
+            <a href="/case-management.html" class="dropdown-link">Case Management</a>
+            <a href="/customer-onboarding-system.html" class="dropdown-link">Customer Onboarding</a>
+            <a href="/loan-origination-system.html" class="dropdown-link">Loan Origination</a>
+            <a href="/credit-scoring-risk-management.html" class="dropdown-link">Credit Scoring</a>
+            <a href="/payment-solutions.html" class="dropdown-link">Payment Solutions</a>
+            <a href="/wealth-management.html" class="dropdown-link">Wealth Management</a>
+            <a href="/compliance-regulatory.html" class="dropdown-link">Compliance & Regulatory</a>
+            <a href="/citizen-services-portal.html" class="dropdown-link">Citizen Services</a>
+            <a href="/enterprise-resource-planning.html" class="dropdown-link">ERP Integration</a>
           </div>
         </div>
         <div class="nav-item">
-          <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
-          <div class="dropdown">
-            <a href="/success-stories.html" class="dropdown-link">Success Stories</a>
-            <a href="/industry-solutions.html" class="dropdown-link">Industry Solutions</a>
-          </div>
+          <a href="/industry-solutions.html" class="nav-link">Industries</a>
         </div>
         <div class="nav-item">
-          <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
+          <a href="/#resources" class="nav-link">
+            Resources <span class="dropdown-arrow">▼</span>
+          </a>
           <div class="dropdown">
+            <a href="/blog.html" class="dropdown-link">Blog</a>
             <a href="/presentations.html" class="dropdown-link">Presentations</a>
-            <a href="/file_archive.html" class="dropdown-link">Files</a>
+            <a href="/success-stories.html" class="dropdown-link">Success Stories</a>
+            <a href="/evaluation.html" class="dropdown-link">Platform Evaluation</a>
+            <a href="/rfp-checklist-for-low-code-platform.html" class="dropdown-link">RFP Checklist</a>
+            <a href="/request-for-information.html" class="dropdown-link">Request for Information</a>
           </div>
-</div>
-        
-        <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-        <a href="about.html" class="nav-link">About</a>
+        </div>
+        <div class="nav-item">
+          <a href="/about.html" class="nav-link">About</a>
+        </div>
+        <div class="nav-item">
+          <a href="/contact.html" class="nav-link">Contact</a>
+        </div>
+      </nav>
+      <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+
+    <!-- Mobile Nav -->
+    <nav class="mobile-nav">
+      <div class="nav-item">
+        <a href="/#solutions" class="nav-link">
+          Solutions <span class="dropdown-arrow">▼</span>
+        </a>
+        <div class="dropdown">
+          <a href="/business-process-automation.html" class="dropdown-link">Business Process Automation</a>
+          <a href="/customer-relationship-management.html" class="dropdown-link">CRM System</a>
+          <a href="/case-management.html" class="dropdown-link">Case Management</a>
+          <a href="/customer-onboarding-system.html" class="dropdown-link">Customer Onboarding</a>
+          <a href="/loan-origination-system.html" class="dropdown-link">Loan Origination</a>
+          <a href="/credit-scoring-risk-management.html" class="dropdown-link">Credit Scoring</a>
+          <a href="/payment-solutions.html" class="dropdown-link">Payment Solutions</a>
+          <a href="/wealth-management.html" class="dropdown-link">Wealth Management</a>
+          <a href="/compliance-regulatory.html" class="dropdown-link">Compliance & Regulatory</a>
+          <a href="/citizen-services-portal.html" class="dropdown-link">Citizen Services</a>
+          <a href="/enterprise-resource-planning.html" class="dropdown-link">ERP Integration</a>
+        </div>
       </div>
       <div class="nav-item">
-        <a href="contact.html" class="nav-link">Contact</a>
-      </div>
-    </nav>
-    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
-
-  <!-- Mobile navigation for mobile devices only -->
-  <nav class="nav mobile-nav">
-    <div class="nav-item">
-      <a href="/" class="nav-link">Platform <span class="dropdown-arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="/evaluation.html" class="dropdown-link">Evaluation</a>
-        <a href="/rfp-checklist-for-low-code-platform.html" class="dropdown-link">Magic Quadrant</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#" class="nav-link">Solutions <span class="dropdown-arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="/success-stories.html" class="dropdown-link">Success Stories</a>
-        <a href="/industry-solutions.html" class="dropdown-link">Industry Solutions</a>
-      </div>
-    </div>
-    <div class="nav-item">
-      <a href="#" class="nav-link">Resources <span class="dropdown-arrow">▼</span></a>
-      <div class="dropdown">
-        <a href="/presentations.html" class="dropdown-link">Presentations</a>
-        <a href="/file_archive.html" class="dropdown-link">Files</a>
-      </div>
-</div>
-    
-        <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-        <a href="about.html" class="nav-link">About</a>
+        <a href="/industry-solutions.html" class="nav-link">Industries</a>
       </div>
       <div class="nav-item">
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="/#resources" class="nav-link">
+          Resources <span class="dropdown-arrow">▼</span>
+        </a>
+        <div class="dropdown">
+          <a href="/blog.html" class="dropdown-link">Blog</a>
+          <a href="/presentations.html" class="dropdown-link">Presentations</a>
+          <a href="/success-stories.html" class="dropdown-link">Success Stories</a>
+          <a href="/evaluation.html" class="dropdown-link">Platform Evaluation</a>
+          <a href="/rfp-checklist-for-low-code-platform.html" class="dropdown-link">RFP Checklist</a>
+          <a href="/request-for-information.html" class="dropdown-link">Request for Information</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="/about.html" class="nav-link">About</a>
+      </div>
+      <div class="nav-item">
+        <a href="/contact.html" class="nav-link">Contact</a>
       </div>
     </nav>
 
+    <!-- Main Content -->
     <main class="content">
       <div class="container">
-        <div class="post-header">
+        <header class="post-header">
           <h1 class="post-title">{{TITLE}}</h1>
-          <div class="post-meta">
-            <time datetime="{{DATE_ISO}}">{{DD}}.{{MM}}.{{YYYY}}</time>
-          </div>
-        </div>
-
+          <div class="post-meta">Published on {{DATE}}</div>
+        </header>
+        
         <article class="post">
-          <div class="post-body">
+          <div class="content">
             {{CONTENT}}
-            <!-- NOTE (n8n integration):
-                 - Ensure CANONICAL is an absolute URL (starts with https://)
-                 - Ensure DATE_ISO format is YYYY-MM-DD or YYYY-MM-DDTHH:mm:ssZ
-                 - Provide default BLOG_OG_IMAGE (1200x630) when dynamic value is missing
-                 - IF_SOURCE is a conditional block: in n8n handle it in code, e.g.:
-                   const src = $json.SOURCE_LINK;  
-                   const showSource = !!src && /^https?:\/\//.test(src);
-                   const html = baseHtml.replace(/\{\{#IF_SOURCE\}\}[\s\S]*?\{\{\/IF_SOURCE\}\}/g,
-                     showSource ? `<p><a href="${src}" target="_blank">Source</a></p>` : '');
-            -->
+          </div>
+
+          <!-- Share Buttons -->
+          <div class="share-block">
+            <span class="share-label">Share:</span>
+            <a href="javascript:void(0)" onclick="window.open('https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(window.location.href), '_blank')" class="share-btn share-linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+              LinkedIn
+            </a>
+            <a href="javascript:void(0)" onclick="window.open('https://twitter.com/intent/tweet?url=' + encodeURIComponent(window.location.href) + '&text=' + encodeURIComponent(document.title), '_blank')" class="share-btn share-twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+              Twitter
+            </a>
+            <a href="javascript:void(0)" onclick="window.open('https://wa.me/?text=' + encodeURIComponent(document.title + ' ' + window.location.href), '_blank')" class="share-btn share-whatsapp">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+              WhatsApp
+            </a>
           </div>
         </article>
       </div>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-      <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+      <div class="footer-text">
+        &copy; 2025 NextGen Low-Code Platform. All rights reserved.
+      </div>
     </footer>
   </div>
-  <script src="/particles-animation.js" defer></script>
+
+  <!-- Particles Background -->
+  <canvas id="particles-bg"></canvas>
+  <script src="/particles-animation.js"></script>
 </body>
 </html>

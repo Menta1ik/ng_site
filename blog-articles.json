@@ -9,7 +9,8 @@
     "excerpt": "The article highlights projections that the global low-code development platform market will grow at a remarkable pace, fueled by enterprises' rising need for rapid application delivery, digital transformation, and cost-efficient modernization. With sectors such as banking, financial services, healthcare, and government under increasing pressure to digitize, low-code is positioned as a primary enabler of scalable innovation. The report emphasizes both the economic scale of this growth and its relevance for organizations aiming to maintain competitiveness in a rapidly evolving landscape.",
     "readTime": 7,
     "path": "blog/2025/09/global-low-code-development-market.html",
-    "image": { "src": "/images/nextgen-preview.svg", "alt": "NextGen Blog preview image" },
+    "image": { "src": "/images/blog/global-low-code-development-market.png", 
+    "alt": "Global Low-Code Development Market" },
     "seo": {
       "title": "Global Low-Code Development Market",
       "description": "The article highlights projections that the global low-code development platform market will grow at a remarkable pace, fueled by enterprises' rising need for rapid application delivery, digital transformation, and cost-efficient modernization. With sectors such as banking, financial services, healthcare, and government under increasing pressure to digitize, low-code is positioned as a primary enabler of scalable innovation. The report emphasizes both the economic scale of this growth and its relevance for organizations aiming to maintain competitiveness in a rapidly evolving landscape.",
@@ -26,7 +27,8 @@
     "excerpt": "The recent article argues that 99% of AI startups will be dead by 2026 due to unsustainable business models, lack of defensible IP, overreliance on foundational model providers, and limited differentiation. While the exact percentage is debatable, the underlying message is clear: most AI-first ventures are chasing hype rather than building resilient, governable, and enterprise-ready solutions.",
     "readTime": 5,
     "path": "/blog/2025/09/why-most-ai-startups-will-fail-and-what-enterprises-can-learn.html",
-    "image": { "src": "/images/nextgen-preview.svg", "alt": "NextGen Blog preview image" },
+    "image": { "src": "/images/blog/why-most-ai-startups-will-fail-and-what-enterprises-can-learn.png", 
+    "alt": "Why Most AI Startups Will Fail — and What Enterprises Can Learn" },
     "seo": {
       "title": "Why Most AI Startups Will Fail — and What Enterprises Can Learn",
       "description": "Why Most AI Startups Will Fail — and What Enterprises Can Learn",
@@ -43,9 +45,8 @@
     "excerpt": "The recent Forrester report highlights the emerging risks associated with AI technologies, particularly in the context of low-code platforms. The concept of \"vibe hacking\" and the potential for no-code ransomware illustrate how malicious actors can exploit these tools for nefarious purposes. As organizations increasingly adopt low-code solutions for agility and efficiency, they must also contend with these new security threats that could compromise sensitive data and operational integrity.",
     "readTime": 6,
     "path": "/blog/2025/08/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.html",
-    "image": {
-      "src": "/images/nextgen-preview.svg",
-      "alt": "NextGen Blog preview image"
+    "image": {"src": "/images/blog/vibe-hacking-and-no-code-ransomware-ai-s-dark-side-is-here-forrester.png",
+      "alt": "Vibe Hacking and No-Code Ransomware: AI’s Dark Side Is Here"
     },
     "seo": {
       "title": "Vibe Hacking and No-Code Ransomware: AI’s Dark Side Is Here — Forrester",
@@ -62,6 +63,9 @@
     "readTime": "6 min read",
     "path": "/blog/2025/09/managing-security-risks-in-low-code-development.html",
     "excerpt": "The recent Tripwire analysis highlights a fundamental tension in the low-code landscape: platforms accelerate delivery, but they also introduce new risk surfaces—particularly around security, governance, and maintainability. The article underscores that low-code environments, if left unchecked, can lead to shadow IT, misconfigured permissions, insecure connectors, and limited visibility for enterprise security teams.",
-    "canonical": "https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html"
+    "canonical": "https://nxgenlowcode.biz/blog/2025/09/managing-security-risks-in-low-code-development.html",
+    "image": {"src": "/images/blog/managing-security-risks-in-low-code-development.png", 
+    "alt": "Security Risks in Low-Code Development"
+    }
   }
 ]

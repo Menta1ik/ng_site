@@ -369,6 +369,24 @@
              text-decoration: none;
              color: inherit;
          }
+         
+         .article-image {
+             width: 100%;
+             height: 250px;
+             overflow: hidden;
+             position: relative;
+         }
+         
+         .article-image img {
+             width: 100%;
+             height: 100%;
+             object-fit: cover;
+             transition: transform 0.5s ease;
+         }
+         
+         .article-card:hover .article-image img {
+             transform: scale(1.05);
+         }
  
          .article-card:hover {
              transform: translateY(-5px);
@@ -807,6 +825,11 @@
             `;
         }
 
+        /**
+         * Renders blog articles with images
+         * Supported image formats: SVG, PNG, JPEG
+         * @param {Array} articles - Array of article objects
+         */
         function renderArticles(articles) {
             const blogContent = document.getElementById('blog-content');
             
@@ -818,8 +841,12 @@
             const makeCards = items => items.map(article => {
                 const url = article.url || article.path || '#';
                 const read = typeof article.readTime === 'number' ? `${article.readTime} min read` : (article.readTime || '');
+                const hasImage = article.image && article.image.src;
                 return `
                 <div class="article-card">
+                    ${hasImage ? `<div class="article-image">
+                        <img src="${article.image.src}" alt="${article.image.alt || article.title}" loading="lazy">
+                    </div>` : ''}
                     <div class="article-content">
                         <div class="article-meta">
                             <span class="article-date">${formatDate(article.date)}</span>

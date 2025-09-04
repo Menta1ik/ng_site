@@ -1,5 +1,22 @@
 [
   {
+    "id": "global-low-code-development-market",
+    "title": "Global Low-Code Development Market",
+    "date": "2025-09-04",
+    "author": "NextGen Team",
+    "category": "Analysis",
+    "tags": ["Low-code", "Market Analysis", "Enterprise"],
+    "excerpt": "The article highlights projections that the global low-code development platform market will grow at a remarkable pace, fueled by enterprises' rising need for rapid application delivery, digital transformation, and cost-efficient modernization. With sectors such as banking, financial services, healthcare, and government under increasing pressure to digitize, low-code is positioned as a primary enabler of scalable innovation. The report emphasizes both the economic scale of this growth and its relevance for organizations aiming to maintain competitiveness in a rapidly evolving landscape.",
+    "readTime": 7,
+    "path": "blog/2025/09/global-low-code-development-market.html",
+    "image": { "src": "/images/nextgen-preview.svg", "alt": "NextGen Blog preview image" },
+    "seo": {
+      "title": "Global Low-Code Development Market",
+      "description": "The article highlights projections that the global low-code development platform market will grow at a remarkable pace, fueled by enterprises' rising need for rapid application delivery, digital transformation, and cost-efficient modernization. With sectors such as banking, financial services, healthcare, and government under increasing pressure to digitize, low-code is positioned as a primary enabler of scalable innovation. The report emphasizes both the economic scale of this growth and its relevance for organizations aiming to maintain competitiveness in a rapidly evolving landscape.",
+      "canonical": "https://nxgenlowcode.biz/blog/2025/09/global-low-code-development-market.html"
+    }
+  },
+  {
     "id": "why-most-ai-startups-will-fail-and-what-enterprises-can-learn",
     "title": "Why Most AI Startups Will Fail — and What Enterprises Can Learn",
     "date": "2025-09-02",

@@ -133,7 +133,9 @@
     .post-header{padding:30px 0 10px}
     .post-title{font-size:clamp(2rem,4.5vw,3rem);font-weight:800;line-height:1.15;margin-bottom:.5rem;background:linear-gradient(135deg,#b2e0ff,#19e97c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .post-meta{color:#a3b3c2;font-size:.95rem;margin-bottom:1.5rem}
-    article.post{background:rgba(255,255,255,.05);border-radius:16px;padding:10px;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08)}
+    article.post{background:rgba(255,255,255,.05);border-radius:16px;padding:0;backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);overflow:hidden}
+    .post-image{display:block;width:100%;height:auto;border-bottom:1px solid rgba(255,255,255,.08)}
+    .post-body{padding:10px}
     .post .content p{margin:1rem 0;color:rgba(255,255,255,.95)}
     .post .content h2{margin:1.5rem 0 .75rem;font-size:1.6rem;color:#19e97c}
     .post .content h3{margin:1.25rem 0 .5rem;font-size:1.3rem;color:#b2e0ff}
@@ -254,10 +256,11 @@
           <div class="post-meta"><time datetime="2025-09-01">01.09.2025</time></div>
         </div>
         <article class="post">
+          <img src="/images/blog/managing-security-risks-in-low-code-development.png" alt="Managing Security Risks in Low-Code Development" class="post-image">
           <div class="post-body">
             <div class="content">
-              <h2>Executive Commentary: Managing Security Risks in Low-Code Development</h2>
-              <p>The recent Tripwire analysis highlights a fundamental tension in the low-code landscape: platforms accelerate delivery, but they also introduce new risk surfaces—particularly around security, governance, and maintainability. The article underscores that low-code environments, if left unchecked, can lead to shadow IT, misconfigured permissions, insecure connectors, and limited visibility for enterprise security teams. The message is clear: speed without oversight creates vulnerabilities. Enterprises need a pragmatic balance between agility and disciplined governance.</p>
+              <h2>The Double-Edged Sword of Low-Code Development</h2>
+              <p>Low-code platforms are revolutionizing application development by enabling rapid creation and deployment of software. They empower citizen developers and accelerate digital transformation, but this speed and accessibility come with inherent security risks. Without proper governance, low-code can become a source of vulnerabilities, compliance gaps, and unmanageable shadow IT. This article explores the key security challenges in low-code development and outlines a strategic framework for mitigating them effectively.</p>
 
               <h2>Why This Matters for Enterprises</h2>
               <p>For sectors like <strong>banking, fintech, government, and the public sector</strong>, the stakes are especially high. These organizations operate under strict regulatory regimes (e.g., GDPR, PCI DSS, PSD2, local data sovereignty requirements) and handle sensitive personal or financial data. A single misconfigured low-code workflow can expose customer records or create compliance gaps. Low-code adoption must therefore be paired with <strong>enterprise-grade security practices</strong>, not treated as “shadow automation.”</p>

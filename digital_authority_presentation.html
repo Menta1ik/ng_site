@@ -7,6 +7,8 @@
     <meta name="description" content="Platform architecture positioning for digital authority. Strategic positioning of NextGen low-code platform in the digital transformation landscape.">
     <meta name="keywords" content="digital authority, platform architecture, NextGen positioning, digital transformation, low-code strategy">
     <link rel="canonical" href="https://nxgenlowcode.biz/digital_authority_presentation.html">
+<link rel="alternate" hreflang="x-default" href="https://nxgenlowcode.biz/digital_authority_presentation.html">
+<link rel="alternate" hreflang="en" href="https://nxgenlowcode.biz/digital_authority_presentation.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -15,13 +17,26 @@
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.svg">
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
     <script>
+  (function(){
+    var host = location.hostname;
+    var isProd = (host === "nxgenlowcode.biz" || host === "www.nxgenlowcode.biz") && location.protocol === "https:";
+    if (isProd) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T";
+      document.head.appendChild(s);
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', 'G-RJQ64XZB6T');
-    </script>
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){};
+    }
+  })();
+</script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -22,6 +22,10 @@
     <meta name="twitter:description" content="NextGen lowcode platform: Build applications 10x faster with enterprise security, global scale, and effortless deployment.">
     <meta name="twitter:image" content="https://nxgenlowcode.biz/images/nextgen-preview.png">
     <meta name="twitter:image:alt" content="NextGen Low-Code Platform preview image">
+    <meta property="og:site_name" content="NextGen Low-Code Platform">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:site" content="@nxgenlowcode">
+    <meta name="twitter:creator" content="@nxgenlowcode">
     
     <!-- Additional meta tags -->
     <meta name="description" content="About NextGen: 10+ years of low-code platform development for banking, enterprise automation, and digital transformation. Proven reliability in regulated industries with enterprise-grade security and scalability.">
@@ -52,6 +56,8 @@
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://nxgenlowcode.biz/about.html">
+<link rel="alternate" hreflang="en" href="https://nxgenlowcode.biz/about.html">
+    <link rel="alternate" hreflang="x-default" href="https://nxgenlowcode.biz/about.html">
     
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -97,12 +103,22 @@
     </script>
     
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-RJQ64XZB6T');
+      (function(){
+        var host = location.hostname;
+        var isProd = (host === 'nxgenlowcode.biz' || host === 'www.nxgenlowcode.biz') && location.protocol === 'https:';
+        if (!isProd) { return; }
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}        
+        var gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T';
+        gtagScript.onload = function(){
+          gtag('js', new Date());
+          gtag('config', 'G-RJQ64XZB6T');
+        };
+        document.head.appendChild(gtagScript);
+      })();
     </script>
     
     <!-- Performance optimizations -->
@@ -565,9 +581,7 @@
                     </div>
 </div>
                 
-        <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-                    <a href="about.html" class="nav-link active">About</a>
-                </div>
+        <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item"><a href="about.html" class="nav-link">About <span class="dropdown-arrow">▼</span></a><div class="dropdown"><a href="about.html" class="dropdown-link active">About</a><a href="team.html" class="dropdown-link">Team</a></div></div>
                 <div class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </div>
@@ -603,9 +617,7 @@
                 </div>
 </div>
             
-        <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-                <a href="about.html" class="nav-link active">About</a>
-            </div>
+        <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item"><a href="about.html" class="nav-link">About <span class="dropdown-arrow">▼</span></a><div class="dropdown"><a href="about.html" class="dropdown-link active">About</a><a href="team.html" class="dropdown-link">Team</a></div></div>
             <div class="nav-item">
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>

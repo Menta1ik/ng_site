@@ -33,6 +33,8 @@
     <meta name="distribution" content="global">
     
     <link rel="canonical" href="https://nxgenlowcode.biz/credit-scoring-risk-management.html">
+<link rel="alternate" hreflang="x-default" href="https://nxgenlowcode.biz/credit-scoring-risk-management.html">
+<link rel="alternate" hreflang="en" href="https://nxgenlowcode.biz/credit-scoring-risk-management.html">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
@@ -53,13 +55,26 @@
     <meta name="apple-mobile-web-app-title" content="NextGen Credit Scoring">
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T"></script>
     <script>
+  (function(){
+    var host = location.hostname;
+    var isProd = (host === "nxgenlowcode.biz" || host === "www.nxgenlowcode.biz") && location.protocol === "https:";
+    if (isProd) {
+      var s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-RJQ64XZB6T";
+      document.head.appendChild(s);
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', 'G-RJQ64XZB6T');
-    </script>
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function(){};
+    }
+  })();
+</script>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -574,7 +589,7 @@
         "name": "Credit Scoring & Risk Management",
         "provider": {
              "@type": "Organization",
-             "name": "NextGen by BrainySoftware",
+             "name": "BrainySoft Ltd",
              "url": "https://nxgenlowcode.biz",
              "logo": "https://nxgenlowcode.biz/images/nextgen-preview.png"
          },
@@ -636,8 +651,12 @@
 </div>
                 
         <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </div>
+  <a href="about.html" class="nav-link">About <span class="dropdown-arrow">▼</span></a>
+  <div class="dropdown">
+    <a href="about.html" class="dropdown-link">About</a>
+    <a href="team.html" class="dropdown-link">Team</a>
+  </div>
+</div>
                 <div class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </div>
@@ -674,8 +693,12 @@
 </div>
             
         <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-                <a href="about.html" class="nav-link">About</a>
-            </div>
+  <a href="about.html" class="nav-link">About <span class="dropdown-arrow">▼</span></a>
+  <div class="dropdown">
+    <a href="about.html" class="dropdown-link">About</a>
+    <a href="team.html" class="dropdown-link">Team</a>
+  </div>
+</div>
             <div class="nav-item">
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>
@@ -872,7 +895,7 @@
 
         <!-- Footer -->
         <footer class="footer">
-            <p class="footer-text">© 2025 NextGen by BrainySoftware - Shaping the Future of Application Development.</p>
+            <p class="footer-text">© 2025 BrainySoft Ltd - Shaping the Future of Application Development.</p>
         </footer>
     </div>
 

@@ -34,6 +34,8 @@
     
     <!-- Canonical Link -->
     <link rel="canonical" href="https://nxgenlowcode.biz/citizen-services-portal.html">
+<link rel="alternate" hreflang="x-default" href="https://nxgenlowcode.biz/citizen-services-portal.html">
+<link rel="alternate" hreflang="en" href="https://nxgenlowcode.biz/citizen-services-portal.html">
     
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -47,12 +49,25 @@
     <meta name="msapplication-TileColor" content="#1a1a1a">
 
     <!-- Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FJ1SLG4EJX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);} 
-      gtag('js', new Date());
-      gtag('config', 'G-FJ1SLG4EJX');
+      (function(){
+        var host = location.hostname;
+        var isProd = (host === 'nxgenlowcode.biz' || host === 'www.nxgenlowcode.biz') && location.protocol === 'https:';
+        if (isProd) {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-FJ1SLG4EJX';
+          document.head.appendChild(s);
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){ dataLayer.push(arguments); }
+          window.gtag = gtag;
+          gtag('js', new Date());
+          gtag('config', 'G-FJ1SLG4EJX');
+        } else {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){};
+        }
+      })();
     </script>
 
     <!-- Font Preloads -->
@@ -207,8 +222,12 @@
 </div>
                 
         <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </div>
+  <a href="about.html" class="nav-link">About <span class="dropdown-arrow">▼</span></a>
+  <div class="dropdown">
+    <a href="about.html" class="dropdown-link">About</a>
+    <a href="team.html" class="dropdown-link">Team</a>
+  </div>
+</div>
                 <div class="nav-item">
                     <a href="contact.html" class="nav-link">Contact</a>
                 </div>
@@ -245,8 +264,12 @@
 </div>
             
         <div class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></div><div class="nav-item">
-                <a href="about.html" class="nav-link">About</a>
-            </div>
+  <a href="about.html" class="nav-link">About <span class="dropdown-arrow">▼</span></a>
+  <div class="dropdown">
+    <a href="about.html" class="dropdown-link">About</a>
+    <a href="team.html" class="dropdown-link">Team</a>
+  </div>
+</div>
             <div class="nav-item">
                 <a href="contact.html" class="nav-link">Contact</a>
             </div>

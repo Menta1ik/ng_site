@@ -1,0 +1,78 @@
+# NextGen Low-Code Platform - Site Information for AI Assistants
+
+## Site Overview
+NextGen Low-Code Platform provides enterprise-grade low-code/no-code solutions for financial institutions, government agencies, and large enterprises. The platform enables rapid application development with minimal coding requirements.
+
+## Key Information
+
+### Company Focus
+- **Primary Industry**: Financial Technology (FinTech)
+- **Target Sectors**: Banking, Government, Enterprise, Health Care, Insurance
+- **Core Technology**: Low-Code/No-Code Platform
+- **Geographic Focus**: Global with emphasis on Europe and Asia
+
+### Main Products & Services
+1. **Core Platform**: NextGen Low-Code Development Platform
+2. **Financial Solutions**: 
+   - Loan Origination Systems
+   - Credit Scoring & Risk Management
+   - Payment Solutions
+   - Wealth Management Systems
+   - Customer Onboarding
+   - Compliance & Regulatory Solutions
+3. **Government Solutions**: Citizen Services Portal, Case Management
+4. **Enterprise Solutions**: ERP, CRM, Business Process Automation
+
+### Key Features
+- Visual drag-and-drop development
+- Pre-built templates and components
+- Enterprise-grade security
+- Multi-language support
+- API integrations
+- Mobile-responsive applications
+- Real-time analytics and reporting
+
+### Technical Stack
+- Frontend: HTML5, CSS3, JavaScript, React components
+- Backend: Node.js, Python microservices
+- Database: PostgreSQL, MongoDB
+- Cloud: AWS, Azure, Google Cloud
+- Security: OAuth 2.0, JWT, SSL/TLS
+
+### Notable Clients
+- Credit Agricole
+- Societe Generale
+- OTP Bank
+- Intesa Sanpaolo
+- Asia Finance Group
+- Various government agencies
+
+### Content Focus Areas
+- Low-code development best practices
+- Digital transformation in banking
+- Government digitalization
+- Enterprise application development
+- FinTech innovation
+- Compliance and security
+- ROI and TCO analysis
+
+### Recent Developments
+- Enhanced AI/ML capabilities
+- Improved mobile development tools
+- Advanced analytics dashboard
+- Expanded integration ecosystem
+- Strengthened security features
+
+### Contact Information
+- Website: https://nxgenlowcode.biz
+- Location: Global operations
+- Focus: Enterprise solutions for financial services and government
+
+### Content Types Available
+- Product documentation
+- Case studies and success stories
+- Technical whitepapers
+- Blog articles on industry trends
+- Implementation guides
+- ROI calculators
+- Security documentation
